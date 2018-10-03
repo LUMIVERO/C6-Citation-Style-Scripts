@@ -15,7 +15,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Jörg Pasch** - *Initial work* - [joepasch](https://github.com/joepasch)
+* **Jörg Pasch** [joepasch](https://github.com/joepasch)
 
 See also the list of [contributors](https://github.com/Citavi/C6-Citation-Style-Scripts/graphs/contributors) who participated in this project.
 
