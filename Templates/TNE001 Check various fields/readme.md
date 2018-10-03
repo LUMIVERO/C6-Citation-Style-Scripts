@@ -11,7 +11,7 @@ Sie möchten einige Titel im Literaturverzeichnis hervorheben (z.B. weil es Ver�
 [→ Translate this with DeepL](https://www.deepl.com/translator#de/en/Sie%20m%C3%B6chten%20einige%20Titel%20im%20Literaturverzeichnis%20hervorheben%20(z.B.%20weil%20es%20Ver%C3%B6ffentlichungen%20Ihres%20Instituts%20sind.)%20Sie%20haben%20vorbereitend%20in%20Ihrem%20Projekt%20die%20betreffenden%20Titel%20z.B.%20mit%20der%20blauen%20Marke%20markiert.%20Im%20Zitationsstileditor%20haben%20Sie%20f%C3%BCr%20alle%20Titel%20eine%20Standardvorlage%20definiert.%20Sie%20erstellen%20eine%20neue%20Vorlage%2C%20die%20nun%20pr%C3%BCft%2C%20ob%20die%20blaue%20Marke%20(%3D%20Label%201)%20bei%20einem%20Titel%20gesetzt%20wurde.)
 
 ## Installing
-[Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
+See Citavi Manual: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
 
 ## Customizing
 Der Programmcode enthält die generischen Feldnamen aller Dokumententypen, die keinen übergeordneten Titel haben. Die Liste der internen Feldbezeichnungen finden Sie im Handbuch. Sie können den generischen Namen auch in Citavi ermitteln, wenn Sie den Mauszeiger in das betreffende Feld stellen und die Tastenkombination CTRL+WIN+F12 drücken. Der Name des Hilfekontextes entspricht dem generischen Feldnamen.
