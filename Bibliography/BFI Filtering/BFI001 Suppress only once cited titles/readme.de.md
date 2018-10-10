@@ -1,4 +1,4 @@
-# Suppress only once cited titles and selected legal document types
+# Im Literaturverzeichnis einmal zitierte Titel und best. jur. Dokumententypen unterdrücken
 
 Titel, die nur einmal im Dokument in den Fußnoten zitiert wurden, sollen im Literaturverzeichnis nicht erscheinen.
 
@@ -6,12 +6,12 @@ Gerichtsentscheidungen und Gesetzestexte, die im Text zitiert wurden, sollen nic
 
 Achten Sie darauf, dass die übergeordneten Dokumententypen im Literaturverzeichnis erscheinen: **Zitationsstil-Editor** > **Stil öffnen** > Menü **Datei** > **Eigenschaften des Zitationsstils** > **Literaturverzeichnis** > Abschnitt **Allgemein** > Option auswählen: **Übergeordnete Titeleinträge automatisch ins Literaturverzeichnis aufnehmen**.
 
-## Prerequisites
-Citavi 5 (and above)
+## Voraussetzung
+Citavi 5 (oder höher)
 
 ## Installation
-See Citavi Manual: [Using Programmable Components](https://www.citavi.com/programmable_components)
+Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
 
-## Author
+## Autor
 
 * **Jörg Pasch** [joepasch](https://github.com/joepasch)
