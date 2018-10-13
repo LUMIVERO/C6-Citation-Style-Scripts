@@ -1,16 +1,3 @@
-// CPS012
-//Add first or middle names for ambiguous last names
-//Version 3.5
-//Version 3.4
-//Version 3.4 Get rid of person cloneing plus small improvements
-//Version 3.3 Copy font style form first group last name to organization name to ensure also "expanded" last names are formatted correctly
-//Version 3.2 In case of NameIdentity.LastName wie use the new output PersonFieldElementFirstNameInitialMiddleNameInitial
-//Version 3.1 Script is deactivated when used on a placeholder citation with /yearonly option ONLY if there is a year field present in the template
-//Version 3.0 Script can deal with different forms of name identity: LastName, LastNameFirstNameInitial, LastNameFirstNameFull etc.
-//Version 2.2 Script allows for combination with idem/eadem output if the same person or group of persons is repeated
-//Version 2.1 Script is deactivated when used on a placeholder citation with /yearonly option
-//Show first name if last names are identical for different persons
-
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -26,7 +13,10 @@ namespace SwissAcademic.Citavi.Citations
         :
         IComponentPartFilter
     {
-
+        //CPS012 Add first or middle names for ambiguous last names v3.5
+		
+		//IMPORTANT: in Citavi 6.1 or below, it is only possible to identify persons with the same last name, not first or middle names.
+		//Also disambiguation can only take place in a single stp, e.g. by adding first name initials only, or by adding full first names, or by adding both first and middle names.
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
 			//IMPORTANT: It is not possible Citavi 6.1 or below, to confine the name ambiguity check to the primary authors only.
@@ -35,10 +25,10 @@ namespace SwissAcademic.Citavi.Citations
 			bool disambiguatePrimaryAuthorsOnly = true;
 			
 			//When a first and/or middle name is added for disambiguation, should that be before or after the last name?
-            PersonNameOrder nameOrderForAmbiguityResolution = PersonNameOrder.LastNameFirstName;
+            PersonNameOrder nameOrderForAmbiguityResolution = PersonNameOrder.FirstNameLastName;
 			
 			//In case of ambiguous last names, should the disambiguation happen by adding full first names or just the initials?
-            NameFormat firstNameFormatForAmbiguityResolution = NameFormat.Full; 
+            NameFormat firstNameFormatForAmbiguityResolution = NameFormat.Abbreviated; 
 			//NameFormat.Full					John Mike
 			//NameFormat.Abbreviated			J. M.
 			//NameFormat.AbbreviatedNoPeriod	J M
