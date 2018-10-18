@@ -11,5 +11,4 @@ Sie verwenden den Dokumententyp "Gerichtsentscheidung", um behördliche Entschei
 Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
 
 ## Autor
-
 * **Jörg Pasch** [joepasch](https://github.com/joepasch)
