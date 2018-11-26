@@ -10,6 +10,7 @@ Citavi 5 (oder höher)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
+Die Komponente muss ein Textelement mit dem Text **CITE COUNT** enthalten. Dieses Textelement wird dann durch die Zahl der Zitierungen ersetzt.
 
 ## Autor
 
