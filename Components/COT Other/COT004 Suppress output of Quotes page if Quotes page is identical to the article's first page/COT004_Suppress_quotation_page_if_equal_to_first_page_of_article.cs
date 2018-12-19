@@ -1,8 +1,13 @@
 //C6#COT004
 //C5#431512
-//Description: Suppress output of "Quotes page" if "Quotes page" is equal to the article's first page
-//Version: 1.4  
-//Version 1.4 Zeile 82 Reihenfolge der Transfersettings getauscht, damit Präfix von Zitat-Seiten ausgegeben wird
+//Description: Suppresses article's pages when quotation starts on first page of article
+//IMPORTANT: Ensure the component has one of the following structure:
+//1.) [article's pages][quotation pages]   <- you can use prefix/suffix of [quotation pages] element to place it inside parentheses
+//2.) [article's pages][literal][quotation pages][literal]   <- literals can contain parenthesis
+//3.) [article's pages][literal][quotation pages
+
+//Version 1.5 Parenthesis around quotation pages can be introduced as separate literal elements or as part of prefix/suffix of the quotation page range field element.
+//Version 1.4 Line 82: Changed order of Transfersettings, to ensure the prefix of quotation pages is output
 //Version 1.3 Umstellung von OriginalString auf PrettyString
 
 using System.Linq;
@@ -51,9 +56,9 @@ namespace SwissAcademic.Citavi.Citations
 
 			//[1]
 			if (placeholderCitation.Entry.PageRange == null) return null;
-			if (string.IsNullOrEmpty(placeholderCitation.Entry.PageRange.PrettyString)) return null;	//ElementApplyConditions sorgen dafür, dass keine leeren Klammern angezeigt werden
+			if (string.IsNullOrEmpty(placeholderCitation.Entry.PageRange.PrettyString)) return null;	//ElementApplyConditions sorgen dafÃ¼r, dass keine leeren Klammern angezeigt werden
 
-			//enthält nur 1 PageRangeFieldElement und 1 QuotationPageRangeFieldElement und sonst lediglich LiteralElemente
+			//enthÃ¤lt nur 1 PageRangeFieldElement und 1 QuotationPageRangeFieldElement und sonst lediglich LiteralElemente
 			PageRangeFieldElement pageRangeFieldElement = null;
 			QuotationPageRangeFieldElement quotationPageRangeFieldElement = null;
 			
@@ -66,9 +71,10 @@ namespace SwissAcademic.Citavi.Citations
 				string.IsNullOrEmpty(citation.Reference.PageRange.PrettyString)
 			)
 			{
-				//Alles unterdrücken ausser QuotationPageRangeFieldElement
+				//Alles unterdrÃ¼cken ausser QuotationPageRangeFieldElement
 				TransferSettings(pageRangeFieldElement, quotationPageRangeFieldElement);
 				RemoveAllButElement(componentPart, quotationPageRangeFieldElement);
+				RemoveParenthesesFromPrefixSuffix(quotationPageRangeFieldElement);
 
 				return null;
 			}
@@ -80,9 +86,10 @@ namespace SwissAcademic.Citavi.Citations
 			//[2], [3], [4] [= nur Zitatseiten]
 			if (startPageQuotation == startPageArticle)
 			{
-				//Alles unterdrücken ausser QuotationPageRangeFieldElement
+				//Alles unterdrÃ¼cken ausser QuotationPageRangeFieldElement
 				TransferSettings(quotationPageRangeFieldElement, pageRangeFieldElement);
 				RemoveAllButElement(componentPart, quotationPageRangeFieldElement);
+				RemoveParenthesesFromPrefixSuffix(quotationPageRangeFieldElement);
 
 				return null;
 			}
@@ -121,68 +128,78 @@ namespace SwissAcademic.Citavi.Citations
 
 		bool TryValidateComponentPartStructure(ComponentPart componentPart, out PageRangeFieldElement pageRangeFieldElement, out QuotationPageRangeFieldElement quotationPageRangeFieldElement)
 		{
+			
+			/*
+				Allowed structures:
+				/1/ [article pages] [quotation pages]
+				/2/ [article pages] [literal] [quotation pages]
+				/3/ [article pages] [literal] [quotation pages] [literal]
+			*/
+			
 			pageRangeFieldElement = null;
 			quotationPageRangeFieldElement = null;
 
 			if (componentPart == null) return false;
-			if (componentPart.Elements == null || componentPart.Elements.Count == 0) return false;
+			if (componentPart.Elements == null || 
+				componentPart.Elements.Count == 0 || 
+				componentPart.Elements.Count < 2 || 
+				componentPart.Elements.Count > 4) return false;
 
-
-			foreach (IElement element in componentPart.Elements)
+			IElement element01 = componentPart.Elements.ElementAtOrDefault(0);
+			IElement element02 = componentPart.Elements.ElementAtOrDefault(1);
+			IElement element03 = componentPart.Elements.ElementAtOrDefault(2);
+			IElement element04 = componentPart.Elements.ElementAtOrDefault(3);
+			
+			
+			#region /1/ [article pages] [quotation pages]
+			if (element04 == null &&
+				element03 == null &&
+				element02 != null &&
+				element02 is QuotationPageRangeFieldElement &&
+				element01 != null &&
+				element01 is PageRangeFieldElement &&
+				((PageRangeFieldElement)element01).PropertyId == ReferencePropertyId.PageRange)
 			{
-				if (element is QuotationPageRangeFieldElement)
-				{
-					if (quotationPageRangeFieldElement == null)
-					{
-						quotationPageRangeFieldElement = element as QuotationPageRangeFieldElement;
-						continue;
-					}
-					else
-					{
-						//more than one QuotationPageRangeFieldElement
-						quotationPageRangeFieldElement = null;
-						pageRangeFieldElement = null;
-						return false;
-					}
-				}
-
-				if (element is PageRangeFieldElement)
-				{
-					if (pageRangeFieldElement == null)
-					{
-						pageRangeFieldElement = element as PageRangeFieldElement;
-						continue;
-					}
-					else
-					{
-						//more than one PageRangeFieldElement
-						pageRangeFieldElement = null;
-						quotationPageRangeFieldElement = null;
-						return false;
-					}
-				}
-
-				if (element is FieldElement)
-				{
-					//we do not allow other FieldElements than 1 PageRangeFieldElement and 1 QuotationPageRangeFieldElement
-					pageRangeFieldElement = null;
-					quotationPageRangeFieldElement = null;
-					return false;
-				}
-			}
-
-
-			if (pageRangeFieldElement != null && quotationPageRangeFieldElement != null)
-			{
+				pageRangeFieldElement = (PageRangeFieldElement)element01;
+				quotationPageRangeFieldElement = (QuotationPageRangeFieldElement)element02;
 				return true;
 			}
-			else
+			#endregion
+			
+			#region /2/ [article pages] [literal] [quotation pages]
+			if (element04 == null &&
+				element03 != null &&
+				element03 is QuotationPageRangeFieldElement &&
+				element02 != null &&
+				element02 is LiteralElement &&
+				element01 != null &&
+				element01 is PageRangeFieldElement &&
+				((PageRangeFieldElement)element01).PropertyId == ReferencePropertyId.PageRange)
 			{
-				pageRangeFieldElement = null;
-				quotationPageRangeFieldElement = null;
-				return false;
+				pageRangeFieldElement = (PageRangeFieldElement)element01;
+				quotationPageRangeFieldElement = (QuotationPageRangeFieldElement)element03;
+				return true;
 			}
-
+			#endregion
+			
+			#region /3/ [article pages] [literal] [quotation pages] [literal]
+			if (element04 != null &&
+				element04 is LiteralElement &&
+				element03 != null &&
+				element03 is QuotationPageRangeFieldElement &&
+				element02 != null &&
+				element02 is LiteralElement &&
+				element01 != null && 
+				element01 is PageRangeFieldElement &&
+				((PageRangeFieldElement)element01).PropertyId == ReferencePropertyId.PageRange)
+			{
+				pageRangeFieldElement = (PageRangeFieldElement)element01;
+				quotationPageRangeFieldElement = (QuotationPageRangeFieldElement)element03;
+				return true;
+			}
+			#endregion
+			
+			return false;
 		}
 
 		void RemoveAllButElement(ComponentPart componentPart, IElement elementToKeep)
@@ -195,8 +212,85 @@ namespace SwissAcademic.Citavi.Citations
 				if (element == elementToKeep) continue;
 				componentPart.Elements.Remove(element);
 			}
-
 		}
+		
+		void RemoveParenthesesFromPrefixSuffix(PageRangeFieldElement pageRangeFieldElement)
+		{
+			if (pageRangeFieldElement == null) return;
+			
+			LiteralElement[] prefixes = new LiteralElement[] {
+				pageRangeFieldElement.PageOnePrefix,
+				pageRangeFieldElement.PageTwoPrefix,
+				pageRangeFieldElement.PageMultiPrefix,
+				
+				pageRangeFieldElement.ColumnOnePrefix,
+				pageRangeFieldElement.ColumnTwoPrefix,
+				pageRangeFieldElement.ColumnMultiPrefix,
+				
+				pageRangeFieldElement.ParagraphOnePrefix,
+				pageRangeFieldElement.ParagraphTwoPrefix,
+				pageRangeFieldElement.ParagraphMultiPrefix,
+				
+				pageRangeFieldElement.MarginOnePrefix,
+				pageRangeFieldElement.MarginTwoPrefix,
+				pageRangeFieldElement.MarginMultiPrefix,
+				
+				pageRangeFieldElement.OtherOnePrefix,
+				pageRangeFieldElement.OtherTwoPrefix,
+				pageRangeFieldElement.OtherMultiPrefix
+			};
+			
+			LiteralElement[] suffixes = new LiteralElement[] { 
+				pageRangeFieldElement.PageOneSuffix,
+				pageRangeFieldElement.PageTwoSuffix,
+				pageRangeFieldElement.PageMultiSuffix,
+				
+				pageRangeFieldElement.ColumnOneSuffix,
+				pageRangeFieldElement.ColumnTwoSuffix,
+				pageRangeFieldElement.ColumnMultiSuffix,
+				
+				pageRangeFieldElement.ParagraphOneSuffix,
+				pageRangeFieldElement.ParagraphTwoSuffix,
+				pageRangeFieldElement.ParagraphMultiSuffix,
+				
+				pageRangeFieldElement.MarginOneSuffix,
+				pageRangeFieldElement.MarginTwoSuffix,
+				pageRangeFieldElement.MarginMultiSuffix,
+				
+				pageRangeFieldElement.OtherOneSuffix,
+				pageRangeFieldElement.OtherTwoSuffix,
+				pageRangeFieldElement.OtherMultiSuffix
+			};
+			
+			foreach(LiteralElement element in prefixes)
+			{
+				TrimStartParentheses(element);
+			}
+			foreach(LiteralElement element in suffixes)
+			{
+				TrimEndParentheses(element);
+			}
+			
+		}
+		
+		void TrimStartParentheses(LiteralElement literalElement)
+		{
+			if (literalElement == null) return;
+			if (string.IsNullOrEmpty(literalElement.Text)) return;
+			
+			char[] charsToTrim = {' ', '('};
+			literalElement.Text = literalElement.Text.TrimStart(charsToTrim);
+		}
+		
+		void TrimEndParentheses(LiteralElement literalElement)
+		{
+			if (literalElement == null) return;
+			if (string.IsNullOrEmpty(literalElement.Text)) return;
+			
+			char[] charsToTrim = {' ', ')'};
+			literalElement.Text = literalElement.Text.TrimEnd(charsToTrim);
+		}
+		
 
 		void TransferSettings(PageRangeFieldElement sourceElement, PageRangeFieldElement targetElement)
 		{
