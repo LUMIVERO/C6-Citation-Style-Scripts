@@ -7,8 +7,16 @@ Citavi 5 (oder höher)
 ## Beispiele
 
 - Petra Müller (2014) Informationskompetenz vermitteln. Bibliothekswesen heute, 4. Jg., S. 14<del>, hier: S. 14</del>.
+- s.a. [Screenshot](https://www.screencast.com/t/p7h2X4pT)
 
 ## Installation
+Erstellen Sie eine neue kombinierte Komponente. Fügen Sie dort die beiden folgenden Komponenten ein:
+- "Seiten von-bis" (Page range; Start- und Endeseite des Beitrags)
+- "Zitat-Seiten" (Quotation page range; Start- und Endeseite des Zitats)
+
+Fügen Sie Klammern hinzu, und zwar entweder [als Textelemente oder als [Prä- und Suffix der Komponente "Zitat-Seite"](https://www.screencast.com/t/tbMberBp8i)
+Der neuen kombinierten Komponente fügen Sie das hier bereitgestellte Skript bei.
+
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
 
 ## Autor
