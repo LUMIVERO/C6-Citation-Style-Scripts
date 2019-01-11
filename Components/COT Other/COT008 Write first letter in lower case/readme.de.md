@@ -11,5 +11,7 @@ Citavi 6 (oder höher)
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
 
+Sie können Wörter von der automatischen Kleinschreibung ausschließen: Tragen Sie diese im Code in Zeile 86 bis 90 in die Liste der "printAsStatedExpressions" ein.
+
 ## Autor
 * **Jörg Pasch** [joepasch](https://github.com/joepasch)
