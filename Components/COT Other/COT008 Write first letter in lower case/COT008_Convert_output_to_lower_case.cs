@@ -1,9 +1,10 @@
 //C6#COT008
 //C5#431516
 //Description: Convert output to lower case (ensure first character is upper case)
-//Version: 2.1  
+//Version: 2.2
 //Name of filter: Convert output to lower case (ensure first character is upper case)
-//Version 2.1: Corrected splitting by interpunctuation
+//Version 2.2: Corrected: 'Print-as-stated' exceptions not working if exception is very first word of field
+//Version 2.1: Corrected: Splitting by interpunctuation
 //Version 2.0: Added possibility to define expressions (abbreviations, proper names etc.) that will be printed exactly as stated
 //Version 1.6: Consider parent's Language field if this is a child reference and the child's Language field is empty
 //Version 1.5: Added checking for null on GetTextUnitsUnfiltered() to avoid NullReferenceExceptions at runtime (which may lead to auto-deactivation of filter)
@@ -29,8 +30,8 @@ namespace SwissAcademic.Citavi.Citations
 		{
 
 
-            var ensureEnglishIsReferenceLanguage = false; 	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
-			var upperCaseAfterPunctuation = true; 			//if set to false, everything but the very first word will be lower case
+			var ensureEnglishIsReferenceLanguage = false;   //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+			var upperCaseAfterPunctuation = true;           //if set to false, everything but the very first word will be lower case
 
 			CultureInfo culture = CultureInfo.CurrentCulture;
 
@@ -81,21 +82,21 @@ namespace SwissAcademic.Citavi.Citations
 			if (textUnits == null || !textUnits.Any()) return null;
 
 			//Expressions that must not be changed with regards to capitalization
-			List<string> printAsStatedExpressions = new List<string>() 
-            {
-                "US", "USA", "UK", "UN", "ZDF", "ARD", "GmbH", "WDR",
-                "Microsoft", "Google", 
-                "Cologne", "London", "Paris", "Moscow",
-                "Germany", "France", "Italy", "Russia", "Sweden",
-				"United Nations", "United States of America", "European Union"
-            };
+			List<string> printAsStatedExpressions = new List<string>()
+			{
+				"US", "USA", "UK", "UN", "ZDF", "ARD", "GmbH", "WDR",
+				"Microsoft", "Google",
+				"Cologne", "London", "Paris", "Moscow",
+				"Germany", "France", "Italy", "Russia", "Sweden",
+				"United Nations", "United States of America", "European Union", "CEO", "CSR", "VC","VCs", "American", "CEOs"
+			};
 			printAsStatedExpressions.Sort((x, y) => y.Length.CompareTo(x.Length)); //descending: longer ones first
 
 			//Break the input text into a list of words at whitespaces,
 			//hyphens, opening parens, and ASCII quotation marks
 			//as well as the above doNotTouchExpressions
 			string splitInterpunctuation = @"(\s)|(-)|(\()|(\))|(\"")|(\.)|(:)|(\?)|(!)";
-            string splitPattern = printAsStatedExpressions.Count == 0 ?
+			string splitPattern = printAsStatedExpressions.Count == 0 ?
 				splitInterpunctuation :
 				string.Format(@"({0})", String.Join("|", printAsStatedExpressions.Select(x => string.Format(@"\b{0}\b", Regex.Escape(x))))) + "|" + splitInterpunctuation;
 
@@ -108,39 +109,38 @@ namespace SwissAcademic.Citavi.Citations
 				var text = textUnits[i].Text;
 
 				List<string> words = Regex.Split(text, splitPattern, RegexOptions.IgnoreCase).Where(x => !string.IsNullOrEmpty(x)).ToList();
-				
+
 				text = string.Empty;
 
 				for (int j = 0; j < words.Count; j++)
 				{
 					var word = words[j].ToString();
 
-                    if (Regex.IsMatch(word, matchInterpunctuation) || word.Equals(" "))
-                    {
-                        //space or punctuation
-                        text = text + word;
-                        continue;
-                    }
+					if (Regex.IsMatch(word, matchInterpunctuation) || word.Equals(" "))
+					{
+						//space or punctuation
+						text = text + word;
+						continue;
+					}
 
-                    if ((i == 0) && (j == 0))
+					string printAsStatedExpression = printAsStatedExpressions.FirstOrDefault(ex => ex.Equals(word, StringComparison.OrdinalIgnoreCase));
+					if (!string.IsNullOrEmpty(printAsStatedExpression))
+					{
+						text = text + printAsStatedExpression;
+						continue;
+					}
+
+					if ((i == 0) && (j == 0))
 					{
 						text = text + ToUpperFirstLetter(word, culture);
 					}
-                    else if (upperCaseAfterPunctuation && ((j > 0 && Regex.IsMatch(words[j - 1], matchInterpunctuation)) || (j > 1 && Regex.IsMatch(words[j - 2], matchInterpunctuation))))
-                    {
+					else if (upperCaseAfterPunctuation && ((j > 0 && Regex.IsMatch(words[j - 1], matchInterpunctuation)) || (j > 1 && Regex.IsMatch(words[j - 2], matchInterpunctuation))))
+					{
 						text = text + ToUpperFirstLetter(word, culture);
 					}
 					else
 					{
-						string printAsStatedExpression = printAsStatedExpressions.FirstOrDefault(ex => ex.Equals(word, StringComparison.OrdinalIgnoreCase));
-						if (!string.IsNullOrEmpty(printAsStatedExpression))
-						{
-							text = text + printAsStatedExpression;
-						}
-						else
-						{
-							text = text + word.ToLower(culture);
-						}
+						text = text + word.ToLower(culture);
 					}
 				}
 				textUnits[i].Text = text;
