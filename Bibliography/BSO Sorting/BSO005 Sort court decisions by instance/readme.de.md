@@ -6,7 +6,7 @@ Gerichtsentscheidungen sollen nach Instanz sortiert werden. Die Instanzen sind i
 Citavi 5 (oder höher)
 
 ## Installation
-Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
+Siehe Citavi Handbuch: [Sortierreihenfolge festlegen](https://www1.citavi.com/sub/manual6/de/index.html?cse_sorting_the_bibliography.html)
 
 ## Autor
 
