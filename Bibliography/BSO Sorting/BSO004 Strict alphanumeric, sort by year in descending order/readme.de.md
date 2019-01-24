@@ -6,7 +6,7 @@ Im Projekt sind viele Dokumententypen ohne Autor oder Titel. Die Literaturliste 
 Citavi 5 (oder höher)
 
 ## Installation
-Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
+Siehe Citavi Handbuch: [Sorting the bibliography](https://www1.citavi.com/sub/manual6/en/index.html?cse_sorting_the_bibliography.html)
 
 ## Autor
 
