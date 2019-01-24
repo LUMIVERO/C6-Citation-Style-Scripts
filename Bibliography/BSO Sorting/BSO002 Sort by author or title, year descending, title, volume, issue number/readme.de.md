@@ -12,7 +12,7 @@ Citavi 6 (oder höher)
 - Zink, Anna (2014) Entwicklung durch Tourismus. Zürich: Waldvogel.
 
 ## Installation
-Siehe Citavi Handbuch: [Sorting the bibliography](https://www1.citavi.com/sub/manual6/en/index.html?cse_sorting_the_bibliography.html)
+Siehe Citavi Handbuch: [Sortierreihenfolge festlegen](https://www1.citavi.com/sub/manual6/de/index.html?cse_sorting_the_bibliography.html)
 
 ## Autor
 
