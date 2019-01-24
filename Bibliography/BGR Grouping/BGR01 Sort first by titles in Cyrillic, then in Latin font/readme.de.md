@@ -9,7 +9,7 @@ Citavi 6 (oder höher)
 Anstelle von Kyrillisch können ebenso andere Schriften als Sortierkriterium herangezogen werden. Im Skript muss dazu IsCyrillic z.B. durch IsHebrew oder IsArabic ausgetauscht werden. Eine Liste der Schriftnamen stellt [Microsoft hier bereit](https://docs.microsoft.com/en-us/dotnet/standard/base-types/character-classes-in-regular-expressions#SupportedNamedBlocks).
 
 ## Installation
-Siehe Citavi Handbuch: [Sorting the bibliography](https://www1.citavi.com/sub/manual6/en/index.html?cse_sorting_the_bibliography.html)
+Siehe Citavi Handbuch: [Sortierreihenfolge festlegen](https://www1.citavi.com/sub/manual6/de/index.html?cse_sorting_the_bibliography.html)
 
 ## Autor
 
