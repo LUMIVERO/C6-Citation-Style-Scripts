@@ -6,6 +6,7 @@
 //2.) [article's pages][literal][quotation pages][literal]   <- literals can contain parenthesis
 //3.) [article's pages][literal][quotation pages
 
+//Version 1.6 Line 91/92: Added changed order of Transfersettings, to choose between the output of the prefix of article's pages and the prefix of quotation pages
 //Version 1.5 Parenthesis around quotation pages can be introduced as separate literal elements or as part of prefix/suffix of the quotation page range field element.
 //Version 1.4 Line 82: Changed order of Transfersettings, to ensure the prefix of quotation pages is output
 //Version 1.3 Umstellung von OriginalString auf PrettyString
@@ -56,9 +57,9 @@ namespace SwissAcademic.Citavi.Citations
 
 			//[1]
 			if (placeholderCitation.Entry.PageRange == null) return null;
-			if (string.IsNullOrEmpty(placeholderCitation.Entry.PageRange.PrettyString)) return null;	//ElementApplyConditions sorgen dafÃ¼r, dass keine leeren Klammern angezeigt werden
+			if (string.IsNullOrEmpty(placeholderCitation.Entry.PageRange.PrettyString)) return null;	//ElementApplyConditions sorgen dafür, dass keine leeren Klammern angezeigt werden
 
-			//enthÃ¤lt nur 1 PageRangeFieldElement und 1 QuotationPageRangeFieldElement und sonst lediglich LiteralElemente
+			//enthält nur 1 PageRangeFieldElement und 1 QuotationPageRangeFieldElement und sonst lediglich LiteralElemente
 			PageRangeFieldElement pageRangeFieldElement = null;
 			QuotationPageRangeFieldElement quotationPageRangeFieldElement = null;
 			
@@ -71,7 +72,7 @@ namespace SwissAcademic.Citavi.Citations
 				string.IsNullOrEmpty(citation.Reference.PageRange.PrettyString)
 			)
 			{
-				//Alles unterdrÃ¼cken ausser QuotationPageRangeFieldElement
+				//Alles unterdrücken ausser QuotationPageRangeFieldElement
 				TransferSettings(pageRangeFieldElement, quotationPageRangeFieldElement);
 				RemoveAllButElement(componentPart, quotationPageRangeFieldElement);
 				RemoveParenthesesFromPrefixSuffix(quotationPageRangeFieldElement);
@@ -86,8 +87,9 @@ namespace SwissAcademic.Citavi.Citations
 			//[2], [3], [4] [= nur Zitatseiten]
 			if (startPageQuotation == startPageArticle)
 			{
-				//Alles unterdrÃ¼cken ausser QuotationPageRangeFieldElement
-				TransferSettings(quotationPageRangeFieldElement, pageRangeFieldElement);
+				//Alles unterdrücken ausser QuotationPageRangeFieldElement - wichtig: Eine der beiden TransferSettings-Zeilen muss immer durch vorangestellte //-Schrägstriche auskommentiert sein!
+			//	TransferSettings(quotationPageRangeFieldElement, pageRangeFieldElement);	//diese Reihenfolge verwenden, wenn die Präfixe der Zitatseiten-Komponente angezeigt werden sollen 
+				TransferSettings(pageRangeFieldElement, quotationPageRangeFieldElement);	//diese Reihenfolge verwenden, wenn die Präfixe der Seitenbereichs-Komponente angezeigt werden sollen
 				RemoveAllButElement(componentPart, quotationPageRangeFieldElement);
 				RemoveParenthesesFromPrefixSuffix(quotationPageRangeFieldElement);
 
