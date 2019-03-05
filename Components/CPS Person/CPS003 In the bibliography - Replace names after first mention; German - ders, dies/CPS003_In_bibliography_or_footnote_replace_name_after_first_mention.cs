@@ -1,9 +1,10 @@
 //C6#CPS003
 //C5#43112
 //Description: In bibliography or footnote replace name after first mention, ders, dies  
-//Version: 1.17
+//Version: 1.18
 #region Version History
-//Version 1.17  Addes options for showing group prefix and/or group suffix (e.g.: "ders. (Hrsg)")
+//Version 1.18  new methods GetPersonsOfPersonFieldElement and GetPersonsOfLastPersonFieldElement as well as new parameter "comparePersonsAgainstLastPersonField" (line 71)
+//Version 1.17  Added options for showing group prefix and/or group suffix (e.g.: "ders. (Hrsg)")
 //Version 1.16  Added "dass." for Neutrum
 //Version 1.15  Bugfix for deactivateFilterAcrossFootnotesIfPreviousCitationNotSolitair
 //				New parameters "deactivateFilterForFirstInsideMultipleCitations" and "deactivateFilterForFirstAfterMultipleCitations"
@@ -37,37 +38,37 @@ namespace SwissAcademic.Citavi.Citations
 		IComponentPartFilter
 	{
 
-
-
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
 		{
 			//if the following is set to true a placeholder citation's output will not show ders./dies. although this would normally be the case
 			//as e.g. the second one of the following two: {Meier 2010 #2} and {Meier 2010 #2:17-19 /opt1} 
-			var deactivateFilterWithOption1Switch = true;								//default: true	
+			var deactivateFilterWithOption1Switch = true;                               //default: true	
 
 			//if the following is set to true, the citation collapsing can take place (if the style is set to omit author names)
 			//true: 	(Mueller 2010, S. 10; 2011, S. 12f.; 2012, S. 17)o
 			//false: 	(Mueller 2010, S. 10; ders. 2011, S. 12 f; ders. 2012, S. 17)
-			var deactivateFilterInsideMultipleCitations = true;							//default: true
-			var deactivateFilterForFirstInsideMultipleCitations = true;					//default: true; only applicable when deactivateFilterInsideMultipleCitations = false
-			var deactivateFilterForFirstAfterMultipleCitations = true;					//default: true
-			var deactivateFilterInIbidemIdemSequence = false;							//default: false
-			var deactivateFilterAcrossFootnotes = false;								//default: false
-			var deactivateFilterAcrossFootnotesIfSeparatedByMoreThanOneIndexNo = true; 	//default: true; only applicable when deactivateFilterAcrossFootnotes = false
-			var deactivateFilterAcrossFootnotesIfPreviousCitationNotSolitair = true;	//default: true; ditto
-			var outputInItalics = true;													//default: true
-			var outputInSmallCaps = false;												//default: false
-			var outputInBold = false;													//default: false
-			var outputUnderlined = false;												//default: false
+			var deactivateFilterInsideMultipleCitations = true;                         //default: true
+			var deactivateFilterForFirstInsideMultipleCitations = true;                 //default: true; only applicable when deactivateFilterInsideMultipleCitations = false
+			var deactivateFilterForFirstAfterMultipleCitations = true;                  //default: true
+			var deactivateFilterInIbidemIdemSequence = false;                           //default: false
+			var deactivateFilterAcrossFootnotes = false;                                //default: false
+			var deactivateFilterAcrossFootnotesIfSeparatedByMoreThanOneIndexNo = true;  //default: true; only applicable when deactivateFilterAcrossFootnotes = false
+			var deactivateFilterAcrossFootnotesIfPreviousCitationNotSolitair = true;    //default: true; ditto
+			var outputInItalics = true;                                                 //default: true
+			var outputInSmallCaps = false;                                              //default: false
+			var outputInBold = false;                                                   //default: false
+			var outputUnderlined = false;                                               //default: false
 
-			var missingPersonsInfo = "o.A.";											//can be set to e.g. "o.A."/"ohne Autor"; leave empty otherwise
-			var outputMissingPersonsInfoInItalics = false;								//default: false
-			var outputMissingPersonsInfoInSmallCaps = false;							//default: false
-			var outputMissingPersonsInfoInBold = false;									//default: false
-			var outputMissingPersonsInfoUnderlined = false;								//default: false
+			var missingPersonsInfo = "o.A.";                                            //can be set to e.g. "o.A."/"ohne Autor"; leave empty otherwise
+			var outputMissingPersonsInfoInItalics = false;                              //default: false
+			var outputMissingPersonsInfoInSmallCaps = false;                            //default: false
+			var outputMissingPersonsInfoInBold = false;                                 //default: false
+			var outputMissingPersonsInfoUnderlined = false;                             //default: false
+
+			var showGroupPrefixIfPresent = false;                                       //default: false
+			var showGroupSuffixIfPresent = true;                                        //default: true
 			
-			var showGroupPrefixIfPresent = false;										//default: false
-			var showGroupSuffixIfPresent = true;										//default: true
+			var comparePersonsAgainstLastPersonField = true;
 
 			handled = false;
 			var thisCitationIsPartOfMultipleCitation = false;
@@ -76,16 +77,19 @@ namespace SwissAcademic.Citavi.Citations
 			if (citation.Reference == null) return null;
 			if (componentPart == null) return null;
 			if (componentPart.Elements == null || !componentPart.Elements.Any()) return null;
-			
+
 			PersonFieldElement personFieldElement = componentPart.Elements.OfType<PersonFieldElement>().FirstOrDefault();
 			if (personFieldElement == null) return null;
-			
+
+
 
 			//determine current persons to compare
-			List<Person> thesePersons = GetPersonsDisplayed(personFieldElement, citation.Reference);
+			IEnumerable<Person> thesePersons = GetPersonsOfPersonFieldElement(citation, personFieldElement);
+			if (thesePersons == null || !thesePersons.Any()) return null;
 			bool usePlural = thesePersons.Count() > 1;
 
 			PlaceholderCitation thisPlaceholderCitation = citation as PlaceholderCitation;
+
 
 			#region deactivateFilterWithOption1Switch
 
@@ -105,7 +109,7 @@ namespace SwissAcademic.Citavi.Citations
 			//SwissAcademic.Drawing.FontStyle fontStyle = outputInItalics ? SwissAcademic.Drawing.FontStyle.Italic : SwissAcademic.Drawing.FontStyle.Neutral;
 			SwissAcademic.Drawing.FontStyle fontStyle;
 
-			var personsMissing = (thesePersons == null || thesePersons.Count == 0);
+			var personsMissing = (thesePersons == null || !thesePersons.Any());
 			var outputMissingPersonsInfo = personsMissing && !string.IsNullOrEmpty(missingPersonsInfo);
 
 			if (personsMissing && outputMissingPersonsInfo)
@@ -158,7 +162,7 @@ namespace SwissAcademic.Citavi.Citations
 					{
 						//... at least for the very first printing entry in a multiple citation
 						var index = printingEntries.IndexOf(thisPlaceholderCitation.Entry);
-						if (index != null && index == 0 && deactivateFilterForFirstInsideMultipleCitations) return null;
+						if (index == 0 && deactivateFilterForFirstInsideMultipleCitations) return null;
 					}
 				}
 			}
@@ -249,8 +253,16 @@ namespace SwissAcademic.Citavi.Citations
 			#endregion InTextCitation
 
 			//determine previous persons
-			List<Person> previousPersons = GetPersonsDisplayed(previousVisibleCitation);
-			if (previousPersons == null || previousPersons.Count == 0) return null;
+			IEnumerable<Person> previousPersons = null; 
+			if (comparePersonsAgainstLastPersonField)
+			{
+				previousPersons = GetPersonsOfLastPersonFieldElement(previousVisibleCitation);
+			} 
+			else
+			{
+				previousPersons = previousVisibleCitation.GetPersonsOfPersonFieldElement(0);
+			}
+			if (previousPersons == null || !previousPersons.Any()) return null;
 
 			var equality = CheckPersonEquality(thesePersons, previousPersons);
 			if (equality == PersonEquality.None) return null;
@@ -264,11 +276,11 @@ namespace SwissAcademic.Citavi.Citations
 				case PersonEquality.M:
 					text = "ders.";
 					break;
-					
+
 				case PersonEquality.N:
 					text = "dass.";
 					break;
-					
+
 				default: //all others
 					text = "dies.";
 					break;
@@ -295,7 +307,7 @@ namespace SwissAcademic.Citavi.Citations
 			}
 
 			#endregion GroupPrefix
-			
+
 			output.Add(new LiteralTextUnit(text, fontStyle));
 
 			#region GroupSuffix
@@ -310,12 +322,69 @@ namespace SwissAcademic.Citavi.Citations
 			}
 
 			#endregion GroupSuffix
-			
+
 			handled = true;
 			return output;
 
 			#endregion Equality detected - generate output
 		}
+		
+		#region GetPersonsOfPersonFieldElement
+		
+		private static IEnumerable<Person> GetPersonsOfPersonFieldElement(Citation citation, PersonFieldElement personFieldElement)
+		{
+			if (citation == null) return null;
+			if (citation.Reference == null) return null;
+			if (citation.Template == null) return null;
+			if (citation.Template.PersonFieldElements == null || !citation.Template.PersonFieldElements.Any()) return null;
+
+
+			if (personFieldElement == null) return null;
+			if (!citation.Template.PersonFieldElements.Any(element => element.Id.Equals(personFieldElement.Id))) return null;
+
+			var componentPartScope = personFieldElement.ComponentPart != null ? personFieldElement.ComponentPart.Scope : ComponentPartScope.Reference;
+			IEnumerable<Person> persons = null;
+
+			if (componentPartScope == ComponentPartScope.Reference)
+			{
+				persons = citation.Reference.GetValue(personFieldElement.PropertyId) as IList<Person>;
+			}
+			else if (componentPartScope == ComponentPartScope.ParentReference && citation.Reference.ParentReference != null)
+			{
+				persons = citation.Reference.ParentReference.GetValue(personFieldElement.PropertyId) as IList<Person>;
+			}
+			return persons;
+		}
+		
+		#endregion
+		
+		#region GetPersonsOfLastPersonFieldElement
+		
+		private static IEnumerable<Person> GetPersonsOfLastPersonFieldElement(Citation citation)
+		{
+			if (citation == null) return null;
+			if (citation.Reference == null) return null;
+			if (citation.Template == null) return null;
+			if (citation.Template.PersonFieldElements == null || !citation.Template.PersonFieldElements.Any()) return null;
+
+			PersonFieldElement personFieldElement = citation.Template.PersonFieldElements.LastOrDefault();
+			if (personFieldElement == null) return null;
+
+			var componentPartScope = personFieldElement.ComponentPart != null ? personFieldElement.ComponentPart.Scope : ComponentPartScope.Reference;
+			IEnumerable<Person> persons = null;
+
+			if (componentPartScope == ComponentPartScope.Reference)
+			{
+				persons = citation.Reference.GetValue(personFieldElement.PropertyId) as IList<Person>;
+			}
+			else if (componentPartScope == ComponentPartScope.ParentReference && citation.Reference.ParentReference != null)
+			{
+				persons = citation.Reference.ParentReference.GetValue(personFieldElement.PropertyId) as IList<Person>;
+			}
+			return persons;
+		}
+		
+		#endregion
 
 		#region GetPreviousVisibleCitation
 
@@ -392,167 +461,42 @@ namespace SwissAcademic.Citavi.Citations
 
 		#endregion GetPreviousCitation
 
-		#region GetPersonsDisplayed
-
-		private static List<Person> GetPersonsDisplayed(PersonFieldElement element, Reference reference)
-		{
-			List<Person> persons = null;
-			if (element == null) return null;
-			if (reference == null) return null;
-
-			switch (element.PropertyId)
-			{
-				#region Authors
-
-				case ReferencePropertyId.Authors:
-					{
-						if (reference.Authors != null) persons = new List<Person>(reference.Authors);
-					}
-					break;
-
-				#endregion Authors
-
-				#region Editors
-
-				case ReferencePropertyId.Editors:
-					{
-						if (reference.Editors != null) persons = new List<Person>(reference.Editors);
-					}
-					break;
-
-				#endregion Editors
-
-				#region AuthorsEditorsOrganizations
-
-				case ReferencePropertyId.AuthorsOrEditorsOrOrganizations:
-					{
-						if (reference.AuthorsOrEditorsOrOrganizations != null) persons = new List<Person>(reference.AuthorsOrEditorsOrOrganizations);
-					}
-					break;
-
-				#endregion AuthorsEditorsOrganizations
-
-				#region Collaborators
-
-				case ReferencePropertyId.Collaborators:
-					{
-						if (reference.Collaborators != null) persons = new List<Person>(reference.Collaborators);
-					}
-					break;
-
-				#endregion Collaborators
-
-				#region Organizations
-
-				case ReferencePropertyId.Organizations:
-					{
-						if (reference.Organizations != null) persons = new List<Person>(reference.Organizations);
-					}
-					break;
-
-				#endregion Organizations
-
-				#region OthersInvolved
-
-				case ReferencePropertyId.OthersInvolved:
-					{
-						if (reference.OthersInvolved != null) persons = new List<Person>(reference.OthersInvolved);
-					}
-					break;
-
-				#endregion OthersInvolved
-			}
-
-			return persons;
-		}
-
-		private static List<Person> GetPersonsDisplayed(ComponentPart componentPart, Reference reference)
-		{
-			List<Person> persons = null;
-			if (reference == null) return null;
-			if (componentPart == null) return null;
-
-			//check for 1st PersonFieldElement in ComponentPart
-			PersonFieldElement firstPersonFieldElement = componentPart.Elements.FirstOrDefault(item => item is PersonFieldElement) as PersonFieldElement;
-			if (firstPersonFieldElement == null) return null;
-
-			persons = GetPersonsDisplayed(firstPersonFieldElement, reference);
-			return persons;
-		}
-
-
-		private static List<Person> GetPersonsDisplayed(Template template, Reference reference)
-		{
-			if (reference == null) return null;
-			if (template == null) return null;
-			if (template.ComponentParts == null || template.ComponentParts.Count == 0) return null;
-
-			List<Person> persons = null;
-
-			//check for 1st PersonFieldElement in citation's template
-			IEnumerable<IElement> elements = template.ComponentParts.SelectMany(part => part.Elements);
-			PersonFieldElement firstPersonFieldElement = elements.FirstOrDefault(item => item is PersonFieldElement) as PersonFieldElement;
-			if (firstPersonFieldElement == null) return null;
-
-			return GetPersonsDisplayed(firstPersonFieldElement, reference);
-		}
-
-		private static List<Person> GetPersonsDisplayed(Citation citation)
-		{
-			if (citation == null) return null;
-			if (citation.Reference == null) return null;
-
-			Template template = citation.GetTemplate();
-			if (template == null) return null;
-
-			List<Person> persons = null;
-
-			persons = GetPersonsDisplayed(template, citation.Reference);
-			if (persons != null) return persons;
-
-			template = template.TemplateUseCase.FallbackTemplate;
-			if (template == null) return null;
-			persons = GetPersonsDisplayed(template, citation.Reference);
-			if (persons != null) return persons;
-
-			return null;
-		}
-
-		#endregion GetPersonsDisplayed
-
 		#region CheckPersonEquality
 
-		private static PersonEquality CheckPersonEquality(List<Person> personsA, List<Person> personsB)
+		private static PersonEquality CheckPersonEquality(IEnumerable<Person> personsA, IEnumerable<Person> personsB)
 		{
-			if (personsA == null || personsA.Count == 0) return PersonEquality.None;
-			if (personsB == null || personsB.Count == 0) return PersonEquality.None;
-			if (personsA.Count != personsB.Count) return PersonEquality.None;
+			if (personsA == null || !personsA.Any()) return PersonEquality.None;
+			if (personsB == null || !personsB.Any()) return PersonEquality.None;
+			if (personsA.Count() != personsB.Count()) return PersonEquality.None;
 
 			//we DO have two lists of persons of same length
 			//FIRST sort by id for comparison
-			var personIdComparer = new PersonIdComparer();
-			personsA.Sort(personIdComparer);
-			personsB.Sort(personIdComparer);
+			//var personIdComparer = new PersonIdComparer();
+			//personsA.Sort(personIdComparer);
+			//personsB.Sort(personIdComparer);
 
 
-			var allCounter = personsA.Count;
+			var allCounter = personsA.Count();
 			var maleCounter = 0;
 			var femaleCounter = 0;
 			var neutralCounter = 0;
 
 			//loop, compare GUID/id and determine/count sex 
-			for (int i = 0; i < personsA.Count; i++)
+			for (int i = 0; i < allCounter; i++)
 			{
-				var idA = personsA[i].GetValue(PersonPropertyId.Id).ToString();
-				var idB = personsB[i].GetValue(PersonPropertyId.Id).ToString();
+				Person personA = personsA.ElementAt(i);
+				Person personB = personsB.ElementAt(i);
+
+				var idA = personA.GetValue(PersonPropertyId.Id).ToString();
+				var idB = personB.GetValue(PersonPropertyId.Id).ToString();
 
 				if (!idA.Equals(idB, StringComparison.Ordinal)) return PersonEquality.None;
 
 				//identical!
 				//determine sex (just need to look at one of them, because they are identical)
-				if (personsA[i].Sex == Sex.Male) maleCounter++;
-				if (personsA[i].Sex == Sex.Female) femaleCounter++;
-				if (personsA[i].Sex == Sex.Neutral || personsA[i].Sex == Sex.Unknown) neutralCounter++;
+				if (personA.Sex == Sex.Male) maleCounter++;
+				if (personA.Sex == Sex.Female) femaleCounter++;
+				if (personA.Sex == Sex.Neutral || personA.Sex == Sex.Unknown) neutralCounter++;
 			}
 
 			//still here, so ALL persons are equal, now return equality based on sex
