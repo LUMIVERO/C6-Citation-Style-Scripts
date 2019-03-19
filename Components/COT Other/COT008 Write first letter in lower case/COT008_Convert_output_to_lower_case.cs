@@ -1,8 +1,9 @@
 //C6#COT008
 //C5#431516
 //Description: Convert output to lower case (ensure first character is upper case)
-//Version: 2.2
+//Version: 2.3
 //Name of filter: Convert output to lower case (ensure first character is upper case)
+//Version 2.3: Changed: var ensureEnglishIsReferenceLanguage = true;
 //Version 2.2: Corrected: 'Print-as-stated' exceptions not working if exception is very first word of field
 //Version 2.1: Corrected: Splitting by interpunctuation
 //Version 2.0: Added possibility to define expressions (abbreviations, proper names etc.) that will be printed exactly as stated
@@ -30,7 +31,7 @@ namespace SwissAcademic.Citavi.Citations
 		{
 
 
-			var ensureEnglishIsReferenceLanguage = false;   //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+			var ensureEnglishIsReferenceLanguage = true;  	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
 			var upperCaseAfterPunctuation = true;           //if set to false, everything but the very first word will be lower case
 
 			CultureInfo culture = CultureInfo.CurrentCulture;
