@@ -1,6 +1,10 @@
 # Wiederholung eines Namens im Literaturverzeichnis unterdrücken (dt.: ders., dies.)
 
-Im Literaturverzeichnis werden mehrere Werke desselben Autors zitiert. Der Name soll nicht wiederholt werden.
+Im Literaturverzeichnis oder in einer Fußnote werden mehrere Werke desselben Autors zitiert. Der Name soll nicht wiederholt werden.
+
+Wird das Skript für das Literaturverzeichnis verwendet, ist folgender Schalter in Zeile 71 auf "`false`" zu setzen:
+
+`var comparePersonsAgainstLastPersonField = true;`
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
