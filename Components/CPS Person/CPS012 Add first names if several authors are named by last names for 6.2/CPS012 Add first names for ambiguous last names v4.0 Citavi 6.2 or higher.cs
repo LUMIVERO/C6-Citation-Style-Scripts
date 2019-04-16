@@ -13,7 +13,9 @@ namespace SwissAcademic.Citavi.Citations
         :
         IComponentPartFilter
     {
-        //CPS012 Add first or middle names for ambiguous last names v4.0
+        //CPS012 Add first or middle names for ambiguous last names v4.1
+		//Version 4.1   Built-in option to insert non-breaking spaces and hyphens
+		//Version 4.0   Completely re-written for Citavi 6 (6.2 or higher)
 		//Disambiguation of identical person names by successively adding first name initials, full first names, middle name initals and full middle names (if available)
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
@@ -31,6 +33,12 @@ namespace SwissAcademic.Citavi.Citations
 			//NameFormat.AbbreviatedCompact		J.M.
 			//NameFormat.Compact				JM
 			
+			//Insert non-breaking spaces and hyphens - geschütztes Leerzeichen und geschützten Bindestrich einfügen
+			var useNonBreakingSpacesInAndBetweenFirstAndMiddleNames = true;		//if true, then e.g. Meyers, J.°R.
+			var useNonBreakingSpaceBetweenLastAndFirstName = true;				//if true, then e.g. Meyers,°John Richard
+			var useNonBreakingSpaceBetweenPrefixAndName = true;					//if true, then e.g. von°Bülow, V.
+			var useNonBreakingHyphenInFirstAndMiddleName = true;				//if true, then e.g. Ewing, J.-R.
+			
             handled = false;
 
             if (citation == null || citation.Reference == null) return null;
@@ -42,7 +50,46 @@ namespace SwissAcademic.Citavi.Citations
             PersonFieldElement personFieldElement = componentPart.Elements.OfType<PersonFieldElement>().FirstOrDefault();
             if (personFieldElement == null) return null;
             if (personFieldElement.SuppressOutput) return null;
-				
+			
+			#region Insert non-breaking spaces and hyphens
+			
+			IEnumerable<PersonFieldElement> personFieldElements = componentPart.Elements.OfType<PersonFieldElement>();
+			if (personFieldElements == null || personFieldElements.Count() == 0) return null;
+			
+			
+			foreach(PersonFieldElement element in personFieldElements)
+			{
+				if (useNonBreakingSpacesInAndBetweenFirstAndMiddleNames)
+				{
+					element.FirstGroupUseNonBreakingSpaceInAndBetweenFirstAndMiddleNames = true;
+					element.SecondGroupUseNonBreakingSpaceInAndBetweenFirstAndMiddleNames = true;
+					element.LastPersonUseNonBreakingSpaceInAndBetweenFirstAndMiddleNames = true;				
+				}
+
+				if (useNonBreakingSpaceBetweenLastAndFirstName)
+				{
+					element.FirstGroupUseNonBreakingSpaceBetweenLastAndFirstName = true;
+					element.SecondGroupUseNonBreakingSpaceBetweenLastAndFirstName = true;
+					element.LastPersonUseNonBreakingSpaceBetweenLastAndFirstName = true;				
+				}
+
+				if (useNonBreakingSpaceBetweenPrefixAndName)
+				{
+					element.FirstGroupUseNonBreakingSpaceBetweenPrefixAndName = true;
+					element.SecondGroupUseNonBreakingSpaceBetweenPrefixAndName = true;
+					element.LastPersonUseNonBreakingSpaceBetweenPrefixAndName = true;
+				}
+
+				if (useNonBreakingHyphenInFirstAndMiddleName)
+				{
+					element.FirstGroupUseNonBreakingHyphenInFirstAndMiddleNames = true;
+					element.SecondGroupUseNonBreakingHyphenInFirstAndMiddleNames = true;
+					element.LastPersonUseNonBreakingHyphenInFirstAndMiddleNames = true;
+				}
+			}
+			
+			#endregion
+			
             #region BeforeFormatPerson: Resolve last name ambiguity
 
             BeforeFormatPersonEventArgs bfp;
