@@ -11,7 +11,7 @@ Citavi 5 (oder höher)
 
 ## Installation
 Erstellen Sie eine neue kombinierte Komponente. Fügen Sie dort die beiden folgenden Komponenten ein:
-- "Seiten von-bis" (Page range; Start- und Endeseite des Beitrags)
+- "Seiten von-bis" (Page range; Start- und Endseite des Beitrags)
 - "Zitat-Seiten" (Quotation page range; Start- und Endseite des Zitats)
 
 Fügen Sie Klammern hinzu, und zwar entweder [als Textelemente oder als [Prä- und Suffix der Komponente "Zitat-Seite"](https://www.screencast.com/t/tbMberBp8i)
