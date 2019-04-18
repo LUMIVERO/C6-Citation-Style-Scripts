@@ -1,5 +1,5 @@
 # Suppress output of Quotes page if Quotes page is identical to the article's first page
-Ausgabe der Komponente "Zitat-Seite" unterdrücken, wenn die Zitat-Seite identisch mit der Startseite des Artikels ist
+Ausgabe der Komponente "Zitat-Seiten" unterdrücken, wenn die Zitat-Seite identisch mit der Startseite des Artikels ist
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
