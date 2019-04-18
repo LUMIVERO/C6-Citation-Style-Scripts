@@ -13,10 +13,10 @@ Oder:
 Im Literaturverzeichnis: 
 - Münch, Ingo von, Legal education and the legal profession in Germany, Baden-Baden 2002.
 
-## Customizing
+## Anpassung
 Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im Literaturverzeichnis-Regelset bei allen Dokumententypen einbauen.
 
-Unter **Listen** > **Personen und Institutionen**erfassen Sie den Namen mit dem (ggf. abgekürzten) Präfix. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie es im Literaturverzeichnis erscheinen soll (z.B. Münch, Ingo von)
+Unter **Listen** > **Personen und Institutionen** erfassen Sie den Namen mit dem (ggf. abgekürzten) Präfix. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie es im Literaturverzeichnis erscheinen soll (z.B. Münch, Ingo von)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
