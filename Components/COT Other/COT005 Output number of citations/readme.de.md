@@ -6,7 +6,7 @@ Citavi 5 (oder höher)
 
 ## Beispiele
 
-- Petra Müller (2014) Informationskompetenz vermitteln. Bibliothekswesen heute, 4. Jg., S. 14-28. (24 mal zitiert)
+- Petra Müller (2014) Informationskompetenz vermitteln. Bibliothekswesen heute, 4. Jg., S. 14-28. (24-mal zitiert)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
