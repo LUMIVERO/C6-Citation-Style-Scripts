@@ -1,5 +1,5 @@
 # Suppress output of Quotes page if Quotes page is identical to the article's first page
-Ausgabe der "Zitat-Seite" unterdrücken, wenn "Zitat-Seite" identisch mit Startseite des Artikels ist
+Ausgabe der "Zitat-Seite" unterdrücken, wenn die "Zitat-Seite" identisch mit der Startseite des Artikels ist
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
@@ -12,7 +12,7 @@ Citavi 5 (oder höher)
 ## Installation
 Erstellen Sie eine neue kombinierte Komponente. Fügen Sie dort die beiden folgenden Komponenten ein:
 - "Seiten von-bis" (Page range; Start- und Endeseite des Beitrags)
-- "Zitat-Seiten" (Quotation page range; Start- und Endeseite des Zitats)
+- "Zitat-Seiten" (Quotation page range; Start- und Endseite des Zitats)
 
 Fügen Sie Klammern hinzu, und zwar entweder [als Textelemente oder als [Prä- und Suffix der Komponente "Zitat-Seite"](https://www.screencast.com/t/tbMberBp8i)
 Der neuen kombinierten Komponente fügen Sie das hier bereitgestellte Skript bei.
