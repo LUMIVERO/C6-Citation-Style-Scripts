@@ -4,8 +4,9 @@
 //IMPORTANT: Ensure the component has one of the following structure:
 //1.) [article's pages][quotation pages]   <- you can use prefix/suffix of [quotation pages] element to place it inside parentheses
 //2.) [article's pages][literal][quotation pages][literal]   <- literals can contain parenthesis
-//3.) [article's pages][literal][quotation pages
+//3.) [article's pages][literal][quotation pages]
 
+//Version 1.7 Added Transfer of HasSpecialFormat to TransferSettings
 //Version 1.6 Line 91/92: Added changed order of Transfersettings, to choose between the output of the prefix of article's pages and the prefix of quotation pages
 //Version 1.5 Parenthesis around quotation pages can be introduced as separate literal elements or as part of prefix/suffix of the quotation page range field element.
 //Version 1.4 Line 82: Changed order of Transfersettings, to ensure the prefix of quotation pages is output
@@ -88,7 +89,7 @@ namespace SwissAcademic.Citavi.Citations
 			if (startPageQuotation == startPageArticle)
 			{
 				//Alles unterdrücken ausser QuotationPageRangeFieldElement - wichtig: Eine der beiden TransferSettings-Zeilen muss immer durch vorangestellte //-Schrägstriche auskommentiert sein!
-			//	TransferSettings(quotationPageRangeFieldElement, pageRangeFieldElement);	//diese Reihenfolge verwenden, wenn die Präfixe der Zitatseiten-Komponente angezeigt werden sollen 
+				//TransferSettings(quotationPageRangeFieldElement, pageRangeFieldElement);	//diese Reihenfolge verwenden, wenn die Präfixe der Zitatseiten-Komponente angezeigt werden sollen 
 				TransferSettings(pageRangeFieldElement, quotationPageRangeFieldElement);	//diese Reihenfolge verwenden, wenn die Präfixe der Seitenbereichs-Komponente angezeigt werden sollen
 				RemoveAllButElement(componentPart, quotationPageRangeFieldElement);
 				RemoveParenthesesFromPrefixSuffix(quotationPageRangeFieldElement);
@@ -296,50 +297,80 @@ namespace SwissAcademic.Citavi.Citations
 
 		void TransferSettings(PageRangeFieldElement sourceElement, PageRangeFieldElement targetElement)
 		{
+			#region Page
+			
+			targetElement.PageOneHasSpecialFormat = sourceElement.PageOneHasSpecialFormat;
 			targetElement.PageOnePrefix.Text = sourceElement.PageOnePrefix.Text;
 			targetElement.PageOnePrefix.FontStyle = sourceElement.PageOnePrefix.FontStyle;
 
+			targetElement.PageTwoHasSpecialFormat = sourceElement.PageTwoHasSpecialFormat;
 			targetElement.PageTwoPrefix.Text = sourceElement.PageTwoPrefix.Text;
 			targetElement.PageTwoPrefix.FontStyle = sourceElement.PageTwoPrefix.FontStyle;
 
 			targetElement.PageMultiPrefix.Text = sourceElement.PageMultiPrefix.Text;
 			targetElement.PageMultiPrefix.FontStyle = sourceElement.PageMultiPrefix.FontStyle;
 
+			#endregion
+			
+			#region Column
+			
+			targetElement.ColumnOneHasSpecialFormat = sourceElement.ColumnOneHasSpecialFormat;
 			targetElement.ColumnOnePrefix.Text = sourceElement.ColumnOnePrefix.Text;
 			targetElement.ColumnOnePrefix.FontStyle = sourceElement.ColumnOnePrefix.FontStyle;
 
+			targetElement.ColumnTwoHasSpecialFormat = sourceElement.ColumnTwoHasSpecialFormat;
 			targetElement.ColumnTwoPrefix.Text = sourceElement.ColumnTwoPrefix.Text;
 			targetElement.ColumnTwoPrefix.FontStyle = sourceElement.ColumnTwoPrefix.FontStyle;
 
 			targetElement.ColumnMultiPrefix.Text = sourceElement.ColumnMultiPrefix.Text;
 			targetElement.ColumnMultiPrefix.FontStyle = sourceElement.ColumnMultiPrefix.FontStyle;
 
+			#endregion
+			
+			#region Margin
+			
+			targetElement.MarginOneHasSpecialFormat = sourceElement.MarginOneHasSpecialFormat;
 			targetElement.MarginOnePrefix.Text = sourceElement.MarginOnePrefix.Text;
 			targetElement.MarginOnePrefix.FontStyle = sourceElement.MarginOnePrefix.FontStyle;
 
+			targetElement.MarginTwoHasSpecialFormat = sourceElement.MarginTwoHasSpecialFormat;
 			targetElement.MarginTwoPrefix.Text = sourceElement.MarginTwoPrefix.Text;
 			targetElement.MarginTwoPrefix.FontStyle = sourceElement.MarginTwoPrefix.FontStyle;
 
 			targetElement.MarginMultiPrefix.Text = sourceElement.MarginMultiPrefix.Text;
 			targetElement.MarginMultiPrefix.FontStyle = sourceElement.MarginMultiPrefix.FontStyle;
 
+			#endregion
+			
+			#region Paragraph
+			
+			targetElement.ParagraphOneHasSpecialFormat = sourceElement.ParagraphOneHasSpecialFormat;
 			targetElement.ParagraphOnePrefix.Text = sourceElement.ParagraphOnePrefix.Text;
 			targetElement.ParagraphOnePrefix.FontStyle = sourceElement.ParagraphOnePrefix.FontStyle;
 
+			targetElement.ParagraphTwoHasSpecialFormat = sourceElement.ParagraphTwoHasSpecialFormat;
 			targetElement.ParagraphTwoPrefix.Text = sourceElement.ParagraphTwoPrefix.Text;
 			targetElement.ParagraphTwoPrefix.FontStyle = sourceElement.ParagraphTwoPrefix.FontStyle;
 
 			targetElement.ParagraphMultiPrefix.Text = sourceElement.ParagraphMultiPrefix.Text;
 			targetElement.ParagraphMultiPrefix.FontStyle = sourceElement.ParagraphMultiPrefix.FontStyle;
 
+			#endregion
+			
+			#region Other
+			
+			targetElement.OtherOneHasSpecialFormat = sourceElement.OtherOneHasSpecialFormat;
 			targetElement.OtherOnePrefix.Text = sourceElement.OtherOnePrefix.Text;
 			targetElement.OtherOnePrefix.FontStyle = sourceElement.OtherOnePrefix.FontStyle;
 
+			targetElement.OtherTwoHasSpecialFormat = sourceElement.OtherTwoHasSpecialFormat;
 			targetElement.OtherTwoPrefix.Text = sourceElement.OtherTwoPrefix.Text;
 			targetElement.OtherTwoPrefix.FontStyle = sourceElement.OtherTwoPrefix.FontStyle;
 
 			targetElement.OtherMultiPrefix.Text = sourceElement.OtherMultiPrefix.Text;
 			targetElement.OtherMultiPrefix.FontStyle = sourceElement.OtherMultiPrefix.FontStyle;
+			
+			#endregion
 		}
 	}
 }
