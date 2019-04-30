@@ -18,7 +18,7 @@ Im Literaturverzeichnis:
 ## Anpassung
 Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Literaturverzeichnis**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS020 "_Namenspräfix in Fußnoten auch bei 'non-dropping particle' abkürzen, hinsichtlich der Sortierung im Literaturverzeichnis aber ignorieren_" besteht, das bei den Personen-Komponenten im **Fußnoten**-Regelset einzufügen ist.)
 
-Unter **Listen** > **Personen und Institutionen** erfassen Sie den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z.<code>&nbsp;</code>B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z.<code>&nbsp;</code>B. `Münch, Ingo von`)
+Unter **Listen** > **Personen und Institutionen** erfassen Sie den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z. B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z. B. `Münch, Ingo von`)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
