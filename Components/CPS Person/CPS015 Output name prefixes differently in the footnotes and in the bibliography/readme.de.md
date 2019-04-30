@@ -1,6 +1,6 @@
 # Präfixe in Literaturverzeichnis und Fußnoten unterschiedlich ausgeben
 
-Sie zitieren Autoren nur mit Nachnamen in den Fußnoten. Wenn Sie aber Autoren mit Präfixen im Namen zitieren, soll das Präfix auch erscheinen und zwar vor dem Nachnamen (z.B. Ingo von Münch). Im Literaturverzeichnis soll das Präfix nach dem Vornamen stehen. 
+Sie zitieren Autoren nur mit Nachnamen in den Fußnoten. Wenn Sie aber Autoren mit Präfixen im Namen zitieren, soll das Präfix auch erscheinen und zwar vor dem Nachnamen (z. B. Ingo von Münch). Im Literaturverzeichnis soll das Präfix nach dem Vornamen stehen. 
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
