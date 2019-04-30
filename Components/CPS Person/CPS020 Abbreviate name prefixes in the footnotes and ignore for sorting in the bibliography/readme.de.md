@@ -1,6 +1,6 @@
 # Namenspräfix in Fußnoten auch bei 'non-dropping particle' abkürzen, hinsichtlich der Sortierung im Literaturverzeichnis aber ignorieren 
 
-Sie zitieren Autoren nur mit Nachnamen in den Fußnoten. Wenn Sie aber Autoren mit Präfixen im Namen zitieren, soll das Präfix auch erscheinen und zwar abgekürzt vor dem Nachnamen (z.B. v. Münch). Im Literaturverzeichnis soll das Präfix ausgeschrieben werden und vor dem Nachnamen stehen, hinsichtlich der Sortierung aber ignoriert werden. Die Sortierung soll also nur den Nachnamen berücksichtigen. 
+Sie zitieren Autoren nur mit Nachnamen in den Fußnoten. Wenn Sie aber Autoren mit Präfixen im Namen zitieren, soll das Präfix auch erscheinen und zwar abgekürzt vor dem Nachnamen (z. B. v. Münch). Im Literaturverzeichnis soll das Präfix ausgeschrieben werden und vor dem Nachnamen stehen, hinsichtlich der Sortierung aber ignoriert werden. Die Sortierung soll also nur den Nachnamen berücksichtigen. 
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
@@ -12,7 +12,7 @@ In der Fußnote:
 Im Literaturverzeichnis: 
 - von Münch, Ingo, Legal education and the legal profession in Germany, Baden-Baden 2002.
 
-Der Beispiel-Autor soll im Literaturverzeichnis bei "M" erscheinen.
+Der Beispiel-Autor soll im Literaturverzeichnis unter "M" erscheinen.
 
 ## Anpassung
 Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Fußnoten**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS015 "_Präfixe in Literaturverzeichnis und Fußnoten unterschiedlich ausgeben_" besteht, das bei den Personen-Komponenten im **Literaturverzeichnis**-Regelset einzufügen ist.)
@@ -24,4 +24,4 @@ Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/pr
 
 ## Autor
 
-* **Jörg Pasch** [joepasch](
+* **Jörg Pasch** [joepasch](https://github.com/joepasch)
