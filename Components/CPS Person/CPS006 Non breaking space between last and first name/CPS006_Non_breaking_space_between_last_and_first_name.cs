@@ -3,7 +3,7 @@
 //Description: Non breaking space between last and first name
 //Example: Meyers, J.°R. 
 //Version: 1.2: added code for downward compatibility with C6 versions 6.3.5.0 and below to prevent two space characters: [comma][space][non-breaking space]
-//Two space characters might also be prevented by replacement rules so this is just in case these rule is missing.
+//Two space characters might also be prevented by replacement rules so this is just in case this rule is missing.
 //Version: 1.1: added variables on top (see lines 14-17) to control breaking in and between prefix, last name, first and middle name(s)
 
 using System;
