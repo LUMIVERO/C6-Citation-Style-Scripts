@@ -17,7 +17,7 @@ Der Beispiel-Autor soll im Literaturverzeichnis unter "M" erscheinen.
 ## Anpassung
 Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Fußnoten**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS015 "_Präfixe in Literaturverzeichnis und Fußnoten unterschiedlich ausgeben_" besteht, das bei den Personen-Komponenten im **Literaturverzeichnis**-Regelset einzufügen ist.)
 
-Unter **Listen** > **Personen und Institutionen** erfassen Sie den Namen mit dem Präfix im Feld "**Name**", z. B. `von Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis für die Sortierung berücksichtigt werden soll (z. B. `Münch, Ingo von`)
+In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem Präfix im Feld "**Name**", z. B. `von Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis für die Sortierung berücksichtigt werden soll (z. B. `Münch, Ingo von`)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
