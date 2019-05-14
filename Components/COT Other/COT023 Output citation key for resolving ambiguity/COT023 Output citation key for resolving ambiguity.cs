@@ -1,5 +1,5 @@
 //COT023
-//Version 1.0, Citavi 6.3.5+
+//Version 1.0, Citavi 6.3.6+
 //Citation key will only be displayed, if the output otherwise results in ambiguous references
 
 using System.Linq;
