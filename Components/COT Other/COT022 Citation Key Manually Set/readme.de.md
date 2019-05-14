@@ -1,5 +1,5 @@
 # Feld "Kurzbeleg" wurde manuell geändert
-Für alle Titel wurden automatisch [Kurzbelege generiert](https://www1.citavi.com/sub/manual6/de/index.html?customizing_citation_keys.html). Der Eintrag im Feld "Kurzbeleg" soll nur dann ausgegeben werden, wenn dieser manuell abgeändert wurde.
+Für alle Titel wurden automatisch [Kurzbelege generiert](https://www1.citavi.com/sub/manual6/de/index.html?customizing_citation_keys.html). Der Eintrag im Feld "**Kurzbeleg**" soll nur dann ausgegeben werden, wenn dieser manuell abgeändert wurde.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
