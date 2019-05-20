@@ -1,12 +1,13 @@
 # Datumsbereich ausgeben (Format: deutsch)
 
-Das Skript kann zu Datums- wie zu Textfeldern hinzugefügt werden.
+Das Skript kann zu Datums- sowie zu Textfeldern hinzugefügt werden.
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
 
 ## Beispiele
 Datum eingeben in der Form: dd.MM.yyyy - dd.MM.yyyy
+
 Umformen zu (z.B.): dd.-dd. MMMM yyyy 
 
 ## Installation
