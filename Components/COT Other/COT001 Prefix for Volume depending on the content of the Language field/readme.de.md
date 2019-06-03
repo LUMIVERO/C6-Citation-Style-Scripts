@@ -1,4 +1,4 @@
-# Prefix for Year depending on the content of the "Language" field
+# Prefix for Volume depending on the content of the "Language" field
 
 Zeitschriftenaufsätze abhängig von der Sprache des Aufsatzes unterschiedlich zitieren.
 
