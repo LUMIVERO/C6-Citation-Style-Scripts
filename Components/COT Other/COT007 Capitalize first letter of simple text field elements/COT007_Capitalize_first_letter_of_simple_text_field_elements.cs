@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc)
+//Version 2.2: Slight improvements
 //Version 2.1: Corrected handling of various typographical quotation marks
 //Version 2.0: Corrected splitting by interpunctuation
 //Version 1.9: Consider parent's Language field if this is a child reference and the child's Language field is empty
@@ -33,19 +34,16 @@ namespace SwissAcademic.Citavi.Citations
 			#region Info on ConvertFullUpperCaseWords parameter
 			/*
 				Example 1: UN and US government made agreement on payments of contribution
-				Example 2: UN AND US GOVERNMENT MADE AGREEMENT ON PAYMENTS OF CONTRIBUTION
-
+				Example 2: UN AND US GOVERNMENT MADE AGREEMENT ON PAYMENTS OF CONTRIBUTION
 				ConvertFullUpperCaseWords.Never (default)
 				Result 1: UN and US Government Made Agreement on Payments of Contribution
-				Result 2: UN and US GOVERNMENT MADE AGREEMENT on PAYMENTS of CONTRIBUTION
-
+				Result 2: UN and US GOVERNMENT MADE AGREEMENT on PAYMENTS of CONTRIBUTION
 				ConvertFullUpperCaseWords.Always: 
 				Result 1: Un and Us Government Made Agreement on Payments of Contribution
-				Result 2: Un and Us Government Made Agreement on Payments of Contribution
-
+				Result 2: Un and Us Government Made Agreement on Payments of Contribution
 				ConvertFullUpperCaseWords.Auto:
 				Result 1: UN and US Government Made Agreement on Payments of Contribution
-				Result 2: Un and Us Government Made Agreement on Payments of Contribution
+				Result 2: Un and Us Government Made Agreement on Payments of Contribution
 			*/
 			#endregion
 
@@ -163,7 +161,7 @@ namespace SwissAcademic.Citavi.Citations
 				*/
 				#endregion
 
-				List<string> words = new List<string>(Regex.Split(text, splitPattern));
+				List<string> words = new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty));
 
 				string matchInterpunctuation = @"\.|:|\?|!";
 				string matchQuotationMarks = @"\""|\u2018|\u2019|\u201A|\u201C|\u201D|\u201E|\u201F|\u2039|\u203A|\u00AB|\u00BB";
@@ -178,9 +176,16 @@ namespace SwissAcademic.Citavi.Citations
 					counter++;
 
 
-					if (Regex.IsMatch(word, matchInterpunctuation) || word.Equals(" "))
+					if (Regex.IsMatch(word, matchInterpunctuation))
 					{
-						//space or punctuation
+						//punctuation
+						text = text + word;
+						prevWord = word;
+						continue;
+					}
+					if (word.Equals(" "))
+					{
+						//space
 						text = text + word;
 						continue;
 					}
