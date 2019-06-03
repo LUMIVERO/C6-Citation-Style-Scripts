@@ -31,7 +31,7 @@ namespace SwissAcademic.Citavi.Citations
 			#region Find numeric field elements
 			
 			//we treat only numeric field elemements that output the Volume field
-			var numericFieldElements = componentPart.Elements.OfType<NumericFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.Number);
+			var numericFieldElements = componentPart.Elements.OfType<NumericFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.Number).ToList();
 			if (numericFieldElements == null || numericFieldElements.Count() == 0) return null;
 			
 			#endregion Find numeric field elements
