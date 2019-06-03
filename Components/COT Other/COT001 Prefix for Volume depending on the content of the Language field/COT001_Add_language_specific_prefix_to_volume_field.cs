@@ -1,5 +1,5 @@
 //C6#COT001
-//C5#4316102
+//C5#431510
 //Description: Add prefix "Vol." or "Jg." to volume field depending on language of reference
 //Version: 1.1 Added ToList() for getting field elements 
 
