@@ -1,7 +1,7 @@
 //C6#COT001
 //C5#4316102
 //Description: Add prefix "Vol." or "Jg." to volume field depending on language of reference
-//Version: 1.0  
+//Version: 1.1 Added ToList() for getting field elements 
 
 
 using System;
@@ -34,7 +34,7 @@ namespace SwissAcademic.Citavi.Citations
 			#region Find numeric field elements
 
 			//we treat only numeric field elemements that output the Volume field
-			var numericFieldElements = componentPart.Elements.OfType<NumericFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.Volume);
+			var numericFieldElements = componentPart.Elements.OfType<NumericFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.Volume).ToList();
 			if (numericFieldElements == null || numericFieldElements.Count() == 0) return null;
 
 			#endregion Find numeric field elements
