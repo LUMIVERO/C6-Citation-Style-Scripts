@@ -1,7 +1,7 @@
 //C6#COT002
 //C5#4316101
 //Description: Add prefix "no." or "Nr." to Number field depening on language of reference
-//Version: 1.0  
+//Version: 1.1 Added ToList() for getting field elements  
 
 using System.Linq;
 using System.Collections.Generic;
