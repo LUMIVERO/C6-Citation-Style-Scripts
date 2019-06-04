@@ -1,6 +1,7 @@
 //C6#COT001
 //C5#431510
-//Description: Add prefix "Vol." or "Jg." to volume field depending on language of reference
+//Description: Add prefix "Vol." or "Jg." and a suffix if needed to volume field depending on language of reference
+//Version: 1.2 Prefix + suffix for other languages (=neither German nor English) can now be added
 //Version: 1.1 Added ToList() for getting field elements 
 
 
@@ -14,7 +15,6 @@ using SwissAcademic.Citavi.Metadata;
 using SwissAcademic.Collections;
 using SwissAcademic.Drawing;
 
-
 namespace SwissAcademic.Citavi.Citations
 {
 	public class ComponentPartFilter
@@ -23,8 +23,6 @@ namespace SwissAcademic.Citavi.Citations
 	{
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
 		{
-
-
 			handled = false;
 
 			if (citation == null) return null;
@@ -58,13 +56,17 @@ namespace SwissAcademic.Citavi.Citations
 			#region Determine reference language
 
 			Language language;
-			if (String.Equals(reference.LanguageCode, CultureInfo.GetCultureInfo("de").TwoLetterISOLanguageName, StringComparison.OrdinalIgnoreCase))
+			if (String.Equals(reference.LanguageCode, CultureInfo.GetCultureInfo("en").TwoLetterISOLanguageName, StringComparison.OrdinalIgnoreCase))
+			{
+				language = Language.English;
+			}
+			else if (String.Equals(reference.LanguageCode, CultureInfo.GetCultureInfo("de").TwoLetterISOLanguageName, StringComparison.OrdinalIgnoreCase))
 			{
 				language = Language.German;
 			}
 			else
 			{
-				language = Language.English;
+				language = Language.Other;
 			}
 
 			#endregion Determine reference language
@@ -92,7 +94,15 @@ namespace SwissAcademic.Citavi.Citations
 							}
 							break;
 
+						default:
 						case Language.German:
+							{
+								element.SingularPrefix.Text = "Jg. ";
+								element.PluralPrefix.Text = "Jg. ";
+							}
+							break;
+
+						case Language.Other:
 							{
 								element.SingularPrefix.Text = "Jg. ";
 								element.PluralPrefix.Text = "Jg. ";
@@ -116,10 +126,18 @@ namespace SwissAcademic.Citavi.Citations
 							}
 							break;
 
+						default:
 						case Language.German:
 							{
 								element.SingularPrefix.Text = "";
 								element.PluralPrefix.Text = "";
+							}
+							break;
+						
+						case Language.Other:
+							{
+								element.SingularSuffix.Text = "";
+								element.PluralSuffix.Text = "";
 							}
 							break;
 					}
@@ -134,7 +152,8 @@ namespace SwissAcademic.Citavi.Citations
 		private enum Language
 		{
 			English,
-			German
+			German,
+			Other
 		}
 	}
 }
