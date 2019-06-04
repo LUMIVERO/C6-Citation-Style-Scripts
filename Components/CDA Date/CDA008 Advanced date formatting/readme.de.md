@@ -1,6 +1,6 @@
 # Advanced date formatting
 
-Wenn bei Zeitschriftenaufsätzen ein Datum in das Feld Jahr eingegeben wird, soll dieses z.B. in der Form 2019 May 24 ausgegeben werden. Wird nur ein Jahr eingegeben, soll das Jahr nicht als Datum (2019 Jan 1) interpretiert werden.
+Wenn bei Zeitschriftenaufsätzen ein Datum in das Feld "Jahr" eingegeben wird, soll dieses z.B. in der Form 2019 May 24 ausgegeben werden. Wird nur ein Jahr eingegeben, soll das Jahr nicht als Datum (2019 Jan 1) interpretiert werden.
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
