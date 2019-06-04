@@ -1,6 +1,6 @@
 //C6#CDA009
 //C5#431510
-//Description: Add prefix "Zuletzt geprüft am " or "Last access " to Access date field ("Zuletzt geprüft am") depending on language of reference
+//Description: Add prefix "Zuletzt geprüft am " or "Last access " and a suffix if needed to Access date field ("Zuletzt geprüft am") depending on language of reference
 //Version: 1.0  
 
 
