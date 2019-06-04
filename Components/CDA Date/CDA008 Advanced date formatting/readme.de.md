@@ -7,6 +7,7 @@ Citavi 6 (oder höher)
 
 ## Beispiele
 Eingabe: 24.05.2019, Ausgabe: 2019 May 24
+
 Eingabe: 2019, Ausgabe: 2019
 
 ## Installation
