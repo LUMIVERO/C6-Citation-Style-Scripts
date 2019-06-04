@@ -1,6 +1,6 @@
 # Prefix and suffix for Edition depending on the content of the "Language" field
 
-Die Auflageninformationen abhängig von der Sprache des Titels unterschiedlich zitieren.
+Im Literaturverzeichnis sollen die Auflagen-Angaben in der Sprache erscheinen, in der die Publikation veröffentlicht wurde.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
