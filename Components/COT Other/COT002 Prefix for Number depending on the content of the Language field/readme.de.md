@@ -1,4 +1,4 @@
-# Prefix for Number depending on the content of the "Language" field
+# Prefix and suffix for Number depending on the content of the "Language" field
 
 Zeitschriftenaufsätze abhängig von der Sprache des Aufsatzes unterschiedlich zitieren.
 
@@ -12,8 +12,8 @@ Citavi 5 (oder höher)
 
 ## Anpassung
 
-1. Kennzeichnen Sie die englischsprachige Literatur, indem Sie in das Feld "Sprache" ein Sprachkürzel eintragen, z.B. EN. (Im Programmcode können Sie unterschiedliche Schreibweisen für das Sprachkürzel festlegen).
-2. Legen Sie im Programmcode die Präfixe für die deutsche und englische Schreibweise fest.
+1. Im Feld "Sprache" muss bei jedem Titel angegeben werden, in welcher Sprache der Titel publiziert wurde: de, en, fr, it etc.
+2. Legen Sie im Programmcode die Präfixe und Suffixe für die deutsche und englische Schreibweise sowie für Quellen mit abweichender bzw. fehlender Sprache fest.
 
 Alternatives Vorgehen
 1. Neue Bedingung erstellen: Feld "Sprache" enthält "en"
