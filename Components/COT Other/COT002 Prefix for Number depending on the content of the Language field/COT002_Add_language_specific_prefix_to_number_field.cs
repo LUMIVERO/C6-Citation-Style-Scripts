@@ -1,16 +1,19 @@
 //C6#COT002
 //C5#431510
-//Description: Add prefix "no." or "Nr." to Number field depening on language of reference
-//Version: 1.1 Added ToList() for getting field elements  
+//Description: Add prefix "no." or "Nr." and a suffix if needed to Number field depending on language of reference
+//Version: 1.2 Prefix + suffix for other languages (=neither German nor English) can now be added
+//Version: 1.1 Added ToList() for getting field elements
 
+
+using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using SwissAcademic.Citavi;
 using SwissAcademic.Citavi.Metadata;
 using SwissAcademic.Collections;
 using SwissAcademic.Drawing;
-
 
 namespace SwissAcademic.Citavi.Citations
 {
@@ -20,8 +23,6 @@ namespace SwissAcademic.Citavi.Citations
 	{
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
 		{
-			
-			
 			handled = false;
 			
 			if (citation == null) return null;
@@ -54,20 +55,20 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#region Determine reference language
 			
-			Language language = Language.German;
-			
-			var wordListEN = new string[] {
-				"EN", 
-				"ENG",
-				"ENGL",
-				"English", 
-				"Englisch", 
-				"Anglais" 
-			};
-			
-			var regExEN = new Regex(@"\b(" + string.Join("|", wordListEN) + @")\b", RegexOptions.IgnoreCase);
-			if (regExEN.IsMatch(reference.Language)) language = Language.English;
-			
+			Language language;
+			if (String.Equals(reference.LanguageCode, CultureInfo.GetCultureInfo("en").TwoLetterISOLanguageName, StringComparison.OrdinalIgnoreCase))
+			{
+				language = Language.English;
+			}
+			else if (String.Equals(reference.LanguageCode, CultureInfo.GetCultureInfo("de").TwoLetterISOLanguageName, StringComparison.OrdinalIgnoreCase))
+			{
+				language = Language.German;
+			}
+			else
+			{
+				language = Language.Other;
+			}
+
 			#endregion Determine reference language
 			
 			foreach(NumericFieldElement element in numericFieldElements)
@@ -87,18 +88,26 @@ namespace SwissAcademic.Citavi.Citations
 					switch (language)
 					{
 						case Language.English:
-						{
-							element.SingularPrefix.Text = "no. ";
-							element.PluralPrefix.Text = "no. ";
-						}
-						break;
-							
+							{
+								element.SingularPrefix.Text = "no. ";
+								element.PluralPrefix.Text = "no. ";
+							}
+							break;
+
+						default:
 						case Language.German:
-						{
-							element.SingularPrefix.Text = "Nr. ";
-							element.PluralPrefix.Text = "Nr. ";
-						}
-						break;
+							{
+								element.SingularPrefix.Text = "Nr. ";
+								element.PluralPrefix.Text = "Nr. ";
+							}
+							break;
+
+						case Language.Other:
+							{
+								element.SingularPrefix.Text = "Nr. ";
+								element.PluralPrefix.Text = "Nr. ";
+							}
+							break;
 					}
 				}
 				
@@ -111,18 +120,26 @@ namespace SwissAcademic.Citavi.Citations
 					switch (language)
 					{
 						case Language.English:
-						{
-							element.SingularPrefix.Text = "";
-							element.PluralPrefix.Text = "";
-						}
-						break;
-							
+							{
+								element.SingularPrefix.Text = "";
+								element.PluralPrefix.Text = "";
+							}
+							break;
+
+						default:
 						case Language.German:
-						{
-							element.SingularPrefix.Text = "";
-							element.PluralPrefix.Text = "";
-						}
-						break;
+							{
+								element.SingularPrefix.Text = "";
+								element.PluralPrefix.Text = "";
+							}
+							break;
+
+						case Language.Other:
+							{
+								element.SingularPrefix.Text = "";
+								element.PluralPrefix.Text = "";
+							}
+							break;
 					}
 				}	
 				
@@ -135,7 +152,8 @@ namespace SwissAcademic.Citavi.Citations
 		private enum Language
 		{
 			English,
-			German
+			German,
+			Other
 		}
 	}
 }
