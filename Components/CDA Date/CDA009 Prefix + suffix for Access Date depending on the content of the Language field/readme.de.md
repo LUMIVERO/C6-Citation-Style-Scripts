@@ -13,7 +13,7 @@ Citavi 5 (oder höher)
 ## Anpassung
 
 1. Kennzeichnen Sie die englischsprachige Literatur, indem Sie in das Feld "Sprache" ein Sprachkürzel eintragen, z.B. EN. (Im Programmcode können Sie unterschiedliche Schreibweisen für das Sprachkürzel festlegen).
-2. Legen Sie im Programmcode die Präfixe für die deutsche und englische Schreibweise sowie für Quellen mit abweichender bzw. fehlender Sprache fest.
+2. Legen Sie im Programmcode die Präfixe und Suffixe für die deutsche und englische Schreibweise sowie für Quellen mit abweichender bzw. fehlender Sprache fest.
 
 Alternatives Vorgehen
 1. Neue Bedingung erstellen: Feld "Sprache" enthält "en"
