@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc)
+//Version 2.3: Improved capitalization after punctuation
 //Version 2.2: Slight improvements
 //Version 2.1: Corrected handling of various typographical quotation marks
 //Version 2.0: Corrected splitting by interpunctuation
@@ -141,12 +142,12 @@ namespace SwissAcademic.Citavi.Citations
 				//textUnit.Text = textUnits[i].Text.ToLower(culture);
 				var text = textUnits[i].Text;
 
-				//Break the input text into a list of words at whitespaces,
-				//hyphens, opening parens, and ASCII quotation marks
-				string splitPattern = @"(\s)|(-)|(\()|(\))|(\"")|(\u2018)|(\u2019)|(\u201A)|(\u201C)|(\u201D)|(\u201E)|(\u201F)|(\u2039)|(\u203A)|(\u00AB)|(\u00BB)|(\.)|(:)|(\?)|(!)";
+                //Break the input text into a list of words at whitespaces,
+                //hyphens, opening parens, and ASCII quotation marks
+                string splitPattern = @"(\s)|(-)|(\()|(\))|(\"")|(\u2018)|(\u2019)|(\u201A)|(\u201C)|(\u201D)|(\u201E)|(\u201F)|(\u2039)|(\u203A)|(\u00AB)|(\u00BB)|(\.)|(:)|(\?)|(!)|(\u2014)";
 
-				#region Infos about typographical quotation marks
-				/*
+                #region Infos about typographical quotation marks
+                /*
 				 * \u2018  Left Single Quotation Mark
 				 * \u2019  Right Single Quotation Mark
 				 * \u201A  Single Low-9 Quotation Mark
@@ -163,7 +164,7 @@ namespace SwissAcademic.Citavi.Citations
 
 				List<string> words = new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty));
 
-				string matchInterpunctuation = @"\.|:|\?|!";
+				string matchInterpunctuation = @"\.|:|\?|!|\u2014";
 				string matchQuotationMarks = @"\""|\u2018|\u2019|\u201A|\u201C|\u201D|\u201E|\u201F|\u2039|\u203A|\u00AB|\u00BB";
 
 				var counter = 0;
@@ -183,19 +184,22 @@ namespace SwissAcademic.Citavi.Citations
 						prevWord = word;
 						continue;
 					}
-					if (word.Equals(" "))
+					if (String.IsNullOrWhiteSpace(word))
 					{
-						//space
+						//space, not store in prevWord
 						text = text + word;
 						continue;
 					}
 
 
-					if (counter == 1) // first word in a textunit
+					
+					if (counter == 1 && i == 0) // overall first word, i.e. first word in first textunit
 					{
-						if (i == 0) text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);  // first word overall => capitalize
-						else if ((String.IsNullOrWhiteSpace(prevWord)) && !(exceptions.Contains(word.ToLower(culture)))) text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);  // new textunit after space and not stopword => capitalize
-						else text = text + word; // in all other cases: do nothing 						           
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);					           
+					}
+					else if (Regex.IsMatch(prevWord, matchInterpunctuation))
+					{
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture); //capitalize also stopwords directly after interpunctuation
 					}
 					else if (Regex.IsMatch(prevWord, matchQuotationMarks)) // capitalize also stopwords directly after quotation marks
 					{
@@ -206,7 +210,7 @@ namespace SwissAcademic.Citavi.Citations
 						text = text + word.ToLower(culture);
 					}
 					else // in all other cases: capitalize
-					{
+					{				
 						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
 					}
 					prevWord = word; // save current word as previous word for next iteration
