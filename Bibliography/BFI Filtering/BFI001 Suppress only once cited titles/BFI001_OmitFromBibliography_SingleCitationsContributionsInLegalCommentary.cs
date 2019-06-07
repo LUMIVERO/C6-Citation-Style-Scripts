@@ -1,6 +1,7 @@
 //BFI001
 //21.06.2018 
 //Suppress "Contribution in legal commentary", Statute, Court decision in reference list
+//Suppress any references that are only cited once 
 
 using System;
 using System.Linq;
