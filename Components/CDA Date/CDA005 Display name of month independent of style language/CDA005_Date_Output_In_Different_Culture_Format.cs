@@ -52,7 +52,6 @@ namespace SwissAcademic.Citavi.Citations
 
 			List<LiteralElement> literalElements = new List<LiteralElement>();
 
-			TextUnitCollection debug = new TextUnitCollection();
 			int counter = 1;
 			foreach (Segment segment in segments)
 			{
