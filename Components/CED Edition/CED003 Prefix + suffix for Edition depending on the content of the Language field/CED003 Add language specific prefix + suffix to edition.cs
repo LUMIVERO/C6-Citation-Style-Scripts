@@ -107,15 +107,15 @@ namespace SwissAcademic.Citavi.Citations
 						default:
 						case Language.German:
 							{
-								element.SingularSuffix.Text = " Aufl.";
-								element.PluralSuffix.Text = " Aufl.";
+								element.SingularSuffix.Text = ". Aufl.";
+								element.PluralSuffix.Text = ". Aufl.";
 							}
 							break;
 							
 						case Language.Other:
 							{
-								element.SingularSuffix.Text = " Aufl.";
-								element.PluralSuffix.Text = " Aufl.";
+								element.SingularSuffix.Text = ". Aufl.";
+								element.PluralSuffix.Text = ". Aufl.";
 							}
 							break;
 					}
