@@ -7,8 +7,8 @@ Citavi 5 (oder höher)
 
 ## Beispiele
 
-- Müller, P.: Informationskompetenz vermitteln. 2. Aufl. 2014.
-- Smith, J.: Information Literacy. 3rd ed., 2010.
+- Müller, P.: Informationskompetenz vermitteln. 2. Aufl. Düsseldorf 2014.
+- Smith, J.: Information Literacy. 3rd ed. London 2010.
 
 ## Anpassung
 
