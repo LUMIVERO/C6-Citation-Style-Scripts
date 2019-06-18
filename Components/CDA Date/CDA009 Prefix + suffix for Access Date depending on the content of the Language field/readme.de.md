@@ -16,7 +16,7 @@ Citavi 5 (oder höher)
 2. Legen Sie im Programmcode die Präfixe und Suffixe für die deutsche und englische Schreibweise sowie für Quellen mit abweichender bzw. fehlender Sprache fest.
 
 Alternatives Vorgehen
-1. Neue Bedingung erstellen: Feld "Sprache" enthält "en"
+1. Neue Bedingung erstellen: Feld "Sprache" enthält "en".
 2. Neue Vorlagen für jeden Dokumententyp erstellen, die bei dieser Bedingung zum Einsatz kommen.
 3. Entsprechende Komponenten (Online-Adresse, Zuletzt geprüft am etc.) duplizieren und dort das Textelement entsprechend der Sprache füllen (Online available at, Last access).
 
