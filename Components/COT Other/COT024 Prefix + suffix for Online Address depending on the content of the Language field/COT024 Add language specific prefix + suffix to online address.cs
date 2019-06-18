@@ -1,7 +1,7 @@
 //C6#COT024
 //C5#431510
 //Description: Add prefix "Online verfügbar unter " or "Online available at " and a suffix if needed to Online Address field ("Online-Adresse") depending on language of reference
-//Version: 1.0  
+//Version: 1.1:  Improved handling if the Online Address field is empty
 
 
 using System;
@@ -31,7 +31,7 @@ namespace SwissAcademic.Citavi.Citations
 			#region Find electronic address field elements
 
 			//we treat only electronic address field elemements that output the Edition field
-			var electronicAddressFieldElements = componentPart.Elements.OfType<ElectronicAddressFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.OnlineAddress).ToList();
+			IEnumerable<ElectronicAddressFieldElement> electronicAddressFieldElements = componentPart.Elements.OfType<ElectronicAddressFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.OnlineAddress).ToList();
 			if (electronicAddressFieldElements == null || !electronicAddressFieldElements.Any()) return null;
 
 			#endregion Find numeric field elements
@@ -51,6 +51,8 @@ namespace SwissAcademic.Citavi.Citations
 			if (reference == null) return null;
 
 			#endregion Determine reference to look at
+
+			if (string.IsNullOrEmpty(reference.OnlineAddress)) return null;
 
 			#region Determine reference language
 
