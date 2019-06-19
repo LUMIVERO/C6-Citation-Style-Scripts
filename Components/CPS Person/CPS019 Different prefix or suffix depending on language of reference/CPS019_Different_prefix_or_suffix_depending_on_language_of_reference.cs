@@ -1,7 +1,7 @@
 //C6#CPS019
 //C5#43124
 //Description: Different prefix or suffix depending on language of reference
-//Version: 1.0
+//Version: 1.1: Slight improvements
 
 using System.Linq;
 using System.Collections.Generic;
@@ -24,10 +24,10 @@ namespace SwissAcademic.Citavi.Citations
 			if (componentPart == null) return null;
 			if (!componentPart.Elements.Any()) return null;
 			
-			IReference reference = citation.Reference;
+			Reference reference = citation.Reference;
 			if (reference == null) return null;
 			
-			IReference parentReference = reference.ParentReference;
+			Reference parentReference = reference.ParentReference;
 			
 			string language = string.Empty;
 			if (componentPart.Scope == ComponentPartScope.Reference)
