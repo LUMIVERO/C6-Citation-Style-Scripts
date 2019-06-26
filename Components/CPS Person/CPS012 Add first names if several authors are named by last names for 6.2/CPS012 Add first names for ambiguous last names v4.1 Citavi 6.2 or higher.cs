@@ -98,7 +98,7 @@ namespace SwissAcademic.Citavi.Citations
             {
                 bfp = (BeforeFormatPersonEventArgs)e;
                 if (bfp.Person == null) return;
-                if (checkAmbiguityForPrimaryAuthorsOnly && bfp.Index > 1) return;
+                if (checkAmbiguityForPrimaryAuthorsOnly && bfp.Index > 0) return;
 
                 bool isLastNameAmbiguous = checkAmbiguityForPrimaryAuthorsOnly ? 
 					citationManager.IsFirstCitedPersonLastnameAmbiguous(bfp.Person.LastName) :
