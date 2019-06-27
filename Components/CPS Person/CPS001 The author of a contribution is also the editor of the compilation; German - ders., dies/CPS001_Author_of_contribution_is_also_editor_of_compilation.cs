@@ -58,7 +58,7 @@ namespace SwissAcademic.Citavi.Citations
 
             #region ThesePersons
 
-            IList<Person> thesePersons = GetPersonsDisplayed(thisPersonFieldElement, reference);
+            List<Person> thesePersons = GetPersonsDisplayed(thisPersonFieldElement, reference);
 
             #endregion
 			
@@ -72,14 +72,14 @@ namespace SwissAcademic.Citavi.Citations
 			
             #region PreviousPersons
 
-            IList<Person> previousPersons = GetPersonsDisplayed(previousPersonFieldElement, reference);
+            List<Person> previousPersons = GetPersonsDisplayed(previousPersonFieldElement, reference);
 			if (previousPersons == null || !previousPersons.Any()) return null;
 
             #endregion
 
 
 
-            bool usePlural = thesePersons.Count() > 1;
+            bool usePlural = thesePersons.Count > 1;
 			
             PersonEquality equality = CheckPersonEquality(thesePersons, previousPersons);			
             if (equality == PersonEquality.None) return null;
@@ -155,18 +155,15 @@ namespace SwissAcademic.Citavi.Citations
 
 		#region CheckPersonEquality
 
-		private static PersonEquality CheckPersonEquality(IList<Person> personsACollection, IList<Person> personsBCollection)
+		private static PersonEquality CheckPersonEquality(List<Person> personsA, List<Person> personsB)
 		{
-			if (personsACollection == null || personsACollection.Count == 0) return PersonEquality.None;
-			if (personsBCollection == null || personsBCollection.Count == 0) return PersonEquality.None;
-			if (personsACollection.Count != personsBCollection.Count) return PersonEquality.None;
+			if (personsA == null || personsA.Count == 0) return PersonEquality.None;
+			if (personsB == null || personsB.Count == 0) return PersonEquality.None;
+			if (!personsA.Count.Equals(personsB.Count)) return PersonEquality.None;
 
 			//we DO have two lists of persons of same length
 			//FIRST sort by id for comparison
 			var personIdComparer = new PersonIdComparer();
-			
-			List<Person> personsA = personsACollection.ToList();
-			List<Person> personsB = personsBCollection.ToList();
 			
 			personsA.Sort(personIdComparer);
 			personsB.Sort(personIdComparer);
