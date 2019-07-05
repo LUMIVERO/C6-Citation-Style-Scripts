@@ -16,7 +16,7 @@ Falls gewünscht, kann das Skript zusätzlich auch bei der **Kurzbeleg**-Kompone
 
 Entfernen Sie im Zitationsstil-Editor unter **Datei** > **Eigenschaften des Zitationsstils** > **Mehrdeutige Nachweise** das Häkchen vor "**Einen eindeutigen Buchstaben anfügen**". Die weiteren Optionen zur Differenzierung von mehrdeutigen Nachweisen können bei Bedarf ausgewählt werden.
 
-Wichtig: Bis zum Erscheinen von Citavi 6.5 kann bei Verwendung des Skripts in großen Publikationen mit sehr vielen Nachweisen in Text und/oder Fußnoten ein Performance-Verlust auftreten. Wenn dadurch ein flüssiges Arbeiten behindert wird, deaktivieren Sie in Citavis Word Add-in unter "**Optionen**" die Einstellung "**Formatierungsanweisung des Zitationsstils sofort anwenden**". Klicken Sie stattdessen von Zeit zu Zeit auf die Schaltfläche **Aktualisieren**, um die Formatierungsanweisungen des Zitationsstils anzuwenden.
+Wichtig: Bis zum Erscheinen von Citavi 6.4 kann bei Verwendung des Skripts in großen Publikationen mit sehr vielen Nachweisen in Text und/oder Fußnoten ein Performance-Verlust auftreten. Wenn dadurch ein flüssiges Arbeiten behindert wird, deaktivieren Sie in Citavis Word Add-in unter "**Optionen**" die Einstellung "**Formatierungsanweisung des Zitationsstils sofort anwenden**". Klicken Sie stattdessen von Zeit zu Zeit auf die Schaltfläche **Aktualisieren**, um die Formatierungsanweisungen des Zitationsstils anzuwenden.
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
