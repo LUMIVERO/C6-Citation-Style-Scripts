@@ -1,8 +1,9 @@
 //C6#COT008
 //C5#431516
 //Description: Convert output to lower case (ensure first character is upper case)
-//Version: 2.3
+//Version: 2.4
 //Name of filter: Convert output to lower case (ensure first character is upper case)
+//Version 2.4: Corrected: quotation marks at start of field/text units will not prevent first word to be capitalized
 //Version 2.3: Changed: var ensureEnglishIsReferenceLanguage = true;
 //Version 2.2: Corrected: 'Print-as-stated' exceptions not working if exception is very first word of field
 //Version 2.1: Corrected: Splitting by interpunctuation
@@ -23,153 +24,157 @@ using System.Linq;
 
 namespace SwissAcademic.Citavi.Citations
 {
-	public class ComponentPartFilter
-		:
-		IComponentPartFilter
-	{
-		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
-		{
+    public class ComponentPartFilter
+        :
+        IComponentPartFilter
+    {
+        public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
+        {
 
 
-			var ensureEnglishIsReferenceLanguage = true;  	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
-			var upperCaseAfterPunctuation = true;           //if set to false, everything but the very first word will be lower case
+            var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+            var upperCaseAfterPunctuation = true;           //if set to false, everything but the very first word will be lower case
 
-			CultureInfo culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
-			handled = false;
+            handled = false;
 
-			if (citation == null) return null;
-			if (citation.Reference == null) return null;
-			if (componentPart == null) return null;
-			if (template == null) return null;
+            if (citation == null) return null;
+            if (citation.Reference == null) return null;
+            if (componentPart == null) return null;
+            if (template == null) return null;
 
-			if (ensureEnglishIsReferenceLanguage)
-			{
-				string languageResolved = citation.Reference.Language;
-				if (componentPart.Scope == ComponentPartScope.Reference)
-				{
-					//if ComponentPartScope is Reference, language can come from Reference or ParentReference
-					if (string.IsNullOrEmpty(languageResolved) && citation.Reference.ParentReference != null)
-					{
-						languageResolved = citation.Reference.ParentReference.Language;
-					}
-					if (string.IsNullOrEmpty(languageResolved)) return null;
-				}
-				else
-				{
-					//if ComponentPartScope is ParentReference, language MUST come from ParentReference
-					if (citation.Reference.ParentReference == null) return null;
-					languageResolved = citation.Reference.ParentReference.Language;
-				}
-				if (string.IsNullOrEmpty(languageResolved)) return null;
+            if (ensureEnglishIsReferenceLanguage)
+            {
+                string languageResolved = citation.Reference.Language;
+                if (componentPart.Scope == ComponentPartScope.Reference)
+                {
+                    //if ComponentPartScope is Reference, language can come from Reference or ParentReference
+                    if (string.IsNullOrEmpty(languageResolved) && citation.Reference.ParentReference != null)
+                    {
+                        languageResolved = citation.Reference.ParentReference.Language;
+                    }
+                    if (string.IsNullOrEmpty(languageResolved)) return null;
+                }
+                else
+                {
+                    //if ComponentPartScope is ParentReference, language MUST come from ParentReference
+                    if (citation.Reference.ParentReference == null) return null;
+                    languageResolved = citation.Reference.ParentReference.Language;
+                }
+                if (string.IsNullOrEmpty(languageResolved)) return null;
 
-				var termsList = new string[] {
-					"en",
-					"eng",
-					"engl",
-					"english",
-					"Englisch"
-				};
+                var termsList = new string[] {
+                    "en",
+                    "eng",
+                    "engl",
+                    "english",
+                    "Englisch"
+                };
 
-				var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
-				if (!regEx.IsMatch(languageResolved))
-				{
-					return null;
-				}
-			}
-
-
-			var textUnits = componentPart.GetTextUnitsUnfiltered(citation, template);
-			if (textUnits == null || !textUnits.Any()) return null;
-
-			//Expressions that must not be changed with regards to capitalization
-			List<string> printAsStatedExpressions = new List<string>()
-			{
-				"US", "USA", "UK", "UN", "ZDF", "ARD", "GmbH", "WDR",
-				"Microsoft", "Google",
-				"Cologne", "London", "Paris", "Moscow",
-				"Germany", "France", "Italy", "Russia", "Sweden",
-				"United Nations", "United States of America", "European Union", "CEO", "CSR", "VC","VCs", "American", "CEOs"
-			};
-			printAsStatedExpressions.Sort((x, y) => y.Length.CompareTo(x.Length)); //descending: longer ones first
-
-			//Break the input text into a list of words at whitespaces,
-			//hyphens, opening parens, and ASCII quotation marks
-			//as well as the above doNotTouchExpressions
-			string splitInterpunctuation = @"(\s)|(-)|(\()|(\))|(\"")|(\.)|(:)|(\?)|(!)";
-			string splitPattern = printAsStatedExpressions.Count == 0 ?
-				splitInterpunctuation :
-				string.Format(@"({0})", String.Join("|", printAsStatedExpressions.Select(x => string.Format(@"\b{0}\b", Regex.Escape(x))))) + "|" + splitInterpunctuation;
-
-			string matchInterpunctuation = @"(\.)|(:)|(\?)|(!)";
+                var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
+                if (!regEx.IsMatch(languageResolved))
+                {
+                    return null;
+                }
+            }
 
 
-			for (int i = 0; i < textUnits.Count; i++)
-			{
-				//textUnit.Text = textUnits[i].Text.ToLower(culture);
-				var text = textUnits[i].Text;
+            var textUnits = componentPart.GetTextUnitsUnfiltered(citation, template);
+            if (textUnits == null || !textUnits.Any()) return null;
 
-				List<string> words = Regex.Split(text, splitPattern, RegexOptions.IgnoreCase).Where(x => !string.IsNullOrEmpty(x)).ToList();
+            //Expressions that must not be changed with regards to capitalization
+            List<string> printAsStatedExpressions = new List<string>()
+            {
+                "US", "USA", "UK", "UN", "ZDF", "ARD", "GmbH", "WDR",
+                "Microsoft", "Google",
+                "Cologne", "London", "Paris", "Moscow",
+                "Germany", "France", "Italy", "Russia", "Sweden",
+                "United Nations", "United States of America", "European Union", "CEO", "CSR", "VC","VCs", "American", "CEOs"
+            };
+            printAsStatedExpressions.Sort((x, y) => y.Length.CompareTo(x.Length)); //descending: longer ones first
 
-				text = string.Empty;
+            //Break the input text into a list of words at whitespaces,
+            //hyphens, opening parens, and ASCII quotation marks
+            //as well as the above printAsStatedExpressions
+            string allInterpunctuation = @"(\s)|(-)|(\()|(\))|("")|(„)|(“)|(“)|(”)|(‘)|(’)|(«)|(»)|(\.)|(:)|(\?)|(!)";
+            string splitPattern = printAsStatedExpressions.Count == 0 ?
+                allInterpunctuation :
+                string.Format(@"({0})", String.Join("|", printAsStatedExpressions.Select(x => string.Format(@"\b{0}\b", Regex.Escape(x))))) + "|" + allInterpunctuation;
 
-				for (int j = 0; j < words.Count; j++)
-				{
-					var word = words[j].ToString();
+            string interpunctuactionFollowedByCapitalization = @"(\.)|(:)|(\?)|(!)"; //next word will be capitalized if possible
+            bool firstWordDone = false;
 
-					if (Regex.IsMatch(word, matchInterpunctuation) || word.Equals(" "))
-					{
-						//space or punctuation
-						text = text + word;
-						continue;
-					}
+            for (int i = 0; i < textUnits.Count; i++)
+            {
+                //textUnit.Text = textUnits[i].Text.ToLower(culture);
+                var text = textUnits[i].Text;
 
-					string printAsStatedExpression = printAsStatedExpressions.FirstOrDefault(ex => ex.Equals(word, StringComparison.OrdinalIgnoreCase));
-					if (!string.IsNullOrEmpty(printAsStatedExpression))
-					{
-						text = text + printAsStatedExpression;
-						continue;
-					}
+                List<string> words = Regex.Split(text, splitPattern, RegexOptions.IgnoreCase).Where(x => !string.IsNullOrEmpty(x)).ToList();
 
-					if ((i == 0) && (j == 0))
-					{
-						text = text + ToUpperFirstLetter(word, culture);
-					}
-					else if (upperCaseAfterPunctuation && ((j > 0 && Regex.IsMatch(words[j - 1], matchInterpunctuation)) || (j > 1 && Regex.IsMatch(words[j - 2], matchInterpunctuation))))
-					{
-						text = text + ToUpperFirstLetter(word, culture);
-					}
-					else
-					{
-						text = text + word.ToLower(culture);
-					}
-				}
-				textUnits[i].Text = text;
-			}
+                text = string.Empty;
 
-			handled = true;
-			return textUnits;
-		}
+                for (int j = 0; j < words.Count; j++)
+                {
+                    var word = words[j].ToString();
 
-		public string ToUpperFirstLetter(string input, CultureInfo culture)
-		{
-			if (string.IsNullOrEmpty(input)) return input;
+                    if (Regex.IsMatch(word, allInterpunctuation) || word.Equals(" "))
+                    {
+                        //space or punctuation
+                        text = text + word;
+                        continue;
+                    }
 
-			char[] letters = input.ToCharArray();
+                    string printAsStatedExpression = printAsStatedExpressions.FirstOrDefault(ex => ex.Equals(word, StringComparison.OrdinalIgnoreCase));
+                    if (!string.IsNullOrEmpty(printAsStatedExpression))
+                    {
+                        text = text + printAsStatedExpression;
+                        firstWordDone = true;
+                        continue;
+                    }
 
-			for (var i = 0; i < letters.Length; i++)
-			{
-				if (i == 0)
-				{
-					letters[0] = char.ToUpper(letters[0], culture);
-				}
-				else
-				{
-					letters[i] = char.ToLower(letters[i], culture);
-				}
-			}
+                    if (((i == 0) && (j == 0)) || !firstWordDone)
+                    {
+                        text = text + ToUpperFirstLetter(word, culture);
+                        firstWordDone = true;
+                    }
+                    else if (upperCaseAfterPunctuation && ((j > 0 && Regex.IsMatch(words[j - 1], interpunctuactionFollowedByCapitalization)) || (j > 1 && Regex.IsMatch(words[j - 2], interpunctuactionFollowedByCapitalization))))
+                    {
+                        text = text + ToUpperFirstLetter(word, culture);
+                        firstWordDone = true;
+                    }
+                    else
+                    {
+                        text = text + word.ToLower(culture);
+                        firstWordDone = true;
+                    }
+                }
+                textUnits[i].Text = text;
+            }
 
-			return new string(letters);
-		}
-	}
+            handled = true;
+            return textUnits;
+        }
+
+        public string ToUpperFirstLetter(string input, CultureInfo culture)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+
+            char[] letters = input.ToCharArray();
+
+            for (var i = 0; i < letters.Length; i++)
+            {
+                if (i == 0)
+                {
+                    letters[0] = char.ToUpper(letters[0], culture);
+                }
+                else
+                {
+                    letters[i] = char.ToLower(letters[i], culture);
+                }
+            }
+
+            return new string(letters);
+        }
+    }
 }
