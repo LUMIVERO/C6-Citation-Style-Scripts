@@ -1,9 +1,12 @@
-﻿//C6#COT018
+//C6#COT018
 //C5#431526
 //Description: Force to use prefixes
 //Version: 1.1, requires Citavi 5.3 and above
-//Bei "Unverändert (wie Eingabe)": +Präfix, Suffix , +Bindestrich durch Halbgeviert Strich ersetzen
-//Version 1.1 changed mode of script from handling the output itself to changing the component part and let Citavi do the rest (lines 115 ff.)  
+//Bei "Unverändert (wie Eingabe)" [C5] bzw. "Kein Zahlensystem (Ausgabe wie Eingabe)" [C6]:
+//+Präfix, +Suffix, +Bindestrich durch Halbgeviertstrich (Gedankenstrich) ersetzen
+//Funktionsweise: Das ERSTE PageRangeFieldElement wird durch korrigierten Output ersetzt.
+//Das Skript kann auch in einer kombinierten Komponente mit weiteren Elementen verwendet werden.
+//Version: 1.1 changed mode of script from handling the output itself to changing the component part and let Citavi do the rest (lines 115 ff.) 
 
 using System.Linq;
 using System.Collections.Generic;
