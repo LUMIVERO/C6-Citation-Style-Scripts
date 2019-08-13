@@ -1,6 +1,6 @@
 # Präfix und Suffix für "Zitat-Seiten" erzwingen
 
-Dieses Skript erzwingt bei der Komponente "Zitat-Seiten" die Ausgabe des hinterlegten Präfixes "S." und Suffixes "ff." auch dann, wenn keine Seitenzahlbereiche verwendet wurden.
+Dieses Skript erzwingt bei der Komponente "**Zitat-Seiten**" die Ausgabe des hinterlegten Präfixes "S." und Suffixes "ff." auch dann, wenn keine Seitenzahlbereiche verwendet wurden.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
