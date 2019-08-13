@@ -21,7 +21,7 @@ entsprechend den Einstellungen, die Sie im Zitationsstil getroffen haben.
 
 Gleiches gilt für mögliche Suffixe: f, ff.
  
-Das hier bereitgestellte Skript sorgt dafür, dass Sie die Option "**Kein Zahlensystem (Ausgabe wie Eingabe)**" nutzen können und trotzdem die im Zitationsstil definierten Präfixe und Suffixe erscheinen.
+Das hier bereitgestellte Skript sorgt dafür, dass trotz der aktivierten Option "**Kein Zahlensystem (Ausgabe wie Eingabe)**" die im Zitationsstil definierten Präfixe und Suffixe erscheinen.
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
