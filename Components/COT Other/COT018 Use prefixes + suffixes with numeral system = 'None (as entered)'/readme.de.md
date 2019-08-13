@@ -15,7 +15,8 @@ In der Konsequenz wendet Citavi aber auch nicht mehr die Regeln an, um den Seite
 - S. für Seiten
 - Sp. für Spalten
 - § und §§ für Paragraphen
-- Rn. für Randnummer, 
+- Rn. für Randnummern, 
+
 entsprechend den Einstellungen, die Sie im Zitationsstil getroffen haben. 
 
 Gleiches gilt für mögliche Suffixe: f, ff.
