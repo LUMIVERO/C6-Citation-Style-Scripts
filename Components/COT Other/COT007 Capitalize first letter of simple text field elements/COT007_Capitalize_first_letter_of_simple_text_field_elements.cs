@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
-//Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc)
+//Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc.)
+//Version 2.4: Corrected handling of words in square brackets
 //Version 2.3: Improved capitalization after punctuation
 //Version 2.2: Slight improvements
 //Version 2.1: Corrected handling of various typographical quotation marks
@@ -144,7 +145,7 @@ namespace SwissAcademic.Citavi.Citations
 
                 //Break the input text into a list of words at whitespaces,
                 //hyphens, opening parens, and ASCII quotation marks
-                string splitPattern = @"(\s)|(-)|(\()|(\))|(\"")|(\u2018)|(\u2019)|(\u201A)|(\u201C)|(\u201D)|(\u201E)|(\u201F)|(\u2039)|(\u203A)|(\u00AB)|(\u00BB)|(\.)|(:)|(\?)|(!)|(\u2014)";
+                string splitPattern = @"(\s)|(-)|(\()|(\))|(\"")|(\u2018)|(\u2019)|(\u201A)|(\u201C)|(\u201D)|(\u201E)|(\u201F)|(\u2039)|(\u203A)|(\u00AB)|(\u00BB)|(\.)|(:)|(\?)|(!)|(\u2014)|(\u005B)|(\u005D)";
 
                 #region Infos about typographical quotation marks
                 /*
