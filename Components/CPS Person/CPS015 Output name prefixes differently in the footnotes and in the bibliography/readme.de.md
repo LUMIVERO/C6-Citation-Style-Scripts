@@ -23,6 +23,8 @@ Zusätzlich müssen in den Eigenschaften der Personen-Komponente folgende Einste
 2. Setzen Sie im Abschnitt "**Namenspräfixe wie folgt formatieren**" ein Häkchen unter "**Namenspräfixe wie folgt abkürzen (Lang- und Kurzformen getrennt mit '|'**".
 3. Tragen Sie im Feld "**Abkürzungsliste**" die benötigten Paare aus Lang- und Kurzform jeweils mit dem Pipe-Zeichen separiert ein, also beispielsweise: `von|v.|von der|v. d.`
 
+![Eigenschaften der Personen-Komponente - Namenspräfixe wie folgt formatieren](CSE%20Namenspräfixe%20wie%20folgt%20formatieren%20%2B%20abkürzen%20-%20Abkürzungsliste.png)
+
 In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z. B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z. B. `Münch, Ingo von`)
 
 ## Installation
