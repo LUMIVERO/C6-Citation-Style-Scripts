@@ -24,7 +24,9 @@ Zusätzlich müssen in den Eigenschaften der Personen-Komponente folgende Einste
 
 ![Eigenschaften der Personen-Komponente - Namenspräfixe wie folgt formatieren](CSE%20Namenspräfixe%20wie%20folgt%20formatieren%20%2B%20abkürzen%20-%20Abkürzungsliste.png)
 
-In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem Präfix im Feld "**Name**", z. B. `von Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis für die Sortierung berücksichtigt werden soll (z. B. `Münch, Ingo von`)
+In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem Präfix im Feld "**Name**", z. B. `von Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis für die Sortierung berücksichtigt werden soll (z. B. `Münch, Ingo von`).
+
+![Namenspräfix - Listen > Personen und Institutionen - Sortieren nach](Namenspräfix%20%2B%20Sortieren%20nach%20-%20von%20Münch.png)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
