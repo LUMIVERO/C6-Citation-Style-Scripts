@@ -17,6 +17,11 @@ Der Beispiel-Autor soll im Literaturverzeichnis unter "M" erscheinen.
 ## Anpassung
 Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Fußnoten**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS015 "_Präfixe in Literaturverzeichnis und Fußnoten unterschiedlich ausgeben_" besteht, das bei den Personen-Komponenten im **Literaturverzeichnis**-Regelset einzufügen ist.)
 
+Zusätzlich müssen in den Eigenschaften der Personen-Komponente folgende Einstellungen getroffen werden:
+1. Rufen Sie die Personen-Komponente mit einem Doppelklick auf.
+2. Setzen Sie im Abschnitt "**Namenspräfixe wie folgt formatieren**" ein Häkchen unter "**Namenspräfixe wie folgt abkürzen (Lang- und Kurzformen getrennt mit '|'**".
+3. Tragen Sie im Feld "**Abkürzungsliste**" die benötigten Paare aus Lang- und Kurzform jeweils mit dem Pipe-Zeichen separiert ein, also beispielsweise: `von|v.|von der|v. d.`
+
 In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem Präfix im Feld "**Name**", z. B. `von Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis für die Sortierung berücksichtigt werden soll (z. B. `Münch, Ingo von`)
 
 ## Installation
