@@ -20,7 +20,7 @@ Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B.
 
 In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z. B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z. B. `Münch, Ingo von`)
 
-<img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Components/CPS%20Person/CPS015%20Output%20name%20prefixes%20differently%20in%20the%20footnotes%20and%20in%20the%20bibliography/Namenspr%C3%A4fixe%20wie%20folgt%20formatieren%20%2B%20abk%C3%BCrzen%20-%20Abk%C3%BCrzungsliste.png" width="600">
+<img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Components/CPS%20Person/CPS015%20Output%20name%20prefixes%20differently%20in%20the%20footnotes%20and%20in%20the%20bibliography/Namenspr%C3%A4fix%20%2B%20Sortieren%20nach%20-%20von%20M%C3%BCnch.png" width="600">
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
