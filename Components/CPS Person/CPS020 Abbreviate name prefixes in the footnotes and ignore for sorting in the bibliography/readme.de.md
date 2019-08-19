@@ -7,7 +7,7 @@ Citavi 6 (oder höher)
 
 ## Beispiele
 In der Fußnote:
-- v. Münch, Legal education and the legal profession in Germany, 2002
+- v. Münch 2002.
 
 Im Literaturverzeichnis: 
 - von Münch, Ingo, Legal education and the legal profession in Germany, Baden-Baden 2002.
@@ -27,7 +27,6 @@ Zusätzlich müssen in den Eigenschaften der Personen-Komponente folgende Einste
 In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem Präfix im Feld "**Name**", z. B. `von Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis für die Sortierung berücksichtigt werden soll (z. B. `Münch, Ingo von`).
 
 <img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Components/CPS%20Person/CPS020%20Abbreviate%20name%20prefixes%20in%20the%20footnotes%20and%20ignore%20for%20sorting%20in%20the%20bibliography/Namenspr%C3%A4fix%20%2B%20Sortieren%20nach%20-%20von%20M%C3%BCnch.png" width="600">
-
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
