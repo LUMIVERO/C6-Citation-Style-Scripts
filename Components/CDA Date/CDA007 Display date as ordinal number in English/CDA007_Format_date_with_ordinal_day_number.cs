@@ -1,6 +1,7 @@
 //CDA007
 //Format date as 12th January
-
+//Version 1.1 ordinal suffixes st nd rd th are now formatted as superscripts
+//
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -53,9 +54,19 @@ namespace SwissAcademic.Citavi.Citations
 			var formattedDate = string.Format(new MyCustomDateProvider(), "{0}", dateValue);
 			if (string.IsNullOrEmpty(formattedDate)) return null;
 			
-			LiteralElement outputDateElement = new LiteralElement(componentPart, formattedDate);
-			outputDateElement.FontStyle = dateTimeFieldElement.FontStyle;
-			componentPart.Elements.ReplaceItem(dateTimeFieldElement, outputDateElement);
+			var formattedDateTextUnits = TextUnitCollectionUtility.TaggedTextToTextUnits(null, formattedDate);
+			if (formattedDateTextUnits == null || !formattedDateTextUnits.Any()) return null;
+			
+			if (dateTimeFieldElement.FontStyle != FontStyle.Neutral)
+			{
+				foreach(ITextUnit textUnit in formattedDateTextUnits)
+				{
+					textUnit.FontStyle |= dateTimeFieldElement.FontStyle;	
+				}
+			}
+			
+			List<LiteralElement> outputDateLiteralElements = formattedDateTextUnits.TextUnitsToLiteralElements(componentPart);
+			componentPart.Elements.ReplaceItem(dateTimeFieldElement, outputDateLiteralElements);
 			
 			foreach(LiteralElement literalElement in componentPart.Elements.OfType<LiteralElement>())
 			{
@@ -65,7 +76,7 @@ namespace SwissAcademic.Citavi.Citations
 			return null;
 		}
 		
-		public class MyCustomDateProvider: IFormatProvider, ICustomFormatter
+		public class MyCustomDateProvider : IFormatProvider, ICustomFormatter
 		{
 		    public object GetFormat(Type formatType)
 		    {
@@ -85,26 +96,25 @@ namespace SwissAcademic.Citavi.Citations
 
 		        if (new[] {11, 12, 13}.Contains(dt.Day))
 		        {
-		            suffix = "th";
+		            suffix = "<sup>th</sup>";
 		        }
 		        else if (dt.Day % 10 == 1)
 		        {
-		            suffix = "st";
+		            suffix = "<sup>st</sup>";
 		        }
 		        else if (dt.Day % 10 == 2)
 		        {
-		            suffix = "nd";
+		            suffix = "<sup>nd</sup>";
 		        }
 		        else if (dt.Day % 10 == 3)
 		        {
-		            suffix = "rd";
+		            suffix = "<sup>rd</sup>";
 		        }
 		        else
 		        {
-		            suffix = "th";
+		            suffix = "<sup>th</sup>";
 		        }
 
-		        //return string.Format("{1}{2} {0:MMMM} {0:yyyy}", arg, dt.Day, suffix);
 		        return string.Format(targetCulture, "{1}{2} {0:MMMM}", arg, dt.Day, suffix);
 		    }
 		}
