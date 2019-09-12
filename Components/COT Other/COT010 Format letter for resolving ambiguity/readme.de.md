@@ -9,7 +9,11 @@ Citavi hängt bei Mehrdeutigkeiten, also für den Fall, dass ein Autor mit mehre
 Dieses Skript ist für den seltenen Fall gedacht, dass der Buchstabe besondere Formatierungen benötigt (Miller 2010<sup>a</sup>) bzw. frei im Text platziert werden muss.
 
 ## Anpassung
-In den Eigenschaften des Zitationsstils ist einzustellen, dass der Buchstabe für die Mehrdeutigkeitsunterscheidung an das Feld **Kurzbeleg** angehängt werden soll (auch wenn das im Stil nicht verwendet wird). Hinter das Feld **Jahr ermittelt** im Literaturverzeichnis sowie im Kurznachweis im Text ist ein zusätzliches Textelement anzuhängen, das keinen Inhalt hat. An dieses Textelement ist der hier bereitgestellte Programmcode zu hängen.
+In den Eigenschaften des Zitationsstils ist einzustellen, dass der Buchstabe für die Mehrdeutigkeitsunterscheidung an das Feld **Kurzbeleg** angehängt werden soll (auch wenn das im Stil nicht verwendet wird). 
+
+Hinter das Feld **Jahr ermittelt** im Literaturverzeichnis sowie im Kurznachweis im Text ist ein zusätzliches Textelement anzuhängen, das keinen Inhalt hat. An dieses Textelement ist der hier bereitgestellte Programmcode zu hängen.
+
+Das leere Textelement ist entsprechend zu formatieren, z.B. "Hochgestellt" oder "Kursiv".
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
