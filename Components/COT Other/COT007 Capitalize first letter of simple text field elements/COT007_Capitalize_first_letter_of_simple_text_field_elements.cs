@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc.)
+//Version 2.6: Introduced new parameter modeStrict
 //Version 2.5: Corrected handling of apostrophe for ommissions, plural handling or possessions, as in he's, don't, I'm, lov'd, p's and q's, comma's, Bernadette's but also Arabic, Japanese or Chinese words, like Shin'ichi etc.
 //Version 2.4: Corrected handling of words in square brackets
 //Version 2.3: Improved capitalization after punctuation
@@ -31,7 +32,11 @@ namespace SwissAcademic.Citavi.Citations
     {
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
-            var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+            var ensureEnglishIsReferenceLanguage = true;   	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+			var modeStrict = false;							//only applicable if ensureEnglishIsReferenceLanguage = true: 
+															//if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in tje language field
+															//if modeStrict = false, it will also capitalize references that have an empty language field
+            
             var convertFullUpperCaseWords = ConvertFullUpperCaseWords.Never;
 
             #region Info on ConvertFullUpperCaseWords parameter
@@ -70,7 +75,7 @@ namespace SwissAcademic.Citavi.Citations
                     {
                         languageResolved = citation.Reference.ParentReference.Language;
                     }
-                    if (string.IsNullOrEmpty(languageResolved)) return null;
+                    if (string.IsNullOrEmpty(languageResolved) && modeStrict) return null;
                 }
                 else
                 {
@@ -78,21 +83,29 @@ namespace SwissAcademic.Citavi.Citations
                     if (citation.Reference.ParentReference == null) return null;
                     languageResolved = citation.Reference.ParentReference.Language;
                 }
-                if (string.IsNullOrEmpty(languageResolved)) return null;
+                if (string.IsNullOrEmpty(languageResolved) && modeStrict)
+				{
+					return null;
+				}
+				
 
-                var termsList = new string[] {
-                    "en",
-                    "eng",
-                    "engl",
-                    "English",
-                    "Englisch"
-                };
+				if (!string.IsNullOrEmpty(languageResolved))
+				{
+					var termsList = new string[] {
+	                    "en",
+	                    "eng",
+	                    "engl",
+	                    "English",
+	                    "Englisch"
+	                };
 
-                var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
-                if (!regEx.IsMatch(languageResolved))
-                {
-                    return null;
-                }
+					
+	                var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
+					if(!regEx.IsMatch(languageResolved))
+	                {
+	                    return null;
+	                }
+				}
             }
 
             //Words that will not be capitalized; add words to this list as required
