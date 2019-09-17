@@ -35,7 +35,7 @@ namespace SwissAcademic.Citavi.Citations
         {
             var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
             var modeStrict = false;             //only applicable if ensureEnglishIsReferenceLanguage = true: 
-                                                //if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in tje language field
+                                                //if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in the language field
                                                 //if modeStrict = false, it will also capitalize references that have an empty language field
 
             var convertFullUpperCaseWords = ConvertFullUpperCaseWords.Never;
