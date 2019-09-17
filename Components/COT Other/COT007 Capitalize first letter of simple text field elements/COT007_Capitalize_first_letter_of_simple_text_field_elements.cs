@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc.)
+//Version 2.8: Corrected issue with text appearing twice under certain circumstances
 //Version 2.7: Words of length 1 succeeded by a period "." are treated as initials and will be capitalized, see e.g. "The Complete Poems of A. R. Ammons"
 //Version 2.6: Introduced new parameter modeStrict
 //Version 2.5: Corrected handling of apostrophe for ommissions, plural handling or possessions, as in he's, don't, I'm, lov'd, p's and q's, comma's, Bernadette's but also Arabic, Japanese or Chinese words, like Shin'ichi etc.
@@ -195,7 +196,7 @@ namespace SwissAcademic.Citavi.Citations
 
                 words = i > 0 ? nextWords : new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty));
                 nextWords = !string.IsNullOrEmpty(nextText) ?
-                    new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty)) :
+                    new List<string>(Regex.Split(nextText, splitPattern).Where(s => s != string.Empty)) :
                     new List<string>();
                     
 
