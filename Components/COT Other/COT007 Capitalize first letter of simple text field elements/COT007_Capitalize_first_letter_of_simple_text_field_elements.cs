@@ -34,7 +34,7 @@ namespace SwissAcademic.Citavi.Citations
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
 			var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
-			var modeStrict = true;				//only applicable if ensureEnglishIsReferenceLanguage = true: 
+			var modeStrict = false;				//only applicable if ensureEnglishIsReferenceLanguage = true: 
 												//if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in the language field
 												//if modeStrict = false, it will also capitalize references that have an empty language field
 
