@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc.)
+//Version 2.7: Words of length 1 succeeded by a period "." are treated as initials and will be capitalized, see e.g. "The Complete Poems of A. R. Ammons"
 //Version 2.6: Introduced new parameter modeStrict
 //Version 2.5: Corrected handling of apostrophe for ommissions, plural handling or possessions, as in he's, don't, I'm, lov'd, p's and q's, comma's, Bernadette's but also Arabic, Japanese or Chinese words, like Shin'ichi etc.
 //Version 2.4: Corrected handling of words in square brackets
@@ -26,17 +27,17 @@ using System.Linq;
 
 namespace SwissAcademic.Citavi.Citations
 {
-    public class ComponentPartFilter
+    public class ComponentPartFilterDebug
         :
         IComponentPartFilter
     {
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
-            var ensureEnglishIsReferenceLanguage = true;   	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
-	    var modeStrict = false;				//only applicable if ensureEnglishIsReferenceLanguage = true: 
-								//if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in tje language field
-								//if modeStrict = false, it will also capitalize references that have an empty language field
-            
+            var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+            var modeStrict = false;             //only applicable if ensureEnglishIsReferenceLanguage = true: 
+                                                //if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in tje language field
+                                                //if modeStrict = false, it will also capitalize references that have an empty language field
+
             var convertFullUpperCaseWords = ConvertFullUpperCaseWords.Never;
 
             #region Info on ConvertFullUpperCaseWords parameter
@@ -84,28 +85,28 @@ namespace SwissAcademic.Citavi.Citations
                     languageResolved = citation.Reference.ParentReference.Language;
                 }
                 if (string.IsNullOrEmpty(languageResolved) && modeStrict)
-				{
-					return null;
-				}
-				
+                {
+                    return null;
+                }
 
-				if (!string.IsNullOrEmpty(languageResolved))
-				{
-					var termsList = new string[] {
-	                    "en",
-	                    "eng",
-	                    "engl",
-	                    "English",
-	                    "Englisch"
-	                };
 
-					
-	                var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
-					if(!regEx.IsMatch(languageResolved))
-	                {
-	                    return null;
-	                }
-				}
+                if (!string.IsNullOrEmpty(languageResolved))
+                {
+                    var termsList = new string[] {
+                        "en",
+                        "eng",
+                        "engl",
+                        "English",
+                        "Englisch"
+                    };
+
+
+                    var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
+                    if (!regEx.IsMatch(languageResolved))
+                    {
+                        return null;
+                    }
+                }
             }
 
             //Words that will not be capitalized; add words to this list as required
@@ -152,6 +153,10 @@ namespace SwissAcademic.Citavi.Citations
 
             string prevWord = string.Empty;
             string secondPrevWord = string.Empty;
+            string nextWord = string.Empty;
+
+            List<string> words = null;
+            List<string> nextWords = null;
 
             //Break the input text into a list of words at whitespaces,
             //hyphens, opening parens, and ASCII quotation marks
@@ -186,8 +191,13 @@ namespace SwissAcademic.Citavi.Citations
             {
                 //textUnit.Text = textUnits[i].Text.ToLower(culture);
                 var text = textUnits[i].Text;
+                var nextText = i < textUnits.Count - 1 ? textUnits[i + 1].Text : null;
 
-                List<string> words = new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty));
+                words = i > 0 ? nextWords : new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty));
+                nextWords = !string.IsNullOrEmpty(nextText) ?
+                    new List<string>(Regex.Split(text, splitPattern).Where(s => s != string.Empty)) :
+                    new List<string>();
+                    
 
                 var counter = 0;
                 text = string.Empty;
@@ -197,6 +207,7 @@ namespace SwissAcademic.Citavi.Citations
                 foreach (string word in words)
                 {
                     counter++;
+                    nextWord = counter < words.Count ? words.ElementAt(counter) : nextWords != null && nextWords.Any() ? nextWords.First() : null;
 
 
                     if (Regex.IsMatch(word, matchInterpunctuation) || string.IsNullOrWhiteSpace(word))
@@ -208,8 +219,13 @@ namespace SwissAcademic.Citavi.Citations
                     {
                         text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
                     }
+                    else if (word.Length == 1 && !string.IsNullOrEmpty(nextWord) && nextWord == ".")
+                    {
+                        //one letter word followed by period is considered a first name initial
+                        text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+                    }
                     else if (
-                        (Regex.IsMatch(prevWord, matchInterpunctuation)) || 
+                        (Regex.IsMatch(prevWord, matchInterpunctuation)) ||
                         (!string.IsNullOrWhiteSpace(secondPrevWord) && Regex.IsMatch(secondPrevWord, matchInterpunctuation) && string.IsNullOrWhiteSpace(prevWord))
                     )
                     {
