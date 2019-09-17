@@ -27,7 +27,7 @@ using System.Linq;
 
 namespace SwissAcademic.Citavi.Citations
 {
-    public class ComponentPartFilterDebug
+    public class ComponentPartFilter
         :
         IComponentPartFilter
     {
