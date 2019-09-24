@@ -3,7 +3,7 @@ Für alle Titel wurden automatisch [Kurzbelege generiert](https://www1.citavi.co
 Die Verwendung von Mehrdeutigkeitsbuchstaben ist im Zitationsstil NICHT vorgesehen.
 
 ## Voraussetzungen
-Citavi 6.3.6 (oder höher)
+Citavi 6.3.11 (oder höher)
 
 ## Beispiele
 - Müller 2014, Kurzbeleg Buch A, S. 17.
