@@ -1,7 +1,7 @@
 //COT023
 //Citavi 6.3.11+
 //Description: Citation key will only be displayed to avoid ambiguous references in the text or within footnotes
-//Version 1.2: Modified for output in the bibliography, since AmbiguityFound and AmbiguityResolved properties don't need to be determined by iterating through citation any more with Citavi 6.3.7
+//Version 1.2: Modified for output in the bibliography, since AmbiguityFound and AmbiguityResolved properties don't need to be determined by iterating through citation any more with Citavi 6.3.11
 //Version 1.1: Added: Output of the citation key in the bibliography, if it was previously used to resolve ambiguous references in the text or within footnotes
 
 using System.Linq;
