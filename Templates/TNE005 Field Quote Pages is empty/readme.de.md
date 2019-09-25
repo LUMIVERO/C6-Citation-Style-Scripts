@@ -6,7 +6,7 @@ Citavi 5 (oder höher)
 ## Beispiele
 Ein Quellennachweis soll unterschiedlich dargestellt werden, wenn die Zitat-Seiten fehlen.
 
-e
+Beispiele
 - Mikat, in: Festschrift Nipperdey, 1965, S. 581 ff. (590).
 - Schulze, in: Festschrift Nipperdey, 1965, S. 581-595.
 
