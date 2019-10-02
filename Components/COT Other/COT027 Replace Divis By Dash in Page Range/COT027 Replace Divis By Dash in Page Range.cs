@@ -27,6 +27,7 @@ namespace SwissAcademic.Citavi.Citations
 
 			bool found = false;
 			TextUnitCollection textUnits = pageRangeFieldElement.GetTextUnits(citation, template);
+			if (textUnits == null) return null;
 			foreach(ITextUnit textUnit in textUnits)
 			{
 				if (textUnit.Text.Contains("-"))
