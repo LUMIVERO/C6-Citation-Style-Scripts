@@ -5,8 +5,9 @@ Je nach Seitenzahlen-Typ (Seiten, Spalten, Paragraphen, Randnummern, Andere) sol
 Citavi 6 (oder höher)
 
 ## Beispiele
-
-- »Der Golden Retriever ist eine vierbeinige Ente!« (Hinz 2014, S. 18). Dass der Hund besonders wasserliebend ist, weist auch Kunz in dem Zürisee-Experiment nach (Kunz 2008).
+Der Seitenbereich soll im Beispielfall nicht ausgegeben werden, wenn es sich um Randnummern handelt:
+- Smith 2017, S. 123-140 (S. 125)
+- Smith 2017,<del>Rz. 123-140</del> (Rz. 125)
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
