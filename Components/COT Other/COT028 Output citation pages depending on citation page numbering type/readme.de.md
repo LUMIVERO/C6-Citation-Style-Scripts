@@ -6,7 +6,8 @@ Citavi 6 (oder höher)
 
 ## Beispiele
 
-- »Der Golden Retriever ist eine vierbeinige Ente!« (Hinz 2014, S. 18). Dass der Hund besonders wasserliebend ist, weist auch Kunz in dem Zürisee-Experiment nach (Kunz 2008).
+- Smith 2017, S. 123-140 (S. 125)
+- Smith 2017, Rz. 123-140<del> (Rz. 125)<del>
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
