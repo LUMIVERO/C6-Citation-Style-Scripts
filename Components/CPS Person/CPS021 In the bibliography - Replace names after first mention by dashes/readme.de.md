@@ -1,4 +1,4 @@
-# Wiederholung eines Namens im Literaturverzeichnis unterdrücken durch Auslassungsstriche
+# Wiederholung eines Namens im Literaturverzeichnis ersetzen durch Auslassungsstriche
 
 Im Literaturverzeichnis werden mehrere Werke desselben Autors zitiert. Der Name soll nicht wiederholt werden, sondern durch Auslassungsstriche ersetzt werden.
 
