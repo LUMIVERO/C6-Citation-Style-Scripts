@@ -1,8 +1,9 @@
 //C6#COT008
 //C5#431516
 //Description: Convert output to lower case (ensure first character is upper case)
-//Version: 2.4
+//Version: 2.5
 //Name of filter: Convert output to lower case (ensure first character is upper case)
+//Version 2.5: Introduced new parameter modeStrict
 //Version 2.4: Corrected: quotation marks at start of field/text units will not prevent first word to be capitalized
 //Version 2.3: Changed: var ensureEnglishIsReferenceLanguage = true;
 //Version 2.2: Corrected: 'Print-as-stated' exceptions not working if exception is very first word of field
@@ -34,6 +35,9 @@ namespace SwissAcademic.Citavi.Citations
 
             var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
             var upperCaseAfterPunctuation = true;           //if set to false, everything but the very first word will be lower case
+			var modeStrict = false;				//only applicable if ensureEnglishIsReferenceLanguage = true: 
+												//if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in the language field
+												//if modeStrict = false, it will also capitalize references that have an empty language field
 
             CultureInfo culture = CultureInfo.CurrentCulture;
 
@@ -54,7 +58,7 @@ namespace SwissAcademic.Citavi.Citations
                     {
                         languageResolved = citation.Reference.ParentReference.Language;
                     }
-                    if (string.IsNullOrEmpty(languageResolved)) return null;
+                    if (string.IsNullOrEmpty(languageResolved) && modeStrict) return null;
                 }
                 else
                 {
@@ -62,22 +66,26 @@ namespace SwissAcademic.Citavi.Citations
                     if (citation.Reference.ParentReference == null) return null;
                     languageResolved = citation.Reference.ParentReference.Language;
                 }
-                if (string.IsNullOrEmpty(languageResolved)) return null;
+                if (string.IsNullOrEmpty(languageResolved) && modeStrict) return null;
 
-                var termsList = new string[] {
-                    "en",
-                    "eng",
-                    "engl",
-                    "english",
-                    "Englisch"
-                };
-
-                var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
-                if (!regEx.IsMatch(languageResolved))
+                if (!string.IsNullOrEmpty(languageResolved))
                 {
-                    return null;
+                    var termsList = new string[] {
+                        "en",
+                        "eng",
+                        "engl",
+                        "English",
+                        "Englisch"
+                    };
+
+
+                    var regEx = new Regex(@"\b(" + string.Join("|", termsList) + @")\b", RegexOptions.IgnoreCase);
+                    if (!regEx.IsMatch(languageResolved))
+                    {
+                        return null;
+                    }
                 }
-            }
+            }	//
 
 
             var textUnits = componentPart.GetTextUnitsUnfiltered(citation, template);
