@@ -1,4 +1,4 @@
-//COT 027
+//COT027
 using System.Linq;
 using System.Collections.Generic;
 using SwissAcademic.Citavi;
