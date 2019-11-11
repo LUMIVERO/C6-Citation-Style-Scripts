@@ -1,5 +1,5 @@
 # Inhalt des Notiz-Felds an Zeitschriftennamen hängen
-Das Skript sorgt dafür, dass an den Zeitschriftennamen der Inhalt des Felds (Zeitschriften-)Notiz angehängt wird. Das Notiz-Feld bei Zeitschriftennamen zeigt sich, wenn Sie die betreffende Zeitschrift über das Menü **Listen** > **Zeitschriften und Zeitungen** bearbeiten.
+Das Skript sorgt dafür, dass an den Zeitschriftennamen der Inhalt des Felds **(Zeitschriften-)Notiz** angehängt wird. Das Notiz-Feld von Zeitschriftennamen lässt sich anzeigen und anpassen, wenn Sie die betreffende Zeitschrift über das Menü **Listen** > **Zeitschriften und Zeitungen** bearbeiten.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
