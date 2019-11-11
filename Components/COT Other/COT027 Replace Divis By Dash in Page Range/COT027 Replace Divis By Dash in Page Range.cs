@@ -1,6 +1,6 @@
 //C6#COT027
 //Description: Replace Divis by Dash in Page Range
-//Version: 1.0
+//Version: 1.0 
 
 using System.Linq;
 using System.Collections.Generic;
@@ -31,6 +31,7 @@ namespace SwissAcademic.Citavi.Citations
 			bool found = false;
 			TextUnitCollection textUnits = pageRangeFieldElement.GetTextUnits(citation, template);
 			if (textUnits == null) return null;
+			
 			foreach(ITextUnit textUnit in textUnits)
 			{
 				if (textUnit.Text.Contains("-"))
@@ -40,7 +41,11 @@ namespace SwissAcademic.Citavi.Citations
 				}
 			}
 			
-			if (found) componentPart.Elements.ReplaceItem(pageRangeFieldElement, textUnits.TextUnitsToLiteralElements(componentPart));
+			if (found)
+			{
+				componentPart.Elements.ReplaceItem(pageRangeFieldElement, textUnits.TextUnitsToLiteralElements(componentPart));
+			}
+			
 			return null;
 		}
 	}
