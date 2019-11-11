@@ -1,4 +1,7 @@
 //COT027
+//Description: Replace Divis by Dash in Page Range
+//Version: 1.0
+
 using System.Linq;
 using System.Collections.Generic;
 using SwissAcademic.Citavi;
