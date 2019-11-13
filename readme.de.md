@@ -2,212 +2,196 @@
 
 ## CDA Datum (Date)
 
-CDA001 Display date range - German
+[CDA001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA001%20Display%20date%20range%20-%20German) Display date range - German
 
-CDA002 Display date range - English
+[CDA002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA002%20Display%20date%20range%20-%20English) Display date range - English
 
-CDA003 Display date as Roman number
+[CDA003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA003%20Display%20date%20as%20Roman%20number) Display date as Roman number
 
-CDA004 Display US date with abbreviated month names
+[CDA004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA004%20Display%20US%20date%20with%20abbreviated%20month%20names) Display US date with abbreviated month names
 
-CDA005 Display name of month independent of style language
+[CDA005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA005%20Display%20name%20of%20month%20independent%20of%20style%20language) Display name of month independent of style language
 
-CDA006 Display o. J. if year of publication is unknown
+[CDA006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA006%20Display%20o.%20J.%20if%20year%20of%20publication%20is%20unknown) Display o. J. if year of publication is unknown
 
-CDA007 Display date as ordinal number in English
+[CDA007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA007%20Display%20date%20as%20ordinal%20number%20in%20English) Display date as ordinal number in English
 
-CDA008 Advanced date formatting
+[CDA008](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA008%20Advanced%20date%20formatting) Advanced date formatting
 
-CDA009 Prefix + suffix for Access Date depending on the content of the Language field
+[CDA009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA009%20Prefix%20%2B%20suffix%20for%20Access%20Date%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Access Date depending on the content of the Language field
 
 
 
 ## CED Auflage (Edition)
 
-CED001 Only output edition if it is not 1
+[CED001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CED%20Edition/CED001%20Only%20output%20edition%20if%20it%20is%20not%201) Only output edition if it is not 1
 
-CED003 Prefix + suffix for Edition depending on the content of the Language field
+[CED003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CED%20Edition/CED003%20Prefix%20%2B%20suffix%20for%20Edition%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Edition depending on the content of the Language field
 
 
 
 ## COT Andere (Other)
 
-COT001 Prefix + suffix for Volume depending on the content of the Language field
+[COT001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT001%20Prefix%20%2B%20suffix%20for%20Volume%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Volume depending on the content of the Language field
 
-COT002 Prefix + suffix for Number depending on the content of the Language field
+[COT002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT002%20Prefix%20%2B%20suffix%20for%20Number%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Number depending on the content of the Language field
 
-COT003 Suppress back reference if reference and back reference occur in the same footnote
+[COT003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT003%20Suppress%20back%20reference%20if%20reference%20and%20back%20reference%20occur%20in%20the%20same%20footnote) Suppress back reference if reference and back reference occur in the same footnote
 
-COT004 Suppress output of Quotes page if Quotes page is identical to the article's first page
+[COT004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT004%20Suppress%20output%20of%20Quotes%20page%20if%20Quotes%20page%20is%20identical%20to%20the%20article's%20first%20page) Suppress output of Quotes page if Quotes page is identical to the article's first page
 
-COT005 Output number of citations
+[COT005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT005%20Output%20number%20of%20citations) Output number of citations
 
-COT006 Convert HTML-encoded text to RTF
+[COT006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT006%20Convert%20HTML-encoded%20text%20to%20RTF) Convert HTML-encoded text to RTF
 
-COT007 Capitalize first letter of simple text field elements
+[COT007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT007%20Capitalize%20first%20letter%20of%20simple%20text%20field%20elements) Capitalize first letter of simple text field elements
 
-COT008 Write first letter in lower case
+[COT008](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT008%20Write%20first%20letter%20in%20lower%20case) Write first letter in lower case
 
-COT009 Make DOI wrappable
+[COT009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT009%20Make%20DOI%20wrappable) Make DOI wrappable
 
-COT010 Format letter for resolving ambiguity
+[COT010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT010%20Format%20letter%20for%20resolving%20ambiguity) Format letter for resolving ambiguity
 
-COT011 o. O. if the place of publication is unknown
+[COT011](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT011%20o.%20O.%20if%20the%20place%20of%20publication%20is%20unknown) o. O. if the place of publication is unknown
 
-COT012 Shorten the page number range, which comprises 3 pages
+[COT012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT012%20Shorten%20the%20page%20number%20range%2C%20which%20comprises%203%20pages) Shorten the page number range, which comprises 3 pages
 
-COT013 Correct font style for et al abbreviation
+[COT013](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT013%20Correct%20font%20style%20for%20et%20al%20abbreviation) Correct font style for et al abbreviation
 
-COT014 Custom Field1 contains Kindle iPad Nook ... (for MLA)
+[COT014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT014%20Custom%20Field1%20contains%20Kindle%20iPad%20Nook%20...%20(for%20MLA)) Custom Field1 contains Kindle iPad Nook ... (for MLA)
 
-COT015 Output citation pages depending on citation page type
+[COT015](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT015%20Output%20citation%20pages%20depending%20on%20citation%20page%20type) Output citation pages depending on citation page type
 
-COT016 Do not repeat the reporter when enumerating court decisions
+[COT016](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT016%20Do%20not%20repeat%20the%20reporter%20when%20enumerating%20court%20decisions) Do not repeat the reporter when enumerating court decisions
 
-COT017 Do not repeat the court when enumerating court decisions
+[COT017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT017%20Do%20not%20repeat%20the%20court%20when%20enumerating%20court%20decisions) Do not repeat the court when enumerating court decisions
 
-COT018 Use prefixes + suffixes with numeral system = 'None (as entered)'
+[COT018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT018%20Use%20prefixes%20%2B%20suffixes%20with%20numeral%20system%20%3D%20'None%20(as%20entered)') Use prefixes + suffixes with numeral system = 'None (as entered)'
 
-COT019 Double format applications eliminate each other
+[COT019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT019%20Double%20format%20applications%20eliminate%20each%20other) Double format applications eliminate each other
 
-COT020 Switch between PMID and DOI
+[COT020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT020%20Switch%20between%20PMID%20and%20DOI) Switch between PMID and DOI
 
-COT022 Citation Key Manually Set
+[COT022](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT022%20Citation%20Key%20Manually%20Set) Citation Key Manually Set
 
-COT023 Output citation key for resolving ambiguity
+[COT023](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT023%20Output%20citation%20key%20for%20resolving%20ambiguity) Output citation key for resolving ambiguity
 
-COT024 Prefix + suffix for Online Address depending on the content of the Language field
+[COT024](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT024%20Prefix%20%2B%20suffix%20for%20Online%20Address%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Online Address depending on the content of the Language field
 
-COT025 Output translated title language specific
+[COT025](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT025%20Output%20translated%20title%20language%20specific) Output translated title language specific
 
-COT026 Replace Parentheses by Brackets
+[COT026](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT026%20Replace%20Parentheses%20by%20Brackets) Replace Parentheses by Brackets
 
-COT027 Replace Divis By Dash in Page Range
+[COT027](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT027%20Replace%20Divis%20By%20Dash%20in%20Page%20Range) Replace Divis By Dash in Page Range
 
-COT028 Output citation pages depending on citation page numbering type
+[COT028](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT028%20Output%20citation%20pages%20depending%20on%20citation%20page%20numbering%20type) Output citation pages depending on citation page numbering type
 
-COT029 Output page range of reference depending on page range numbering type
-
-
+[COT029](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT029%20Output%20page%20range%20of%20reference%20depending%20on%20page%20range%20numbering%20type) Output page range of reference depending on page range numbering type
 
 ## CPE Zeitschrift (Periodical)
 
-CPE002 Add the content of the Note field to the journal name
+[CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the Note field to the journal name
 
-CPE004 Add ISSN to the journal name
+[CPE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE004%20Add%20ISSN%20to%20the%20journal%20name) Add ISSN to the journal name
 
-CPE005 Replace Space by Non-breaking Space in the Journal Name
-
-
+[CPE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE005%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Journal%20Name) Replace Space by Non-breaking Space in the Journal Name
 
 ## CPS Person
 
-CPS001 The author of a contribution is also the editor of the compilation; German - ders., dies
+[CPS001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS001%20The%20author%20of%20a%20contribution%20is%20also%20the%20editor%20of%20the%20compilation%3B%20German%20-%20ders.%2C%20dies) The author of a contribution is also the editor of the compilation; German - ders., dies
 
-CPS002 The author of a contribution is also the editor of the compilation; English - id., eid
+[CPS002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS002%20The%20author%20of%20a%20contribution%20is%20also%20the%20editor%20of%20the%20compilation%3B%20English%20-%20id.%2C%20eid) The author of a contribution is also the editor of the compilation; English - id., eid
 
-CPS003 In the bibliography - Replace names after first mention; German - ders, dies
+[CPS003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS003%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%3B%20German%20-%20ders%2C%20dies) In the bibliography - Replace names after first mention; German - ders, dies
 
-CPS004 In the bibliography - Replace names after first mention; English - id., eid
+[CPS004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS004%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%3B%20English%20-%20id.%2C%20eid) In the bibliography - Replace names after first mention; English - id., eid
 
-CPS005 Show number of unnamed co-authors
+[CPS005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS005%20Show%20number%20of%20unnamed%20co-authors) Show number of unnamed co-authors
 
-CPS006 Non breaking space between last and first name
+[CPS006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS006%20Non%20breaking%20space%20between%20last%20and%20first%20name) Non breaking space between last and first name
 
-CPS007 Different author names depending on the number of authors
+[CPS007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS007%20Different%20author%20names%20depending%20on%20the%20number%20of%20authors) Different author names depending on the number of authors
 
-CPS008 Abbreviate the name of the author or institution if they have already been mentioned
+[CPS008](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS008%20Abbreviate%20the%20name%20of%20the%20author%20or%20institution%20if%20they%20have%20already%20been%20mentioned) Abbreviate the name of the author or institution if they have already been mentioned
 
-CPS009 Replace text element with ed. or eds
+[CPS009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS009%20Replace%20text%20element%20with%20ed.%20or%20eds) Replace text element with ed. or eds
 
-CPS011 Suppress court name if two or more decisions are mentioned in footnote
+[CPS011](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS011%20Suppress%20court%20name%20if%20two%20or%20more%20decisions%20are%20mentioned%20in%20footnote) Suppress court name if two or more decisions are mentioned in footnote
 
-CPS012 Add first names if several authors are named by last names for 6.0 or 6.1
+[CPS012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS012%20Add%20first%20names%20if%20several%20authors%20are%20named%20by%20last%20names%20for%206.0%20or%206.1) Add first names if several authors are named by last names for 6.0 or 6.1
 
-CPS012 Add first names if several authors are named by last names for 6.2 or higher
+[CPS012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS012%20Add%20first%20names%20if%20several%20authors%20are%20named%20by%20last%20names%20for%206.2%20or%20higher) Add first names if several authors are named by last names for 6.2 or higher
 
-CPS013 Add group suffix to Authors or Editors or organizations
+[CPS013](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS013%20Add%20group%20suffix%20to%20Authors%20or%20Editors%20or%20organizations) Add group suffix to Authors or Editors or organizations
 
-CPS014 Use NN for missing name
+[CPS014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS014%20Use%20NN%20for%20missing%20name) Use NN for missing name
 
-CPS015 Output name prefixes differently in the footnotes and in the bibliography
+[CPS015](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS015%20Output%20name%20prefixes%20differently%20in%20the%20footnotes%20and%20in%20the%20bibliography) Output name prefixes differently in the footnotes and in the bibliography
 
-CPS018 Include the first author's initials
+[CPS018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS018%20Include%20the%20first%20author's%20initials) Include the first author's initials
 
-CPS019 Different prefix or suffix depending on language of reference
+[CPS019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS019%20Different%20prefix%20or%20suffix%20depending%20on%20language%20of%20reference) Different prefix or suffix depending on language of reference
 
-CPS020 Abbreviate name prefixes in the footnotes and ignore for sorting in the bibliography
+[CPS020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS020%20Abbreviate%20name%20prefixes%20in%20the%20footnotes%20and%20ignore%20for%20sorting%20in%20the%20bibliography) Abbreviate name prefixes in the footnotes and ignore for sorting in the bibliography
 
-CPS021 In the bibliography - Replace names after first mention by dashes
-
-
-
-
+[CPS021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS021%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20dashes) In the bibliography - Replace names after first mention by dashes
 
 # Vorlagenbedingungen (Templates)
 
-TNE002 Field Edition is not empty
+[TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field Edition is not empty
 
-TNE003 Field Usual abbreviation (legal comment) is empty
+[TNE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE003%20Field%20Usual%20abbreviation%20(legal%20comment)%20is%20empty) Field Usual abbreviation (legal comment) is empty
 
-TNE004 Field CustomField1 of the parent title is not empty
+[TNE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE004%20Field%20CustomField1%20of%20the%20parent%20title%20is%20not%20empty) Field CustomField1 of the parent title is not empty
 
-TNE005 Field Quoted Pages is empty
+[TNE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE005%20Field%20Quoted%20Pages%20is%20empty) Field Quoted Pages is empty
 
-TRE001 Another contribution from parent reference in preceding footnote is cited
+[TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20preceding%20footnote%20is%20cited) Another contribution from parent reference in preceding footnote is cited
 
-TRE003 Other contribution by same author from same parent reference also cited
+[TRE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE003%20Other%20contribution%20by%20same%20author%20from%20same%20parent%20reference%20also%20cited) Other contribution by same author from same parent reference also cited
 
-TRE004 In multiple references author(s) and year identical to previous entry
+[TRE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE004%20In%20multiple%20references%20author(s)%20and%20year%20identical%20to%20previous%20entry) In multiple references author(s) and year identical to previous entry
 
-TRE005 Collective volume has been cited before
+[TRE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE005%20Collective%20volume%20has%20been%20cited%20before) Collective volume has been cited before
 
-TRE006 Reference has been cited only once
+[TRE006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE006%20Reference%20has%20been%20cited%20only%20once) Reference has been cited only once
 
-TRE007 Another Article from same journal
+[TRE007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE007%20Another%20Article%20from%20same%20journal) Another Article from same journal
 
-TXY001 Field Specific Field 3 contains Schreiben, Erlass oder Verfügung
+[TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20oder%20Verf%C3%BCgung) Field Specific Field 3 contains Schreiben, Erlass oder Verfügung
 
-TXY002 Field Author contains exactly 4 authors
+[TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field Author contains exactly 4 authors
 
-TXY003 Field Author contains more than 4 authors
+[TXY003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE003%20Other%20contribution%20by%20same%20author%20from%20same%20parent%20reference%20also%20cited) Field Author contains more than 4 authors
 
-TXY004 Field Author contains specific name
+[TXY004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE004%20In%20multiple%20references%20author(s)%20and%20year%20identical%20to%20previous%20entry) Field Author contains specific name
 
-TXY005 Field Custom Field 1 contains the word Lexikon
+[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE005%20Collective%20volume%20has%20been%20cited%20before) Field Custom Field 1 contains the word Lexikon
 
-TXY007 Field Court contains BVerfG
+[TXY007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE006%20Reference%20has%20been%20cited%20only%20once) Field Court contains BVerfG
 
-TXY009 Field Online Address contains wikipedia.org
+[TXY009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY009%20Field%20Online%20Address%20contains%20wikipedia.org) Field Online Address contains wikipedia.org
 
-TXY010 Field Year contains number less than or equal to 1800
+[TXY010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY010%20Field%20Year%20contains%20number%20less%20than%20or%20equal%20to%201800) Field Year contains number less than or equal to 1800
 
-TXY011 Citation Key was manually set
+[TXY011](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY011%20Citation%20Key%20was%20manually%20set) Citation Key was manually set
 
-TXY012 Field Series Title contains specific name
+[TXY012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY012%20Field%20Series%20Title%20contains%20specific%20name) Field Series Title contains specific name
 
-TXY015 Field Journal contains specific name
+[TXY015](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY015%20Field%20Journal%20contains%20specific%20name) Field Journal contains specific name
 
-TXY016 References are indirect quotations
+[TXY016](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY016%20References%20are%20indirect%20quotations) References are indirect quotations
 
-TXY017 References are direct quotations
-
-
+[TXY017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY017%20References%20are%20direct%20quotations) References are direct quotations
 
 # Literaturverzeichnis sortieren
 
-BSO001 By Custom Field 1 or author or title (skip stop words), year, sort title
+[BSO001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO001%20By%20Custom%20Field%201%20or%20author%20or%20title%20(skip%20stop%20words)%2C%20year%2C%20sort%20title) By Custom Field 1 or author or title (skip stop words), year, sort title
 
-BSO002 Sort by author or title, year descending, title, volume, issue number
+[BSO002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO002%20Sort%20by%20author%20or%20title%2C%20year%20descending%2C%20title%2C%20volume%2C%20issue%20number) Sort by author or title, year descending, title, volume, issue number
 
-BSO003 Strict alphanumeric sorting
+[BSO003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO003%20Strict%20alphanumeric%20sorting) Strict alphanumeric sorting
 
-BSO004 Strict alphanumeric, sort by year in descending order
+[BSO004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO004%20Strict%20alphanumeric%2C%20sort%20by%20year%20in%20descending%20order) Strict alphanumeric, sort by year in descending order
 
-BSO005 Sort court decisions by instance
-
-
-
-
-
-
+[BSO005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO005%20Sort%20court%20decisions%20by%20instance) Sort court decisions by instance
