@@ -1,6 +1,6 @@
 # Programmierte Komponenten
 
-## CDA Datum (Date)
+## CDA Datum
 
 [CDA001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA001%20Display%20date%20range%20-%20German) Display date range - German
 
@@ -21,8 +21,7 @@
 [CDA009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA009%20Prefix%20%2B%20suffix%20for%20Access%20Date%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Access Date depending on the content of the Language field
 
 
-
-## CED Auflage (Edition)
+## CED Auflagen
 
 [CED001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CED%20Edition/CED001%20Only%20output%20edition%20if%20it%20is%20not%201) Only output edition if it is not 1
 
@@ -30,7 +29,7 @@
 
 
 
-## COT Andere (Other)
+## COT Andere
 
 [COT001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT001%20Prefix%20%2B%20suffix%20for%20Volume%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for Volume depending on the content of the Language field
 
@@ -88,7 +87,7 @@
 
 [COT029](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT029%20Output%20page%20range%20of%20reference%20depending%20on%20page%20range%20numbering%20type) Output page range of reference depending on page range numbering type
 
-## CPE Zeitschrift (Periodical)
+## CPE Zeitschrift
 
 [CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the Note field to the journal name
 
@@ -136,7 +135,7 @@
 
 [CPS021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS021%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20dashes) In the bibliography - Replace names after first mention by dashes
 
-# Vorlagenbedingungen (Templates)
+# Vorlagenbedingungen
 
 [TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field Edition is not empty
 
