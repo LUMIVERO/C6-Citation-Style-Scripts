@@ -136,7 +136,6 @@ namespace SwissAcademic.Citavi.Citations
 			thisPersonFieldElement.SecondGroupLastPersonSeparator.Text = "";
 			
 			
-			
 			AfterFormatPersonEventArgs afp;
             thisPersonFieldElement.PersonFormatter.AfterFormatPerson +=
             (sender, e) =>
