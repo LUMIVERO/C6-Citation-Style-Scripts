@@ -1,16 +1,25 @@
 # Der Autor eines Beitrags ist auch der Herausgeber des Sammelwerks (dt.: ders., dies.)
 
-Der Autor eines Beitrags aus einem Sammelwerk ist auch der Herausgeber des Sammelwerks.
+Der Autor eines Beitrags aus einem Sammelwerk bzw. in Schriften eines Autors ist auch der Herausgeber/Autor des übergeordneten Werks.
+
+Die für Citavi 6 grundlegend überarbeitete Version des Skripts vermag bei dem übergeordneten Werk die Ersetzung mit ders./dies. auch dann vorzunehmen, wenn es sich um den oder die ersten Autoren/Herausgeber aus einer Kohorte handelt (s. 2. Beispiel unten).
 
 ## Voraussetzungen
-Citavi 6 (oder höher)
+Citavi 5 bzw. 6 (oder höher)
 
 ## Beispiele
 
-- Müller, Karin: Stammzellenforschung. In: dies. (Hg.): Biologie heute. Köln 2014.
+- Müller, Karin: Stammzellenforschung. In: Dies. (Hrsg.): Biologie heute. Köln 2014.
+- Meyer, Peter: Grundlagen des wissenschaftlichen Arbeitens. In: Ders./Schmidt, Renate (Hrsg.): Zitieren aber richtig. München 2014.
+
+## Download
+
+[für Citavi 6](CPS001_C6%20Author%20of%20contribution%20is%20also%20editor%20of%20compilation%20-%20ders%2C%20dies.cs)
+
+[für Citavi 5](CPS001_C5%20Author%20of%20contribution%20is%20also%20editor%20of%20compilation%20-%20ders%2C%20dies.cs)
 
 ## Customizing
-Im Programmcode kann festgelegt werden, ob die Ausgabe kursiv (= italic), fett (= bold), in Kapitälchen (= SmallCaps) oder unterstrichen (= underlined) erfolgen soll. Die entsprechenden Formatierungen werden durch "true" eingeschaltet.
+Im Programmcode kann festgelegt werden, ob die Ausgabe kursiv (= Italic), fett (= Bold), in Kapitälchen (= SmallCaps) oder unterstrichen (= Underline) erfolgen soll.
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
