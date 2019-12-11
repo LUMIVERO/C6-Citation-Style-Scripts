@@ -21,7 +21,7 @@
 [CDA009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA009%20Prefix%20%2B%20suffix%20for%20Access%20Date%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for "Access Date" depending on the content of the "Language" field
 
 
-## CED Auflagen
+## CED Auflage
 
 [CED001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CED%20Edition/CED001%20Only%20output%20edition%20if%20it%20is%20not%201) Only output edition if it is not 1
 
