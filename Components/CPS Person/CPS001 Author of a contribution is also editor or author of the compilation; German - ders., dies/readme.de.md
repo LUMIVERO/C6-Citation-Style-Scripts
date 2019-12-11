@@ -9,8 +9,8 @@ Citavi 5 bzw. 6 (oder höher)
 
 ## Beispiele
 
-- Müller, Karin: Stammzellenforschung. In: Dies. (Hrsg.): Biologie heute. Köln 2014.
-- Meyer, Peter: Grundlagen des wissenschaftlichen Arbeitens. In: Ders./Schmidt, Renate (Hrsg.): Zitieren aber richtig. München 2014.
+- Müller, Karin: Stammzellenforschung. In: Dies. (Hrsg.): Biologie heute. Köln 2014, S. 11-17.
+- Meyer, Peter: Einführung. In: Ders./Schmidt, Renate (Hrsg.): Zitieren aber richtig. München 2014, S. 5-7.
 
 ## Download
 
