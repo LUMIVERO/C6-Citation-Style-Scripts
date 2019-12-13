@@ -161,13 +161,13 @@
 
 [TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field "Author" contains exactly 4 authors
 
-[TXY003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE003%20Other%20contribution%20by%20same%20author%20from%20same%20parent%20reference%20also%20cited) Field "Author" contains more than 4 authors
+[TXY003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY003%20Field%20Author%20contains%20more%20than%204%20authors) Field "Author" contains more than 4 authors
 
-[TXY004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE004%20In%20multiple%20references%20author(s)%20and%20year%20identical%20to%20previous%20entry) Field "Author" contains specific name
+[TXY004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY004%20Field%20Author%20contains%20specific%20name) Field "Author" contains specific name
 
-[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE005%20Collective%20volume%20has%20been%20cited%20before) Field "Custom Field 1" contains the word Lexikon
+[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY005%20Field%20Custom%20Field%201%20contains%20the%20word%20Lexikone) Field "Custom Field 1" contains the word Lexikon
 
-[TXY007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE006%20Reference%20has%20been%20cited%20only%20once) Field "Court" contains BVerfG
+[TXY007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY007%20Field%20Court%20contains%20BVerfG) Field "Court" contains BVerfG
 
 [TXY009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY009%20Field%20Online%20Address%20contains%20wikipedia.org) Field "Online Address" contains wikipedia.org
 
