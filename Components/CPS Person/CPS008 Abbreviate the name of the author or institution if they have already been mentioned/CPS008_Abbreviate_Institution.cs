@@ -1,4 +1,4 @@
-// CPS 008
+//CPS008
 //Version: 2.6
 //Abbreviate organization that has been mentioned before
 
