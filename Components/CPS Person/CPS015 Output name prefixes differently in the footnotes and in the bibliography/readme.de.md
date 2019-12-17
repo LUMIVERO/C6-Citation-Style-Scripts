@@ -18,9 +18,10 @@ Im Literaturverzeichnis:
 ## Anpassung
 Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Literaturverzeichnis**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS020 "_Namenspräfix in Fußnoten auch bei 'non-dropping particle' abkürzen, hinsichtlich der Sortierung im Literaturverzeichnis aber ignorieren_" besteht, das bei den Personen-Komponenten im **Fußnoten**-Regelset einzufügen ist.)
 
-In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z. B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z. B. `Münch, Ingo von`)
+In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z. B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z. B. `Münch, Ingo von`).
 
-<img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Components/CPS%20Person/CPS015%20Output%20name%20prefixes%20differently%20in%20the%20footnotes%20and%20in%20the%20bibliography/Namenspr%C3%A4fix%20%2B%20Sortieren%20nach%20-%20von%20M%C3%BCnch.png" width="600">
+<img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Components/CPS%20Person/CPS015%20Output%20name%20prefixes%20differently%20in%20the%20footnotes%20and%20in%20the%20bibliography/
+Namenspr%C3%A4fix%20%2B%20Sortieren%20nach%20-%20v.%20M%C3%BCnch.png" width="600">
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
