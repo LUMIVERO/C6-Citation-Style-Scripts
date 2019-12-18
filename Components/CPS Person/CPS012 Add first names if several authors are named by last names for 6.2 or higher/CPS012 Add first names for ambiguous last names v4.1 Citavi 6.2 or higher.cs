@@ -13,7 +13,8 @@ namespace SwissAcademic.Citavi.Citations
         :
         IComponentPartFilter
     {
-        //CPS012 Add first or middle names for ambiguous last names v4.1
+        //CPS012 Add first or middle names for ambiguous last names v4.2
+		//Version 4.2   Added first name font style parameter
 		//Version 4.1   Built-in option to insert non-breaking spaces and hyphens
 		//Version 4.0   Completely re-written for Citavi 6 (6.2 or higher)
 		//Disambiguation of identical person names by successively adding first name initials, full first names, middle name initals and full middle names (if available)
@@ -23,7 +24,11 @@ namespace SwissAcademic.Citavi.Citations
             bool checkAmbiguityForPrimaryAuthorsOnly = false;
 			
 			//When a first and/or middle name is added for disambiguation, should that be before or after the last name?
-            PersonNameOrder nameOrderForAmbiguityResolution = PersonNameOrder.LastNameFirstName;
+            PersonNameOrder nameOrderForAmbiguityResolution = PersonNameOrder.FirstNameLastName;
+			
+			//Formatting of the first name; combine several styles with a pipe character
+			//FontStyle firstNameFontStyle = FontStyle.Bold | FontStyle.Italic;
+			FontStyle firstNameFontStyle = FontStyle.Italic;
 			
 			//In case of ambiguous last names, should the first attempt to disambigutate be the addition of full first names or just the initials?
             NameFormat firstNameFormatForAmbiguityResolution = NameFormat.Abbreviated; 
@@ -98,7 +103,7 @@ namespace SwissAcademic.Citavi.Citations
             {
                 bfp = (BeforeFormatPersonEventArgs)e;
                 if (bfp.Person == null) return;
-                if (checkAmbiguityForPrimaryAuthorsOnly && bfp.Index > 0) return;
+                if (checkAmbiguityForPrimaryAuthorsOnly && bfp.Index > 1) return;
 
                 bool isLastNameAmbiguous = checkAmbiguityForPrimaryAuthorsOnly ? 
 					citationManager.IsFirstCitedPersonLastnameAmbiguous(bfp.Person.LastName) :
@@ -129,18 +134,21 @@ namespace SwissAcademic.Citavi.Citations
 					{
 						bfp.FirstNameFormat = firstNameFormatForAmbiguityResolution;
 						bfp.MiddleNameUsage = MiddleNameUsage.None;
+						bfp.FirstAndMiddleNameFontStyle = firstNameFontStyle;
 						break;
 					}
 					case NameIdentity.LastNameFirstNameInitial:
 					{
 						bfp.FirstNameFormat = NameFormat.Full;
 						bfp.MiddleNameUsage = MiddleNameUsage.None;
+						bfp.FirstAndMiddleNameFontStyle = firstNameFontStyle;
 						break;
 					}
 					case NameIdentity.LastNameFirstNameFull:
 					{
 						bfp.FirstNameFormat = NameFormat.Full;
 						bfp.MiddleNameFormat = firstNameFormatForAmbiguityResolution;
+						bfp.FirstAndMiddleNameFontStyle = firstNameFontStyle;
 						bfp.MiddleNameUsage = MiddleNameUsage.All;
 						break;
 					}
@@ -149,6 +157,7 @@ namespace SwissAcademic.Citavi.Citations
 					{
 						bfp.FirstNameFormat = NameFormat.Full;
 						bfp.MiddleNameFormat = NameFormat.Full;
+						bfp.FirstAndMiddleNameFontStyle = firstNameFontStyle;
 						bfp.MiddleNameUsage = MiddleNameUsage.All;
 						break;
 					}
