@@ -1,4 +1,4 @@
-# Write first letter in lower case
+# Write first letter in lower case ("Sentence case")
 Alle Wörter im Titelfeld sollen mit einem kleinen Buchstaben beginnen. Ausnahme: erstes Wort im Titel.
 
 ## Voraussetzungen
