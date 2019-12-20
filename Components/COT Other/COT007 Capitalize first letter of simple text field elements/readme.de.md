@@ -1,4 +1,4 @@
-# Capitalize first letter of simple text field elements
+# Capitalize first letter of simple text field elements ("Title Case")
 Alle Wörter im Titelfeld sollen mit einem Großbuchstaben beginnen.
 
 ## Voraussetzungen
