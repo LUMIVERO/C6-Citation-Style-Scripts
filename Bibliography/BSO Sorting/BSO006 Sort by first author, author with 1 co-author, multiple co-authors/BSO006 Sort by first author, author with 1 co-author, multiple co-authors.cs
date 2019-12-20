@@ -1,7 +1,14 @@
 //C6#BSO006
 //C5#43311
 //Description:  Sort by first author, author with 1 co-author and author with multiple co-authors
-//				Alleiniger Autor, zwei Autoren, mehrere Autoren; chronologisch vom ältesten zum neuesten Titel sortiert
+//				1. Papers by a single author are listed chronologically from oldest to most recent.
+//				2. Then papers by that author and a second, alphabetically according to the second author.
+//				3. Papers by three or more authors are listed chronologically.
+//				Alleiniger Autor, zwei Autoren, mehrere Autoren; chronologisch vom ältesten zum neuesten Titel sortiert - Springer-Sortierung
+//				1. Gruppe - 1 Autor:				Alleiniger Autor, Jahr (aufsteigend/ascending), Titel
+//				2. Gruppe - 2 Autoren:				Erst-Autor, Zweit-Autor, Jahr (aufsteigend/ascending), Titel
+//				3. Gruppe - 3 und mehr Autoren:		Erst-Autor, Jahr (aufsteigend/ascending), Titel - Die Ko-Autoren werden bei der Sortierung also ignoriert!
+//													Diese Sortierung für die 3. Gruppe korrespondiert anscheinend mit dem Kurznachweis im Text, wo ab 3 Autoren mit Erst-Autor et al. abgekürzt wird.
 //Version 1.2   Slight improvements regarding sorting
 //Version 1.1 	Position of first person fieldelement does not matter anymore
 
