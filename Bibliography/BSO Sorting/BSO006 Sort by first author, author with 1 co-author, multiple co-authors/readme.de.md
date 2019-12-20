@@ -11,14 +11,14 @@ Bei mehreren Titeln desselben Autors gilt folgende Reihenfolge: 
 Citavi 6 (oder höher)
 
 ## Beispiele
-Müller, Peter (2010): Schweizer Berge. Zürich.
-Müller, Peter (2014): Hüttentouren in Österreich. Wien.
-Müller, Peter/Bauer, Anton (2019): Bayerische Alpen. München.
-Müller, Peter/Meyer, Tanja (2007): Vogesen erkunden. Straßburg.
-Müller, Peter/Schmidt, Stefan (2011): Radfahren im Rheinland. Köln. 
-Müller, Peter/Schulz, Sandra/Bauer, Anton (2001): Kanufahren in Hessen. Limburg.
-Müller, Peter/Dengler, Miriam/Meyer, Tanja/Jansen, Eva (2003). Wandern in der Rhön. Fulda.
-Müller, Peter/Graf, Thomas/Meyer, Tanja (2005). Von der Seenplatte an die Ostsee mit dem Rad. Stralsund.
+- Müller, Peter (2010): Schweizer Berge. Zürich.
+- Müller, Peter (2014): Hüttentouren in Österreich. Wien.
+- Müller, Peter/Bauer, Anton (2019): Bayerische Alpen. München.
+- Müller, Peter/Meyer, Tanja (2007): Vogesen erkunden. Straßburg.
+- Müller, Peter/Schmidt, Stefan (2011): Radfahren im Rheinland. Köln. 
+- Müller, Peter/Schulz, Sandra/Bauer, Anton (2001): Kanufahren in Hessen. Limburg.
+- Müller, Peter/Dengler, Miriam/Meyer, Tanja/Jansen, Eva (2003). Wandern in der Rhön. Fulda.
+- Müller, Peter/Graf, Thomas/Meyer, Tanja (2005). Von der Seenplatte an die Ostsee mit dem Rad. Stralsund.
 
 ## Installation
 Siehe Citavi Handbuch: [Sortierreihenfolge festlegen](https://www1.citavi.com/sub/manual6/de/index.html?cse_sorting_the_bibliography.html)
