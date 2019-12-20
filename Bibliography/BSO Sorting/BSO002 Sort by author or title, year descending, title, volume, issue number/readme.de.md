@@ -1,6 +1,6 @@
 # Nach Autor oder Titel, dann nach Jahr absteigend, dann nach Titel sortieren
 
-Die Literaturliste soll nach Autoren sortiert sein. Bei Werken ohne Autor, soll der Titel als Sortierkriterium erscheinen.
+Die Literaturliste soll nach Autoren sortiert sein. Bei Werken ohne Autor soll der Titel als Sortierkriterium erscheinen.
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
