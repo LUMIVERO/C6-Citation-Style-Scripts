@@ -97,9 +97,9 @@
 
 ## CPS Person
 
-[CPS001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS001%20The%20author%20of%20a%20contribution%20is%20also%20the%20editor%20or%20author%20of%20the%20compilation%3B%20German%20-%20ders.%2C%20dies) The author of a contribution is also the editor or author of the compilation; German - ders., dies
+[CPS001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS001%20Author%20of%20a%20contribution%20is%20also%20editor%20or%20author%20of%20the%20compilation%3B%20German%20-%20ders.%2C%20dies) The author of a contribution is also the editor or author of the compilation; German - ders., dies
 
-[CPS002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS002%20The%20author%20of%20a%20contribution%20is%20also%20the%20editor%20of%20the%20compilation%3B%20English%20-%20id.%2C%20eid) The author of a contribution is also the editor of the compilation; English - id., eid
+[CPS002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS002%20Author%20of%20a%20contribution%20is%20also%20editor%20or%20author%20of%20the%20compilation%3B%20English%20-%20id.%2C%20eid) The author of a contribution is also the editor of the compilation; English - id., eid
 
 [CPS003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS003%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%3B%20German%20-%20ders%2C%20dies) In the bibliography - Replace names after first mention; German - ders, dies
 
