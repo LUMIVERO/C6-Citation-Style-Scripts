@@ -4,6 +4,7 @@ Auflagenzahl nur ausgeben, wenn diese nicht 1 ist
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
+
 Filter can handle both Edition and  EditionNumberResolved, can be part of a multi-element component part
 
 ## Beispiele
