@@ -12,7 +12,7 @@ namespace SwissAcademic.Citavi.Citations
    public class CustomTemplateCondition
       :
       ITemplateConditionMacro
-   {
+	{
       
 		public bool IsTemplateForReference(ConditionalTemplate template, Citation citation)
 		{
@@ -49,5 +49,5 @@ namespace SwissAcademic.Citavi.Citations
 			return false;
 
 		}
-   }
+	}
 }
