@@ -195,3 +195,11 @@
 [BSO004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO004%20Strict%20alphanumeric%2C%20sort%20by%20year%20in%20descending%20order) Strict alphanumeric, sort by year in descending order
 
 [BSO005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO005%20Sort%20court%20decisions%20by%20instance) Sort court decisions by instance
+
+## Support
+
+If you have any questions, comments or requests, please contact the [support](https://www.citavi.com/en/support/overview) directly
+
+## License
+
+This project is licensed under the [MIT](LICENSE) License
