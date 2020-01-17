@@ -1,6 +1,10 @@
-# Programmierte Komponenten
+# Zitationstil-Skripte für Citavi 6
 
-## CDA Datum
+[[> English version]](readme.md)
+
+## Programmierte Komponenten
+
+### CDA Datum
 
 [CDA001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA001%20Display%20date%20range%20-%20German) Display date range - German
 
@@ -20,16 +24,13 @@
 
 [CDA009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA009%20Prefix%20%2B%20suffix%20for%20Access%20Date%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for "Access Date" depending on the content of the "Language" field
 
-
-## CED Auflage
+### CED Auflage
 
 [CED001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CED%20Edition/CED001%20Only%20output%20edition%20if%20it%20is%20not%201) Only output edition if it is not 1
 
 [CED003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CED%20Edition/CED003%20Prefix%20%2B%20suffix%20for%20Edition%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for edition depending on the content of the "Language" field
 
-
-
-## COT Andere
+### COT Andere
 
 [COT001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT001%20Prefix%20%2B%20suffix%20for%20Volume%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for volume depending on the content of the "Language" field
 
@@ -87,7 +88,7 @@
 
 [COT029](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT029%20Output%20page%20range%20of%20reference%20depending%20on%20page%20range%20numbering%20type) Output page range of reference depending on page range numbering type
 
-## CPE Zeitschrift
+### CPE Zeitschrift
 
 [CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the "Note" field to the journal name
 
@@ -95,7 +96,7 @@
 
 [CPE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE005%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Journal%20Name) Replace space by non-breaking space in the journal name
 
-## CPS Person
+### CPS Person
 
 [CPS001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS001%20Author%20of%20a%20contribution%20is%20also%20editor%20or%20author%20of%20the%20compilation%3B%20German%20-%20ders.%2C%20dies) The author of a contribution is also the editor or author of the compilation; German - ders., dies
 
@@ -135,7 +136,7 @@
 
 [CPS021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS021%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20dashes) In the bibliography - Replace names after first mention by dashes
 
-# Vorlagenbedingungen
+## Vorlagenbedingungen
 
 [TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field "Edition" is not empty
 
@@ -183,7 +184,7 @@
 
 [TXY017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY017%20References%20are%20direct%20quotations) References are direct quotations
 
-# Literaturverzeichnis sortieren
+## Literaturverzeichnis sortieren
 
 [BSO001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO001%20By%20Custom%20Field%201%20or%20author%20or%20title%20(skip%20stop%20words)%2C%20year%2C%20sort%20title) By "Custom Field 1 "or author or title (skip stop words), year, sort title
 
