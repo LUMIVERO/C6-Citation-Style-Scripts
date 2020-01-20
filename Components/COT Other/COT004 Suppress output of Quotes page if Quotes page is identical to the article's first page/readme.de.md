@@ -14,7 +14,7 @@ Erstellen Sie eine neue [kombinierte Komponente](https://www.citavi.com/combinin
 - "Seiten von-bis" (Page range; Start- und Endseite des Beitrags)
 - "Zitat-Seiten" (Quotation page range; Start- und Endseite des Zitats)
 
-Fügen Sie Klammern hinzu, und zwar entweder [Textelemente](https://www.citavi.com/text_elements) oder als [Prä- und Suffix der Komponente "Zitat-Seite"](https://www.screencast.com/t/tbMberBp8i)
+Fügen Sie Klammern hinzu, und zwar entweder [Textelemente](https://www.citavi.com/text_elements) oder als [Prä- und Suffix der Komponente "Zitat-Seite"](https://www.screencast.com/t/tbMberBp8i).
 Der neuen kombinierten Komponente fügen Sie das hier bereitgestellte Skript bei.
 
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
