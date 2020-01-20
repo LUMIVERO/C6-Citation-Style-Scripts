@@ -138,6 +138,8 @@
 
 [CPS021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS021%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20dashes) In the bibliography - Replace names after first mention by dashes
 
+[CPS022](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS022%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20Ders.%2C%20Dies) In the bibliography - Replace names after first mention by Ders., Dies
+
 ## Vorlagenbedingungen
 
 [TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field "Edition" is not empty
