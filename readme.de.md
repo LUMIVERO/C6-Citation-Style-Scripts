@@ -188,6 +188,8 @@
 
 [TXY017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY017%20References%20are%20direct%20quotations) References are direct quotations
 
+[TXY018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY018%20Field%20Edition%20or%20EditionNumberResolved%20is%20exactly%201) Field Edition or EditionNumberResolved is exactly 1
+
 ## Literaturverzeichnis sortieren
 
 [BSO001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO001%20By%20Custom%20Field%201%20or%20author%20or%20title%20(skip%20stop%20words)%2C%20year%2C%20sort%20title) By "Custom Field 1 "or author or title (skip stop words), year, sort title
