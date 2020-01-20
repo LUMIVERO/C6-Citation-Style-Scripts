@@ -24,7 +24,7 @@
 
 [CDA009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA009%20Prefix%20%2B%20suffix%20for%20Access%20Date%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for "Access Date" depending on the content of the "Language" field
 
-[CDA010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA010%20Display%20%22Original%20Publication%22%20without%20brackets%20if%20%22Year%20Resolved%22%20is%20empty) Display "Original Publication" without brackets if "Year Resolved" is empty
+[CDA010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CDA%20Date/CDA010%20Display%20Original%20Publication%20without%20brackets%20if%20Year%20Resolved%20is%20empty) Display "Original Publication" without brackets if "Year Resolved" is empty
 
 ### CED Auflage
 
@@ -201,6 +201,18 @@
 [BSO004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO004%20Strict%20alphanumeric%2C%20sort%20by%20year%20in%20descending%20order) Strict alphanumeric, sort by year in descending order
 
 [BSO005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO005%20Sort%20court%20decisions%20by%20instance) Sort court decisions by instance
+
+[BSO006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO006%20Sort%20by%20first%20author%2C%20author%20with%201%20co-author%2C%20multiple%20co-authors) Sort by first author, author with 1 co-author, multiple co-authors
+
+[BSO007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO007%20Sort%20by%20first%20author%20and%20number%20of%20co-authors) Sort by first author and number of co-authors
+
+## Bibliography Filtering
+
+[BFI001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/BFI001%20Suppress%20only%20once%20cited%20titles) Suppress only once cited titles
+
+## Bibliography Grouping
+
+[BGR01](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BGR%20Grouping/BGR01%20Sort%20first%20by%20titles%20in%20Cyrillic%2C%20then%20in%20Latin%20font) Sort first by titles in Cyrillic, then in Latin font
 
 ## Support
 
