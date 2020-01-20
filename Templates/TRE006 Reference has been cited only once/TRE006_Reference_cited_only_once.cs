@@ -1,5 +1,6 @@
 //TRE006
 //Reference has been cited only once
+
 using System;
 using System.Linq;
 using System.Collections.Generic;
