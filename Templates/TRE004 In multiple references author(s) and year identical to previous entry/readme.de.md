@@ -1,4 +1,4 @@
-# Übergeordnetes Werk oder Beitrag daraus wurde vorher einmal zitiert
+# Innerhalb eines Mehrfachnachweises stimmen Autor/Herausgeber/Institution mit denjenigen des vorherigens Titeleintrags überein
 
 
 ## Voraussetzungen
