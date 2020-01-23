@@ -1,5 +1,6 @@
-//#43143
-//Version 2.3
+//C6#CDA004
+//C5#43143
+//Version 2.4
 //US date with short month name, e.g. 15 May 2015 or 7 Jan. 2011
 
 using System;
@@ -17,6 +18,7 @@ namespace SwissAcademic.Citavi.Citations
 		:
 		IComponentPartFilter
 	{
+		//Version 2.4 handle missing day or month correctly
 		//Version 2.3 introduction of debug mode
 		//Version 2.2 added parameter 'doNotAbbreviateIfLengthIsEqualToOrLess' to avoid abbreviation of June and July (=4) 
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
@@ -58,10 +60,17 @@ namespace SwissAcademic.Citavi.Citations
 			{
 				string dateString = referenceInScope.GetValue(dateFieldElement.PropertyId) as string;
 				if (string.IsNullOrEmpty(dateString)) continue;
-				
-				DateTime dateValue;
-				if (!DateTimeInformation.TryParse(dateString, out dateValue)) continue;
 
+				List<DateTimeMatch> dateTimeMatches = DateTimeInformation.Matches(dateString);
+				if (!dateTimeMatches.Any() || dateTimeMatches.Count > 1) continue;
+				DateTimeMatch dateTimeMatch = dateTimeMatches.ElementAt(0);
+				
+				bool containsDayInformation = !dateTimeMatch.MissingDayWasAutoCompleted;
+				bool containsMonthInformation = !dateTimeMatch.MissingMonthWasAutoCompleted;
+				
+				DateTime dateValue = dateTimeMatch.DateTime;
+				
+				
 				int day = dateValue.Day;
 				int month = dateValue.Month;
 				int year = dateValue.Year;
@@ -81,8 +90,22 @@ namespace SwissAcademic.Citavi.Citations
 				}
 				else
 				{
-					string newDatePattern = "{0} {1} {2}";
-					dateString = string.Format(newDatePattern, dayString, monthString, yearString);
+					if (dateTimeMatch.MissingMonthWasAutoCompleted && dateTimeMatch.MissingDayWasAutoCompleted)
+					{
+						string newDatePattern = "{0}";
+						dateString = string.Format(newDatePattern, yearString);
+					}
+					else if (dateTimeMatch.MissingDayWasAutoCompleted)
+					{
+						string newDatePattern = "{0} {1}";
+						dateString = string.Format(newDatePattern, monthString, yearString);
+					}
+
+					else
+					{
+						string newDatePattern = "{0} {1} {2}";
+						dateString = string.Format(newDatePattern, dayString, monthString, yearString);
+					}
 				}
 				
 				LiteralElement outputDateElement = new LiteralElement(componentPart, dateString);
