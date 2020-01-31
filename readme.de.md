@@ -220,4 +220,4 @@ Bei Fragen, Anmerkungen oder Wünschen kontaktieren Sie bitte den [Support](http
 
 ## Lizenz
 
-Das Projekt st lizensiert unter der [MIT](LICENSE) Lizenz
+Das Projekt ist lizensiert unter der [MIT](LICENSE) Lizenz
