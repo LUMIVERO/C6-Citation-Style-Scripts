@@ -90,7 +90,7 @@
 
 [COT029](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT029%20Output%20page%20range%20of%20reference%20depending%20on%20page%20range%20numbering%20type) Output page range of reference depending on page range numbering type
 
-[COT030](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT030%20Output%20LANGUAGE%20field%20language%20specific) COT030 Output "language" field language specific
+[COT030](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT030%20Output%20LANGUAGE%20field%20language%20specific) Output "language" field language specific
 
 ### CPE Periodical
 
