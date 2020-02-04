@@ -80,7 +80,7 @@
 
 [COT024](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT024%20Prefix%20%2B%20suffix%20for%20Online%20Address%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for "Online Address" depending on the content of the "Language" field
 
-[COT025](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT025%20Output%20translated%20title%20language%20specific) Output "translated title" language specific
+[COT025](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT025%20Output%20translated%20title%20language%20specific) Output "Translated Title" language specific
 
 [COT026](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT026%20Replace%20Parentheses%20by%20Brackets) Replace parentheses by brackets
 
@@ -90,7 +90,7 @@
 
 [COT029](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT029%20Output%20page%20range%20of%20reference%20depending%20on%20page%20range%20numbering%20type) Output page range of reference depending on page range numbering type
 
-[COT030](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT030%20Output%20LANGUAGE%20field%20language%20specific) Output "language" field language specific
+[COT030](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT030%20Output%20LANGUAGE%20field%20language%20specific) Output "Language" field language specific
 
 ### CPE Periodical
 
