@@ -92,6 +92,8 @@
 
 [COT030](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT030%20Output%20LANGUAGE%20field%20language%20specific) Output "Language" field language specific
 
+[COT031](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT031%20Replace%20Divis%20by%20Non-breaking%20Hyphen%20in%20Case%20Number) Replace Divis by Non-breaking Hyphen in Case Number
+
 ### CPE Periodical
 
 [CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the "Note" field to the journal name
