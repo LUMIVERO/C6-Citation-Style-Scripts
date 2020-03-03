@@ -192,7 +192,9 @@
 
 [TXY017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY017%20References%20are%20direct%20quotations) References are direct quotations
 
-[TXY018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY018%20Field%20Edition%20or%20EditionNumberResolved%20is%20exactly%201) Field Edition or EditionNumberResolved is exactly 1
+[TXY018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY018%20Field%20Edition%20or%20EditionNumberResolved%20is%20exactly%201) Field "Edition" or "EditionNumberResolved" is exactly 1
+
+[TXY019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY019%20Field%20Groups%20of%20Parent%20Reference%20contains%20specific%20name) Field "Groups" of Parent Reference contains specific name
 
 ## Bibliography Sorting
 
