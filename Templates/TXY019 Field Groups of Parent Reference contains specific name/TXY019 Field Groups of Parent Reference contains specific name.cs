@@ -20,6 +20,8 @@ namespace SwissAcademic.Citavi.Citations
 			if (citation.Reference == null) return false;
 			if (citation.Reference.ParentReference == null) return false;
 
+			if (citation.Reference.ParentReference.Groups == null || !citation.Reference.ParentReference.Groups.Any()) return false;
+
 			return (citation.Reference.ParentReference.Groups.Any(item => item.Name.Equals("Group Name")));
 
 		}
