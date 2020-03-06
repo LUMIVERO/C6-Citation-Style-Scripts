@@ -166,6 +166,12 @@
 
 [TRE007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE007%20Another%20Article%20from%20same%20journal) Another article from same journal
 
+[TRE008](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE008%20Consecutive%20citation%20-%20same%20series) Consecutive citation - same series
+
+[TRE009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE009%20Other%20work%20in%20the%20same%20series%20was%20cited%20before) Other work in the same series was cited before
+
+[TRE010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE010%20Other%20work%20in%20the%20same%20series%20was%20cited%20in%20a%20previous%20footnote) Other work in the same series was cited in a previous footnote
+
 [TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20oder%20Verf%C3%BCgung) Field "Specific Field 3" contains Schreiben, Erlass oder Verfügung
 
 [TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field "Author" contains exactly 4 authors
