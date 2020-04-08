@@ -15,13 +15,13 @@ namespace SwissAcademic.Citavi.Citations
 	{
 		public bool IsTemplateForReference(ConditionalTemplate template, Citation citation)
 		{
-			//The following information must be filled in exactly as in the "Edit person" dialog
-			string lastName = "Duck";
-			string firstName = "Dagobert";
+			//Just fill in those attribute that you would like to search for or leave empty
+			string lastName = "";
+			string firstName = "";
 			string middleName = "";
 			string prefix = "";
 			string suffix = "";
-			string abbreviation = "";
+			string abbreviation = "DLR";
 
 			//If you do not wish the above person to be checked as the publisher of the superordinate work,
 			//then enter"= false;" in the following line:
@@ -67,12 +67,12 @@ namespace SwissAcademic.Citavi.Citations
 			{
 				if
 				(
-					string.Compare(person.LastName, lastName, StringComparison.Ordinal) == 0 &&
-					string.Compare(person.FirstName, firstName, StringComparison.Ordinal) == 0 &&
-					string.Compare(person.MiddleName, middleName, StringComparison.Ordinal) == 0 &&
-					string.Compare(person.Prefix, prefix, StringComparison.Ordinal) == 0 &&
-					string.Compare(person.Suffix, suffix, StringComparison.Ordinal) == 0 &&
-					string.Compare(person.Abbreviation, abbreviation, StringComparison.Ordinal) == 0
+					(string.IsNullOrWhiteSpace(lastName) || string.Compare(person.LastName, lastName, StringComparison.Ordinal) == 0) &&
+					(string.IsNullOrWhiteSpace(firstName) || string.Compare(person.FirstName, firstName, StringComparison.Ordinal) == 0) &&
+					(string.IsNullOrWhiteSpace(middleName) || string.Compare(person.MiddleName, middleName, StringComparison.Ordinal) == 0) &&
+					(string.IsNullOrWhiteSpace(prefix) || string.Compare(person.Prefix, prefix, StringComparison.Ordinal) == 0) &&
+					(string.IsNullOrWhiteSpace(suffix) || string.Compare(person.Suffix, suffix, StringComparison.Ordinal) == 0) &&
+					(string.IsNullOrWhiteSpace(abbreviation) || string.Compare(person.Abbreviation, abbreviation, StringComparison.Ordinal) == 0)
 				)
 				{
 					return true;
