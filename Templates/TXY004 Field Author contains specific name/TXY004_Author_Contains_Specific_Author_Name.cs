@@ -16,12 +16,12 @@ namespace SwissAcademic.Citavi.Citations
 		public bool IsTemplateForReference(ConditionalTemplate template, Citation citation)
 		{
 			//Just fill in those attribute that you would like to search for or leave empty
-			string lastName = "";
+			string lastName = "Doe";
 			string firstName = "";
 			string middleName = "";
 			string prefix = "";
 			string suffix = "";
-			string abbreviation = "DLR";
+			string abbreviation = "";
 
 			//If you do not wish the above person to be checked as the publisher of the superordinate work,
 			//then enter"= false;" in the following line:
