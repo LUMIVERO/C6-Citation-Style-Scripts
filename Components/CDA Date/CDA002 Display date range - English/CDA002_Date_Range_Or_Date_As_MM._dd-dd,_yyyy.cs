@@ -65,7 +65,7 @@ namespace SwissAcademic.Citavi.Citations
 			DateTime dateB;
 
 			CultureInfo deDE = new CultureInfo("de-DE");
-			string[] formats = new string[] { "dd.MM.yyyy", "d.M.yyyy", "d.MM.yyyy", "dd.M.yyyy", "dd.MM.yy", "d.M.yy", "d.MM.yy", "dd.M.yy" };
+			string[] formats = new string[] { "yyyy-MM-dd", "dd.MM.yyyy", "d.M.yyyy", "d.MM.yyyy", "dd.M.yyyy", "dd.MM.yy", "d.M.yy", "d.MM.yy", "dd.M.yy" };
 
 
 			//try single date first
@@ -81,8 +81,8 @@ namespace SwissAcademic.Citavi.Citations
 
 				var dayString = dateSingle.Day.ToString("D2");
 
-				var outputFormatSingle = "{0} {1}, {2}";
-				var dateSingleText = string.Format(outputFormatSingle, monthString, dayString, yearString);
+				var outputFormatSingle = "{0} {1} {2}";
+				var dateSingleText = string.Format(outputFormatSingle, dayString, monthString, yearString);
 
 				var outputSingleDate = new TextUnitCollection();
 				var textSingleDate = new LiteralTextUnit(dateSingleText);
