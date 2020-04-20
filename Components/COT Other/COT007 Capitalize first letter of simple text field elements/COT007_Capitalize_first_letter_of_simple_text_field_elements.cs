@@ -283,7 +283,7 @@ namespace SwissAcademic.Citavi.Citations
 		{
 			Never,
 			Always,
-			Auto		//converts full uppercase words to lower case only if the conmplete text is written in uppercase
+			Auto		//converts full uppercase words to lower case only if the complete text is written in uppercase
 		};
 
 		public bool HasLowerCase(string input)
