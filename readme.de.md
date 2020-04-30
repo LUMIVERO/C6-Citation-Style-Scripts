@@ -128,6 +128,8 @@
 
 [CPS012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS012%20Add%20first%20names%20if%20several%20authors%20are%20named%20by%20last%20names%20for%206.2%20or%20higher) Add first names if several authors are named by last names for 6.2 or higher
 
+[CPS012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS012%20Add%20first%20names%20if%20several%20authors%20are%20named%20by%20last%20names%20for%206.4%20or%20higher) Add first names if several authors are named by last names for 6.4 or higher
+
 [CPS013](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS013%20Add%20group%20suffix%20to%20Authors%20or%20Editors%20or%20organizations) Add group suffix to authors or editors or organizations
 
 [CPS014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS014%20Use%20NN%20for%20missing%20name) Use "NN" (nomen nescio,  nomen nominandum) for missing name
