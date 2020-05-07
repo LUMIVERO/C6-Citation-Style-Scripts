@@ -148,7 +148,7 @@
 
 ## Templates
 
-[TNE001](hhttps://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE001%20Check%20various%20fields%20if%20EMPTY%20or%20NOT%20EMPTY Different reference of same author also citedCheck various fields if EMPTY or NOT EMPTY
+[TNE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE001%20Check%20various%20fields%20if%20EMPTY%20or%20NOT%20EMPTY Different reference of same author also citedCheck various fields if EMPTY or NOT EMPTY
 
 [TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field "Edition" is not empty
 
