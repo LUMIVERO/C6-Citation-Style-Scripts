@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc.)
+//Version 2.9: Corrected issues with full text being enclosed in quotes, parenthesis or spanish quotation marks (or a combination): “an english patient”, (an english patient) etc.
 //Version 2.8: Corrected issue with text appearing twice under certain circumstances
 //Version 2.7: Words of length 1 succeeded by a period "." are treated as initials and will be capitalized, see e.g. "The Complete Poems of A. R. Ammons"
 //Version 2.6: Introduced new parameter modeStrict
@@ -34,8 +35,8 @@ namespace SwissAcademic.Citavi.Citations
 	{
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
 		{
-			var ensureEnglishIsReferenceLanguage = true;	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
-			var modeStrict = false;				//only applicable if ensureEnglishIsReferenceLanguage = true: 
+			var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+			var modeStrict = false;             //only applicable if ensureEnglishIsReferenceLanguage = true: 
 												//if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in the language field
 												//if modeStrict = false, it will also capitalize references that have an empty language field
 
@@ -163,7 +164,7 @@ namespace SwissAcademic.Citavi.Citations
 			//hyphens, opening parens, and ASCII quotation marks
 			string splitPattern = @"(\s)|(-)|(\()|(\))|(\[)|(\])|(\"")|(\')|(\u2018)|(\u2019)|(\u201A)|(\u201C)|(\u201D)|(\u201E)|(\u201F)|(\u2039)|(\u203A)|(\u00AB)|(\u00BB)|(\.)|(:)|(\?)|(!)|(\u2014)";
 
-			string matchInterpunctuation = @"\.|:|\?|!|\u2014";
+			string matchInterpunctuation = @"\.|:|\?|!|\u00BF|\u2014|\(|\)|\[|\]";
 			string matchQuotationMarks = @"\""|\u2018|\u2019|\u201A|\u201C|\u201D|\u201E|\u201F|\u2039|\u203A|\u00AB|\u00BB";
 			string matchApostrophe = @"'|\u2019"; //further 'FALSE' apostrophe characters: \u02bc, \u02c8, \u00b4, \u0060, \u2018, \u2032, \u02bb
 
@@ -184,6 +185,7 @@ namespace SwissAcademic.Citavi.Citations
 			 * \u203A  Single Right-Pointing Angle Quotation Mark
 			 * \u00AB  Double Left-Pointing Angle Quotation Mark
 			 * \u00BB  Double Right-Pointing Angle Quotation Mark
+			 * \u00BF  Inverted Question Mark ¿
 			*/
 			#endregion
 
@@ -198,7 +200,7 @@ namespace SwissAcademic.Citavi.Citations
 				nextWords = !string.IsNullOrEmpty(nextText) ?
 					new List<string>(Regex.Split(nextText, splitPattern).Where(s => s != string.Empty)) :
 					new List<string>();
-					
+
 
 				var counter = 0;
 				text = string.Empty;
@@ -218,7 +220,14 @@ namespace SwissAcademic.Citavi.Citations
 					}
 					else if (counter == 1 && i == 0) // overall first word, i.e. first word in first textunit
 					{
-						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+						if (Regex.IsMatch(word, matchQuotationMarks)) //e.g. if complete field is in quotation marks
+						{
+							text = text + word;
+						}
+						else
+						{
+							text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+						}
 					}
 					else if (word.Length == 1 && !string.IsNullOrEmpty(nextWord) && nextWord == ".")
 					{
@@ -232,7 +241,7 @@ namespace SwissAcademic.Citavi.Citations
 					{
 						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture); //capitalize also stopwords directly after interpunctuation
 					}
-					else if (Regex.IsMatch(prevWord, matchApostrophe) && !string.IsNullOrWhiteSpace(secondPrevWord))
+					else if (Regex.IsMatch(prevWord, matchApostrophe) && !string.IsNullOrWhiteSpace(secondPrevWord) && !Regex.IsMatch(secondPrevWord, matchQuotationMarks) && !Regex.IsMatch(secondPrevWord, matchInterpunctuation))
 					{
 						text = text + word.ToLower(culture);
 					}
@@ -283,7 +292,7 @@ namespace SwissAcademic.Citavi.Citations
 		{
 			Never,
 			Always,
-			Auto		//converts full uppercase words to lower case only if the complete text is written in uppercase
+			Auto        //converts full uppercase words to lower case only if the complete text is written in uppercase
 		};
 
 		public bool HasLowerCase(string input)
