@@ -148,6 +148,8 @@
 
 ## Templates
 
+[TNE001](hhttps://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE001%20Check%20various%20fields%20if%20EMPTY%20or%20NOT%20EMPTY Different reference of same author also citedCheck various fields if EMPTY or NOT EMPTY
+
 [TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field "Edition" is not empty
 
 [TNE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE003%20Field%20Usual%20abbreviation%20(legal%20comment)%20is%20empty) Field "Usual abbreviation" (legal comment) is empty
@@ -157,6 +159,8 @@
 [TNE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE005%20Field%20Quoted%20Pages%20is%20empty) Field "Quoted Pages" is empty
 
 [TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20preceding%20footnote%20is%20cited) Another contribution from parent reference in preceding footnote is cited
+
+[TRE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE002%20Different%20reference%20of%20same%20author%20also%20cited) Different reference of same author also cited
 
 [TRE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE003%20Other%20contribution%20by%20same%20author%20from%20same%20parent%20reference%20also%20cited) Other contribution by same author from same parent reference also cited
 
@@ -173,6 +177,8 @@
 [TRE009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE009%20Other%20work%20in%20the%20same%20series%20was%20cited%20before) Other work in the same series was cited before
 
 [TRE010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE010%20Other%20work%20in%20the%20same%20series%20was%20cited%20in%20a%20previous%20footnote) Other work in the same series was cited in a previous footnote
+
+[TRE011](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE011%20The%20editor%20is%20also%20the%20translator%20of%20a%20reference) The editor is also the translator of a reference
 
 [TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20oder%20Verf%C3%BCgung) Field "Specific Field 3" contains Schreiben, Erlass oder Verfügung
 
