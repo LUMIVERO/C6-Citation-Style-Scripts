@@ -1,6 +1,5 @@
-//#C6_TRE002
-//#C5_43244
-//Version 2.1
+//TRE002
+//Version 1.0
 
 using System.Linq;
 using System.Collections.Generic;
@@ -14,14 +13,17 @@ namespace SwissAcademic.Citavi.Citations
 		:
 		ITemplateConditionMacro
 	{
-		//At least one other reference of same author(s)/editor(s)/organization(s) also cited
-		//Version 2.1 NoBib citation are ignored
+		//Other reference of same author(s)/editor(s)/organization(s) cited BEFORE
 		public bool IsTemplateForReference(ConditionalTemplate template, Citation citation)
 		{
 			var testEqualityBy = PersonIdentityTest.ByInternalID; //adjust here to your needs
 																//e.g. PersonIdentityTest.ByLastNameFirstName
                                                                 //e.g. PersonIdentityText.ByFullName
 																//e.g. PersonIdentityTest.ByInternalID <- recommended for most cases
+			
+			bool considerNoBibInBibliographyCitations = false;
+			bool considerNoBibInInTextCitations = false;
+			bool considerNoBibInFootnoteCitations = false;
 			
 			if (citation == null) return false;
 
@@ -34,29 +36,64 @@ namespace SwissAcademic.Citavi.Citations
 			IEnumerable<Person> currentPersons = currentReference.AuthorsOrEditorsOrOrganizations;
 			if (currentPersons == null || currentPersons.Count() == 0) return false;
 			
+			IEnumerable<PublicationCitation> allCitations = null;
 			
-			BibliographyCitation currentBibliographyCitation = citation as BibliographyCitation;
-			if (currentBibliographyCitation == null)
+			PublicationCitation currentPublicationCitation = citation as PublicationCitation;
+			if (currentPublicationCitation == null) return false;
+			
+			#region InTextCitations
+			
+			InTextCitation currentInTextCitation = citation as InTextCitation;
+			if (currentInTextCitation != null)
 			{
-				PlaceholderCitation  currentPlaceholderCitation = citation as PlaceholderCitation;
-				if (currentPlaceholderCitation == null) return false;
-				
-				currentBibliographyCitation = currentPlaceholderCitation.CorrespondingBibliographyCitation;
-			}
-			if (currentBibliographyCitation == null) return false;
-			if (currentBibliographyCitation.NoBib.GetValueOrDefault(false)) return false;
+				if (currentInTextCitation.BibOnly) return false;
+				allCitations = considerNoBibInInTextCitations ? 
+					citationManager.InTextCitations.Where(item => !item.BibOnly).Cast<PublicationCitation>() :
+					citationManager.InTextCitations.Where(item => !item.BibOnly && item.CorrespondingBibliographyCitation != null && !item.CorrespondingBibliographyCitation.NoBib.GetValueOrDefault(false));
+			} 
 			
+			#endregion 
+			
+			#region FootnoteCitations
+			
+			if (allCitations == null)
+			{
+				FootnoteCitation currentFootnoteCitation = citation as FootnoteCitation;
+				if (currentFootnoteCitation != null)
+				{
+					if (currentFootnoteCitation.BibOnly) return false;
+					allCitations = considerNoBibInFootnoteCitations ?
+						citationManager.FootnoteCitations.Where(item => !item.BibOnly).Cast<PublicationCitation>() :
+						citationManager.FootnoteCitations.Where(item => !item.BibOnly && item.CorrespondingBibliographyCitation != null && !item.CorrespondingBibliographyCitation.NoBib.GetValueOrDefault(false));
+				}
+			}
+			
+			#endregion
+			
+			#region BibliographyCitations
+
+			if (allCitations == null)
+			{
+				BibliographyCitation currentBibliographyCitation = citation as BibliographyCitation;
+				if (currentBibliographyCitation.NoBib.GetValueOrDefault(false)) return false;
+				if (currentBibliographyCitation != null)
+				{
+					allCitations = citationManager.BibliographyCitations.Where(item => !item.NoBib.GetValueOrDefault(false)).Cast<PublicationCitation>();
+				}
+			}
+			
+			#endregion 
 			
 			
 			IEnumerable<string> currentIdentifiers = GetPersonIdentifiers(currentPersons, testEqualityBy);
 
-			foreach (BibliographyCitation otherBibliographyCitation in citationManager.BibliographyCitations)
+			foreach (PublicationCitation otherPublicationCitation in allCitations)
 			{
-				if (otherBibliographyCitation == null) continue;
-				if (otherBibliographyCitation == currentBibliographyCitation) continue;
-				if (otherBibliographyCitation.NoBib.GetValueOrDefault(false)) continue;
+				if (otherPublicationCitation == null) continue;
 				
-				var otherReference = otherBibliographyCitation.Reference;
+				if (otherPublicationCitation == currentPublicationCitation) break;
+				
+				var otherReference = otherPublicationCitation.Reference;
 				if (otherReference == null) continue;
 				if (otherReference == currentReference) continue;
 
