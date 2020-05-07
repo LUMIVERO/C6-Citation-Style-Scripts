@@ -1,6 +1,6 @@
 # Prüfen, ob bestimmte Felder des Titels leer oder auch nicht leer sind
 
-Über die eingebauten Standardbedingungen hinaus soll überprüft werden, ob ein bestimmtes Feld tatsächlich Daten enthält. Mithilfe dieser Bedingung können mehrere Felder und Feld-Kombinationen abgefragt werden, z.B. `Feld "Erstveröffentlichung" ist leer` und `Feld "Online-Adresse" enthält` Daten.
+Über die eingebauten Standardbedingungen hinaus soll überprüft werden, ob ein bestimmtes Feld tatsächlich Daten enthält. Mithilfe dieser Bedingung können mehrere Felder und Feld-Kombinationen abgefragt werden, z.B. `Feld "Erstveröffentlichung" ist leer` und `Feld "Online-Adresse" enthält Daten`.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
