@@ -1,5 +1,5 @@
 # Ein anderer Beitrag eines übergeordneten Titels wird in derselben Fußnote zitiert
-Die eingebaute Standardbedingungen prüft nur, ob anderer Beitrag eines übergeordneten Titels in einer vorherigen Fußnote bereits zitiert wurde.
+Die eingebaute Standardbedingungen prüft nur, ob ein anderer Beitrag eines übergeordneten Titels in einer vorherigen Fußnote bereits zitiert wurde.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
