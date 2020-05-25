@@ -146,6 +146,8 @@
 
 [CPS022](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS022%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20Ders.%2C%20Dies) In the bibliography - Replace names after first mention by Ders., Dies
 
+[CPS023](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS023%20Format%20certain%20persons%20differently) Format certain persons differently
+
 ## Templates
 
 [TNE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE001%20Check%20various%20fields%20if%20EMPTY%20or%20NOT%20EMPTY) Check various fields if EMPTY or NOT EMPTY 
