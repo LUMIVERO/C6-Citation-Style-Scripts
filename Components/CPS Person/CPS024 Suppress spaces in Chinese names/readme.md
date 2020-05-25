@@ -9,7 +9,7 @@ Citavi 6.4 (or newer)
 Screenshot: https://www.screencast.com/t/tLMO821f
 
 ## Note
-The script checks if a name has any Chinese characters in it and if so, applies the name order "firstname lastname" to the output. By doing so, it is possible to apply a different order for Chinese names and keep the space and/or komma as separators for Non-Chinese names within the same group of authors or editors etc.
+In the lines 41-48 the script checks if a name has any Chinese characters in it and if so, applies the name order "firstname lastname" to the output. By doing so, it is possible to apply a different order for Chinese names and keep the space and/or komma as separators for Non-Chinese names within the same group of authors or editors etc.
 
 ## Download
 [for Citavi 6](CPS024_suppress_spaces_in_chinese_names.cs)
