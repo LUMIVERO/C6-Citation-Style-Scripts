@@ -1,6 +1,8 @@
 # Zeitschriftennamen um ISSN ergänzen
 Sie möchten im Literaturverzeichnis auch die ISSN einer Zeitschrift ausgeben.
 
+Dieses Skript steht in Citavi 6 als programmierte Komponente direkt auf dem Citavi-Server zur Verfügung.
+
 ## Voraussetzungen
 Citavi 5 (oder höher)
 
