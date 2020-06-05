@@ -1,4 +1,4 @@
-//C6#CPE002 Variation
+//C6#CPE004 (CPE002 Variation)
 //C5#43122 Variation
 //Description: Add Abbreviation 3 (== UserAbbreviation2) To Periodical Name
 //Version: 1.0  
