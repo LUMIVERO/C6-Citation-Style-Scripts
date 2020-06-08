@@ -1,4 +1,6 @@
-//CPS021 In the bibliography - Replace names after first mention by dashes
+//CPS021
+//Version: 3.3
+//Description: In the bibliography - Replace names after first mention by dashes
 
 using System.Linq;
 using System.Collections.Generic;
