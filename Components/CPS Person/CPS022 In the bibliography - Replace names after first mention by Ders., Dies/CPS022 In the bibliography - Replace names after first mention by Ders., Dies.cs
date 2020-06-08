@@ -1,4 +1,5 @@
-//CPS022 
+//CPS022
+//Version: 2.0
 //Description: In the bibliography - Replace names after first mention by Ders., Dies.
 
 using System;
@@ -17,7 +18,9 @@ namespace SwissAcademic.Citavi.Citations
 	{
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
-            handled = false;
+			//Version 2.0: Corrected bug that organizations were not considered because of missing AfterFormatOrganization event handler
+
+			handled = false;
 
             if (citation == null || citation.Reference == null || citation.CitationManager == null) return null;
             if (componentPart == null || componentPart.Elements == null || !componentPart.Elements.Any()) return null;
@@ -219,6 +222,98 @@ namespace SwissAcademic.Citavi.Citations
 					else
 					{						
 						afp.TextUnits.Insert(0, personSeparator); //we allow output of the person's name but inject the separator again
+					}
+				}
+				
+				#endregion
+				
+            };
+			
+			
+			
+			AfterFormatOrganizationEventArgs afo;
+            thisPersonFieldElement.PersonFormatter.AfterFormatOrganization +=
+            (sender, e) =>
+            {
+                afo = (AfterFormatOrganizationEventArgs)e;
+				
+				#region Full Identity
+				
+				if (compareResult.Identity == PersonTeamsIdentity.Full)
+				{
+					if (afo.Index == 0)
+					{
+						afo.TextUnits.Clear();
+						switch (compareResult.GenderStructure)
+						{
+							case PersonTeamGenderStructure.SingleMale:
+								{
+									afo.TextUnits.Add(idemSingularMaleLiteral);
+								}
+								break;
+							case PersonTeamGenderStructure.SingleFemale:
+								{
+									afo.TextUnits.Add(idemSingularFemaleLiteral);
+								}
+								break;
+							case PersonTeamGenderStructure.SingleNeuter:
+								{
+									afo.TextUnits.Add(idemSingularNeutralLiteral);
+								}
+								break;
+							default:
+								{
+									afo.TextUnits.Add(idemPluralLiteral);
+								}
+								break;
+						}
+					}
+					else
+					{
+						afo.TextUnits.Clear(); //we suppress the output of the person's name
+					}
+				}
+				
+				#endregion 
+				
+				#region Partial Identity
+				
+				else
+				{
+					if (afo.Index == 0)
+					{
+						afo.TextUnits.Clear();
+						switch (compareResult.GenderStructure)
+						{
+							case PersonTeamGenderStructure.SingleMale:
+								{
+									afo.TextUnits.Add(idemSingularMaleLiteral);
+								}
+								break;
+							case PersonTeamGenderStructure.SingleFemale:
+								{
+									afo.TextUnits.Add(idemSingularFemaleLiteral);
+								}
+								break;
+							case PersonTeamGenderStructure.SingleNeuter:
+								{
+									afo.TextUnits.Add(idemSingularNeutralLiteral);
+								}
+								break;
+							default:
+								{
+									afo.TextUnits.Add(idemPluralLiteral);
+								}
+								break;
+						}
+					}
+					else if (afo.Index < compareResult.IdenticalPersonsCount)
+					{
+						afo.TextUnits.Clear(); //we suppress the output of the person's name
+					}
+					else
+					{						
+						afo.TextUnits.Insert(0, personSeparator); //we allow output of the person's name but inject the separator again
 					}
 				}
 				
