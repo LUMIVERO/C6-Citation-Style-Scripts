@@ -1,4 +1,5 @@
-//CPS021 In the bibliography - Replace names after first mention by dashes 
+//CPS021 In the bibliography - Replace names after first mention by dashes
+
 using System.Linq;
 using System.Collections.Generic;
 using SwissAcademic.Citavi;
@@ -15,6 +16,7 @@ namespace SwissAcademic.Citavi.Citations
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
             //Name of filter: Outputs a dash "---" instead of names in case of repetition 
+			//Version 3.3: Corrected bug that organizations were not considered because of missing AfterFormatOrganization event handler
             //Version 3.2: Refactored for C6 to make use of AfterFormatPerson event handler
             //Version 3.1:
             //- set font style of dashes to neutral
@@ -144,7 +146,7 @@ namespace SwissAcademic.Citavi.Citations
             if (previousPersonFieldElement == null) return null;
 
             #endregion PreviousPersonFieldElement
-
+			
             #region ThesePersons
 
             //we DO have a valid citation/reference a previous citation/reference, so we can compare their persons
@@ -176,9 +178,12 @@ namespace SwissAcademic.Citavi.Citations
 				*/
 
                 AfterFormatPersonEventArgs afp;
+				failedOnce = false;
                 thisPersonFieldElement.PersonFormatter.AfterFormatPerson +=
                 (sender, e) =>
                 {
+					#region AfterFormatPerson
+					
                     if (exitLookForRepetitionIfFailedOnce && failedOnce) return;
                     afp = (AfterFormatPersonEventArgs)e;
 
@@ -206,7 +211,46 @@ namespace SwissAcademic.Citavi.Citations
                     //same person
                     afp.TextUnits.Clear();
                     afp.TextUnits.Add(emDashesTextUnit);
+					
+					#endregion
                 };
+				
+				AfterFormatOrganizationEventArgs afo;
+				thisPersonFieldElement.PersonFormatter.AfterFormatOrganization += 
+				(sender, e) =>
+				{
+					#region AfterFormatOrganization
+					
+					if (exitLookForRepetitionIfFailedOnce && failedOnce) return;
+                    afo = (AfterFormatOrganizationEventArgs)e;
+
+                    Person thisOrganization = afo.Organization;
+                    if (thisOrganization == null)
+                    {
+                        failedOnce = true;
+                        return;
+                    }
+
+                    Person previousOrganization = previousPersons.ElementAtOrDefault(afo.Index);
+                    if (previousOrganization == null)
+                    {
+                        failedOnce = true;
+                        return;
+                    }
+
+
+                    if (!thisOrganization.Equals(previousOrganization))
+                    {
+                        failedOnce = true;
+                        return;
+                    }
+
+                    //same organization
+                    afo.TextUnits.Clear();
+                    afo.TextUnits.Add(emDashesTextUnit);
+					
+					#endregion
+				};
             }
 
             #endregion LookForRepetitionOfIndividualPersons = TRUE
