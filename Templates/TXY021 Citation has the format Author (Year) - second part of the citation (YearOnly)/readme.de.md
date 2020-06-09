@@ -27,7 +27,7 @@ Setzen Sie unter `Datei` > `Eigenschaften des Zitationsstils` > `Mehrdeutige Nac
 
 <img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20(Year)%20-%20second%20part%20of%20the%20citation%20(YearOnly)/Zitationsstil-Eigenschaften%20-%20Mehrdeutige%20Nachweise%20-%20Zusatzoptionen%20bei%20Vorlagen%20anzeigen.png" width="600">
 
-Rufen Sie im Stil den Unklaren Dokumententyp auf, klicken im Regelset **Kurznachweis im Text** auf die neue Vorlage "Autor (Jahr) Bedingung _ Nur Jahr" und setzen ein Häkchen vor `alle Zitationen, die nach diesem Template ausgegeben werden, nicht auf Mehrdeutigkeit prüfen`.
+Rufen Sie im Stil den **Unklaren Dokumententyp** auf, klicken im Regelset **Kurznachweis im Text** auf die neue Vorlage **"Autor (Jahr) Bedingung _ Nur Jahr"** und setzen ein Häkchen vor `alle Zitationen, die nach diesem Template ausgegeben werden, nicht auf Mehrdeutigkeit prüfen`.
 
 Wenn die übrigen Dokumententypen auf dem Unklaren Dokumententyp basieren, genügt dies, ansonsten müssten die Schritte noch für die weiteren Dokumententypen wiederholt werden - nur dass Sie die programmierte Vorlagenbedingung nicht neu einfügen und kompilieren müssen, sondern diese nun auch bei den übrigen Dokumententypen und Regelsets zur Auswahl steht.
 
