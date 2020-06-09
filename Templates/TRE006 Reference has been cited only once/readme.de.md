@@ -9,7 +9,7 @@ Citavi 6 (oder höher)
 Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
 
 ## Umsetzung
-In der Standardvorlage für die jeweilige Fußnote wird die Kurzform des Titels definiert. In der Vorlage, die auf dem hier veröffentlichten Skript basiert, wird die Langsform definiert.
+In der Standardvorlage für die jeweilige Fußnote wird die Kurzform des Titels definiert. In der Vorlage, die auf dem hier veröffentlichten Skript basiert, wird die Langform definiert.
 
 ## Autor
 
