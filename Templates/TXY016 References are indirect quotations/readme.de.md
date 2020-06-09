@@ -1,4 +1,4 @@
-# Quelle ist direktes Zitat
+# Quelle ist ein indirektes Zitat
 Bei indirekten Zitaten sollen die Zitat-Seiten nicht ausgegeben werden.
 
 Um keine neue Vorlage zu erstellen, kann alternativ die [Komponente Zitat-Seite zur programmierten Komponente umgewandelt werden](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT015%20Output%20citation%20pages%20depending%20on%20citation%20page%20type).
