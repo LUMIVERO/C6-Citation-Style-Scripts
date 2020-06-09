@@ -13,8 +13,8 @@ Citavi 5 (oder höher)
 
 ## Beispiele
 Die Formatierung des Nachweises soll sich immer dann von der Standardvorlage unterscheiden, wenn Sie in Citavis Word Add-in die Option `Person (Jahr)` nutzen.
-- (Autor Jahr): (Hinz & Kunz 2014, S. 18)
-- Autor (Jahr): Hinz und Kunz (2014, S. 18)
+- **(Autor Jahr)**: (Hinz & Kunz 2014, S. 18)
+- **Autor (Jahr)**: Hinz und Kunz (2014, S. 18)
 
 ## Anpassung
 Erstellen Sie eine neue programmierte Vorlagenbedingung und tragen Sie eine erklärende Bezeichnung in das Feld `Name` ein, z.B.: `Autor (Jahr) Bedingung _ Nur Autor`.
