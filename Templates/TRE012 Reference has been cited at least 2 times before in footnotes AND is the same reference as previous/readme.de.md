@@ -20,7 +20,7 @@ Citavi 5 (oder höher)
    - **Immanuel Kant: Kritik der reinen Vernunft (=KrV). Stuttgart 1984 [1781].**
 2. Nennung (Vorlage mit der Bedingung `Titel wurde bereits in einer vorherigen Fußnote genannt`): `Kurznachweis` (ggf. inkl. Ausgabe eines Titelstichworts mithilfe der `Kurzbeleg`-Funktion) - hier soll noch KEIN ebd. verwendet werden
    - **Kant: KrV.**
-3. und weitere Nennungen, wenn identisch mit dem vorherigen Titeleintrag (Vorlage mit diesem Skript & weiteren Wdh.-Bedingungen):
+3. und weitere Nennungen, wenn identisch mit dem vorherigen Titeleintrag (Vorlage mit `diesem Skript` & weiteren `Wdh.-Bedingungen`):
    - **ebd.**
 
 ## Installation
