@@ -184,6 +184,10 @@
 
 [TRE011](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE011%20The%20editor%20is%20also%20the%20translator%20of%20a%20reference) The editor is also the translator of a reference
 
+TRE012(https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE012%20Reference%20has%20been%20cited%20at%20least%202%20times%20before%20in%20footnotes%20AND%20is%20the%20same%20reference%20as%20previous) Reference has been cited at least 2 times before in footnotes AND is the same reference
+
+TRE013(https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE013%20Reference%20has%20been%20cited%20at%20least%202%20times%20before%20in%20footnotes) Reference has been cited at least 2 times before in footnotes
+
 [TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20oder%20Verf%C3%BCgung) Field "Specific Field 3" contains Schreiben, Erlass oder Verfügung
 
 [TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field "Author" contains exactly 4 authors
@@ -213,6 +217,10 @@
 [TXY018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY018%20Field%20Edition%20or%20EditionNumberResolved%20is%20exactly%201) Field "Edition" or "EditionNumberResolved" is exactly 1
 
 [TXY019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY019%20Field%20Groups%20of%20Parent%20Reference%20contains%20specific%20name) Field "Groups" of Parent Reference contains specific name
+
+TXY020(https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY020%20Citation%20has%20the%20format%20Author%20(Year)%20-%20first%20part%20of%20the%20citation%20(PersonOnly%20and%20NoPar)) Citation has the format Author (Year) - first part of the citation (PersonOnly and NoPar)
+
+TXY021(https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20(Year)%20-%20second%20part%20of%20the%20citation%20(YearOnly)) Citation has the format Author (Year) - second part of the citation (YearOnly)
 
 ## Bibliography Sorting
 
