@@ -16,12 +16,12 @@ Die folgenden Bedingungen können Sie bei Bedarf zusätzlich auswählen:
 Citavi 5 (oder höher)
 
 ## Beispiele
-1. Nennung: `Vollbeleg`
-2. Nennung: `Kurznachweis` (ggf. inkl. Ausgabe eines Titelstichworts mithilfe der `Kurzbeleg`-Funktion) - hier soll noch KEIN ebd. verwendet werden
-3. und weitere Nennungen, wenn identisch mit dem vorherigen Titeleintrag: `ebd.`
-
-## Anpassung
-
+1. Nennung (`Standardvorlage`): `Vollbeleg`
+   - **Immanuel Kant: Kritik der reinen Vernunft (=KrV). Stuttgart 1984 [1781].**
+2. Nennung (Vorlage mit der Bedingung `Titel wurde bereits in einer vorherigen Fußnote genannt`): `Kurznachweis` (ggf. inkl. Ausgabe eines Titelstichworts mithilfe der `Kurzbeleg`-Funktion) - hier soll noch KEIN ebd. verwendet werden
+   - **Kant: KrV.**
+3. und weitere Nennungen, wenn identisch mit dem vorherigen Titeleintrag (Vorlage mit diesem Skript & weiteren Wdh.-Bedingungen):
+   - **ebd.**
 
 ## Installation
 Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
