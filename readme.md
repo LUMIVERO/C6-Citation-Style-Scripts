@@ -184,7 +184,7 @@
 
 [TRE011](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE011%20The%20editor%20is%20also%20the%20translator%20of%20a%20reference) The editor is also the translator of a reference
 
-[TRE012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE012%20Reference%20has%20been%20cited%20at%20least%202%20times%20before%20in%20footnotes%20AND%20is%20the%20same%20reference%20as%20previous) Reference has been cited at least 2 times before in footnotes AND is the same reference
+[TRE012](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE012%20Reference%20has%20been%20cited%20at%20least%202%20times%20before%20in%20footnotes%20AND%20same%20as%20previous) Reference has been cited at least 2 times before in footnotes AND is the same reference as previous
 
 [TRE013](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE013%20Reference%20has%20been%20cited%20at%20least%202%20times%20before%20in%20footnotes) Reference has been cited at least 2 times before in footnotes
 
