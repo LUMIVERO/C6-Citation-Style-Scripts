@@ -94,6 +94,10 @@
 
 [COT031](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT031%20Replace%20Divis%20by%20Non-breaking%20Hyphen%20in%20Case%20Number) Replace Divis by Non-breaking Hyphen in Case Number
 
+[COT032](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT032%20Remove%20text%20element%20%5Bonline%5D%20if%20field%20'Online%20address'%20is%20empty) Remove text element [online] if field 'Online address' is empty
+
+[COT033](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT033%20Switch%20between%20URL%20and%20DOI) Switch between URL and DOI
+
 ### CPE Periodical
 
 [CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
