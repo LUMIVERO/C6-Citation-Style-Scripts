@@ -8,7 +8,6 @@ Es soll eine Literaturliste für einen Lehrstuhl erstellt werden. Der Name der L
 
 - Schmitt, K.; **Zimmermann, E.** (2014): Hochschulbibliographien als Leistungsausweis. Bochum.
 
-
 ## Installation
 Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
 
