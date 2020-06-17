@@ -3,7 +3,7 @@
 Diese programmierte Vorlagenbedingung greift auf den Wert `Auflagennummer ermittelt` (`EditionNumberResolved`) zurück, kann also auch mit Einträgen wie `1. Aufl.` umgehen.
 
 ## Voraussetzungen
-Citavi 6 (oder höher)
+Citavi 6 (oder höher).
 
 ## Beispiele
 Ein Quellennachweis soll unterschiedlich dargestellt werden, wenn es sich um die erste Auflage handelt, also beispielsweise ohne Auflagen-Information und ohne Klammern um die Jahreszahl:
