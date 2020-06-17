@@ -1,7 +1,7 @@
 # Das Feld Gericht enthält das Wort "BVerfG".
 
 ## Voraussetzungen
-Citavi 5 (oder höher).
+Citavi 5 (oder höher)
 
 ## Beispiele
 In den Fußnoten werden Gerichtsentscheidungen zitiert. Entscheidungen vom Bundesverfassungsgericht sollen abweichend zitiert werden.
