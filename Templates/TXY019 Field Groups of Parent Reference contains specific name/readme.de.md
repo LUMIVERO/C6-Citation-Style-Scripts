@@ -1,7 +1,7 @@
 # Das übergeordnete Sammelwerk ist einer bestimmten Gruppe zugewiesen
 
 ## Voraussetzungen
-Citavi 5 (oder höher)
+Citavi 5 (oder höher).
 
 ## Beispiele
 Lexikonartikel erfassen Sie in Citavi als Beitrag im Sammelwerk. Im Literaturverzeichnis sollen die Lexikonartikel aber abweichend formatiert werden.
