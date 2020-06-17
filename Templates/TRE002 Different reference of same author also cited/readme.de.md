@@ -5,7 +5,7 @@ Für den Fall, dass mehrere Werke eines Autors zitiert werden, soll ab dem zweit
 Diese programmierte Vorlagenbedingung steht in Citavi 6 direkt auf dem Citavi-Server zur Verfügung.
 
 ## Voraussetzungen
-Citavi 5 (oder höher)
+Citavi 5 (oder höher).
 
 ## Beispiele
 Ein Autor hat mehrere Werke veröffentlicht. Um die Publikationen besser auseinanderhalten zu können, soll in diesem Fall ein Titel-Stichwort in den Fußnoten genannt werden.
