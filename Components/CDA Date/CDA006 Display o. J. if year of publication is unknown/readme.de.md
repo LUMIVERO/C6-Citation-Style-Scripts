@@ -11,9 +11,8 @@ Trotz gründlicher Prüfung konnte das Erscheinungsjahr eines Werks nicht ermitt
 - Klein, N. (o. J.): Minimal Data Sets. Köln.
 
 ## Anpassung
-Der auszugebende Text kann in Zeile 22 eingetragen bzw. geändert werden, so dass auch `ohne Jahr` oder `no date` möglich sind.
+Der auszugebende Text kann in Zeile 22 eingetragen bzw. geändert werden, so dass alternativ auch `ohne Jahr`, `no date` oder `n. d.` möglich ist.
 Falls ein zusätzliches Leerzeichen erwünscht ist, muss es in Zeile 23 zwischen den beiden Platzhaltern ergänzt werden.
-
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
