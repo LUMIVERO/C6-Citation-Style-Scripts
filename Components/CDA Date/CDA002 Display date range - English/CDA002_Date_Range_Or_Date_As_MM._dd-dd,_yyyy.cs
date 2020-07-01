@@ -341,7 +341,7 @@ namespace SwissAcademic.Citavi.Citations
 			if (found)
 			{
 				input.ElementAt(index).Text = ndMatch;
-				LiteralTextUnit identifyingLetterTextUnit = new LiteralTextUnit("–" + identifyingLetter, Drawing.FontStyle.Neutral);
+				LiteralTextUnit identifyingLetterTextUnit = new LiteralTextUnit(" " + identifyingLetter, Drawing.FontStyle.Neutral);
 				input.Insert(index + 1, identifyingLetterTextUnit);
 			}
 
