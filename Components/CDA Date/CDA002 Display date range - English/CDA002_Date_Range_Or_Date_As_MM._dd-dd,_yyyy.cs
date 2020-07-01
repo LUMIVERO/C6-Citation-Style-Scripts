@@ -33,10 +33,10 @@ namespace SwissAcademic.Citavi.Citations
 			///{0}: letter for ambiguity resolving
 			///{1}: year	of start or single date
 			///{2}: month	of start or single date
-			///{3}: day		of start or single date
+			///{3}: day 	of start or single date
 			///{4}: year	of end date
 			///{5}: month	of end date
-			///{6}: day		of end date
+			///{6}: day 	of end date
 			///use the following formatting for "6 June 2018"
 			///YEAR:	yyyy = 2018, yy = 18
 			///MONTH:	MMMM = June, MMM = Jun, MM = 06, %M = 6
