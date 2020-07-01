@@ -1,4 +1,5 @@
 //CDA002 v3.0
+
 using SwissAcademic.Citavi.Metadata;
 using SwissAcademic.Drawing;
 using System;
@@ -9,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace SwissAcademic.Citavi.Citations
 {
-    public class ComponentPartFilter
+	public class ComponentPartFilter
 		:
 		IComponentPartFilter
 	{
@@ -23,12 +24,12 @@ namespace SwissAcademic.Citavi.Citations
 			//list all possible date formats for this script to check; the scripts tries to parse the date beginning from left to right
 			string[] formats = new string[] { "yyyy-MM-dd", "yyyy/MM/dd", "dd/MM/yyyy", "yyyy/dd/MM",  "dd.MM.yyyy", "d.M.yyyy", "d.MM.yyyy", "dd.M.yyyy", "dd.MM.yy", "d.M.yy", "d.MM.yy", "dd.M.yy" };
 
-			bool usePeriodAfterAbbreviatedMonthName = true;    //if true, month names will be: Jan. Feb. Mar. Apr. May (!) Jun. Jul. Aug. Sept. Oct. Nov. Dec.
+			bool usePeriodAfterAbbreviatedMonthName = true;		//if true, month names will be: Jan. Feb. Mar. Apr. May (!) Jun. Jul. Aug. Sept. Oct. Nov. Dec.
 
 			///IMPORTANT: Use the following indexed placeholders {n} and format strings xxxx as in {n:xxxx} for the templates. 
-            ///You can ommit placeholders and/or place them freely inside the templates below. Yet, it is not recommended to use the same placeholder more than once, 
-            ///because this script is not optimized for this.
-            ///
+			///You can ommit placeholders and/or place them freely inside the templates below. Yet, it is not recommended to use the same placeholder more than once, 
+			///because this script is not optimized for this.
+			///
 			///{0}: letter for ambiguity resolving
 			///{1}: year	of start or single date
 			///{2}: month	of start or single date
@@ -116,23 +117,23 @@ namespace SwissAcademic.Citavi.Citations
 
 			string outputText = string.Empty;
 
-            #region Check for Single Date
+			#region Check for Single Date
 
-            if (TryParseSingleDate(dateString, formats, targetCulture, out dateSingle))
+			if (TryParseSingleDate(dateString, formats, targetCulture, out dateSingle))
 			{
-                #region BibliographyCitation
+				#region BibliographyCitation
 
-                if (isBibliographyCitation || isPreviewBibliographyCitation)
+				if (isBibliographyCitation || isPreviewBibliographyCitation)
 				{
 					outputText = FormatDate(dateSingle, outputFormatSingleDateBibliography, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName); 
 				}
 
-                #endregion
+				#endregion
 
-                #region PlaceholderCitation
+				#region PlaceholderCitation
 
-                else if (isPlaceholderCitation)
-                {
+				else if (isPlaceholderCitation)
+				{
 					outputText = FormatDate(dateSingle, outputFormatSingleDatePlaceholder, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName);
 				}
 
@@ -144,56 +145,56 @@ namespace SwissAcademic.Citavi.Citations
 				{
 					handled = false;
 					return null;
-                }
+				}
 
-                #endregion 
+				#endregion 
 			}
 
-            #endregion
+			#endregion
 
-            #region Check for Date Range
+			#region Check for Date Range
 
-            else if (TryParseDateRange(dateString, formats, targetCulture, out dateStart, out dateEnd))
+			else if (TryParseDateRange(dateString, formats, targetCulture, out dateStart, out dateEnd))
 			{
-                #region BibliographyCitation
+				#region BibliographyCitation
 
-                if (isBibliographyCitation || isPreviewBibliographyCitation)
-                {
+				if (isBibliographyCitation || isPreviewBibliographyCitation)
+				{
 					
 					#region same year, same month
-                    
+					
 					if (dateStart.Year == dateEnd.Year && dateStart.Month == dateEnd.Month && dateStart.Day != dateEnd.Day)
 					{
 						outputText = FormatDateRange(dateStart, dateEnd, outputFormatDateRangeSameYearSameMonthBibliography, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName);
 					}
 
-                    #endregion
+					#endregion
 
 					#region same year, different months
-                    
+					
 					else if (dateStart.Year == dateEnd.Year && dateStart.Month != dateEnd.Month)
 					{
 						outputText = FormatDateRange(dateStart, dateEnd, outputFormatDateRangeSameYearDifferentMonthBibliography, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName);
 					}
 
-                    #endregion
+					#endregion
 
-                    #region different years
+					#region different years
 
-                    else
-                    {
+					else
+					{
 						outputText = FormatDateRange(dateStart, dateEnd, outputFormatDateRangeDifferentYearsBibliography, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName);
 					}
 
 					#endregion
 				}
 
-                #endregion
+				#endregion
 
-                #region PlaceholderCitation
+				#region PlaceholderCitation
 
-                else if (isPlaceholderCitation)
-                {
+				else if (isPlaceholderCitation)
+				{
 					#region same year, same month
 					
 					if (dateStart.Year == dateEnd.Year && dateStart.Month == dateEnd.Month && dateStart.Day != dateEnd.Day)
@@ -210,24 +211,24 @@ namespace SwissAcademic.Citavi.Citations
 						outputText = FormatDateRange(dateStart, dateEnd, outputFormatDateRangeSameYearDifferentMonthPlaceholder, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName);
 					}
 
-                    #endregion
+					#endregion
 
-                    #region different years
+					#region different years
 
-                    else
-                    {
+					else
+					{
 						outputText = FormatDateRange(dateStart, dateEnd, outputFormatDateRangeDifferentYearsPlaceholder, targetCulture, identifyingLetter, usePeriodAfterAbbreviatedMonthName);
 					}
 
-                    #endregion 
-                }
+					#endregion 
+				}
 
-                #endregion
+				#endregion
 
-                #region Other
+				#region Other
 
-                else
-                {
+				else
+				{
 					handled = false;
 					return null;
 				}
@@ -235,12 +236,12 @@ namespace SwissAcademic.Citavi.Citations
 				#endregion
 			}
 
-            #endregion
+			#endregion
 
-            #region Do the output
+			#region Do the output
 
 			if (!string.IsNullOrEmpty(outputText))
-            {
+			{
 				var outputTextUnits = new TextUnitCollection();
 				outputTextUnits = TextUnitCollectionUtility.TaggedTextToTextUnits(dateFieldElement, outputText, fontStyle);
 
@@ -248,31 +249,31 @@ namespace SwissAcademic.Citavi.Citations
 				{
 					List<ITextUnit> componentPartOutput = new List<ITextUnit>();
 					foreach(IElement element in componentPart.Elements)
-                    {
+					{
 						if (element == dateFieldElement)
-                        {
+						{
 							componentPartOutput.AddRange(outputTextUnits);
-                        }
+						}
 						else
-                        {
+						{
 							componentPartOutput.AddRange(element.GetTextUnits(citation, template));
-                        }
-                    }
+						}
+					}
 					handled = true;
 					return componentPartOutput;
 				}
 			}
 
-            #endregion 
+			#endregion 
 
-            handled = false;
+			handled = false;
 			return null;
 		}
 
-        #region GetReferenceInScope
+		#region GetReferenceInScope
 
-        private Reference GetReferenceInScope(ComponentPart componentPart, Citation citation)
-        {
+		private Reference GetReferenceInScope(ComponentPart componentPart, Citation citation)
+		{
 			if (citation == null || citation.Reference == null) return null;
 			if (componentPart == null) return null;
 
@@ -281,12 +282,12 @@ namespace SwissAcademic.Citavi.Citations
 			return referenceInScope;
 		}
 
-        #endregion
+		#endregion
 
-        #region GetDateFieldElement
+		#region GetDateFieldElement
 
-        private FieldElement GetDateFieldElement(ComponentPart componentPart)
-        {
+		private FieldElement GetDateFieldElement(ComponentPart componentPart)
+		{
 			if (componentPart == null || componentPart.Elements == null || !componentPart.Elements.Any()) return null;
 
 			FieldElement dateFieldElement = componentPart.Elements.Where(element =>
@@ -303,23 +304,23 @@ namespace SwissAcademic.Citavi.Citations
 			return dateFieldElement;
 		}
 
-        #endregion
+		#endregion
 
-        #region ContainsND
+		#region ContainsND
 
-        private bool ContainsND(string dateString)
+		private bool ContainsND(string dateString)
 		{
 			if (string.IsNullOrEmpty(dateString)) return false;
 			string ndRegexPattern = @"(?<nd>n\.{0,1} *d\.{0,1} *)";
 			return Regex.IsMatch(dateString, ndRegexPattern);
 		}
 
-        #endregion
+		#endregion
 
-        #region SeparateIdentifyingLetterFromND
+		#region SeparateIdentifyingLetterFromND
 
-        private TextUnitCollection SeparateIdentifyingLetterFromND(TextUnitCollection input, string identifyingLetter)
-        {
+		private TextUnitCollection SeparateIdentifyingLetterFromND(TextUnitCollection input, string identifyingLetter)
+		{
 			string ndRegexPattern = @"(?<nd>n\.{0,1} *d\.{0,1} *)(?<identifyingLetter>" + identifyingLetter + @")$";
 			string ndMatch = "";
 			var index = -1;
@@ -350,12 +351,12 @@ namespace SwissAcademic.Citavi.Citations
 			return input;
 		}
 
-        #endregion
+		#endregion
 
-        #region TryParseSingleDate
+		#region TryParseSingleDate
 
-        private bool TryParseSingleDate(string dateString, string[] formats, CultureInfo targetCulture, out DateTime dateSingle)
-        {
+		private bool TryParseSingleDate(string dateString, string[] formats, CultureInfo targetCulture, out DateTime dateSingle)
+		{
 			dateSingle = DateTime.MinValue;
 
 			if (string.IsNullOrEmpty(dateString)) return false;
@@ -364,13 +365,13 @@ namespace SwissAcademic.Citavi.Citations
 
 			return DateTime.TryParseExact(dateString, formats, targetCulture, DateTimeStyles.None, out dateSingle);
 			
-        }
+		}
 
-        #endregion
+		#endregion
 
-        #region TryParseDateRange
+		#region TryParseDateRange
 
-        private bool TryParseDateRange(string dateString, string[] formats, CultureInfo targetCulture, out DateTime dateStart, out DateTime dateEnd)
+		private bool TryParseDateRange(string dateString, string[] formats, CultureInfo targetCulture, out DateTime dateStart, out DateTime dateEnd)
 		{
 			dateStart = DateTime.MinValue;
 			dateEnd = DateTime.MinValue;
@@ -397,12 +398,12 @@ namespace SwissAcademic.Citavi.Citations
 		#region FormatDate
 
 		private string FormatDate(DateTime date, string formatTemplate, CultureInfo culture, string identifyingLetter, bool usePeriodAfterAbbreviatedMonthName)
-        {
+		{
 			var formatPlaceholders = GetFormatPlaceholders(formatTemplate);
 
-			object year = (object)date;   //1
-			object month = (object)date;  //2
-			object day = (object)date;    //3
+			object year = (object)date;		//1
+			object month = (object)date;	//2
+			object day = (object)date;		//3
 
 			if (formatPlaceholders.Month != null && formatPlaceholders.Month.FormatString != null && formatPlaceholders.Month.FormatString.Equals("MMM"))
 			{
@@ -421,15 +422,15 @@ namespace SwissAcademic.Citavi.Citations
 		#region FormatDateRange
 
 		private string FormatDateRange(DateTime startDate, DateTime endDate, string formatTemplate, CultureInfo culture, string identifyingLetter, bool usePeriodAfterAbbreviatedMonthName)
-        {
+		{
 			var formatPlaceholders = GetFormatPlaceholders(formatTemplate);
 
-			object startYear = (object)startDate;   //1
+			object startYear = (object)startDate;	//1
 			object startMonth = (object)startDate;  //2
-			object startDay = (object)startDate;    //3
-			object endYear = (object)endDate;       //4
-			object endMonth = (object)endDate;      //5
-			object endDay = (object)endDate;        //6
+			object startDay = (object)startDate;	//3
+			object endYear = (object)endDate;		//4
+			object endMonth = (object)endDate;		//5
+			object endDay = (object)endDate;		//6
 
 			if (formatPlaceholders.StartMonth != null && formatPlaceholders.StartMonth.FormatString != null && formatPlaceholders.StartMonth.FormatString.Equals("MMM"))
 			{
@@ -456,7 +457,7 @@ namespace SwissAcademic.Citavi.Citations
 		#region GetMonthNameAbbreviated
 
 		private string GetMonthNameAbbreviated(DateTime inputDate, CultureInfo targetCulture, bool usePeriodAfterAbbreviatedMonthName)
-        {
+		{
 			string monthNameFull = inputDate.ToString("MMMM", targetCulture);
 			string monthNameAbbreviated = inputDate.ToString("MMM", targetCulture);
 
@@ -467,29 +468,29 @@ namespace SwissAcademic.Citavi.Citations
 				return monthNameAbbreviated == monthNameFull ? monthNameAbbreviated : monthNameAbbreviated + ".";
 			}
 			else
-            {
+			{
 				return monthNameAbbreviated.TrimEnd('.');
-            }
-        }
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region GetDayNameAbbreviated
+		#region GetDayNameAbbreviated
 
-        private string GetDayNameAbbreviated(DateTime inputDate, CultureInfo targetCulture, bool usePeriodAfterAbbreviatedDayName)
-        {
+		private string GetDayNameAbbreviated(DateTime inputDate, CultureInfo targetCulture, bool usePeriodAfterAbbreviatedDayName)
+		{
 			string dayNameFull = inputDate.ToString("dddd", targetCulture);
 			string dayNameAbbreviated = inputDate.ToString("ddd", targetCulture);
 
 			if (usePeriodAfterAbbreviatedDayName)
-            {
+			{
 				return dayNameAbbreviated == dayNameFull ? dayNameAbbreviated : dayNameAbbreviated + ".";
-            }
+			}
 			else
-            {
+			{
 				return dayNameAbbreviated;
-            }
-        }
+			}
+		}
 
 		#endregion
 
@@ -577,7 +578,7 @@ namespace SwissAcademic.Citavi.Citations
 		#region GetFormatPlaceholders
 
 		private FormatPlaceholders GetFormatPlaceholders(string formatTemplate, int max_count = 100)
-        {
+		{
 			//we return only placeholders with index 0, 1, 2, 3, 4, 5, 6
 			//if an index is NOT used, we return null
 			var formatTemplateParser = new FormatTemplateParser();
@@ -589,9 +590,9 @@ namespace SwissAcademic.Citavi.Citations
 			var returnValue = new FormatPlaceholders();
 
 			foreach(var placeholder in placeholders)
-            {
+			{
 				switch (placeholder.Index)
-                {
+				{
 					case 0: 
 						returnValue.IdentifyingLetter = placeholder;
 						break;
@@ -613,11 +614,11 @@ namespace SwissAcademic.Citavi.Citations
 					case 6:
 						returnValue.EndDay = placeholder;
 						break;
-                }
-            }
+				}
+			}
 
 			return returnValue;
-        }
+		}
 
 		#endregion
 
@@ -628,29 +629,29 @@ namespace SwissAcademic.Citavi.Citations
 		private class FormatTemplateParser
 			:
 			IFormatProvider,
-            ICustomFormatter
-        {
+			ICustomFormatter
+		{
 			internal readonly List<FormatPlaceholder> Placeholders = new List<FormatPlaceholder>();
 
 			public object GetFormat(Type formatType)
-            {
+			{
 				return this;
-            }
+			}
 
 			public string Format(string formatString, object arg, IFormatProvider formatProvider)
-            {
+			{
 				var index = (int)arg;
 				Placeholders.Add(new FormatPlaceholder((int)arg, formatString));
 				return null;
 			}
-        }
+		}
 
-        #endregion
+		#endregion
 
-        #region Class FormatPlaceholder
+		#region Class FormatPlaceholder
 
 		private class FormatPlaceholder
-        {
+		{
 			#region Properties
 
 			public int Index { get; private set; }
@@ -659,42 +660,42 @@ namespace SwissAcademic.Citavi.Citations
 			#endregion
 
 			public FormatPlaceholder(int index, string formatString)
-            {
+			{
 				Index = index;
 				FormatString = formatString;
-            }
-        }
+			}
+		}
 
 		#endregion
 
 		#region Class FormatPlaceholders
 
 		private class FormatPlaceholders
-        {
+		{
 			public FormatPlaceholder IdentifyingLetter { get; set; }
 
 			public FormatPlaceholder Year 
 			{ 
 				get
-                {
+				{
 					return StartYear;
-                }
+				}
 			}
 
 			public FormatPlaceholder Month 
 			{ 
 				get
-                {
+				{
 					return StartMonth;
-                }
+				}
 			}
 
 			public FormatPlaceholder Day 
 			{ 
 				get
-                {
+				{
 					return StartDay;
-                }
+				}
 			}
 
 			public FormatPlaceholder StartYear { get; set; }
@@ -708,8 +709,8 @@ namespace SwissAcademic.Citavi.Citations
 			public FormatPlaceholder EndMonth { get; set; }
 
 			public FormatPlaceholder EndDay { get; set; }
-        }
+		}
 
-        #endregion 
-    }
+		#endregion 
+	}
 }
