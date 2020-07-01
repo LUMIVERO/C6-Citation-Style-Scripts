@@ -8,7 +8,7 @@ Citavi 6 (oder höher)
 ## Beispiele
 Enter date range as: dd.MM.yyyy - dd.MM.yyyy
 
-Format it to MMM. dd-dd, yyyy e.g.
+Format it to yyyy, MMMM d - d or MMM. dd-dd, yyyy e.g.
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
