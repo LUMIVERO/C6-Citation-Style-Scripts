@@ -49,7 +49,7 @@ namespace SwissAcademic.Citavi.Citations
 			//DATE RANGE - output format templates
 			//same year, same month
 			string outputFormatDateRangeSameYearSameMonthPlaceholder = "{1:yyyy}{0}";																	//e.g. 2013a
-			string outputFormatDateRangeSameYearSameMonthBibliography = "{1:yyyy}{0}, {2:MMMM} {3:%do} - {6:%do}";										//e.g. 2013a, January 6th
+			string outputFormatDateRangeSameYearSameMonthBibliography = "{1:yyyy}{0}, {2:MMMM} {3:%do} - {6:%do}";										//e.g. 2013a, January 6th - 9th
 
 			//same year, different month
 			string outputFormatDateRangeSameYearDifferentMonthPlaceholder = "{1:yyyy}{0}";																//e.g. 2013a
