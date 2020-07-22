@@ -1,6 +1,7 @@
 //C6#COT007
 //C5#431516
 //Description: Capitalize first letter of simple text field elements (such as Title or Subtitle etc.)
+//Version 2.11: Made 2.10 less specific to achieve the same for "in " as well as "in: ", "In: " etc.
 //Version 2.10: Capitalize next word after "In " stemming from a literal element (not a field) and denoting a contribution in a collective volume (CMOS)
 //Version 2.9: Corrected issues with full text being enclosed in quotes, parenthesis or spanish quotation marks (or a combination): “an english patient”, (an english patient) etc.
 //Version 2.8: Corrected issue with text appearing twice under certain circumstances
@@ -36,10 +37,10 @@ namespace SwissAcademic.Citavi.Citations
     {
         public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
         {
-            var ensureEnglishIsReferenceLanguage = true;    //if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
-            var modeStrict = false;             //only applicable if ensureEnglishIsReferenceLanguage = true: 
-                                                //if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in the language field
-                                                //if modeStrict = false, it will also capitalize references that have an empty language field
+            var ensureEnglishIsReferenceLanguage = true;	//if set to false, the component part filter will ALWAYS capitalize, regardless of the reference's language
+            var modeStrict = false;				//only applicable if ensureEnglishIsReferenceLanguage = true: 
+												//if modeStrict = true, it will only capitalize references that have "en" or "eng" etc. in the language field
+												//if modeStrict = false, it will also capitalize references that have an empty language field
 
             var convertFullUpperCaseWords = ConvertFullUpperCaseWords.Never;
 
@@ -114,11 +115,11 @@ namespace SwissAcademic.Citavi.Citations
 
             //Words that will not be capitalized; add words to this list as required
             string[] exceptionsArray = { "a", "an", "and", "as", "at",
-                                         "but", "by", "down", "for", "from",
-                                         "in", "into", "nor",
-                                         "of", "on", "onto", "or", "over",
-                                         "so", "the", "till", "to",
-                                         "up", "via", "with", "yet" };
+										 "but", "by", "down", "for", "from",
+										 "in", "into", "nor",
+										 "of", "on", "onto", "or", "over",
+										 "so", "the", "till", "to",
+										 "up", "via", "with", "yet" };
 
             List<string> exceptions = new List<string>(exceptionsArray);
 
@@ -144,12 +145,12 @@ namespace SwissAcademic.Citavi.Citations
                     {
                         if (HasLowerCase(fullString))
                         {
-                            fullUpperCaseTreatment = false;
+							fullUpperCaseTreatment = false;
                         }
                         else
                         {
-                            fullUpperCaseTreatment = true;
-                        }
+							fullUpperCaseTreatment = true;
+						}
                     }
                     break;
             }
@@ -192,6 +193,11 @@ namespace SwissAcademic.Citavi.Citations
 
             //CMOS Special treatment for contributions In...: In <i>The Small Voice of History</i>
             bool capitalizeNextWordOnce = false;
+			
+			var startsWithLiteralIn =
+						componentPart.Elements.ElementAt(0) is LiteralElement &&
+						(((LiteralElement)componentPart.Elements.ElementAt(0)).Text.Equals("in ", StringComparison.OrdinalIgnoreCase) ||
+						((LiteralElement)componentPart.Elements.ElementAt(0)).Text.StartsWith("in:", StringComparison.OrdinalIgnoreCase));
 
             for (int i = 0; i < textUnits.Count; i++)
             {
@@ -205,16 +211,10 @@ namespace SwissAcademic.Citavi.Citations
                     new List<string>();
 
                 //CMOS Special treatment for contributions In...: In <i>The Small Voice of History</i>
-                if (i == 0 && textUnits[0].Text.Equals("In "))
+                if (i == 0 && startsWithLiteralIn)
                 {
-                    var isLiteralIn =
-                        componentPart.Elements.ElementAt(0) is LiteralElement &&
-                        ((LiteralElement)componentPart.Elements.ElementAt(0)).Text.Equals("In ");
-                    if (isLiteralIn)
-                    {
-                        capitalizeNextWordOnce = true;
-                        continue;
-                    }
+                    capitalizeNextWordOnce = true;
+                    continue;
                 }
 
 
@@ -231,14 +231,14 @@ namespace SwissAcademic.Citavi.Citations
 
                     if (Regex.IsMatch(word, matchInterpunctuation) || string.IsNullOrWhiteSpace(word))
                     {
-                        //punctuation
-                        text = text + word;
+						//punctuation
+						text = text + word;
                     }
                     else if (capitalizeNextWordOnce)
                     {
-                        //CMOS Special treatment for contributions In...: In <i>The Small Voice of History</i>
-                        capitalizeNextWordOnce = false;
-                        text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+						//CMOS Special treatment for contributions In...: In <i>The Small Voice of History</i>
+						capitalizeNextWordOnce = false;
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
                     }
                     else if (counter == 1 && i == 0) // overall first word, i.e. first word in first textunit
                     {
@@ -253,73 +253,73 @@ namespace SwissAcademic.Citavi.Citations
                     }
                     else if (word.Length == 1 && !string.IsNullOrEmpty(nextWord) && nextWord == ".")
                     {
-                        //one letter word followed by period is considered a first name initial
-                        text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+						//one letter word followed by period is considered a first name initial
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
                     }
                     else if (
-                        (Regex.IsMatch(prevWord, matchInterpunctuation)) ||
-                        (!string.IsNullOrWhiteSpace(secondPrevWord) && Regex.IsMatch(secondPrevWord, matchInterpunctuation) && string.IsNullOrWhiteSpace(prevWord))
+						(Regex.IsMatch(prevWord, matchInterpunctuation)) ||
+						(!string.IsNullOrWhiteSpace(secondPrevWord) && Regex.IsMatch(secondPrevWord, matchInterpunctuation) && string.IsNullOrWhiteSpace(prevWord))
                     )
                     {
-                        text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture); //capitalize also stopwords directly after interpunctuation
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture); //capitalize also stopwords directly after interpunctuation
                     }
 					else if (Regex.IsMatch(prevWord, matchApostrophe) && !string.IsNullOrWhiteSpace(secondPrevWord) && !Regex.IsMatch(secondPrevWord, matchQuotationMarks) && !Regex.IsMatch(secondPrevWord, matchInterpunctuation))
                     {
-                        text = text + word.ToLower(culture);
-                    }
-                    else if (Regex.IsMatch(prevWord, matchQuotationMarks)) // capitalize also stopwords directly after quotation marks
-                    {
-                        text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
-                    }
-                    else if (exceptions.Contains(word.ToLower(culture))) // check list of exceptions
-                    {
-                        text = text + word.ToLower(culture);
-                    }
-                    else // in all other cases: capitalize
-                    {
-                        text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
-                    }
-                    secondPrevWord = prevWord;
-                    prevWord = word; // save current word as previous word for next iteration
-                }
-                textUnits[i].Text = text;
-            }
+						text = text + word.ToLower(culture);
+					}
+					else if (Regex.IsMatch(prevWord, matchQuotationMarks)) // capitalize also stopwords directly after quotation marks
+					{
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+					}
+					else if (exceptions.Contains(word.ToLower(culture))) // check list of exceptions
+					{
+						text = text + word.ToLower(culture);
+					}
+					else // in all other cases: capitalize
+					{
+						text = text + ToUpperFirstLetter(word, fullUpperCaseTreatment, culture);
+					}
+					secondPrevWord = prevWord;
+					prevWord = word; // save current word as previous word for next iteration
+				}
+				textUnits[i].Text = text;
+			}
 
-            handled = true;
-            return textUnits;
-        }
+			handled = true;
+			return textUnits;
+		}
 
-        public string ToUpperFirstLetter(string input, bool ensureAllButFirstIsLower = false, CultureInfo culture = null)
-        {
-            if (string.IsNullOrEmpty(input)) return input;
+		public string ToUpperFirstLetter(string input, bool ensureAllButFirstIsLower = false, CultureInfo culture = null)
+		{
+			if (string.IsNullOrEmpty(input)) return input;
 
-            char[] letters = input.ToCharArray();
+			char[] letters = input.ToCharArray();
 
-            for (var i = 0; i < letters.Length; i++)
-            {
-                if (i == 0)
-                {
-                    letters[0] = char.ToUpper(letters[0], culture);
-                    continue;
-                }
+			for (var i = 0; i < letters.Length; i++)
+			{
+				if (i == 0)
+				{
+					letters[0] = char.ToUpper(letters[0], culture);
+					continue;
+				}
 
-                if (i > 0 && ensureAllButFirstIsLower == false) break;
-                letters[i] = char.ToLower(letters[i], culture);
-            }
+				if (i > 0 && ensureAllButFirstIsLower == false) break;
+				letters[i] = char.ToLower(letters[i], culture);
+			}
 
-            return new string(letters);
-        }
+			return new string(letters);
+		}
 
-        public enum ConvertFullUpperCaseWords
-        {
-            Never,
-            Always,
-            Auto        //converts full uppercase words to lower case only if the complete text is written in uppercase
-        };
+		public enum ConvertFullUpperCaseWords
+		{
+			Never,
+			Always,
+			Auto		//converts full uppercase words to lower case only if the complete text is written in uppercase
+		};
 
-        public bool HasLowerCase(string input)
-        {
-            return !string.IsNullOrEmpty(input) && input.Any(c => char.IsLower(c));
-        }
-    }
+		public bool HasLowerCase(string input)
+		{
+			return !string.IsNullOrEmpty(input) && input.Any(c => char.IsLower(c));
+		}
+	}
 }
