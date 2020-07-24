@@ -3,9 +3,9 @@
 Sie möchten innerhalb von Text-Feldern, für die Citavi keine Formatierungsmöglichkeit vorsieht (z.B. `Zeitschrift`), einen Teil des Textes bzw. Namens <i>kursiv</i> stellen, <b>fett</b> formatieren, <u>unterstreichen</u>, <sup>höherstellen</sup> oder <sub>tieferstellen</sub>.
 
 Wichtig: 
-1) Wenn der gesamte Feldinhalt bei den entsprechenden Dokumententypen immer in der besonderen Weise (z.B. kursiv) ausgegeben werden muss, sollte die Formatierung über die Einstellungsmöglichkeiten der Felder im Zitationsstil vorgenommen werden.
+1) Wenn der gesamte Feldinhalt bei den entsprechenden Dokumententypen immer in der besonderen Weise (z.B. kursiv) ausgegeben werden muss, sollte die Formatierung über die Einstellungsmöglichkeiten der Komponenten im Zitationsstil vorgenommen werden.
 
-2) Auch bei reinen Textfeldern (wie `Übersetzter Titel`, `Kurzbeleg` oder den `Freitext`-Feldern) wird dieses Skript nicht benötigt. Die unten aufgeführten HMTL-Tags werden hier auch ohne Skript umgesetzt. Dies gilt allerdings nicht für die Anzeige der Feldinhalte im Projekt im Reiter `TItel`, sondern nur in der Titelanzeige oberhalb der Titelliste (`Zahnrad`-Icon > `Aktuellen Titel im Zitationsstil anzeigen`) sowie im Word-Dokument.
+2) Auch bei reinen Text-Feldern (wie `Übersetzter Titel`, `Kurzbeleg` oder den `Freitext`-Feldern) wird dieses Skript nicht benötigt. Die unten aufgeführten HMTL-Tags werden bei diesen Feldern auch ohne Skript umgesetzt. Dies gilt allerdings nicht für die Anzeige der Feldinhalte im Projekt im Reiter `TItel`, sondern nur in der Titelanzeige oberhalb der Titelliste (`Zahnrad`-Icon > `Aktuellen Titel im Zitationsstil anzeigen`) sowie im Word-Dokument.
 
 Der Programmcode wird also nur ggf. bei den Feldern vom Typ "PersonFieldElement" (`Autor`, `Herausgeber`, `Institution` etc.), "PeriodicalFieldElement" (`Zeitschrift`), "SeriesTitleFieldElement" (`Reihentitel`) oder "NumericFieldElement" (`Auflage`, `Bandnummer der Reihe` etc.) benötigt.
 
