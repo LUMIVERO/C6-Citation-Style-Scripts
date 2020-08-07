@@ -1,6 +1,6 @@
 //C6#CPS001
 //Description: Author of contribution is also editor of compilation - ders., dies.
-//Version: 4.0
+//Version: 4.1 Added parameter bool confineReplacementToSingleAuthorOnPartialIdentity = true;
 //Version: 4.0 Completely re-written for Citavi 6
 //Version: 3.2 See note under 3.0 + jumps over 'empty' person fields
 //Version: 3.1 Corrects error that "ders./dies./ibid." was always displayed
@@ -70,17 +70,21 @@ namespace SwissAcademic.Citavi.Citations
 			PersonTeamsCompareResult compareResult = GetPersonTeamsIdentityAndGenderStructure(thesePersons, previousPersons);
 			if (compareResult.Identity == PersonTeamsIdentity.None) return null;
 			
-            bool handleAlsoPartialIdentity = true;  //if true, both of the following cases (1) and (2) will be treated. Otherwise, 
-                                        			//if false, only case (1) will be treated 
-			//(1) Watson, Mary / Smith, Emma, »An interesting contribution«, in: iidem (Eds.), Edited book with 2 editors, London 2012.
-            //(2) Watson, Mary / Smith, Emma, »A rather boring contribution«, in: iidem / Green, Peter (Eds.), Edited book with 3 editors, London 2012.
+            bool handleAlsoPartialIdentity = true;  //if true, all of the following cases (1) - (3) will be treated. Otherwise, 
+                                        			//if false, only case (2) will be treated 
+			bool confineReplacementToSingleAuthorOnPartialIdentity = true; 	//ignored if handleAlsoPartialIdentity = false;
+																			//if true, only cases (1) and (2) will be treated
+			//(1) Watson, Mary, »An interesting contribution«, in: eadem / Smith, Emma (Eds.), Edited book with 2 editors, London 2012.
+			//(2) Watson, Mary / Smith, Emma, »An interesting contribution«, in: iidem (Eds.), Edited book with 2 editors, London 2012.
+            //(3) Watson, Mary / Smith, Emma, »A rather boring contribution«, in: iidem / Green, Peter (Eds.), Edited book with 3 editors, London 2012.
             if (compareResult.Identity == PersonTeamsIdentity.Partial && !handleAlsoPartialIdentity) return null;
+			if (compareResult.Identity == PersonTeamsIdentity.Partial && previousPersons.Count() > 1 && confineReplacementToSingleAuthorOnPartialIdentity) return null;
 
 			//if you want "ders."/"dies." written in italics or other font styles, choose the desired option, for example FontStyle.Italic, FontStyle.Bold or FontStyle.SmallCaps
-			LiteralTextUnit idemSingularMaleLiteral = new LiteralTextUnit("ders.", FontStyle.Neutral);
-         	LiteralTextUnit idemSingularFemaleLiteral = new LiteralTextUnit("dies.", FontStyle.Neutral);
-         	LiteralTextUnit idemSingularNeutralLiteral = new LiteralTextUnit("dass.", FontStyle.Neutral);
-         	LiteralTextUnit idemPluralLiteral = new LiteralTextUnit("dies.", FontStyle.Neutral);
+			LiteralTextUnit idemSingularMaleLiteral = new LiteralTextUnit("Ders.", FontStyle.Neutral);
+         	LiteralTextUnit idemSingularFemaleLiteral = new LiteralTextUnit("Dies.", FontStyle.Neutral);
+         	LiteralTextUnit idemSingularNeutralLiteral = new LiteralTextUnit("Dass.", FontStyle.Neutral);
+         	LiteralTextUnit idemPluralLiteral = new LiteralTextUnit("Dies.", FontStyle.Neutral);
 			
 			//NOTE: If you want a prefix such as "In: " and a suffix " (Hrsg.)", you can define them as group prefix and suffix on the field element inside the component part editor
 			
