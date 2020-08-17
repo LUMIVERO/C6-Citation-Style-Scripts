@@ -30,7 +30,7 @@ namespace SwissAcademic.Citavi.Citations
 			
 			//Formatting of the first name; combine several styles with a pipe character
 			//FontStyle firstNameFontStyle = FontStyle.Bold | FontStyle.Italic;
-			FontStyle firstNameFontStyle = FontStyle.Italic;
+			FontStyle firstNameFontStyle = FontStyle.Neutral;
 			
 			//In case of ambiguous last names, should the first attempt to disambigutate be the addition of full first names or just the initials?
             NameFormat firstNameFormatForAmbiguityResolution = NameFormat.Abbreviated; 
