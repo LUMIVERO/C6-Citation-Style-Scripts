@@ -1,5 +1,6 @@
 //CDA005
 //Description: Output date field (including name of month) in different culture format depending on language of reference
+//Version: 1.4 If a letter for disambiguation is added to the output, the font style of the date/year will applied
 //Version: 1.3 If reference is ambiguous, a letter for disambiguation is added to the output
 //Version: 1.2 Lines 107ff language specific output
 //Version: 1.1 If field has year information only, without month and day, only the year will be output here (instead of January, 1st of that year)
@@ -215,7 +216,12 @@ namespace SwissAcademic.Citavi.Citations
 				}
 			}
 
-			if (ambiguityFound) literalElements.Add(new LiteralElement(componentPart, bibliographyCitation.IdentifyingLetter));
+			if (ambiguityFound) 
+			{
+				var literalElement = new LiteralElement(componentPart, bibliographyCitation.IdentifyingLetter);
+				literalElement.FontStyle = dateTimeFieldElement.FontStyle;
+				literalElements.Add(literalElement);
+			}
 
 			//replace the DateTimeFieldElement by the LiteralElements
 			componentPart.Elements.ReplaceItem(dateTimeFieldElement, literalElements);
