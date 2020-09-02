@@ -98,6 +98,10 @@
 
 [COT033](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT033%20Switch%20between%20URL%20and%20DOI) Switch between URL and DOI
 
+[COT034](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT034%20Suppress%20output%20if%20reference%20is%20cited%20only%20once) Suppress output if reference is cited only once
+
+[COT035](hhttps://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT035%20Output%20Reference%20Type) Output Reference Type
+
 ### CPE Periodical
 
 [CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
