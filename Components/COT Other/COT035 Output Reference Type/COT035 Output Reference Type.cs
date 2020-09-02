@@ -20,9 +20,6 @@ namespace SwissAcademic.Citavi.Citations
 
 			handled = true;
 
-			if (citation == null) return null;
-			if (citation.Reference == null) return null;
-
 			TextUnitCollection output = new TextUnitCollection();
 			LiteralTextUnit text;
 
@@ -31,8 +28,10 @@ namespace SwissAcademic.Citavi.Citations
 			text = new LiteralTextUnit(referenceType, FontStyle.Neutral);
 		//	text = new LiteralTextUnit(referenceType, FontStyle.Bold | FontStyle.SmallCaps);
 
+			output.Add(new LiteralTextUnit("[", FontStyle.Neutral));
 			output.Add(text);
-
+			output.Add(new LiteralTextUnit("]", FontStyle.Neutral));
+			
 			return output;
 		}
 	}
