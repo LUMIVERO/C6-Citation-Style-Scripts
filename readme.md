@@ -100,7 +100,7 @@
 
 [COT034](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT034%20Suppress%20output%20if%20reference%20is%20cited%20only%20once) Suppress output if reference is cited only once
 
-[COT035](hhttps://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT035%20Output%20Reference%20Type) Output Reference Type
+[COT035](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT035%20Output%20Reference%20Type) Output Reference Type
 
 ### CPE Periodical
 
