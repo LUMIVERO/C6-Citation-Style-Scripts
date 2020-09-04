@@ -87,93 +87,45 @@ namespace SwissAcademic.Citavi.Citations
 			//delta = 1 (over two pages) ditto
 			//delta > 2 or 3 (over 4 or 5 or more pages) ditto
 
-			if (rangeToTreatIsExactly3)
+			if ( (rangeToTreatIsExactly3 == true && delta == 2) || (rangeToTreatIsExactly3 == false && (delta == 2 || delta == 3)) )
 			{
-				if (delta == 2)
+				switch(pageRange.NumberingType)
 				{
-					switch(pageRange.NumberingType)
-					{
-						case NumberingType.Column:
-						{	
-							pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.ColumnMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-						
-						case NumberingType.Margin:
-						{
-							pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.MarginMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-						
-						case NumberingType.Other:
-						{
-							pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.OtherMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-						
-						case NumberingType.Page:
-						default:
-						{
-							pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.PageMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-					
-						case NumberingType.Paragraph:
-						{
-							pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.ParagraphMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
+					case NumberingType.Column:
+					{	
+						pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
+						pageRangeFieldElement.ColumnMultiSuffix.Text = suffixForRangeOf3or4;
 					}
-				}
-			}
-			
-			else
-			{
-				if (delta == 2 || delta == 3)
-				{
-					switch(pageRange.NumberingType)
-					{
-						case NumberingType.Column:
-						{	
-							pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.ColumnMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-						
-						case NumberingType.Margin:
-						{
-							pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.MarginMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-						
-						case NumberingType.Other:
-						{
-							pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.OtherMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
-						
-						case NumberingType.Page:
-						default:
-						{
-							pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.PageMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
+					break;
 					
-						case NumberingType.Paragraph:
-						{
-							pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
-							pageRangeFieldElement.ParagraphMultiSuffix.Text = suffixForRangeOf3or4;
-						}
-						break;
+					case NumberingType.Margin:
+					{
+						pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
+						pageRangeFieldElement.MarginMultiSuffix.Text = suffixForRangeOf3or4;
 					}
+					break;
+					
+					case NumberingType.Other:
+					{
+						pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
+						pageRangeFieldElement.OtherMultiSuffix.Text = suffixForRangeOf3or4;
+					}
+					break;
+					
+					case NumberingType.Page:
+					default:
+					{
+						pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
+						pageRangeFieldElement.PageMultiSuffix.Text = suffixForRangeOf3or4;
+					}
+					break;
+					
+					case NumberingType.Paragraph:
+					{
+						pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
+						pageRangeFieldElement.ParagraphMultiSuffix.Text = suffixForRangeOf3or4;
+					}
+					break;
 				}
 			}
 
