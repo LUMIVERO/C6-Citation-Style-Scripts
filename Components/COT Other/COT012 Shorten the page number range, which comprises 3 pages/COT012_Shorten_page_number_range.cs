@@ -1,13 +1,14 @@
 //C6#COT012
 //C5#431621
 //Description: Shorten page number range
-//Version: 2.0
-//Behandlung von Seitenzahlbereichen mit genau 3 Seiten: z.B.: 17-19 -> S. 17 ff.
-//Genau 1 Seite, z.B.: 17 -> S. 17
-//Genau 2 Seiten, z.B. 17-18 -> S. 17 f.
-//Genau 3 Seiten, z.B. 17-19 -> S. 17 ff.  (DIESER FALL WIRD HIER BEHANDELT)
-//4 und mehr Seiten, z.B. 17-20 -> S. 17-20
-//Version 2: Uses PageNumber.IsFullyNumeric instead of PageNumber.IsNumeric. 
+//Version: 2.1
+//Behandlung von Seitenzahlbereichen mit genau 3 (oder ggf. 3 oder 4) Seiten: z.B.: 1-3 (oder ggf. 1-4) -> S. 1 ff.
+//Genau 1 Seite, z.B.: 					1 				-> S. 1
+//Genau 2 Seiten, z.B.:					1-2 			-> S. 1 f.
+//Genau 3 (oder ggf. 4) Seiten, z.B.: 	1-3 (ggf. 1-4) 	-> S. 1 ff.  (DIESER FALL WIRD HIER BEHANDELT)
+//4 bzw. 5 und mehr Seiten, z.B.:		1-5 			-> S. 1-5
+//Version 2.1: 	Customizable, whether the script should apply to a page range with exactly 3 pages OR with 3 or 4 pages.
+//Version 2: 	Uses PageNumber.IsFullyNumeric instead of PageNumber.IsNumeric. 
 //Pls. deploy script version 1.1 instead, if you get compilation errors with your Citavi 5 version.
 
 using System.Linq;
@@ -26,7 +27,8 @@ namespace SwissAcademic.Citavi.Citations
 
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
 		{
-   			string suffixForRangeOf3 = " ff.";
+   			string suffixForRangeOf3or4 = "\u00A0ff.";		//inkl. geschütztem Leerzeichen (ggf. durch normales Leerzeichen ersetzen)
+			bool rangeToTreatIsExactly3 = true;				//wenn false, dann soll ein Bereich von 3 ODER 4 Seiten mit " ff." verkürzt werden (sonst nur bei genau 3 Seiten)
 			
 			handled = false;
 
@@ -80,57 +82,101 @@ namespace SwissAcademic.Citavi.Citations
 			if (endPage > startPage) delta = endPage - startPage;
 			else delta = 0;
 
-			//we only treat the special case delta = 2 (over three pages)
+			//we only treat the special case delta = 2 (optional 2 or 3) (three pages, optional three or four pages)
 			//delta = 0 (over one page) is handled directly from the elements settings
 			//delta = 1 (over two pages) ditto
-			//delta > 2 (over 4 or more pages) ditto
+			//delta > 2 or 3 (over 4 or 5 or more pages) ditto
 
-			if (delta == 2)
+			if (rangeToTreatIsExactly3)
 			{
-				switch(pageRange.NumberingType)
+				if (delta == 2)
 				{
-					case NumberingType.Column:
-					{	
-						pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
-						pageRangeFieldElement.ColumnMultiSuffix.Text = suffixForRangeOf3;
-					}
-					break;
-												
-					case NumberingType.Margin:
+					switch(pageRange.NumberingType)
 					{
-						pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
-						pageRangeFieldElement.MarginMultiSuffix.Text = suffixForRangeOf3;
-					}
-					break;
-												
-					case NumberingType.Other:
-					{
-						pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
-						pageRangeFieldElement.OtherMultiSuffix.Text = suffixForRangeOf3;
-					}
-					break;
+						case NumberingType.Column:
+						{	
+							pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.ColumnMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
 						
-					case NumberingType.Page:
-					default:
-					{
-						pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
-						pageRangeFieldElement.PageMultiSuffix.Text = suffixForRangeOf3;
-					}
-					break;
+						case NumberingType.Margin:
+						{
+							pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.MarginMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
 						
-					case NumberingType.Paragraph:
-					{
-						pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
-						pageRangeFieldElement.ParagraphMultiSuffix.Text = suffixForRangeOf3;
+						case NumberingType.Other:
+						{
+							pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.OtherMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+						
+						case NumberingType.Page:
+						default:
+						{
+							pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.PageMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+					
+						case NumberingType.Paragraph:
+						{
+							pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.ParagraphMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
 					}
-					break;
-
 				}
-
-				
-
-				
 			}
+			
+			else
+			{
+				if (delta == 2 || delta == 3)
+				{
+					switch(pageRange.NumberingType)
+					{
+						case NumberingType.Column:
+						{	
+							pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.ColumnMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+						
+						case NumberingType.Margin:
+						{
+							pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.MarginMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+						
+						case NumberingType.Other:
+						{
+							pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.OtherMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+						
+						case NumberingType.Page:
+						default:
+						{
+							pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.PageMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+					
+						case NumberingType.Paragraph:
+						{
+							pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
+							pageRangeFieldElement.ParagraphMultiSuffix.Text = suffixForRangeOf3or4;
+						}
+						break;
+					}
+				}
+			}
+
 			return null; //handled remains false, because Citavi will do the formatting with the changed field element's properties
 
 		}
