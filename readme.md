@@ -166,9 +166,11 @@
 
 [TNE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE003%20Field%20Usual%20abbreviation%20(legal%20comment)%20is%20empty) Field "Usual abbreviation" (legal comment) is empty
 
-[TNE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE004%20Field%20CustomField1%20of%20the%20parent%20title%20is%20not%20empty) Field" CustomField1" of the parent title is not empty
+[TNE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE004%20Field%20CustomField1%20of%20the%20parent%20title%20is%20not%20empty) Field" CustomField1" of the parent reference is not empty
 
 [TNE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE005%20Field%20Quoted%20Pages%20is%20empty) Field "Quoted Pages" is empty
+
+[TNE006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE006%20Field%20Online%20Address%20of%20the%20parent%20reference%20is%20not%20empty) Field "Online Address" of the parent reference is not empty
 
 [TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20preceding%20footnote%20is%20cited) Another contribution from parent reference in preceding footnote is cited
 
