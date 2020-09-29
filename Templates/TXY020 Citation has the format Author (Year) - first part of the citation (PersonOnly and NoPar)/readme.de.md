@@ -23,7 +23,7 @@ In die neue leere Vorlage ziehen Sie aus der Komponentenpalette auf der linken S
 
 Falls Sie für die Komponente verschiedene Formatierungen oder Trennzeichen verwenden möchten, müssten Sie die Komponente markieren und über den Befehl `Komponente` > `Duplizieren` eine Kopie erzeugen, die Sie entsprechend anpassen.
 
-Setzen Sie unter `Datei` > `Eigenschaften des Zitationsstils` > `Mehrdeutige Nachweis`e > ein Häkchen vor `Zusatzoptionen bei Vorlagen anzeigen` und bestätigen Sie die Änderung mit `OK`:
+Setzen Sie unter `Datei` > `Eigenschaften des Zitationsstils` > `Mehrdeutige Nachweise` > ein Häkchen vor `Zusatzoptionen bei Vorlagen anzeigen` und bestätigen Sie die Änderung mit `OK`:
 
 <img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Templates/TXY020%20Citation%20has%20the%20format%20Author%20(Year)%20-%20first%20part%20of%20the%20citation%20(PersonOnly%20and%20NoPar)/Zitationsstil-Eigenschaften%20-%20Mehrdeutige%20Nachweise%20-%20Zusatzoptionen%20bei%20Vorlagen%20anzeigen.png" width="600">
 
