@@ -34,8 +34,6 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (seriesTitle == null) return false;
 
-            
-			
 			return string.Equals(seriesTitle.Name, "NAME", StringComparison.OrdinalIgnoreCase); 
 		}
 	}
