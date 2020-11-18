@@ -13,7 +13,7 @@ namespace SwissAcademic.Citavi.Citations
         :
         IComponentPartFilter
     {
-        //CPS012 Add first or middle names for ambiguous last names v5.0
+		//CPS012 Add first or middle names for ambiguous last names v5.0
 		//Version 5.0   Completely re-written for Citavi 6.4 (> Citavi 6.3.16)
 		//Berücksichtigt die 3 neuen Werte: NameIdentity.LastNamePrefix, NameIdentity.LastNameFirstNameInitialMiddleNameInitial & NameIdentity.LastNameFirstNameInitialMiddleNameFull
 		//Version 4.2   Added first name font style parameter
