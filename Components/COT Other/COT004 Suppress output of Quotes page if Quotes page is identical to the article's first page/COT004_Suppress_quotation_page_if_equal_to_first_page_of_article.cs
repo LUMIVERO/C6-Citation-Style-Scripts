@@ -6,7 +6,7 @@
 //2.) [article's pages][literal][quotation pages][literal]   <- literals can contain parenthesis
 //3.) [article's pages][literal][quotation pages]
 
-//Version 1.9 Arrangement of numbering types (Paragraph & Margin) corrected according to GUI
+//Version 1.9 Arrangement of numbering types (paragraph & margin) corrected according to GUI
 //Version 1.8 Added Transfer of Suffix settings for all numbering types (page, column etc.)
 //Version 1.7 Added Transfer of HasSpecialFormat to TransferSettings
 //Version 1.6 Line 91/92: Added changed order of Transfersettings, to choose between the output of the prefix of article's pages and the prefix of quotation pages
