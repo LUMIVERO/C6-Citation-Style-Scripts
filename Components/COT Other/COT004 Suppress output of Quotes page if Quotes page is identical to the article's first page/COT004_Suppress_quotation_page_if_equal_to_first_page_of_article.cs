@@ -6,6 +6,7 @@
 //2.) [article's pages][literal][quotation pages][literal]   <- literals can contain parenthesis
 //3.) [article's pages][literal][quotation pages]
 
+//Version 1.9 Arrangement of numbering types (Paragraph & Margin) corrected according to GUI
 //Version 1.8 Added Transfer of Suffix settings for all numbering types (page, column etc.)
 //Version 1.7 Added Transfer of HasSpecialFormat to TransferSettings
 //Version 1.6 Line 91/92: Added changed order of Transfersettings, to choose between the output of the prefix of article's pages and the prefix of quotation pages
@@ -105,27 +106,27 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.PageTwoHasSpecialFormat = false;
 				pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.PageMultiSuffix.Text = string.Empty;
-
+				
 				pageRangeFieldElement.ColumnOneHasSpecialFormat = false;
 				pageRangeFieldElement.ColumnTwoHasSpecialFormat = false;
 				pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.ColumnMultiSuffix.Text = string.Empty;
-
-				pageRangeFieldElement.MarginOneHasSpecialFormat = false;
-				pageRangeFieldElement.MarginTwoHasSpecialFormat = false;
-				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
-				pageRangeFieldElement.MarginMultiSuffix.Text = string.Empty;
-
+				
 				pageRangeFieldElement.ParagraphOneHasSpecialFormat = false;
 				pageRangeFieldElement.ParagraphTwoHasSpecialFormat = false;
 				pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.ParagraphMultiSuffix.Text = string.Empty;
-
+				
+				pageRangeFieldElement.MarginOneHasSpecialFormat = false;
+				pageRangeFieldElement.MarginTwoHasSpecialFormat = false;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiSuffix.Text = string.Empty;
+				
 				pageRangeFieldElement.OtherOneHasSpecialFormat = false;
 				pageRangeFieldElement.OtherTwoHasSpecialFormat = false;
 				pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.OtherMultiSuffix.Text = string.Empty;
-
+				
 				return null;
 			}
 		}
@@ -305,7 +306,7 @@ namespace SwissAcademic.Citavi.Citations
 			targetElement.PageOnePrefix.FontStyle = sourceElement.PageOnePrefix.FontStyle;
 			targetElement.PageOneSuffix.Text = sourceElement.PageOneSuffix.Text;
 			targetElement.PageOneSuffix.FontStyle = sourceElement.PageOneSuffix.FontStyle;
-
+			
 			targetElement.PageTwoHasSpecialFormat = sourceElement.PageTwoHasSpecialFormat;
 			targetElement.PageTwoPrefix.Text = sourceElement.PageTwoPrefix.Text;
 			targetElement.PageTwoPrefix.FontStyle = sourceElement.PageTwoPrefix.FontStyle;
@@ -332,33 +333,12 @@ namespace SwissAcademic.Citavi.Citations
 			targetElement.ColumnTwoPrefix.FontStyle = sourceElement.ColumnTwoPrefix.FontStyle;
 			targetElement.ColumnTwoSuffix.Text = sourceElement.ColumnTwoSuffix.Text;
 			targetElement.ColumnTwoSuffix.FontStyle = sourceElement.ColumnTwoSuffix.FontStyle;
-
+			
 			targetElement.ColumnMultiPrefix.Text = sourceElement.ColumnMultiPrefix.Text;
 			targetElement.ColumnMultiPrefix.FontStyle = sourceElement.ColumnMultiPrefix.FontStyle;
 			targetElement.ColumnMultiSuffix.Text = sourceElement.ColumnMultiSuffix.Text;
-			targetElement.ColumnMultiSuffix.FontStyle = sourceElement.ColumnMultiSuffix.FontStyle;			
-
-			#endregion
+			targetElement.ColumnMultiSuffix.FontStyle = sourceElement.ColumnMultiSuffix.FontStyle;
 			
-			#region Margin
-			
-			targetElement.MarginOneHasSpecialFormat = sourceElement.MarginOneHasSpecialFormat;
-			targetElement.MarginOnePrefix.Text = sourceElement.MarginOnePrefix.Text;
-			targetElement.MarginOnePrefix.FontStyle = sourceElement.MarginOnePrefix.FontStyle;
-			targetElement.MarginOneSuffix.Text = sourceElement.MarginOneSuffix.Text;
-			targetElement.MarginOneSuffix.FontStyle = sourceElement.MarginOneSuffix.FontStyle;			
-
-			targetElement.MarginTwoHasSpecialFormat = sourceElement.MarginTwoHasSpecialFormat;
-			targetElement.MarginTwoPrefix.Text = sourceElement.MarginTwoPrefix.Text;
-			targetElement.MarginTwoPrefix.FontStyle = sourceElement.MarginTwoPrefix.FontStyle;
-			targetElement.MarginTwoSuffix.Text = sourceElement.MarginTwoSuffix.Text;
-			targetElement.MarginTwoSuffix.FontStyle = sourceElement.MarginTwoSuffix.FontStyle;			
-
-			targetElement.MarginMultiPrefix.Text = sourceElement.MarginMultiPrefix.Text;
-			targetElement.MarginMultiPrefix.FontStyle = sourceElement.MarginMultiPrefix.FontStyle;
-			targetElement.MarginMultiSuffix.Text = sourceElement.MarginMultiSuffix.Text;
-			targetElement.MarginMultiSuffix.FontStyle = sourceElement.MarginMultiSuffix.FontStyle;			
-
 			#endregion
 			
 			#region Paragraph
@@ -367,8 +347,8 @@ namespace SwissAcademic.Citavi.Citations
 			targetElement.ParagraphOnePrefix.Text = sourceElement.ParagraphOnePrefix.Text;
 			targetElement.ParagraphOnePrefix.FontStyle = sourceElement.ParagraphOnePrefix.FontStyle;
 			targetElement.ParagraphOneSuffix.Text = sourceElement.ParagraphOneSuffix.Text;
-			targetElement.ParagraphOneSuffix.FontStyle = sourceElement.ParagraphOneSuffix.FontStyle;			
-
+			targetElement.ParagraphOneSuffix.FontStyle = sourceElement.ParagraphOneSuffix.FontStyle;
+			
 			targetElement.ParagraphTwoHasSpecialFormat = sourceElement.ParagraphTwoHasSpecialFormat;
 			targetElement.ParagraphTwoPrefix.Text = sourceElement.ParagraphTwoPrefix.Text;
 			targetElement.ParagraphTwoPrefix.FontStyle = sourceElement.ParagraphTwoPrefix.FontStyle;
@@ -382,24 +362,45 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#endregion
 			
+			#region Margin
+			
+			targetElement.MarginOneHasSpecialFormat = sourceElement.MarginOneHasSpecialFormat;
+			targetElement.MarginOnePrefix.Text = sourceElement.MarginOnePrefix.Text;
+			targetElement.MarginOnePrefix.FontStyle = sourceElement.MarginOnePrefix.FontStyle;
+			targetElement.MarginOneSuffix.Text = sourceElement.MarginOneSuffix.Text;
+			targetElement.MarginOneSuffix.FontStyle = sourceElement.MarginOneSuffix.FontStyle;
+			
+			targetElement.MarginTwoHasSpecialFormat = sourceElement.MarginTwoHasSpecialFormat;
+			targetElement.MarginTwoPrefix.Text = sourceElement.MarginTwoPrefix.Text;
+			targetElement.MarginTwoPrefix.FontStyle = sourceElement.MarginTwoPrefix.FontStyle;
+			targetElement.MarginTwoSuffix.Text = sourceElement.MarginTwoSuffix.Text;
+			targetElement.MarginTwoSuffix.FontStyle = sourceElement.MarginTwoSuffix.FontStyle;
+			
+			targetElement.MarginMultiPrefix.Text = sourceElement.MarginMultiPrefix.Text;
+			targetElement.MarginMultiPrefix.FontStyle = sourceElement.MarginMultiPrefix.FontStyle;
+			targetElement.MarginMultiSuffix.Text = sourceElement.MarginMultiSuffix.Text;
+			targetElement.MarginMultiSuffix.FontStyle = sourceElement.MarginMultiSuffix.FontStyle;
+			
+			#endregion
+			
 			#region Other
 			
 			targetElement.OtherOneHasSpecialFormat = sourceElement.OtherOneHasSpecialFormat;
 			targetElement.OtherOnePrefix.Text = sourceElement.OtherOnePrefix.Text;
 			targetElement.OtherOnePrefix.FontStyle = sourceElement.OtherOnePrefix.FontStyle;
 			targetElement.OtherOneSuffix.Text = sourceElement.OtherOneSuffix.Text;
-			targetElement.OtherOneSuffix.FontStyle = sourceElement.OtherOneSuffix.FontStyle;			
-
+			targetElement.OtherOneSuffix.FontStyle = sourceElement.OtherOneSuffix.FontStyle;
+			
 			targetElement.OtherTwoHasSpecialFormat = sourceElement.OtherTwoHasSpecialFormat;
 			targetElement.OtherTwoPrefix.Text = sourceElement.OtherTwoPrefix.Text;
 			targetElement.OtherTwoPrefix.FontStyle = sourceElement.OtherTwoPrefix.FontStyle;
 			targetElement.OtherTwoSuffix.Text = sourceElement.OtherTwoSuffix.Text;
-			targetElement.OtherTwoSuffix.FontStyle = sourceElement.OtherTwoSuffix.FontStyle;				
-
+			targetElement.OtherTwoSuffix.FontStyle = sourceElement.OtherTwoSuffix.FontStyle;
+			
 			targetElement.OtherMultiPrefix.Text = sourceElement.OtherMultiPrefix.Text;
 			targetElement.OtherMultiPrefix.FontStyle = sourceElement.OtherMultiPrefix.FontStyle;
 			targetElement.OtherMultiSuffix.Text = sourceElement.OtherMultiSuffix.Text;
-			targetElement.OtherMultiSuffix.FontStyle = sourceElement.OtherMultiSuffix.FontStyle;				
+			targetElement.OtherMultiSuffix.FontStyle = sourceElement.OtherMultiSuffix.FontStyle;
 			
 			#endregion
 		}
