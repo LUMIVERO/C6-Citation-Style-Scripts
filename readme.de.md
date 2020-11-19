@@ -60,7 +60,7 @@
 
 [COT013](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT013%20Correct%20font%20style%20for%20et%20al%20abbreviation) Correct font style for et al abbreviation
 
-[COT014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT014%20Custom%20Field1%20contains%20Kindle%20iPad%20Nook%20...%20(for%20MLA)) "Custom Field1" contains Kindle iPad Nook ... (for MLA)
+[COT014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT014%20Custom%20Field1%20contains%20Kindle%20iPad%20Nook%20...%20%5Bfor%20MLA%5D) "Custom Field1" contains Kindle iPad Nook ... (for MLA)
 
 [COT015](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT015%20Output%20citation%20pages%20depending%20on%20citation%20page%20type) Output citation pages depending on citation page type
 
@@ -68,7 +68,7 @@
 
 [COT017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT017%20Do%20not%20repeat%20the%20court%20when%20enumerating%20court%20decisions) Do not repeat the court when enumerating court decisions
 
-[COT018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT018%20Use%20prefixes%20%2B%20suffixes%20with%20numeral%20system%20%3D%20'None%20(as%20entered)') Use prefixes + suffixes with numeral system = 'None (as entered)'
+[COT018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT018%20Use%20prefixes%20%2B%20suffixes%20with%20numeral%20system%20%3D%20'None%20%5Bas%20entered%5D') Use prefixes + suffixes with numeral system = 'None (as entered)'
 
 [COT019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT019%20Double%20format%20applications%20eliminate%20each%20other) Double format applications eliminate each other
 
@@ -164,7 +164,7 @@
 
 [TNE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE002%20Field%20Edition%20is%20not%20empty) Field "Edition" is not empty
 
-[TNE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE003%20Field%20Usual%20abbreviation%20(legal%20comment)%20is%20empty) Field "Usual abbreviation" (legal comment) is empty
+[TNE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE003%20Field%20Usual%20abbreviation%20%5Blegal%20comment%5D%20is%20empty) Field "Usual abbreviation" (legal comment) is empty
 
 [TNE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE004%20Field%20CustomField1%20of%20the%20parent%20title%20is%20not%20empty) Field" CustomField1" of the parent reference is not empty
 
@@ -178,7 +178,7 @@
 
 [TRE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE003%20Other%20contribution%20by%20same%20author%20from%20same%20parent%20reference%20also%20cited) Other contribution by same author from same parent reference also cited
 
-[TRE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE004%20In%20multiple%20references%20author(s)%20and%20year%20identical%20to%20previous%20entry) In multiple references author(s) and year identical to previous entry
+[TRE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE004%20In%20multiple%20references%20author%5Bs%5D%20and%20year%20identical%20to%20previous%20entry) In multiple references author(s) and year identical to previous entry
 
 [TRE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE005%20Collective%20volume%20has%20been%20cited%20before) Collective volume has been cited before
 
@@ -228,13 +228,13 @@
 
 [TXY019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY019%20Field%20Groups%20of%20Parent%20Reference%20contains%20specific%20name) Field "Groups" of Parent Reference contains specific name
 
-[TXY020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY020%20Citation%20has%20the%20format%20Author%20(Year)%20-%20first%20part%20of%20the%20citation%20(PersonOnly%20and%20NoPar)) Citation has the format "Author (Year)" - first part of the citation (PersonOnly and NoPar)
+[TXY020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY020%20Citation%20has%20the%20format%20Author%20%5BYear%5D%20-%20first%20part%20of%20the%20citation%20%5BPersonOnly%20and%20NoPar%5D) Citation has the format "Author (Year)" - first part of the citation (PersonOnly and NoPar)
 
-[TXY021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20(Year)%20-%20second%20part%20of%20the%20citation%20(YearOnly)) Citation has the format "Author (Year)" - second part of the citation (YearOnly)
+[TXY021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20%5BYear%5D%20-%20second%20part%20of%20the%20citation%20%5BYearOnly%5D) Citation has the format "Author (Year)" - second part of the citation (YearOnly)
 
 ## Literaturverzeichnis sortieren
 
-[BSO001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO001%20By%20Custom%20Field%201%20or%20author%20or%20title%20(skip%20stop%20words)%2C%20year%2C%20sort%20title) By "Custom Field 1 "or author or title (skip stop words), year, sort title
+[BSO001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO001%20By%20Custom%20Field%201%20or%20author%20or%20title%20%5Bskip%20stop%20words%5D%2C%20year%2C%20sort%20title) By "Custom Field 1 "or author or title (skip stop words), year, sort title
 
 [BSO002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO002%20Sort%20by%20author%20or%20title%2C%20year%20descending%2C%20title%2C%20volume%2C%20issue%20number) Sort by author or title, year descending, title, volume, issue number
 
