@@ -104,7 +104,6 @@
 
 [COT036](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT036%20Prefix%20%2B%20suffix%20for%20page%20range%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for page range depending on the content of the Language field
 
-
 ### CPE Periodical
 
 [CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
