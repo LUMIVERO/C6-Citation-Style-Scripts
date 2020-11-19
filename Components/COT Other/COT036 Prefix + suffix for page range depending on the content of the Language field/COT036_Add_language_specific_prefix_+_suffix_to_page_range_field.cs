@@ -2,6 +2,7 @@
 //Description: Different prefix or suffix for page range depending on language of reference
 //Version: 1.0
 //Das Trennzeichen sowie die Formatierung von "Erste Zahl" und "Letzte Zahl" müssen in der Komponente selbst festgelegt werden.
+//Auch die Einstellungen für Titel ohne Eintrag im Feld "Sprache" werden in den Komponente getroffen.
 
 using System.Linq;
 using System.Collections.Generic;
@@ -686,6 +687,136 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginMultiPrefix.Text = "n.º\u00A0margin.\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0e\u00A0ss.";
+				pageRangeFieldElement.MarginMultiSuffix.FontStyle = FontStyle.Neutral;				
+				
+				#endregion
+				
+				#region Other
+				
+				pageRangeFieldElement.OtherOneHasSpecialFormat = false;
+				pageRangeFieldElement.OtherOneNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.OtherOnePrefix.Text = "";
+				pageRangeFieldElement.OtherOnePrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.OtherOneSuffix.Text = "";
+				pageRangeFieldElement.OtherOneSuffix.FontStyle = FontStyle.Neutral;				
+				
+				pageRangeFieldElement.OtherTwoHasSpecialFormat = false;
+				pageRangeFieldElement.OtherTwoNumberingStyle = NumberingStyle.FullRange;
+				pageRangeFieldElement.OtherTwoPrefix.Text = "";
+				pageRangeFieldElement.OtherTwoPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.OtherTwoSuffix.Text = "";
+				pageRangeFieldElement.OtherTwoSuffix.FontStyle = FontStyle.Neutral;					
+				
+				pageRangeFieldElement.OtherMultiNumberingStyle = NumberingStyle.FullRange;
+				pageRangeFieldElement.OtherMultiPrefix.Text = "";
+				pageRangeFieldElement.OtherMultiPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.OtherMultiSuffix.Text = "";
+				pageRangeFieldElement.OtherMultiSuffix.FontStyle = FontStyle.Neutral;					
+				
+				#endregion
+				
+				return null;
+			}
+			
+			#endregion
+			
+			#region Other: Language is NOT EMPTY - treat like English?
+			
+			if (!string.IsNullOrWhiteSpace(language));
+			{
+				
+				#region Page
+				
+				pageRangeFieldElement.PageOneHasSpecialFormat = true;
+				pageRangeFieldElement.PageOneNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.PageOnePrefix.Text = "p.\u00A0";
+				pageRangeFieldElement.PageOnePrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.PageOneSuffix.Text = "";
+				pageRangeFieldElement.PageOneSuffix.FontStyle = FontStyle.Neutral;
+				
+				pageRangeFieldElement.PageTwoHasSpecialFormat = true;
+				pageRangeFieldElement.PageTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.PageTwoPrefix.Text = "pp.\u00A0";
+				pageRangeFieldElement.PageTwoPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.PageTwoSuffix.Text = "\u00A0f.";
+				pageRangeFieldElement.PageTwoSuffix.FontStyle = FontStyle.Neutral;
+				
+				pageRangeFieldElement.PageMultiNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.PageMultiPrefix.Text = "pp.\u00A0";
+				pageRangeFieldElement.PageMultiPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.PageMultiSuffix.Text = "\u00A0ff.";
+				pageRangeFieldElement.PageMultiSuffix.FontStyle = FontStyle.Neutral;
+				
+				#endregion
+				
+				#region Column
+				
+				pageRangeFieldElement.ColumnOneHasSpecialFormat = true;
+				pageRangeFieldElement.ColumnOneNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.ColumnOnePrefix.Text = "col.\u00A0";
+				pageRangeFieldElement.ColumnOnePrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.ColumnOneSuffix.Text = "";
+				pageRangeFieldElement.ColumnOneSuffix.FontStyle = FontStyle.Neutral;
+				
+				pageRangeFieldElement.ColumnTwoHasSpecialFormat = true;
+				pageRangeFieldElement.ColumnTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.ColumnTwoPrefix.Text = "col.\u00A0";
+				pageRangeFieldElement.ColumnTwoPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.ColumnTwoSuffix.Text = "\u00A0f.";
+				pageRangeFieldElement.ColumnTwoSuffix.FontStyle = FontStyle.Neutral;
+				
+				pageRangeFieldElement.ColumnMultiNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.ColumnMultiPrefix.Text = "col.\u00A0";
+				pageRangeFieldElement.ColumnMultiPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.ColumnMultiSuffix.Text = "\u00A0ff.";
+				pageRangeFieldElement.ColumnMultiSuffix.FontStyle = FontStyle.Neutral;				
+				
+				#endregion
+				
+				#region Paragraph
+				
+				pageRangeFieldElement.ParagraphOneHasSpecialFormat = true;
+				pageRangeFieldElement.ParagraphOneNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.ParagraphOnePrefix.Text = "§\u00A0";
+				pageRangeFieldElement.ParagraphOnePrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.ParagraphOneSuffix.Text = "";
+				pageRangeFieldElement.ParagraphOneSuffix.FontStyle = FontStyle.Neutral;				
+				
+				pageRangeFieldElement.ParagraphTwoHasSpecialFormat = false;
+				pageRangeFieldElement.ParagraphTwoNumberingStyle = NumberingStyle.FullRange;
+				pageRangeFieldElement.ParagraphTwoPrefix.Text = "§§\u00A0";
+				pageRangeFieldElement.ParagraphTwoPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.ParagraphTwoSuffix.Text = "";
+				pageRangeFieldElement.ParagraphTwoSuffix.FontStyle = FontStyle.Neutral;
+				
+				pageRangeFieldElement.ParagraphMultiNumberingStyle = NumberingStyle.FullRange;
+				pageRangeFieldElement.ParagraphMultiPrefix.Text = "§§\u00A0";
+				pageRangeFieldElement.ParagraphMultiPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.ParagraphMultiSuffix.Text = "";
+				pageRangeFieldElement.ParagraphMultiSuffix.FontStyle = FontStyle.Neutral;
+				
+				#endregion
+				
+				#region Margin
+				
+				pageRangeFieldElement.MarginOneHasSpecialFormat = true;
+				pageRangeFieldElement.MarginOneNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginOnePrefix.Text = "no.\u00A0";
+				pageRangeFieldElement.MarginOnePrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.MarginOneSuffix.Text = "";
+				pageRangeFieldElement.MarginOneSuffix.FontStyle = FontStyle.Neutral;				
+				
+				pageRangeFieldElement.MarginTwoHasSpecialFormat = true;
+				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginTwoPrefix.Text = "no.\u00A0";
+				pageRangeFieldElement.MarginTwoPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0f.";
+				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
+				
+				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiPrefix.Text = "no.\u00A0";
+				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
+				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0ff.";
 				pageRangeFieldElement.MarginMultiSuffix.FontStyle = FontStyle.Neutral;				
 				
 				#endregion
