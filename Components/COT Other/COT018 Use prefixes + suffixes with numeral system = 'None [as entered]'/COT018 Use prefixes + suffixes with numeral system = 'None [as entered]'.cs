@@ -1,12 +1,13 @@
 //C6#COT018
 //C5#431526
 //Description: Force to use prefixes
-//Version: 1.1, requires Citavi 5.3 and above
+//Version 1.2: requires Citavi 5.3 and above
 //Bei "Unverändert (wie Eingabe)" [C5] bzw. "Kein Zahlensystem (Ausgabe wie Eingabe)" [C6]:
 //+Präfix, +Suffix, +Bindestrich durch Halbgeviertstrich (Gedankenstrich) ersetzen
 //Funktionsweise: Das ERSTE PageRangeFieldElement wird durch korrigierten Output ersetzt.
 //Das Skript kann auch in einer kombinierten Komponente mit weiteren Elementen verwendet werden.
-//Version: 1.1 changed mode of script from handling the output itself to changing the component part and let Citavi do the rest (lines 115 ff.) 
+//Version 1.2: Arrangement of numbering types (page, column, paragraph, margin, other) corrected according to GUI
+//Version 1.1: changed mode of script from handling the output itself to changing the component part and let Citavi do the rest (lines 115 ff.) 
 
 using System.Linq;
 using System.Collections.Generic;
@@ -61,29 +62,29 @@ namespace SwissAcademic.Citavi.Citations
 			LiteralElement suffix = null;
 			switch (pageRangeResolved.NumberingType)
 			{
-				case NumberingType.Column:
-					prefix = pageRangeFieldElement.ColumnMultiPrefix;
-					suffix = pageRangeFieldElement.ColumnMultiSuffix;
-					break;
-					
-				case NumberingType.Margin:
-					prefix = pageRangeFieldElement.MarginMultiPrefix;
-					suffix = pageRangeFieldElement.MarginMultiSuffix;
-					break;
-					
-				case NumberingType.Other:
-					prefix = pageRangeFieldElement.OtherMultiPrefix;
-					suffix = pageRangeFieldElement.OtherMultiSuffix;
-					break;
-				
 				case NumberingType.Page:
 					prefix = pageRangeFieldElement.PageMultiPrefix;
 					suffix = pageRangeFieldElement.PageMultiSuffix;
 					break;
 				
+				case NumberingType.Column:
+					prefix = pageRangeFieldElement.ColumnMultiPrefix;
+					suffix = pageRangeFieldElement.ColumnMultiSuffix;
+					break;
+				
 				case NumberingType.Paragraph:
 					prefix = pageRangeFieldElement.ParagraphMultiPrefix;
 					suffix = pageRangeFieldElement.ParagraphMultiSuffix;
+					break;
+				
+				case NumberingType.Margin:
+					prefix = pageRangeFieldElement.MarginMultiPrefix;
+					suffix = pageRangeFieldElement.MarginMultiSuffix;
+					break;
+				
+				case NumberingType.Other:
+					prefix = pageRangeFieldElement.OtherMultiPrefix;
+					suffix = pageRangeFieldElement.OtherMultiSuffix;
 					break;
 			}
 			
