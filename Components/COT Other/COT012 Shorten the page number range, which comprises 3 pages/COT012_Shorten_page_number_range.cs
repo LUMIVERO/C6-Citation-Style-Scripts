@@ -7,9 +7,9 @@
 //Genau 2 Seiten, z.B.:					1-2 			-> S. 1 f.
 //Genau 3 (oder ggf. 4) Seiten, z.B.: 	1-3 (ggf. 1-4) 	-> S. 1 ff.  (DIESER FALL WIRD HIER BEHANDELT)
 //4 bzw. 5 und mehr Seiten, z.B.:		1-5 			-> S. 1-5
-//Version 2.2: Arrangement of numbering types (page, column, paragraph, margin, other) corrected according to GUI
-//Version 2.1: 	Customizable, whether the script should apply to a page range with exactly 3 pages OR with 3 or 4 pages.
-//Version 2: 	Uses PageNumber.IsFullyNumeric instead of PageNumber.IsNumeric. 
+//Version 2.2:	Arrangement of numbering types (page, column, paragraph, margin, other) corrected according to GUI
+//Version 2.1:	Customizable, whether the script should apply to a page range with exactly 3 pages OR with 3 or 4 pages.
+//Version 2.0:	Uses PageNumber.IsFullyNumeric instead of PageNumber.IsNumeric. 
 //Pls. deploy script version 1.1 instead, if you get compilation errors with your Citavi 5 version.
 
 using System.Linq;
