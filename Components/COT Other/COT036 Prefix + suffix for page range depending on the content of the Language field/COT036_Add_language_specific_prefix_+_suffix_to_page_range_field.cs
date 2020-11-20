@@ -2,7 +2,7 @@
 //Description: Different prefix or suffix for page range depending on language of reference
 //Version: 1.0
 //Das Trennzeichen sowie die Formatierung von "Erste Zahl" und "Letzte Zahl" müssen in der Komponente selbst festgelegt werden.
-//Auch die Einstellungen für Titel ohne Eintrag im Feld "Sprache" werden in den Komponente getroffen.
+//Auch die Optionen für Titel ohne Eintrag im Feld "Sprache" werden in den Komponenten-Einstellungen getroffen.
 
 using System.Linq;
 using System.Collections.Generic;
