@@ -114,6 +114,8 @@
 
 [CPE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE005%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Journal%20Name) Replace space by non-breaking space in the journal name
 
+[CPE006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE006%20Prefix%20for%20Journal%20Name%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix for Journal Name depending on the content of the "Language" field
+
 ### CPS Person
 
 [CPS001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS001%20Author%20of%20a%20contribution%20is%20also%20editor%20or%20author%20of%20the%20compilation%3B%20German%20-%20ders.%2C%20dies) The author of a contribution is also the editor or author of the compilation; German - ders., dies
