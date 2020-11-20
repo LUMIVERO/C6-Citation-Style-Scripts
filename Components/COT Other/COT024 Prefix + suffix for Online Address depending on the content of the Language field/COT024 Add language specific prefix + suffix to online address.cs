@@ -87,7 +87,6 @@ namespace SwissAcademic.Citavi.Citations
 						LiteralElement newElement = new LiteralElement(componentPart, "Online available at ");
 						componentPart.Elements.InsertIElementBefore(element, newElement);
 						
-
 						//add suffix
 						newElement = new LiteralElement(componentPart, "");
 						componentPart.Elements.InsertIElementAfter(element, newElement);
@@ -101,7 +100,6 @@ namespace SwissAcademic.Citavi.Citations
 						LiteralElement newElement = new LiteralElement(componentPart, "Online verfügbar unter ");
 						componentPart.Elements.InsertIElementBefore(element, newElement);
 						
-
 						//add suffix
 						newElement = new LiteralElement(componentPart, "");
 						componentPart.Elements.InsertIElementAfter(element, newElement);					
@@ -114,7 +112,6 @@ namespace SwissAcademic.Citavi.Citations
 						LiteralElement newElement = new LiteralElement(componentPart, "Online verfügbar unter ");
 						componentPart.Elements.InsertIElementBefore(element, newElement);
 						
-
 						//add suffix
 						newElement = new LiteralElement(componentPart, "");
 						componentPart.Elements.InsertIElementAfter(element, newElement);
