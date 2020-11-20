@@ -34,7 +34,7 @@ namespace SwissAcademic.Citavi.Citations
 			IEnumerable<ElectronicAddressFieldElement> electronicAddressFieldElements = componentPart.Elements.OfType<ElectronicAddressFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.OnlineAddress).ToList();
 			if (electronicAddressFieldElements == null || !electronicAddressFieldElements.Any()) return null;
 
-			#endregion Find numeric field elements
+			#endregion Find electronic address field elements
 
 			#region Determine reference to look at
 
