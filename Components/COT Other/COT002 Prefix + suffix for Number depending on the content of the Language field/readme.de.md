@@ -7,8 +7,8 @@ Citavi 5 (oder höher)
 
 ## Beispiele
 
-- Müller, P.: Informationskompetenz vermitteln. Bibliothekswesen heute, Jg. 4, Nr. 3, 2014, 14-15.
-- Smith, J.: Information Literacy. The Teaching Library, Vol. 25, No. 8, 2010, 22-28.
+- Müller, P.: Informationskompetenz vermitteln. Bibliothekswesen heute, Jg. 4, Nr. 3, 2014, S. 14-15.
+- Smith, J.: Information Literacy. The Teaching Library, Vol. 25, No. 8, 2010, pp. 22-28.
 
 ## Anpassung
 
