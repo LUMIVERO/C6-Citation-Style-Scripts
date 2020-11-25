@@ -34,11 +34,9 @@ namespace SwissAcademic.Citavi.Citations
 			
 			var citationKeyFieldElement = componentPart.Elements.OfType<CitationKeyFieldElement>().FirstOrDefault();
 			if (citationKeyFieldElement == null) return null;
-
-			//
+			
 			TextUnitCollection output = new TextUnitCollection();
 			LiteralTextUnit text;
-			//
 			
 			string citationKeyResolved;
 			UpdateType citationKeyUpdateTypeResolved;
