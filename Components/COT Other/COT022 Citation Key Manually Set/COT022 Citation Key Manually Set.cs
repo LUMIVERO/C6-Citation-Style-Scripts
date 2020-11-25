@@ -1,6 +1,7 @@
 //COT022
-//Version 1.0, Citavi 5+
-//Only manually modified citation keys will be displayed, the output of automatically generated citation keys will be suppressed
+//Description:  Only manually modified citation keys will be displayed, the output of automatically generated citation keys will be suppressed
+//Version 1.1:	Added option to output the title of the reference, if the citation key is NOT manually set
+//Version 1.0:	Citavi 5+
 
 using System.Linq;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace SwissAcademic.Citavi.Citations
 	{
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
 		{
+			var titleAsFallback = true;					//if titleAsFallback = true, the title will be displayed, if the citation key is NOT manually set
+														//if titleAsFallback = false, nothing will be displayed, if the citation key is NOT manually set
+														//in both cases, the citation key will be displayed, if it is manually set
+			
 			//suppresses the output of the component, if a CitationKey field element is present and if the current citation key was automatically created
 			handled = false;
 			
@@ -30,6 +35,10 @@ namespace SwissAcademic.Citavi.Citations
 			var citationKeyFieldElement = componentPart.Elements.OfType<CitationKeyFieldElement>().FirstOrDefault();
 			if (citationKeyFieldElement == null) return null;
 
+			//
+			TextUnitCollection output = new TextUnitCollection();
+			LiteralTextUnit text;
+			//
 			
 			string citationKeyResolved;
 			UpdateType citationKeyUpdateTypeResolved;
@@ -46,8 +55,20 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (citationKeyUpdateTypeResolved == UpdateType.Automatic || string.IsNullOrWhiteSpace(citationKeyResolved))
 			{
-				handled = true;
-				return null;
+				if (titleAsFallback)
+				{
+					handled = true;
+					text = new LiteralTextUnit(citation.Reference.Title, FontStyle.Neutral);
+
+					output.Add(text);
+					
+					return output;
+				}
+				else
+				{
+					handled = true;
+					return null;
+				}
 			}
 			
 			return null;
