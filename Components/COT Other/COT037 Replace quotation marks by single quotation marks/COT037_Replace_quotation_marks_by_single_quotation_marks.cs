@@ -25,51 +25,52 @@ namespace SwissAcademic.Citavi.Citations
 			if (componentPart.Elements == null || componentPart.Elements.Count == 0) return null;
 
 
-			TextFieldElement textFieldElement = componentPart.Elements.OfType<TextFieldElement>().FirstOrDefault();
-			//SwissAcademic.Citavi.Citations.TextFieldElement
-			if (textFieldElement == null) return null;
+            foreach (TextFieldElement textFieldElement in componentPart.Elements.OfType<TextFieldElement>().ToList())
+            {
+				if (textFieldElement == null) return null;
 
-			bool found = false;
-			TextUnitCollection textUnits = textFieldElement.GetTextUnits(citation, template);
-			if (textUnits == null) return null;
+				bool found = false;
+				TextUnitCollection textUnits = textFieldElement.GetTextUnits(citation, template);
+				if (textUnits == null) return null;
 			
-			foreach(ITextUnit textUnit in textUnits)
-			{
-				if (textUnit.Text.Contains("“"))						//EN, öffnend
+				foreach(ITextUnit textUnit in textUnits)
 				{
-					found = true;
-					textUnit.Text = textUnit.Text.Replace("“", "‘");
+					if (textUnit.Text.Contains("“"))						//EN, öffnend
+					{
+						found = true;
+						textUnit.Text = textUnit.Text.Replace("“", "‘");
+					}
+					if (textUnit.Text.Contains("”"))						//EN, schließend
+					{
+						found = true;
+						textUnit.Text = textUnit.Text.Replace("”", "’");
+					}
+					if (textUnit.Text.Contains("„"))						//DE, öffnend
+					{
+						found = true;
+						textUnit.Text = textUnit.Text.Replace("„", "‚");
+					}
+					if (textUnit.Text.Contains("“"))						//DE, schließend
+					{
+						found = true;
+						textUnit.Text = textUnit.Text.Replace("“", "‘");
+					}
+					if (textUnit.Text.Contains("»"))						//FR/CH, öffnend
+					{
+						found = true;
+						textUnit.Text = textUnit.Text.Replace("»", "›");
+					}
+					if (textUnit.Text.Contains("«"))						//FR/CH, schließend
+					{
+						found = true;
+						textUnit.Text = textUnit.Text.Replace("«", "‹");
+					}
 				}
-				if (textUnit.Text.Contains("”"))						//EN, schließend
-				{
-					found = true;
-					textUnit.Text = textUnit.Text.Replace("”", "’");
-				}
-				if (textUnit.Text.Contains("„"))						//DE, öffnend
-				{
-					found = true;
-					textUnit.Text = textUnit.Text.Replace("„", "‚");
-				}
-				if (textUnit.Text.Contains("“"))						//DE, schließend
-				{
-					found = true;
-					textUnit.Text = textUnit.Text.Replace("“", "‘");
-				}
-				if (textUnit.Text.Contains("»"))						//FR/CH, öffnend
-				{
-					found = true;
-					textUnit.Text = textUnit.Text.Replace("»", "›");
-				}
-				if (textUnit.Text.Contains("«"))						//FR/CH, schließend
-				{
-					found = true;
-					textUnit.Text = textUnit.Text.Replace("«", "‹");
-				}
-			}
 			
-			if (found)
-			{
-				componentPart.Elements.ReplaceItem(textFieldElement, textUnits.TextUnitsToLiteralElements(componentPart));
+				if (found)
+				{
+					componentPart.Elements.ReplaceItem(textFieldElement, textUnits.TextUnitsToLiteralElements(componentPart));
+				}
 			}
 			
 			return null;
