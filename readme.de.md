@@ -104,7 +104,7 @@
 
 [COT036](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT036%20Prefix%20%2B%20suffix%20for%20page%20range%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for page range depending on the content of the Language field
 
-[COT037](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT037%20Replace%20quotation%20marks%20by%20single%20quotation%20marks) Replace (double) quotation marks by single quotation marks
+[COT037](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT037%20Replace%20double%20quotation%20marks%20by%20single%20quotation%20marks) Replace (double) quotation marks by single quotation marks
 
 ### CPE Zeitschrift
 
