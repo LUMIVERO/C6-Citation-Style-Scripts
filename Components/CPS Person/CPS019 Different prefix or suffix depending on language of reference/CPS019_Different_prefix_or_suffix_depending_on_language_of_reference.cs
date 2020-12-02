@@ -1,6 +1,7 @@
 //C6#CPS019
 //C5#43124
 //Description: Different prefix or suffix depending on language of reference
+//Version: 1.2: Can be used in Editors AND AuthorsOrEditorsOrOrganizations components now
 //Version: 1.1: Slight improvements
 
 using System.Linq;
@@ -42,18 +43,50 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (string.IsNullOrEmpty(language)) return null;
 
-			PersonFieldElement editorFieldElement = componentPart.Elements.OfType<PersonFieldElement>().Where(field => field.PropertyId == ReferencePropertyId.Editors).FirstOrDefault() as PersonFieldElement;
-			if (editorFieldElement == null) return null;
+			PersonFieldElement authorsOrEditorsOrOrganizationsFieldElement = componentPart.Elements.OfType<PersonFieldElement>().Where(field => field.PropertyId == ReferencePropertyId.Editors || field.PropertyId == ReferencePropertyId.AuthorsOrEditorsOrOrganizations).FirstOrDefault() as PersonFieldElement;
+			if (authorsOrEditorsOrOrganizationsFieldElement == null) return null;
+			
+			if (componentPart.Scope == ComponentPartScope.Reference)
+			{
+				if
+				(
+					citation.Reference.AuthorsOrEditorsOrOrganizationsPersonRoleResolved != PersonRole.Editor &&
+					citation.Reference.AuthorsOrEditorsOrOrganizationsPersonRoleResolved != PersonRole.Organization
+				) return null;
+			}
+			else if (componentPart.Scope == ComponentPartScope.ParentReference)
+			{
+				if
+				(
+				citation.Reference.ParentReference.AuthorsOrEditorsOrOrganizationsPersonRoleResolved != PersonRole.Editor &&
+				citation.Reference.ParentReference.AuthorsOrEditorsOrOrganizationsPersonRoleResolved != PersonRole.Organization
+				) return null;
+			}
+			
+			#region German
+			
+			if (language.Contains("DE"))
+			{
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixSingular.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixPlural.Text = "";
 				
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixSingular.Text = " (Hrsg.)";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixPlural.Text = " (Hrsg.)";
+				
+				return null;
+			}
+			
+			#endregion 
+			
 			#region English
 			
 			if (language.Contains("EN"))
 			{
-				editorFieldElement.GroupPrefixSingular.Text = "ed. by ";
-				editorFieldElement.GroupPrefixPlural.Text = "ed. by ";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixSingular.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixPlural.Text = "";
 				
-				editorFieldElement.GroupSuffixSingular.Text = "";
-				editorFieldElement.GroupSuffixPlural.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixSingular.Text = " (ed.)";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixPlural.Text = " (eds.)";
 				
 				return null;
 			}
@@ -64,11 +97,11 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (language.Contains("FR"))
 			{
-				editorFieldElement.GroupPrefixSingular.Text = "publ. par ";
-				editorFieldElement.GroupPrefixPlural.Text = "publ. par ";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixSingular.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixPlural.Text = "";
 				
-				editorFieldElement.GroupSuffixSingular.Text = "";
-				editorFieldElement.GroupSuffixPlural.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixSingular.Text = " (éd.)";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixPlural.Text = " (éds.)";
 				
 				return null;
 			}
@@ -79,11 +112,11 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (language.Contains("IT"))
 			{
-				editorFieldElement.GroupPrefixSingular.Text = "a cura di ";
-				editorFieldElement.GroupPrefixPlural.Text = "a cura di ";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixSingular.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupPrefixPlural.Text = "";
 				
-				editorFieldElement.GroupSuffixSingular.Text = "";
-				editorFieldElement.GroupSuffixPlural.Text = "";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixSingular.Text = " (ed.)";
+				authorsOrEditorsOrOrganizationsFieldElement.GroupSuffixPlural.Text = " (eds.)";
 				
 				return null;
 			}
