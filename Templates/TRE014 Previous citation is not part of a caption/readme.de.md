@@ -29,7 +29,8 @@ Darüberhinaus kombinieren Sie das Skript zusätzlich mit einer der beiden weite
 
 Die folgenden Bedingungen können Sie bei Bedarf zusätzlich auswählen:
 - `Vorheriger Titeleintrag ist NICHT Teil eines Mehrfachnachweises`
-- `Vorheriger Titeleintrag steht auf derselben Seite in der Publikation` - dient dazu, dass "ebd." NICHT in der ersten Fußnote auf einer neuen Word-Seite erscheint
+- `Vorheriger Titeleintrag steht auf derselben Seite in der Publikation` - dient dazu, dass "ebd." NICHT als erster Nachweis auf einer neuen Word-Seite erscheint
+- `Vorheriger Titeleintrag steht im selben Absatz in der Publikation`
 - `Vorheriger Titeleintrag steht für sich alleine in einer Fußnote`
 - `Vorheriger Titeleintrag steht in der unmittelbar vorhergehenden Fußnote`
 
