@@ -6,6 +6,13 @@ Nutzen Sie dieses Skript, um die wiederholte Nennung von Titeln differenziert be
 
 Dieses Skript dient dazu, alle weiteren Erwähnungen des Titels mit einer noch kürzeren Zitierweise zu definieren. 
 
+## Voraussetzungen
+Citavi 5 (oder höher)
+
+## Anpassung
+
+Aktuell behandelt dieses Skript ab der 3. Nennung alle weiteren Erwähnungen eines Titels. 
+
 Alternativ kombinieren Sie das Skript mit den weiteren eingebauten Standard-Wiederholungsbedingungen, um zu verhindern, dass "ebd." bereits bei der zweiten Nennung eines Titels erfolgt.
 - `Gleicher Titeleintrag und gleiche Zitatseite wie vorheriger` **ODER**
 - `Gleicher Titeleintrag wie vorheriger` 
@@ -15,9 +22,6 @@ Die folgenden Bedingungen können Sie bei Bedarf zusätzlich auswählen:
 - `Vorheriger Titeleintrag steht auf derselben Seite in der Publikation` - dient dazu, dass "ebd." NICHT in der ersten Fußnote auf einer neuen Word-Seite erscheint
 - `Vorheriger Titeleintrag steht für sich alleine in einer Fußnote`
 - `Vorheriger Titeleintrag steht in der unmittelbar vorhergehenden Fußnote`
-
-## Voraussetzungen
-Citavi 5 (oder höher)
 
 ## Beispiele
 
