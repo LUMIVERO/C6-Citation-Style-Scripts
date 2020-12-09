@@ -8,7 +8,7 @@ Nutzen Sie dieses Skript, um die wiederholte Nennung von Titeln differenziert be
 Citavi 6 (oder höher)
 
 ## Beispiele
-
+![Beispiel ebd.-Verwendung - Vorheriger Titeleintrag ist NICHT Teil einer Bild- oder Tabellen-Legende](ebd.%20-%20Vorheriger%20Titeleintrag%20ist%20NICHT%20Teil%20einer%20Bild-%20oder%20Tabellen-Legende.png | width=300)
 
 ## Anwendung
 
