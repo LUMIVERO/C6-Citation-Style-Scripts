@@ -204,6 +204,8 @@
 
 [TRE013](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE013%20Reference%20has%20been%20cited%20at%20least%202%20times%20before%20in%20footnotes) Reference has been cited at least 2 times before in footnotes
 
+[TRE014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE014%20Previous%20citation%20is%20not%20part%20of%20a%20caption) Previous citation of the reference is not part of a caption
+
 [TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20oder%20Verf%C3%BCgung) Field "Specific Field 3" contains Schreiben, Erlass oder Verfügung
 
 [TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field "Author" contains exactly 4 authors
