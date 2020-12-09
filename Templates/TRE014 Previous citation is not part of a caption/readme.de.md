@@ -12,7 +12,11 @@ Citavi 6 (oder höher)
 
 ## Anwendung
 
-Wichtig: Bis einschließlich Citavi 6.7 übergibt das Word Add-In die korrekte Information über die Eigenschaft eines Nachweises, Teil einer Bild-/Tabellen-Unterschrift zu sein, nur bei Bedarf.
+Wichtig: 
+
+1) Klicken Sie nach der Auswahl des angepassten Zitationsstils in Citavis Word Add-In im Reiter `Citavi` auf `Aktualisieren`, s. https://www.screencast.com/t/s82CaubZNdr [Screenshot].
+
+2) Bis einschließlich Citavi 6.7 übergibt das Word Add-In die korrekte Information über die Eigenschaft eines Nachweises, Teil einer Bild-/Tabellen-Unterschrift zu sein, nur bei Bedarf.
 
 Damit diese Information verfügbar ist und von der vorliegenden programmierten Vorlagenbedingung genutzt werden kann, muss im Zitationsstil daher bei einer beliebigen Vorlage auch eine der beiden folgenden eingebauten Bedingungen ausgewählt sein (es muss also nicht zwingend die Vorlage sein, die Sie mit diesem Skript anlegen, auch wenn das empfehlenswert ist):
 - `Aktueller Titel ist Teil einer Bild-oder Tabellen-Legende` **ODER**
