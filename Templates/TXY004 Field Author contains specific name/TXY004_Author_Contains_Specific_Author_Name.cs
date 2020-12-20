@@ -1,4 +1,6 @@
 //TXY004
+//Description: Field Author contains specific Author name
+//Version 1.1: Slight improvements (string.IsNullOrWhiteSpace)
 
 using System;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace SwissAcademic.Citavi.Citations
 		public bool IsTemplateForReference(ConditionalTemplate template, Citation citation)
 		{
 			//Just fill in those attribute that you would like to search for or leave empty
+			//The following information must be filled in exactly as in the "Edit person" dialog
 			string lastName = "Doe";
 			string firstName = "";
 			string middleName = "";
@@ -26,7 +29,6 @@ namespace SwissAcademic.Citavi.Citations
 			//If you do not wish the above person to be checked as the publisher of the superordinate work,
 			//then enter"= false;" in the following line:
 			bool checkParentReference = true;
-
 
 
 			if (citation == null) return false;
@@ -54,9 +56,6 @@ namespace SwissAcademic.Citavi.Citations
 				return false;
 			}
 
-
-
-
 			return false;
 		}
 
@@ -81,7 +80,5 @@ namespace SwissAcademic.Citavi.Citations
 
 			return false;
 		}
-
-
 	}
 }
