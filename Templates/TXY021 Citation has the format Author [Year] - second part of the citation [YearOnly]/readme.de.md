@@ -25,7 +25,7 @@ Falls Sie für eine der Komponente nverschiedene Formatierungen oder Trennzeiche
 
 Setzen Sie unter `Datei` > `Eigenschaften des Zitationsstils` > `Mehrdeutige Nachweise` > ein Häkchen vor `Zusatzoptionen bei Vorlagen anzeigen` und bestätigen Sie die Änderung mit `OK`:
 
-<img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20(Year)%20-%20second%20part%20of%20the%20citation%20(YearOnly)/Zitationsstil-Eigenschaften%20-%20Mehrdeutige%20Nachweise%20-%20Zusatzoptionen%20bei%20Vorlagen%20anzeigen.png" width="600">
+<img src="https://github.com/Citavi/C6-Citation-Style-Scripts/blob/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20%5BYear%5D%20-%20second%20part%20of%20the%20citation%20%5BYearOnly%5D/Zitationsstil-Eigenschaften%20-%20Mehrdeutige%20Nachweise%20-%20Zusatzoptionen%20bei%20Vorlagen%20anzeigen.png" width="600">
 
 Rufen Sie im Stil den **Unklaren Dokumententyp** auf, klicken im Regelset **Kurznachweis im Text** auf die neue Vorlage **"Autor (Jahr) Bedingung _ Nur Jahr"** und setzen ein Häkchen vor `alle Zitationen, die nach diesem Template ausgegeben werden, nicht auf Mehrdeutigkeit prüfen`.
 
