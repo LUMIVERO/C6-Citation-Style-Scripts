@@ -17,4 +17,4 @@ Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creatin
 
 ## Autor
 
-* **Jörg Pasch** [joepasch](https://github.com/joepasch)
+* **Susanne Sitzler**
