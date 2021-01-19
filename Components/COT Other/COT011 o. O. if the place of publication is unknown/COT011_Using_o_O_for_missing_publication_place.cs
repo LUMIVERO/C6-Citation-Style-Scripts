@@ -15,8 +15,8 @@ using SwissAcademic.Drawing;
 namespace SwissAcademic.Citavi.Citations
 {
 	public class ComponentPartFilter
-	   :
-	   IComponentPartFilter
+		:
+		IComponentPartFilter
 	{
 
 		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
@@ -25,24 +25,24 @@ namespace SwissAcademic.Citavi.Citations
 
 			if (citation == null) return null;
 
-            Reference currentReference = citation.Reference;
-            if (currentReference == null) return null;
+			Reference currentReference = citation.Reference;
+			if (currentReference == null) return null;
 			
 			Reference currentParentReference = currentReference.ParentReference; // can be null;
 
-            if (componentPart == null) return null;
-            if (componentPart.Elements == null || !componentPart.Elements.Any()) return null;
+			if (componentPart == null) return null;
+			if (componentPart.Elements == null || !componentPart.Elements.Any()) return null;
 
-            Reference referenceInScope = null;
-            if (componentPart.Scope == ComponentPartScope.ParentReference && currentParentReference != null)
-            {
-                referenceInScope = currentParentReference;
-            }
-            else if (componentPart.Scope == ComponentPartScope.Reference)
-            {
-                referenceInScope = currentReference;
-            }
-            
+			Reference referenceInScope = null;
+			if (componentPart.Scope == ComponentPartScope.ParentReference && currentParentReference != null)
+			{
+				referenceInScope = currentParentReference;
+			}
+			else if (componentPart.Scope == ComponentPartScope.Reference)
+			{
+				referenceInScope = currentReference;
+			}
+			
 			var firstPlaceOfPublicationFieldElement = componentPart.Elements.OfType<PlaceOfPublicationFieldElement>().FirstOrDefault() as PlaceOfPublicationFieldElement;
 			if (firstPlaceOfPublicationFieldElement == null) return null;
 
