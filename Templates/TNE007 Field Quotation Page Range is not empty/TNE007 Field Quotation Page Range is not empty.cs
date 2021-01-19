@@ -1,6 +1,6 @@
-//TNE005
+//TNE007
 //Version 1.0
-//Field Quoted Pages is not empty - Citation has quotation page range
+//Field Quotation Page Range is not empty - Citation has no quoted pages
 
 using System;
 using System.Linq;
