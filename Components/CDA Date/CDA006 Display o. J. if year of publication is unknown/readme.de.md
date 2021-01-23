@@ -11,7 +11,7 @@ Trotz gründlicher Prüfung konnte das Erscheinungsjahr eines Werks nicht ermitt
 - Klein, N. (o. J.): Minimal Data Sets. Köln.
 
 ## Anpassung
-Der auszugebende Text kann in Zeile 26 eingetragen bzw. geändert werden, so dass alternativ auch `ohne Jahr`, `no date` oder `n. d.` möglich ist.
+Der auszugebende Text kann in Zeile 26 eingetragen bzw. geändert werden, so dass alternativ auch `ohne Jahr`, `no date` oder `n. d.` möglich sind.
 Falls kein zusätzliches Leerzeichen erwünscht ist, muss es in Zeile 27 bzw. 29 zwischen den beiden Platzhaltern entfernt werden.
 
 ## Installation
