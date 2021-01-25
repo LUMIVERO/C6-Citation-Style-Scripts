@@ -1,5 +1,5 @@
 //C6#COT039
-//Description:	Copy parallel publication into the Title supplement field
+//Description:	Copy parallel publication into the "Title supplement" field
 //Version 1.1:	Slight improvements
 //
 //More precisely, the script outputs the parallel publication as a formatted string and inserts it into the "Title supplement" field.
@@ -72,7 +72,7 @@ namespace SwissAcademic.Citavi.Citations
 			StringBuilder outputTagged = new StringBuilder();
 			
 			
-			#region title of the article		//wird für den Stil "Angewandte Chemie nicht benötigt
+			#region title of the article				//wird für den Stil "Angewandte Chemie" nicht benötigt
 			
 	/**		if (!string.IsNullOrEmpty(otherReference.Title))
 			{
@@ -93,7 +93,7 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (!string.IsNullOrEmpty(otherReference.Periodical.StandardAbbreviation))
 			{
-	/**			if (output.Count > 0) 					//wird benötigt, falls zuvor noch der Aufsatztitel ausgegeben wird
+	/**			if (output.Count > 0)					//wird benötigt, falls zuvor noch der Aufsatztitel ausgegeben wird
 				{
 					outputTagged.Append(", ");
 					output.Add(new LiteralTextUnit(", ", FontStyle.Neutral));
@@ -174,7 +174,7 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#endregion 
 			
-			#region DOI							//wird für den Stil "Angewandte Chemie nicht benötigt
+			#region DOI									//wird für den Stil "Angewandte Chemie" nicht benötigt
 			
 	/**		if (!string.IsNullOrEmpty(otherReference.Doi))
 			{
