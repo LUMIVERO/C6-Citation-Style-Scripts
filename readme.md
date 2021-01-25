@@ -106,6 +106,10 @@
 
 [COT037](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT037%20Replace%20double%20quotation%20marks%20by%20single%20quotation%20marks) Replace (double) quotation marks by single quotation marks
 
+[COT038](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT038%20Display%20o.%20S.%20if%20Quotation%20Page%20Range%20is%20empty) Display o. S. if Quotation Page Range is empt
+
+[COT039](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT039%20Copy%20parallel%20publication%20into%20the%20Title%20supplement%20field) Copy parallel publication into the "Title supplement" field
+
 ### CPE Periodical
 
 [CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
@@ -163,6 +167,8 @@
 [CPS022](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS022%20In%20the%20bibliography%20-%20Replace%20names%20after%20first%20mention%20by%20Ders.%2C%20Dies) In the bibliography - Replace names after first mention by Ders., Dies
 
 [CPS023](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS023%20Format%20certain%20persons%20differently) Format certain persons differently
+
+[CPS024](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS024%20Suppress%20spaces%20in%20Chinese%20names) Suppress spaces in Chinese names
 
 ## Templates
 
