@@ -7,8 +7,7 @@ Citavi 6 (oder höher)
 ## Beispiele
 
 - Müller, P.: Informationskompetenz vermitteln. Berlin 2014 [1999].
-- Smith, J.: Information Literacy. London 1998.
-							   statt ... [1998].
+- Smith, J.: Information Literacy. London 1998. -> statt: ... [1998].
 
 ## Installation
 Erstellen Sie eine neue [kombinierte Komponente](https://www.citavi.com/combining_components). Fügen Sie dort die beiden folgenden Elemente ein:
