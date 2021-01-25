@@ -2,8 +2,8 @@
 //Description: Copy parallel publication into the Title supplement field
 //Version: 1.1: Slight improvements
 //
-//More precisely, the script outputs the parallel publication as a formatted string and inserts it into the "Title supplement" field
-//Funktion des Komponentenskripts: Gibt die Parallelveröffentlichung formatiert aus und schreibt diese in das Feld "Titelzusätze"
+//More precisely, the script outputs the parallel publication as a formatted string and inserts it into the "Title supplement" field.
+//Funktion des Komponentenskripts: Gibt die Parallelveröffentlichung formatiert aus und schreibt diese in das Feld "Titelzusätze".
 //
 //Schritt 1:
 //Fügen Sie im Zitationsstil-Editor dieses Skript bei der Komponente "Titelzusätze" ein, wie unter www.citavi.com/programmable_components gezeigt.
