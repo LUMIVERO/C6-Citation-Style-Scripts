@@ -19,7 +19,7 @@ Fügen Sie im Zitationsstil-Editor dieses Skript bei der Komponente `Titelzusät
 Falls Sie die Komponente `Titelzusätze` auch bei Dokumententypen nutzen, bei denen keine Ausgabe der Parallelveröffentlichungen erwünscht ist, gehen Sie folgendermaßen vor: Markieren Sie die Komponente und erzeugen über den Befehl `Komponente` > `Duplizieren` eine Kopie. Alternative: Erstellen Sie über das Menü `Komponente` > `Neu` eine neue Komponente.
 
 ### Schritt 2
-1. Wählen Sie den Zitationsstil in Citavi und in Citavis Word Add-In aus.
+1. Wählen Sie den Zitationsstil in Citavi _und_ in Citavis Word Add-In aus.
 2. Blenden Sie in Citavi die Vorschau auf das Literaturverzeichnis ein: Menü `Ansicht` > `Aktuellen Titel im Zitationsstil anzeigen`.
 3. Erfassen Sie den Aufsatz aus der deutschen Ausgabe der Zeitschrift.
 4. Erfassen Sie den Aufsatz aus der englischen Ausgabe der Zeitschrift. 
