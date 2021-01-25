@@ -1,6 +1,6 @@
 //C6#COT039
-//Description: Copy parallel publication into the Title supplement field
-//Version: 1.1: Slight improvements
+//Description:	Copy parallel publication into the Title supplement field
+//Version 1.1:	Slight improvements
 //
 //More precisely, the script outputs the parallel publication as a formatted string and inserts it into the "Title supplement" field.
 //Funktion des Komponentenskripts: Gibt die Parallelveröffentlichung formatiert aus und schreibt diese in das Feld "Titelzusätze".
