@@ -8,7 +8,6 @@ Citavi 6 (oder höher)
 
 - Müller, P.: Informationskompetenz vermitteln. Berlin 2014 [1999].
 - Smith, J.: Information Literacy. London 1998.
-
 							   statt ... [1998].
 
 ## Installation
