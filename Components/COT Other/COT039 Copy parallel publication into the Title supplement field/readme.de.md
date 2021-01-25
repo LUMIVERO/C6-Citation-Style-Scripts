@@ -29,6 +29,10 @@ Schritt 2
 
 WICHTIG: Der Verweis muss in beide Richtungen erfolgen, also sowohl `Dieser Titel verweist auf` als auch `Auf diesen Titel wird verwiesen`.
 
+
+![Wechselseitige Verweise dokumentieren](Parallelveröffentlichung.png)
+
+
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
 
