@@ -1,8 +1,10 @@
 //CDA006
-//Description: Display "o. J." if year of publication is unknown & separating the ambiguity resolving letter by a space
-//Version: 1.1 Additionally adds "im Druck" or "in press" and the letter to resolve ambiguity separated by a space
-//Version: 1.0 Using "o.J." or "n.d." if the publication year is empty
+//Description:	Display "o. J." if year of publication is unknown & separating the ambiguity resolving letter by a space
+//Version 1.1:	Considers also other reference types for the in-print option, not just journal articles like the built-in condition "BuiltInTemplateCondition.InPrint".
+//Version 1.1:	Additionally adds "im Druck" or "in press" and the letter to resolve ambiguity separated by a space
+//Version 1.0:	Using "o.J." or "n.d." if the publication year is empty
 
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using SwissAcademic.Citavi;
@@ -34,7 +36,7 @@ namespace SwissAcademic.Citavi.Citations
 			
 			if (componentPart == null) return null;
 			if (componentPart.Elements == null || componentPart.Elements.Count == 0) return null;
-		
+
 			Reference reference = citation.Reference;
 			if (reference == null) return null;
 
@@ -96,6 +98,8 @@ namespace SwissAcademic.Citavi.Citations
 			string identifyingLetter = string.Empty;
 			if (correspondingBibliographyCitationInScope != null) identifyingLetter = correspondingBibliographyCitationInScope.IdentifyingLetter;
 
+			var inPrintMarkersLocalized = SwissAcademic.Properties.Resources.InPrintPlaceholderLanguageVersions.Split('|');			//[im Druck], [In press] etc.
+
 			string outputString = string.Empty;
 
 			if (string.IsNullOrEmpty(yearValue))
@@ -104,27 +108,37 @@ namespace SwissAcademic.Citavi.Citations
 				outputString = string.Format(noYearTemplate, noYearString, identifyingLetter);
 			}
 
-			else if (BuiltInTemplateCondition.InPrint.IsMet(template, citation) && addInPrintNote && addInPrintNoteCustom)
+			else if (addInPrintNote)
 			{
-				//"im Druck" or "in print"
-				outputString = string.Format(inPrintTemplate, inPrintNoteCustom, identifyingLetter);
+				if (addInPrintNoteCustom)
+				{
+					foreach (string marker in inPrintMarkersLocalized)
+					{
+						if (yearValue.Contains(marker, StringComparison.CurrentCultureIgnoreCase))
+						{
+							//"im Druck" or "in print"
+							outputString = string.Format(inPrintTemplate, inPrintNoteCustom, identifyingLetter);
+						}
+					}
+				}
+				
+				else
+				{
+					foreach (string marker in inPrintMarkersLocalized)
+					{
+						if (yearValue.Contains(marker, StringComparison.CurrentCultureIgnoreCase))
+						{
+							//"im Druck" or "in print" as specified on the date/time field element in component
+							if (string.IsNullOrEmpty(inPrintNoteStandard)) return null;
+							outputString = string.Format(inPrintTemplate, inPrintNoteStandard, identifyingLetter);
+						}
+					}
+				}
 			}
 
-			else if (BuiltInTemplateCondition.InPrint.IsMet(template, citation) && addInPrintNote)
-			{
-				//"im Druck" or "in print" as specified on the date/time field element in component
-				if (string.IsNullOrEmpty(inPrintNoteStandard)) return null;
-				outputString = string.Format(inPrintTemplate, inPrintNoteStandard, identifyingLetter);
-			}
-
-			else if (!string.IsNullOrEmpty(yearValue) && !BuiltInTemplateCondition.InPrint.IsMet(template, citation)) 
-			{
-				//if neither "o.J."/"n.d." nor "im Druck"/"in print" applies
-				return null;
-			}
-			
 			else 
 			{
+				//if neither "o.J."/"n.d." nor "im Druck"/"in print" applies
 				return null;
 			}
 
