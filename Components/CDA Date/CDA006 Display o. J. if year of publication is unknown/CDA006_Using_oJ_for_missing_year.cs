@@ -1,6 +1,7 @@
 //CDA006
 //Description:	Display "o. J." if year of publication is unknown & separating the ambiguity resolving letter by a space
-//Version 1.1:	Considers also other reference types for the in-print option, not just journal articles like the built-in condition "BuiltInTemplateCondition.InPrint".
+//Version 1.3:	Slight improvements (ContainsInPrintInformation instead of StringComparison of InPrintPlaceholderLanguageVersions)
+//Version 1.2:	Considers also other reference types for the in-print option, not just journal articles like the built-in condition "BuiltInTemplateCondition.InPrint".
 //Version 1.1:	Additionally adds "im Druck" or "in press" and the letter to resolve ambiguity separated by a space
 //Version 1.0:	Using "o.J." or "n.d." if the publication year is empty
 
@@ -98,8 +99,6 @@ namespace SwissAcademic.Citavi.Citations
 			string identifyingLetter = string.Empty;
 			if (correspondingBibliographyCitationInScope != null) identifyingLetter = correspondingBibliographyCitationInScope.IdentifyingLetter;
 
-			var inPrintMarkersLocalized = SwissAcademic.Properties.Resources.InPrintPlaceholderLanguageVersions.Split('|');			//[im Druck], [In press] etc.
-
 			string outputString = string.Empty;
 
 			if (string.IsNullOrEmpty(yearValue))
@@ -108,31 +107,18 @@ namespace SwissAcademic.Citavi.Citations
 				outputString = string.Format(noYearTemplate, noYearString, identifyingLetter);
 			}
 
-			else if (addInPrintNote)
+			else if (addInPrintNote && StringUtility.ContainsInPrintInformation(yearValue))
 			{
 				if (addInPrintNoteCustom)
 				{
-					foreach (string marker in inPrintMarkersLocalized)
-					{
-						if (yearValue.Contains(marker, StringComparison.CurrentCultureIgnoreCase))
-						{
-							//"im Druck" or "in print"
-							outputString = string.Format(inPrintTemplate, inPrintNoteCustom, identifyingLetter);
-						}
-					}
+					//"im Druck" or "in print"
+					outputString = string.Format(inPrintTemplate, inPrintNoteCustom, identifyingLetter);
 				}
-				
 				else
 				{
-					foreach (string marker in inPrintMarkersLocalized)
-					{
-						if (yearValue.Contains(marker, StringComparison.CurrentCultureIgnoreCase))
-						{
-							//"im Druck" or "in print" as specified on the date/time field element in component
-							if (string.IsNullOrEmpty(inPrintNoteStandard)) return null;
-							outputString = string.Format(inPrintTemplate, inPrintNoteStandard, identifyingLetter);
-						}
-					}
+					//"im Druck" or "in print" as specified on the date/time field element in component
+					if (string.IsNullOrEmpty(inPrintNoteStandard)) return null;
+					outputString = string.Format(inPrintTemplate, inPrintNoteStandard, identifyingLetter);
 				}
 			}
 
