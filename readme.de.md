@@ -158,7 +158,7 @@
 
 [CPS018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS018%20Include%20the%20first%20author's%20initials) Include the first author's initials
 
-[CPS019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS019%20Prefix%20%2B%20suffix%20for%20the%20Editor%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix or suffix for the Editor depending on the content of the "Language" field
+[CPS019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS019%20Prefix%20%2B%20suffix%20for%20the%20Editor%20depending%20on%20the%20content%20of%20the%20Language%20field) Prefix + suffix for the Editor depending on the content of the "Language" field
 
 [CPS020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS020%20Abbreviate%20name%20prefixes%20in%20the%20footnotes%20and%20ignore%20for%20sorting%20in%20the%20bibliography) Abbreviate name prefixes in the footnotes and ignore for sorting in the bibliography
 
