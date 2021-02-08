@@ -1,5 +1,4 @@
 //C6#CED003
-//C5#431510
 //Description: Add suffix "Aufl." or "ed." and a prefix if needed to edition field depending on language of reference
 //Version: 1.0  
 
