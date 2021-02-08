@@ -1,4 +1,4 @@
-# Präfix oder Suffix sprachabhängig ausgeben
+# Präfix oder Suffix des Herausgebers sprachabhängig ausgeben
 
 Im Literaturverzeichnis sollen Namenszusätze (wie Hrsg.) in der Sprache erscheinen, in der die Publikation veröffentlicht wurde.
 
