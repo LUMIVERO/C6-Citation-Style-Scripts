@@ -106,7 +106,7 @@
 
 [COT037](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT037%20Replace%20double%20quotation%20marks%20by%20single%20quotation%20marks) Replace (double) quotation marks by single quotation marks
 
-[COT038](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT038%20Display%20o.%20S.%20if%20Quotation%20Page%20Range%20is%20empty) Display o. S. if Quotation Page Range is empt
+[COT038](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT038%20Display%20o.%20S.%20if%20Quotation%20Page%20Range%20is%20empty) Display o. S. if Quotation Page Range is empty
 
 [COT039](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT039%20Copy%20parallel%20publication%20into%20the%20Title%20supplement%20field) Copy parallel publication into the "Title supplement" field
 
