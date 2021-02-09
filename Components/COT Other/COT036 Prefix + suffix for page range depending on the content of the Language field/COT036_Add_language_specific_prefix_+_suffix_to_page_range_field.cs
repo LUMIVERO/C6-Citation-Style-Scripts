@@ -1,6 +1,6 @@
 //C6#COT036
 //Description: Different prefix or suffix for page range depending on language of reference
-//Version: 1.0
+//Version 1.1:	Slight improvements (instead of MarginMultiNumberingStyle, MarginTwoNumberingStyle was stated by mistake)
 //Das Trennzeichen sowie die Formatierung von "Erste Zahl" und "Letzte Zahl" müssen in der Komponente selbst festgelegt werden.
 //Auch die Optionen für Titel ohne Eintrag im Feld "Sprache" werden in den Komponenten-Einstellungen getroffen.
 
@@ -163,7 +163,7 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0f.";
 				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
 				
-				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.MarginMultiPrefix.Text = "Rn.\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0ff.";
@@ -293,7 +293,7 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0f.";
 				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
 				
-				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.MarginMultiPrefix.Text = "no.\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0ff.";
@@ -423,7 +423,7 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0sq.";
 				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
 				
-				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.MarginMultiPrefix.Text = "n°\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0sqq.";
@@ -553,7 +553,7 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0e\u00A0seg.";
 				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
 				
-				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.MarginMultiPrefix.Text = "n.\u00A0marg.\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0e\u00A0segg.";
@@ -683,7 +683,7 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0e\u00A0s.";
 				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
 				
-				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.MarginMultiPrefix.Text = "n.º\u00A0margin.\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0e\u00A0ss.";
@@ -813,7 +813,7 @@ namespace SwissAcademic.Citavi.Citations
 				pageRangeFieldElement.MarginTwoSuffix.Text = "\u00A0f.";
 				pageRangeFieldElement.MarginTwoSuffix.FontStyle = FontStyle.Neutral;				
 				
-				pageRangeFieldElement.MarginTwoNumberingStyle = NumberingStyle.StartPageOnly;
+				pageRangeFieldElement.MarginMultiNumberingStyle = NumberingStyle.StartPageOnly;
 				pageRangeFieldElement.MarginMultiPrefix.Text = "no.\u00A0";
 				pageRangeFieldElement.MarginMultiPrefix.FontStyle = FontStyle.Neutral;
 				pageRangeFieldElement.MarginMultiSuffix.Text = "\u00A0ff.";
