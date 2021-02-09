@@ -1,5 +1,5 @@
 //C6#COT036
-//Description: Different prefix or suffix for page range depending on language of reference
+//Description:	Different prefix or suffix for page range depending on language of reference
 //Version 1.1:	Slight improvements (instead of MarginMultiNumberingStyle, MarginTwoNumberingStyle was stated by mistake)
 //Das Trennzeichen sowie die Formatierung von "Erste Zahl" und "Letzte Zahl" müssen in der Komponente selbst festgelegt werden.
 //Auch die Optionen für Titel ohne Eintrag im Feld "Sprache" werden in den Komponenten-Einstellungen getroffen.
