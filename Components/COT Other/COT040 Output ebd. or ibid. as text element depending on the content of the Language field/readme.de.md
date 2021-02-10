@@ -2,7 +2,7 @@
 
 Nutzen Sie dieses Skript, um die wiederholte Nennung von Titeln je nach Sprache der jeweiligen Quelle mit "ebd." oder "ibid." differenziert behandelt zu können.
 
-Erstellen Sie wie gewohnt eine neue Vorlage mit einer der beiden eingebauten Standard-Wiederholungsbedingungen:
+Erstellen Sie wie gewohnt eine neue Vorlage mit einer der beiden eingebauten Standard-Wiederholungsbedingungen, s. www.citavi.com/ebenda:
 - `Gleicher Titeleintrag und gleiche Zitatseite wie vorheriger` **ODER**
 - `Gleicher Titeleintrag wie vorheriger` 
 
@@ -12,7 +12,7 @@ Die folgenden Bedingungen können Sie bei Bedarf zusätzlich auswählen:
 - `Vorheriger Titeleintrag steht für sich alleine in einer Fußnote`
 - `Vorheriger Titeleintrag steht in der unmittelbar vorhergehenden Fußnote`
 
-Erstellen Sie ein neues Textelement [s. Handbuch](https://www1.citavi.com/sub/manual6/de/index.html?cse_text_elements.html) mit beliebigem Inhalt, an das Sie dieses Skript hängen. 
+Erstellen Sie ein neues Textelement [(s. Handbuch)](https://www1.citavi.com/sub/manual6/de/index.html?cse_text_elements.html) mit beliebigem Inhalt, an das Sie dieses Skript hängen. 
 
 Falls Sie auch "a.a.O." bzw. "Op. cit." mehrsprachig ausgeben möchten, erstellen Sie ein zweites Textelement und fügen dort das entsprechend angepasste Skript hinzu.
 
