@@ -1,8 +1,8 @@
 //C6#CPS019
 //C5#43124
-//Description: Different prefix or suffix depending on language of reference
-//Version: 1.2: Can be used in Editors AND AuthorsOrEditorsOrOrganizations components now
-//Version: 1.1: Slight improvements
+//Description:	Different prefix or suffix depending on language of reference
+//Version 1.2:	Can be used in Editors AND AuthorsOrEditorsOrOrganizations components now
+//Version 1.1:	Slight improvements
 
 using System.Linq;
 using System.Collections.Generic;
