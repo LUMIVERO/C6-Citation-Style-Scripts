@@ -110,6 +110,8 @@
 
 [COT039](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT039%20Copy%20parallel%20publication%20into%20the%20Title%20supplement%20field) Copy parallel publication into the "Title supplement" field
 
+[COT040](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT040%20Output%20ebd.%20or%20ibid.%20as%20text%20element%20depending%20on%20the%20content%20of%20the%20Language%20field) Output "ebd." or "ibid." as text element depending on the content of the "Language" field
+
 ### CPE Periodical
 
 [CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
