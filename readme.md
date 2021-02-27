@@ -222,7 +222,7 @@
 
 [TXY004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY004%20Field%20Author%20contains%20specific%20name) Field "Author" contains specific name
 
-[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY005%20Field%20Custom%20Field%201%20contains%20the%20word%20Lexikone) Field "Custom Field 1" contains the word Lexikon
+[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY005%20Field%20Custom%20Field%201%20contains%20the%20word%20Lexikon) Field "Custom Field 1" contains the word Lexikon, Encyclopedia ...
 
 [TXY007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY007%20Field%20Court%20contains%20BVerfG) Field "Court" contains BVerfG
 
