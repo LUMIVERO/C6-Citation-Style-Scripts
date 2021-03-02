@@ -16,7 +16,7 @@ Wenn Sie englisch- und anderssprachige Literatur zitieren, wählen Sie in Zeile 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
 
-Sie können Wörter von der automatischen Kleinschreibung ausschließen: Tragen Sie diese im Code in Zeile 86 bis 90 in die Liste der "printAsStatedExpressions" ein.
+Sie können Wörter von der automatischen Kleinschreibung ausschließen: Tragen Sie diese im Code in Zeile 97 bis 106 in die Liste der "printAsStatedExpressions" ein.
 
 ## Autor
 * **Jörg Pasch** [joepasch](https://github.com/joepasch)
