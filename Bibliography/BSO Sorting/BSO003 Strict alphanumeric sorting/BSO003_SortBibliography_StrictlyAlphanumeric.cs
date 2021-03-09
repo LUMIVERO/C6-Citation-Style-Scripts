@@ -37,7 +37,6 @@ namespace SwissAcademic.Citavi.Comparers
 			return xBibliographyEntry.CompareTo(yBibliographyEntry);
 		}
 		
-		
 		private string GetTextForSorting (string text, bool removeLeadingParticles = false)
 		{
 			var particlesToIgnore = new string[] {
