@@ -186,7 +186,7 @@
 
 [TNE006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE006%20Field%20Online%20Address%20of%20the%20parent%20reference%20is%20not%20empty) Field "Online Address" of the parent reference is not empty
 
-[TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20preceding%20footnote%20is%20cited) Another contribution from parent reference in preceding footnote is cited
+[TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20the%20same%20footnote%20is%20cited) Another contribution from parent reference in the same footnote is cited
 
 [TRE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE002%20Different%20reference%20of%20same%20author%20also%20cited) Different reference of same author also cited
 
