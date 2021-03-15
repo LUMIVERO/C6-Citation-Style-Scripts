@@ -1,5 +1,6 @@
 //C6#COT039
 //Description:	Copy parallel publication into the "Title supplement" field
+//Version 1.2:	Added option for "pageRangeStartPageOnly"
 //Version 1.1:	Slight improvements
 //
 //More precisely, the script outputs the parallel publication as a formatted string and inserts it into the "Title supplement" field.
@@ -45,6 +46,7 @@ namespace SwissAcademic.Citavi.Citations
 			if (!string.IsNullOrEmpty(reference.TitleSupplement)) return null;	//Diese Zeile ggf. durch // auskommentieren, falls auch bereits gefüllte Titelzusätze-Felder überschrieben werden sollen
 			if (reference.Periodical == null) return null;
 			
+			bool pageRangeStartPageOnly = false;								//Wenn "true" aktiviert ist, wird nur die Anfangsseite (125) statt des gesamten Seitenbereichs (125-127) ausgegeben
 			
 			//find the other reference via entity links
 			if (reference.Project.EntityLinks == null || !reference.Project.EntityLinks.Any()) return null;
@@ -142,7 +144,7 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#endregion
 
-			#region volumne number
+			#region volume number
 			
 			if (!string.IsNullOrEmpty(otherReference.Volume))
 			{
@@ -161,7 +163,18 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#region page range
 			
-			if (!string.IsNullOrEmpty(otherReference.PageRange.ToString()))
+			if (pageRangeStartPageOnly && !string.IsNullOrEmpty(otherReference.PageRange.StartPage.ToString()))			//falls oben pageRangeStartPageOnly aktiviert ist
+			{
+				if (output.Count > 0) 
+				{
+					outputTagged.Append(", ");
+					output.Add(new LiteralTextUnit(", ", FontStyle.Neutral));
+				}
+				outputTagged.Append(otherReference.PageRange.StartPage.ToString());
+				output.Add(new LiteralTextUnit(otherReference.PageRange.StartPage.ToString(), FontStyle.Neutral));
+			}
+			
+			else if (!string.IsNullOrEmpty(otherReference.PageRange.ToString()))
 			{
 				if (output.Count > 0) 
 				{
