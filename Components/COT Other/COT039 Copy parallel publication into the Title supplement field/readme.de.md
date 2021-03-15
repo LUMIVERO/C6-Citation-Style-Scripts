@@ -33,7 +33,7 @@ WICHTIG: Der Verweis muss in beide Richtungen erfolgen, also sowohl `Dieser Tite
 ![Wechselseitige Verweise dokumentieren](Parallelveröffentlichung.png)
 
 ## Anpassung
-Um nur die Anfangsseite (125) statt des gesamten Seitenbereichs (125-127) auszugeben, muss in Zeile 49 der Schalter auf `true` gesetzt werden.
+Um nur die Anfangsseite (125) statt des gesamten Seitenbereichs (125-127) auszugeben, muss im Skript in Zeile 49 der Schalter für `pageRangeStartPageOnly` auf `true` gesetzt werden.
 
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
