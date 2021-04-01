@@ -17,6 +17,7 @@ Falls kein zusätzliches Leerzeichen erwünscht ist, muss es in Zeile 27 bzw. 29
 ## Installation
 Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
 
-## Autor
+## Autoren
 
 * **Jörg Pasch** [joepasch](https://github.com/joepasch)
+* **Susanne Sitzler** [Susanne-S](https://github.com/Susanne-S)
