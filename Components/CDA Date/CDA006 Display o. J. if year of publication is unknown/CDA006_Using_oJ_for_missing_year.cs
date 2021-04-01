@@ -1,5 +1,6 @@
 //CDA006
 //Description:	Display "o. J." if year of publication is unknown & separating the ambiguity resolving letter by a space
+//Version 1.4:	Non-breaking space & new templates noYearNoIdentifyingLetterTemplate & inPrintNoIdentifyingLetterTemplate in case no ambiguity resolution is required = no space after "o.J.")
 //Version 1.3:	Slight improvements (ContainsInPrintInformation instead of StringComparison of InPrintPlaceholderLanguageVersions)
 //Version 1.2:	Considers also other reference types for the in-print option, not just journal articles like the built-in condition "BuiltInTemplateCondition.InPrint".
 //Version 1.1:	Additionally adds "im Druck" or "in press" and the letter to resolve ambiguity separated by a space
@@ -24,14 +25,16 @@ namespace SwissAcademic.Citavi.Citations
 
 			handled = false;
 			
-			bool addInPrintNote = true;					//only if set to true you are able to separate the in-print-note and the ambiguity resolving letter by a space, if required.
-			bool addInPrintNoteCustom = false;			//only applicable if addInPrintNote = true, if set to false, the output well be as specified on the date/time field element in component
-			string noYearString = "o.J.";				//"o.J.", "n.d."
-			string noYearTemplate = "{0} {1}";			//add a space if you do not want the ambiguity resolving letter to "stick" to the no-year-string:	"{0} {1}" -> o. J. a
-														//remove the space if you want the ambiguity resolving letter to "stick" to the no-year-string:		"{0}{1}"  -> o.J.a
-			string inPrintTemplate = "{0} {1}";			//add a space if you do not want the ambiguity resolving letter to "stick" to the in-print-note:	"{0} {1}" -> in press a
-														//remove the space if you want the ambiguity resolving letter to "stick" to the in-print-note:		"{0}{1}"  -> in pressa
-			string inPrintNoteCustom = "im Druck";		//"im Druck", ", in press"
+			bool addInPrintNote = true;						//only if set to true you are able to separate the in-print-note and the ambiguity resolving letter by a space, if required.
+			bool addInPrintNoteCustom = false;				//only applicable if addInPrintNote = true, if set to false, the output well be as specified on the date/time field element in component
+			string noYearString = "o.\u00A0J.";				//"o.J.", "n.d." - \u00A0 = non-breaking space (geschütztes Leerzeichen)
+			string noYearTemplate = "{0}\u00A0{1}";			//add a space if you do not want the ambiguity resolving letter to "stick" to the no-year-string:	"{0} {1}" -> o. J. a
+															//remove the space if you want the ambiguity resolving letter to "stick" to the no-year-string:		"{0}{1}"  -> o.J.a
+			string noYearNoIdentifyingLetterTemplate = "{0}";	
+			string inPrintTemplate = "{0}\u00A0{1}";		//add a space if you do not want the ambiguity resolving letter to "stick" to the in-print-note:	"{0} {1}" -> in press a
+															//remove the space if you want the ambiguity resolving letter to "stick" to the in-print-note:		"{0}{1}"  -> in pressa
+			string inPrintNoIdentifyingLetterTemplate = "{0}";
+			string inPrintNoteCustom = "im\u00A0Druck";		//"im Druck", ", in press"
 			
 			if (citation == null) return null;
 			
@@ -101,10 +104,18 @@ namespace SwissAcademic.Citavi.Citations
 
 			string outputString = string.Empty;
 
+
 			if (string.IsNullOrEmpty(yearValue))
 			{
 				//"o.J." or "n.d."
-				outputString = string.Format(noYearTemplate, noYearString, identifyingLetter);
+				if (string.IsNullOrEmpty(identifyingLetter))
+				{
+					outputString = string.Format(noYearNoIdentifyingLetterTemplate, noYearString);
+				}
+				else
+				{
+					outputString = string.Format(noYearTemplate, noYearString, identifyingLetter);
+				}
 			}
 
 			else if (addInPrintNote && StringUtility.ContainsInPrintInformation(yearValue))
@@ -112,13 +123,28 @@ namespace SwissAcademic.Citavi.Citations
 				if (addInPrintNoteCustom)
 				{
 					//"im Druck" or "in print"
-					outputString = string.Format(inPrintTemplate, inPrintNoteCustom, identifyingLetter);
+					if (string.IsNullOrEmpty(identifyingLetter))
+					{
+						outputString = string.Format(inPrintNoIdentifyingLetterTemplate, inPrintNoteCustom);
+					}
+					else
+					{
+						outputString = string.Format(inPrintTemplate, inPrintNoteCustom, identifyingLetter);
+					}
 				}
 				else
 				{
 					//"im Druck" or "in print" as specified on the date/time field element in component
 					if (string.IsNullOrEmpty(inPrintNoteStandard)) return null;
-					outputString = string.Format(inPrintTemplate, inPrintNoteStandard, identifyingLetter);
+					
+					if (string.IsNullOrEmpty(identifyingLetter))
+					{
+						outputString = string.Format(inPrintNoIdentifyingLetterTemplate, inPrintNoteStandard);
+					}
+					else
+					{
+						outputString = string.Format(inPrintTemplate, inPrintNoteStandard, identifyingLetter);
+					}
 				}
 			}
 
