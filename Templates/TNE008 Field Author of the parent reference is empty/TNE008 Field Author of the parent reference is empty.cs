@@ -23,7 +23,7 @@ namespace SwissAcademic.Citavi.Citations
 
 			if (!citation.Reference.ParentReference.ReferenceType.CoreFields.Contains(ReferenceTypeCoreFieldId.Authors)) return false;
 
-            return citation.Reference.ParentReference.Authors.Count == 0;
+			return citation.Reference.ParentReference.Authors.Count == 0;
 
 		}
 	}
