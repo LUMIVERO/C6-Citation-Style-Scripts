@@ -188,6 +188,10 @@
 
 [TNE006](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE006%20Field%20Online%20Address%20of%20the%20parent%20reference%20is%20not%20empty) Field "Online Address" of the parent reference is not empty
 
+[TNE007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE007%20Field%20Quotation%20Page%20Range%20is%20not%20empty) Field "Quotation Page Range" is not empty
+
+[TNE008](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE008%20Field%20Author%20of%20the%20parent%20reference%20is%20empty) Field "Author" of the parent reference is empty
+
 [TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20the%20same%20footnote%20is%20cited) Another contribution from parent reference in the same footnote is cited
 
 [TRE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE002%20Different%20reference%20of%20same%20author%20also%20cited) Different reference of same author also cited
@@ -249,6 +253,8 @@
 [TXY020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY020%20Citation%20has%20the%20format%20Author%20%5BYear%5D%20-%20first%20part%20of%20the%20citation%20%5BPersonOnly%20and%20NoPar%5D) Citation has the format "Author (Year)" - first part of the citation (PersonOnly and NoPar)
 
 [TXY021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY021%20Citation%20has%20the%20format%20Author%20%5BYear%5D%20-%20second%20part%20of%20the%20citation%20%5BYearOnly%5D) Citation has the format "Author (Year)" - second part of the citation (YearOnly)
+
+[TXY022](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY022%20Field%20Page%20Range%20has%20certain%20Numbering%20Type) Field "Page Range" has certain Numbering Type
 
 ## Literaturverzeichnis sortieren
 
