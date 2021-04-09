@@ -14,7 +14,7 @@ Der Seitenbereich soll im Beispielfall an einer anderen Position ausgegeben werd
 In Zeile 20-24 kann über die Schalter `true` und `false` eingestellt werden, für welchen Seitenzahlen-Typ die Vorlage gelten soll.
 
 ## Installation
-Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/programmable_components)
+Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
 
 ## Autor
 
