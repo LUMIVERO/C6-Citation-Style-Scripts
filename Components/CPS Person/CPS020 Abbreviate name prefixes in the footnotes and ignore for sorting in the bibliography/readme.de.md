@@ -15,7 +15,7 @@ Im Literaturverzeichnis:
 Der Beispiel-Autor soll im Literaturverzeichnis unter "M" erscheinen.
 
 ## Anpassung
-Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Fußnoten**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS015 "_Präfixe in Literaturverzeichnis und Fußnoten unterschiedlich ausgeben_" besteht, das bei den Personen-Komponenten im **Literaturverzeichnis**-Regelset einzufügen ist.)
+Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Fußnoten**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript [CPS015 "_Präfixe in Literaturverzeichnis und Fußnoten unterschiedlich ausgeben_"](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS015%20Output%20name%20prefixes%20differently%20in%20the%20footnotes%20and%20in%20the%20bibliography) besteht, das bei den Personen-Komponenten im **Literaturverzeichnis**-Regelset einzufügen ist.)
 
 Zusätzlich müssen in den Eigenschaften der Personen-Komponente folgende Einstellungen getroffen werden:
 1. Rufen Sie die Personen-Komponente mit einem Doppelklick auf.
