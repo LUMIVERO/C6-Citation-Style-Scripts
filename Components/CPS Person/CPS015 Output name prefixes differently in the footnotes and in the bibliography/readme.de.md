@@ -16,7 +16,7 @@ Im Literaturverzeichnis:
 - Münch, Ingo von, Legal education and the legal profession in Germany, Baden-Baden 2002.
 
 ## Anpassung
-Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Literaturverzeichnis**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript CPS020 "_Namenspräfix in Fußnoten auch bei 'non-dropping particle' abkürzen, hinsichtlich der Sortierung im Literaturverzeichnis aber ignorieren_" besteht, das bei den Personen-Komponenten im **Fußnoten**-Regelset einzufügen ist.)
+Sie müssen den Code in Ihrem Zitationsstil bei allen Personen-Komponenten (z.B. **Autor, Herausgeber oder Institution**) im **Literaturverzeichnis**-Regelset bei allen Dokumententypen einbauen. (Beachten Sie bitte, dass in dieser Hinsicht eine Abweichung zum Skript [CPS020 "Namenspräfix in Fußnoten auch bei 'non-dropping particle' abkürzen, hinsichtlich der Sortierung im Literaturverzeichnis aber ignorieren"](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS020%20Abbreviate%20name%20prefixes%20in%20the%20footnotes%20and%20ignore%20for%20sorting%20in%20the%20bibliography) besteht, das bei den Personen-Komponenten im **Fußnoten**-Regelset einzufügen ist.)
 
 In Ihrem Citavi-Projekt erfassen Sie unter **Listen** > **Personen und Institutionen** den Namen mit dem (ggf. abgekürzten) Präfix im Feld "**Name**", z. B. `von Münch` oder `v. Münch`. Im Feld **Sortieren nach** geben Sie den Namen so ein, wie er im Literaturverzeichnis erscheinen soll (z. B. `Münch, Ingo von`).
 
