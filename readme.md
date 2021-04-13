@@ -174,6 +174,8 @@
 
 [CPS025](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS025%20Removes%20brackets%20on%20Organization%20name%20if%20abbreviation%20is%20missing) Removes brackets on Organization name if abbreviation is missing
 
+[CPS026](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPS%20Person/CPS026%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Author%20or%20Editor%20Name) Replace Space by Non-breaking Space in the Author or Editor Name
+
 ## Templates
 
 [TNE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE001%20Check%20various%20fields%20if%20EMPTY%20or%20NOT%20EMPTY) Check various fields if EMPTY or NOT EMPTY 
