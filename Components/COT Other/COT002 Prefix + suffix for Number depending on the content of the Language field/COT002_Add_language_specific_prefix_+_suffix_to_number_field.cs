@@ -1,8 +1,9 @@
 //C6#COT002
 //C5#431510
-//Description: Add prefix "no." or "Nr." and a suffix if needed to Number field depending on language of reference
-//Version: 1.2 Prefix + suffix for other languages (=neither German nor English) can now be added
-//Version: 1.1 Added ToList() for getting field elements
+//Description:	Add prefix "no." or "Nr." and a suffix if needed to Number field depending on language of reference
+//Version 1.3:	Region "Volume field contains text" corrected (TextPrefix & TextSuffix) and for isNumeric the options SingularSuffix & PluralSuffix added
+//Version 1.2:	Prefix + suffix for other languages (=neither German nor English) can now be added
+//Version 1.1:	Added ToList() for getting field elements
 
 
 using System;
@@ -91,6 +92,8 @@ namespace SwissAcademic.Citavi.Citations
 							{
 								element.SingularPrefix.Text = "no. ";
 								element.PluralPrefix.Text = "no. ";
+								element.SingularSuffix.Text = "";
+								element.PluralSuffix.Text = "";
 							}
 							break;
 
@@ -99,6 +102,8 @@ namespace SwissAcademic.Citavi.Citations
 							{
 								element.SingularPrefix.Text = "Nr. ";
 								element.PluralPrefix.Text = "Nr. ";
+								element.SingularSuffix.Text = "";
+								element.PluralSuffix.Text = "";
 							}
 							break;
 
@@ -106,6 +111,8 @@ namespace SwissAcademic.Citavi.Citations
 							{
 								element.SingularPrefix.Text = "Nr. ";
 								element.PluralPrefix.Text = "Nr. ";
+								element.SingularSuffix.Text = "";
+								element.PluralSuffix.Text = "";
 							}
 							break;
 					}
@@ -121,23 +128,23 @@ namespace SwissAcademic.Citavi.Citations
 					{
 						case Language.English:
 							{
-								element.SingularPrefix.Text = "";
-								element.PluralPrefix.Text = "";
+								element.TextPrefix.Text = "";
+								element.TextSuffix.Text = "";
 							}
 							break;
 
 						default:
 						case Language.German:
 							{
-								element.SingularPrefix.Text = "";
-								element.PluralPrefix.Text = "";
+								element.TextPrefix.Text = "";
+								element.TextSuffix.Text = "";
 							}
 							break;
 
 						case Language.Other:
 							{
-								element.SingularPrefix.Text = "";
-								element.PluralPrefix.Text = "";
+								element.TextPrefix.Text = "";
+								element.TextSuffix.Text = "";
 							}
 							break;
 					}
