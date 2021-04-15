@@ -1,7 +1,8 @@
 //C6#COT002
 //C5#431510
 //Description:	Add prefix "no." or "Nr." and a suffix if needed to Number field depending on language of reference
-//Version 1.3:	Region "Volume field contains text" corrected (TextPrefix & TextSuffix) and for isNumeric the options SingularSuffix & PluralSuffix added
+//Version 1.4:	Slight improvements
+//Version 1.3:	Region "Number field contains text" corrected (TextPrefix & TextSuffix) and for isNumeric the options SingularSuffix & PluralSuffix added
 //Version 1.2:	Prefix + suffix for other languages (=neither German nor English) can now be added
 //Version 1.1:	Added ToList() for getting field elements
 
@@ -10,7 +11,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text.RegularExpressions;
+using System.Text;
 using SwissAcademic.Citavi;
 using SwissAcademic.Citavi.Metadata;
 using SwissAcademic.Collections;
@@ -32,7 +33,7 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#region Find numeric field elements
 			
-			//we treat only numeric field elemements that output the Volume field
+			//we treat only numeric field elemements that output the Number field
 			var numericFieldElements = componentPart.Elements.OfType<NumericFieldElement>().Where(element => element.PropertyId == ReferencePropertyId.Number).ToList();
 			if (numericFieldElements == null || numericFieldElements.Count() == 0) return null;
 			
@@ -82,7 +83,7 @@ namespace SwissAcademic.Citavi.Citations
 				int number;
 				bool isNumeric = int.TryParse(value, out number);
 				
-				#region Volume field contains just a number
+				#region Number field contains just a number
 				
 				if (isNumeric)
 				{
@@ -118,9 +119,9 @@ namespace SwissAcademic.Citavi.Citations
 					}
 				}
 				
-				#endregion Volume field contains just a number
+				#endregion Number field contains just a number
 				
-				#region Volume field contains text
+				#region Number field contains text
 				
 				else
 				{
@@ -150,7 +151,7 @@ namespace SwissAcademic.Citavi.Citations
 					}
 				}	
 				
-				#endregion Volume field contains text
+				#endregion Number field contains text
 			}
 			
 			return null;
