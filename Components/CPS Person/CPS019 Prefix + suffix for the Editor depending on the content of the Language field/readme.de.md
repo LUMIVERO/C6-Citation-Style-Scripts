@@ -2,7 +2,9 @@
 
 Im Literaturverzeichnis sollen Namenszusätze (wie Hrsg.) in der Sprache erscheinen, in der die Publikation veröffentlicht wurde.
 
-Im Feld "Sprache" muss bei jedem Titel angegeben werden, in welcher Sprache der Titel publiziert wurde: en, fr, it etc.
+Im Feld `Sprache` muss bei jedem Titel angegeben werden, in welcher Sprache der Titel publiziert wurde: `en`, `fr`, `it` etc.
+
+Bei Quellen mit einer unklaren Sprache (das Feld ist leer oder enthält ein Kürzel, das nicht im Skript aufgeführt ist), kommen die Einstellungen zum Tragen, die in der Komponente selbst hinterlegt sind.
 
 ## Voraussetzungen
 Citavi 6 (oder höher)
