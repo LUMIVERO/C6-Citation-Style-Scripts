@@ -13,4 +13,4 @@ Siehe Citavi Handbuch: [Using Programmable Components](https://www.citavi.com/pr
 
 ## Autor
 
-* **Jörg Pasch** [joepasch](https://github.com/joepasch)
+* **Susanne Sitzler** [Susanne-S](https://github.com/Susanne-S)
