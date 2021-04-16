@@ -9,10 +9,10 @@ using System.Reflection;
 
 namespace SwissAcademic.Citavi.Citations
 {
-    public class ComponentPartFilter
-        :
-        IComponentPartFilter
-    {
+	public class ComponentPartFilter
+		:
+		IComponentPartFilter
+	{
 		//CPS012 Add first or middle names for ambiguous last names v5.0
 		//Version 5.0   Completely re-written for Citavi 6.4 (> Citavi 6.3.16)
 		//Berücksichtigt die 3 neuen Werte: NameIdentity.LastNamePrefix, NameIdentity.LastNameFirstNameInitialMiddleNameInitial & NameIdentity.LastNameFirstNameInitialMiddleNameFull
@@ -20,20 +20,20 @@ namespace SwissAcademic.Citavi.Citations
 		//Version 4.1   Built-in option to insert non-breaking spaces and hyphens
 		//Version 4.0   Completely re-written for Citavi 6 (6.2 or higher)
 		//Disambiguation of identical person names by successively adding first name initials, full first names, middle name initals and full middle names (if available)
-        public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
-        {
+		public IEnumerable<ITextUnit> GetTextUnits(ComponentPart componentPart, Template template, Citation citation, out bool handled)
+		{
 			//Should only the primary authors be considered in checking last names for ambiguity?
-            bool checkAmbiguityForPrimaryAuthorsOnly = false;
+			bool checkAmbiguityForPrimaryAuthorsOnly = false;
 			
 			//When a first and/or middle name is added for disambiguation, should that be before or after the last name?
-            PersonNameOrder nameOrderForAmbiguityResolution = PersonNameOrder.FirstNameLastName;
+			PersonNameOrder nameOrderForAmbiguityResolution = PersonNameOrder.FirstNameLastName;
 			
 			//Formatting of the first name; combine several styles with a pipe character
 			//FontStyle firstNameFontStyle = FontStyle.Bold | FontStyle.Italic;
 			FontStyle firstNameFontStyle = FontStyle.Neutral;
 			
 			//In case of ambiguous last names, should the first attempt to disambigutate be the addition of full first names or just the initials?
-            NameFormat firstNameFormatForAmbiguityResolution = NameFormat.Abbreviated; 
+			NameFormat firstNameFormatForAmbiguityResolution = NameFormat.Abbreviated; 
 			//NameFormat.Full					John Mike
 			//NameFormat.Abbreviated			J. M.
 			//NameFormat.AbbreviatedNoPeriod	J M
@@ -46,17 +46,17 @@ namespace SwissAcademic.Citavi.Citations
 			var useNonBreakingSpaceBetweenPrefixAndName = true;					//if true, then e.g. von°Bülow, V.
 			var useNonBreakingHyphenInFirstAndMiddleName = true;				//if true, then e.g. Ewing, J.-R.
 			
-            handled = false;
+			handled = false;
 
-            if (citation == null || citation.Reference == null) return null;
-            if (componentPart == null || componentPart.Elements == null || !componentPart.Elements.Any()) return null;
+			if (citation == null || citation.Reference == null) return null;
+			if (componentPart == null || componentPart.Elements == null || !componentPart.Elements.Any()) return null;
 			
-            CitationManager citationManager = citation.CitationManager;
-            if (citationManager == null) return null;
+			CitationManager citationManager = citation.CitationManager;
+			if (citationManager == null) return null;
 
-            PersonFieldElement personFieldElement = componentPart.Elements.OfType<PersonFieldElement>().FirstOrDefault();
-            if (personFieldElement == null) return null;
-            if (personFieldElement.SuppressOutput) return null;
+			PersonFieldElement personFieldElement = componentPart.Elements.OfType<PersonFieldElement>().FirstOrDefault();
+			if (personFieldElement == null) return null;
+			if (personFieldElement.SuppressOutput) return null;
 			
 			#region Insert non-breaking spaces and hyphens
 			
@@ -97,21 +97,21 @@ namespace SwissAcademic.Citavi.Citations
 			
 			#endregion
 			
-            #region BeforeFormatPerson: Resolve last name ambiguity
+			#region BeforeFormatPerson: Resolve last name ambiguity
 
-            BeforeFormatPersonEventArgs bfp;
-            personFieldElement.PersonFormatter.BeforeFormatPerson +=
-            (sender, e) =>
-            {
-                bfp = (BeforeFormatPersonEventArgs)e;
-                if (bfp.Person == null) return;
-                if (checkAmbiguityForPrimaryAuthorsOnly && bfp.Index > 1) return;
+			BeforeFormatPersonEventArgs bfp;
+			personFieldElement.PersonFormatter.BeforeFormatPerson +=
+			(sender, e) =>
+			{
+				bfp = (BeforeFormatPersonEventArgs)e;
+				if (bfp.Person == null) return;
+				if (checkAmbiguityForPrimaryAuthorsOnly && bfp.Index > 1) return;
 
-                bool isLastNameAmbiguous = checkAmbiguityForPrimaryAuthorsOnly ? 
+				bool isLastNameAmbiguous = checkAmbiguityForPrimaryAuthorsOnly ? 
 					citationManager.IsFirstCitedPersonLastnameAmbiguous(bfp.Person.LastName) :
 					citationManager.IsCitedPersonLastNameAmbiguous(bfp.Person.LastName);
 				
-                if (!isLastNameAmbiguous) return;
+				if (!isLastNameAmbiguous) return;
 				
 				NameIdentity nameIdentity = checkAmbiguityForPrimaryAuthorsOnly ? 
 					citationManager.GetFirstPersonNameIdentity(bfp.Person) :
@@ -212,11 +212,11 @@ namespace SwissAcademic.Citavi.Citations
 				}
 				
 				bfp.NameOrder = nameOrderForAmbiguityResolution;
-            };
+			};
 
-            #endregion
+			#endregion
 
-            return null;
-        }
-    }
+			return null;
+		}
+	}
 }
