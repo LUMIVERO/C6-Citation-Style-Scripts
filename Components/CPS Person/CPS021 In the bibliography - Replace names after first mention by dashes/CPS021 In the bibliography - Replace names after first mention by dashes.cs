@@ -1,4 +1,5 @@
-//CPS021
+//C6#CPS021
+//C5#43114
 //Version: 3.3
 //Description: In the bibliography - Replace names after first mention by dashes
 
