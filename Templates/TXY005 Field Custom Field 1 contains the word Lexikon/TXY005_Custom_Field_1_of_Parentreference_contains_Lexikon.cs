@@ -1,9 +1,9 @@
 //TXY005
 
 using System.Linq;
-using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using SwissAcademic.Citavi;
 using SwissAcademic.Citavi.Metadata;
 using SwissAcademic.Collections;
