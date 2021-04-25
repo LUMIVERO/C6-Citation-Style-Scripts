@@ -222,7 +222,7 @@
 
 [TRE014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE014%20Previous%20citation%20is%20not%20part%20of%20a%20caption) Previous citation of the reference is not part of a caption
 
-[TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20oder%20Verf%C3%BCgung) Field "Specific Field 3" contains Schreiben, Erlass oder Verfügung
+[TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20or%20Verf%C3%BCgung) Field "Specific Field 3" contains "Schreiben", "Erlass" or "Verfügung"
 
 [TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field "Author" contains exactly 4 authors
 
@@ -230,11 +230,11 @@
 
 [TXY004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY004%20Field%20Author%20contains%20specific%20name) Field "Author" contains specific name
 
-[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY005%20Field%20Custom%20Field%201%20contains%20the%20word%20Lexikon) Field "Custom Field 1" contains the word Lexikon
+[TXY005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY005%20Field%20Custom%20Field%201%20contains%20the%20word%20Lexikon) Field "Custom Field 1" contains the word "Lexikon"
 
-[TXY007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY007%20Field%20Court%20contains%20BVerfG) Field "Court" contains BVerfG
+[TXY007](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY007%20Field%20Court%20contains%20BVerfG) Field "Court" contains "BVerfG"
 
-[TXY009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY009%20Field%20Online%20Address%20contains%20wikipedia.org) Field "Online Address" contains wikipedia.org
+[TXY009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY009%20Field%20Online%20Address%20contains%20wikipedia.org) Field "Online Address" contains "wikipedia.org"
 
 [TXY010](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY010%20Field%20Year%20contains%20number%20less%20than%20or%20equal%20to%201800) Field "Year" contains number less than or equal to 1800
 
