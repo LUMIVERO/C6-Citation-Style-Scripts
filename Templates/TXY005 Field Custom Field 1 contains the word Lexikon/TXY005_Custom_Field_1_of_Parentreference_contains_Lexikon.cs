@@ -35,7 +35,6 @@ namespace SwissAcademic.Citavi.Citations
 			var regEx = new Regex(@"\b(" + string.Join("|", wordList) + @")\b", RegexOptions.IgnoreCase);
 			return regEx.IsMatch(test);
 
-
 		}
 	}
 }
