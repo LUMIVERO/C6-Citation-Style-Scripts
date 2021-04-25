@@ -1,4 +1,4 @@
-# Feld "Art der Schrift" bzw. "Titelzusätze" enthält "Master" oder "Doctoral"
+# Feld "Art der Schrift" bzw. "Titelzusätze" enthält "Dissertation", "Doktor" oder "Master"
 
 Die Vorlage soll greifen, wenn die Quelle bei einer `Hochschulschrift` einer zuvor festgelegten `Art der Schrift` entspricht (Masterarbeit, Doktorarbeit, Thesis etc.) bzw. bei anderen Dokumententypen den gewünschten Eintrag im Feld `Titelzusätze` hat.
 
@@ -11,7 +11,7 @@ Im Literaturverzeichnis sollen Bachelor- und Masterarbeiten abweichend von Disse
 - Schmidt, A. (2021): Summa cum laude. [Dissertation, JGU Mainz, Institut für Physik]. Online verfügbar unter [...]
 
 ## Anpassung
-In Zeile 31-32 kann über die Begriffe festgelegt werden, für welchen Typ bzw. Eintrag im Feld `Art der Schrift` (`Type of thesis`) bzw. `Titelzusätze` (`Title supplement`) die Vorlage gelten soll.
+In Zeile 31-34 kann über die Begriffe festgelegt werden, für welchen Typ bzw. Eintrag im Feld `Art der Schrift` (`Type of thesis`) bzw. `Titelzusätze` (`Title supplement`) die Vorlage gelten soll.
 
 ## Installation
 Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
