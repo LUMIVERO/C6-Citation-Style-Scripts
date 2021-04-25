@@ -1,4 +1,4 @@
-# Im Feld "Freitext 1" (des Sammelwerks) steht das Wort Lexikon.
+# Feld "Freitext 1" (des Sammelwerks) enthält das Wort Lexikon
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
