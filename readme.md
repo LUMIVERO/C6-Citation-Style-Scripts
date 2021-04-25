@@ -258,6 +258,8 @@
 
 [TXY022](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY022%20Field%20Page%20Range%20has%20certain%20Numbering%20Type) Field "Page Range" has certain Numbering Type
 
+[TXY023 ](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY023%20Field%20Title%20Supplement%20contains%20Master%20or%20Doctoral) Field "Title Supplement" contains "Master" or "Doctoral"
+
 ## Bibliography Sorting
 
 [BSO001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BSO%20Sorting/BSO001%20By%20Custom%20Field%201%20or%20author%20or%20title%20%5Bskip%20stop%20words%5D%2C%20year%2C%20sort%20title) By "Custom Field 1 "or author or title (skip stop words), year, sort title
