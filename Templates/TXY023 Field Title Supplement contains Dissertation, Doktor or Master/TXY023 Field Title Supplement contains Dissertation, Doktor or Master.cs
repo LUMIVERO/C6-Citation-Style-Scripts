@@ -1,5 +1,5 @@
 //TXY023
-//Description:	Field "TitleSupplement" ("Type of thesis", "Art der Schrift") contains "Master" or "Doctoral")
+//Description:	Field "TitleSupplement" ("Type of thesis", "Art der Schrift") contains "Dissertation", "Doktor" or "Master"
 //Version 1.0
 
 using System.Linq;
@@ -28,8 +28,10 @@ namespace SwissAcademic.Citavi.Citations
 			//note: if you do not specify the whole word, but rather its first characters, do NOT use * as a wildcard, but
 			//\\w*, which means "zero or more word characters"
 			var wordList = new string[] {
-				"Master\\w*",					//z.B. auch Wörter wie "Master's dissertations" usw. 
-				"Doctoral\\w*"					//z.B. auch Wörter wie "Doctoral dissertations" usw.
+				"Dissertation",
+				"Doktor\\w*",					//z.B. auch Wörter wie "Doktorarbeit" usw.
+				"Doctoral\\w*",					//z.B. auch Wörter wie "Doctoral dissertations" usw.
+				"Master\\w*"					//z.B. auch Wörter wie "Masterarbeit" oder "Master's dissertations" usw. 
 			};
 			var regEx = new Regex(@"\b(" + string.Join("|", wordList) + @")\b", RegexOptions.IgnoreCase);
 			return regEx.IsMatch(field);
