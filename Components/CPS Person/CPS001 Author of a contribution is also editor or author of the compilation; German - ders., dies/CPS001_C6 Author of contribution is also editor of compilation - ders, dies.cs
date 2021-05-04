@@ -1,16 +1,18 @@
 //C6#CPS001
-//Description: Author of contribution is also editor of compilation - ders., dies.
-//Version: 4.1 Added parameter bool confineReplacementToSingleAuthorOnPartialIdentity = true;
-//Version: 4.0 Completely re-written for Citavi 6
-//Version: 3.2 See note under 3.0 + jumps over 'empty' person fields
-//Version: 3.1 Corrects error that "ders./dies./ibid." was always displayed
-//Version: 3.0 Compares Persons by checking surrounding template (complete revision)
-//Version: 2.0 Now works with GroupPrefix and GroupSuffix as well as additional LiteralElements or FieldElements inside the component part
-//Version: 1.5 In case of "Contribution in Collected Works", we have to check for "Author (of contribution ) = Author (of parent reference)" 
-//			   and not for "Author (of contribution) = Editor (of parent reference). See code line 40.
-//Version: 1.4 New variable "outputInSmallCaps", "outputInBold", "outputUnderlined"
-//Version: 1.3 Single N oder unknown author yields "ders." instead of "dies."
-//added outputInItalics variable on top
+//Description:	Author of contribution is also editor of compilation - ders., dies.
+
+//Version 4.2:	Added parameter bool useNonBreakingSpaces... = true;
+//Version 4.1:	Added parameter bool confineReplacementToSingleAuthorOnPartialIdentity = true;
+//Version 4.0:	Completely re-written for Citavi 6
+//Version 3.2:	See note under 3.0 + jumps over 'empty' person fields
+//Version 3.1:	Corrects error that "ders./dies./ibid." was always displayed
+//Version 3.0:	Compares Persons by checking surrounding template (complete revision)
+//Version 2.0:	Now works with GroupPrefix and GroupSuffix as well as additional LiteralElements or FieldElements inside the component part
+//Version 1.5:	In case of "Contribution in Collected Works", we have to check for "Author (of contribution ) = Author (of parent reference)" 
+//				and not for "Author (of contribution) = Editor (of parent reference). See code line 40.
+//Version 1.4:	New variable "outputInSmallCaps", "outputInBold", "outputUnderlined"
+//Version 1.3:	Single N oder unknown author yields "ders." instead of "dies."
+//				added outputInItalics variable on top
 
 using System;
 using System.Linq;
@@ -32,6 +34,11 @@ namespace SwissAcademic.Citavi.Citations
 			//return handled = false if you want Citavi to produce the standard output; 
 
 			handled = false;
+			
+			var useNonBreakingSpacesInAndBetweenFirstAndMiddleNames = false;	//if true, then e.g. Meyers, J.°R.
+			var useNonBreakingSpaceBetweenLastAndFirstName = false;				//if true, then e.g. Meyers,°John Richard
+			var useNonBreakingSpaceBetweenPrefixAndName = false;				//if true, then e.g. von°Bülow, V.
+			var useNonBreakingHyphenInFirstAndMiddleName = false;				//if true, then e.g. Ewing, J.-R.
 
 			if (citation == null || citation.Reference == null) return null;
 			if (componentPart == null || componentPart.Elements == null || !componentPart.Elements.Any()) return null;
@@ -66,9 +73,60 @@ namespace SwissAcademic.Citavi.Citations
 			if (previousPersons == null || !previousPersons.Any()) return null;
 			
 			#endregion
+
+			IEnumerable<PersonFieldElement> personFieldElements = componentPart.Elements.OfType<PersonFieldElement>();
+			if (personFieldElements == null || personFieldElements.Count() == 0) return null;
 			
 			PersonTeamsCompareResult compareResult = GetPersonTeamsIdentityAndGenderStructure(thesePersons, previousPersons);
-			if (compareResult.Identity == PersonTeamsIdentity.None) return null;
+			if (compareResult.Identity == PersonTeamsIdentity.None) //return null; [old version without useNonBreakingSpace...]
+			{
+				foreach(PersonFieldElement element in personFieldElements)
+				{
+					if (useNonBreakingSpacesInAndBetweenFirstAndMiddleNames)
+					{
+						element.FirstGroupUseNonBreakingSpaceInAndBetweenFirstAndMiddleNames = true;
+						element.SecondGroupUseNonBreakingSpaceInAndBetweenFirstAndMiddleNames = true;
+						element.LastPersonUseNonBreakingSpaceInAndBetweenFirstAndMiddleNames = true;
+					}
+
+					if (useNonBreakingSpaceBetweenLastAndFirstName)
+					{
+						element.FirstGroupUseNonBreakingSpaceBetweenLastAndFirstName = true;
+						element.SecondGroupUseNonBreakingSpaceBetweenLastAndFirstName = true;
+						element.LastPersonUseNonBreakingSpaceBetweenLastAndFirstName = true;				
+					}
+
+					if (useNonBreakingSpaceBetweenPrefixAndName)
+					{
+						element.FirstGroupUseNonBreakingSpaceBetweenPrefixAndName = true;
+						element.SecondGroupUseNonBreakingSpaceBetweenPrefixAndName = true;
+						element.LastPersonUseNonBreakingSpaceBetweenPrefixAndName = true;
+					}
+
+					if (useNonBreakingHyphenInFirstAndMiddleName)
+					{
+						element.FirstGroupUseNonBreakingHyphenInFirstAndMiddleNames = true;
+						element.SecondGroupUseNonBreakingHyphenInFirstAndMiddleNames = true;
+						element.LastPersonUseNonBreakingHyphenInFirstAndMiddleNames = true;
+					}
+				}
+			
+				//for downward compatibility of this script we make sure the separator is just a comma and not "comma + space"
+				var currentVersion = SwissAcademic.Environment.InformationalVersion;
+				var maxVersionForWorkaround = new Version(6,3,5,0);			
+				if (currentVersion <= maxVersionForWorkaround)
+				{
+					foreach(PersonFieldElement element in personFieldElements)
+					{
+						element.FirstGroupLastNameFirstNameSeparator.Text = ",";
+						element.SecondGroupLastNameFirstNameSeparator.Text = ",";
+						element.LastPersonLastNameFirstNameSeparator.Text = ",";
+					}
+				}
+			
+				//Citavi will do the rest, no need to return any output, since PersonTeamsIdentity.None = true
+				return null;
+			}
 			
 			bool handleAlsoPartialIdentity = true;	//if true, all of the following cases (1) - (3) will be treated. Otherwise, 
 													//if false, only case (2) will be treated 
