@@ -1,4 +1,4 @@
-# Im Literaturverzeichnis einmal zitierte Titel und best. jur. Dokumententypen unterdrücken
+# Im Literaturverzeichnis einmal zitierte Titel und bestimmte juristische Dokumententypen unterdrücken
 
 Titel, die nur einmal im Dokument in den Fußnoten zitiert wurden, sollen im Literaturverzeichnis nicht erscheinen.
 
