@@ -278,7 +278,7 @@
 
 ## Bibliography Filtering
 
-[BFI001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/BFI001%20Suppress%20only%20once%20cited%20titles) Suppress only once cited titles
+[BFI001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/BFI001%20Suppress%20only%20once%20cited%20references) Suppress only once cited references
 
 [BFI002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/BFI002%20Omit%20from%20bibliography%20and%20sort%20by%20reference%20type) Omit from bibliography and sort by reference type
 
