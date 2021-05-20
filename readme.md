@@ -280,6 +280,8 @@
 
 [BFI001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/BFI001%20Suppress%20only%20once%20cited%20titles) Suppress only once cited titles
 
+[BFI002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BFI%20Filtering/BFI002%20Omit%20from%20bibliography%20and%20sort%20by%20reference%20type) Omit from bibliography and sort by reference type
+
 ## Bibliography Grouping
 
 [BGR01](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Bibliography/BGR%20Grouping/BGR01%20Sort%20first%20by%20titles%20in%20Cyrillic%2C%20then%20in%20Latin%20font) Sort first by titles in Cyrillic, then in Latin font
