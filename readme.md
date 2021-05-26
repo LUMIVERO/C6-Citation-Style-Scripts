@@ -112,6 +112,8 @@
 
 [COT040](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT040%20Output%20ebd.%20or%20ibid.%20as%20text%20element%20depending%20on%20the%20content%20of%20the%20Language%20field) Output "ebd." or "ibid." as text element depending on the content of the "Language" field
 
+[COT041](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/COT%20Other/COT041%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Series%20Title) Replace Space by Non-breaking Space in the "Series Title"
+
 ### CPE Periodical
 
 [CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
