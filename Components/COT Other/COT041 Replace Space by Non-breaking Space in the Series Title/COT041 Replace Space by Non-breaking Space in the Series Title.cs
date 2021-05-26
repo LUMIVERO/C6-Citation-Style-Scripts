@@ -1,4 +1,4 @@
-//C6#COT040
+//C6#COT041
 //Description:	Replace Space by Non-breaking Space in the Series Title
 //Version: 1.0 
 
