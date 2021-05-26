@@ -116,11 +116,11 @@
 
 ### CPE Zeitschrift
 
-[CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to journal name or replace with ISSN
+[CPE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE001%20Add%20ISSN%20to%20journal%20name%20or%20replace%20with%20ISSN) Add ISSN to Journal Name or replace with ISSN
 
-[CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the "Note" field to the journal name
+[CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the "Note" field to the Journal Name
 
-[CPE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE004%20Add%20the%20content%20of%20the%20Abbreviation%203%20field%20to%20the%20journal%20name) Add the content of the "Abbreviation 3" field to the journal name
+[CPE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE004%20Add%20the%20content%20of%20the%20Abbreviation%203%20field%20to%20the%20journal%20name) Add the content of the "Abbreviation 3" field to the Journal Name
 
 [CPE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE005%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Journal%20Name) Replace space by non-breaking space in the Journal Name
 
