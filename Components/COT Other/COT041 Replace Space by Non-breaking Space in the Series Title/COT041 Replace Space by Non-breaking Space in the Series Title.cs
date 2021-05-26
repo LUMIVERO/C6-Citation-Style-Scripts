@@ -1,6 +1,7 @@
 //C6#COT041
 //Description:	Replace Space by Non-breaking Space in the Series Title
-//Version: 1.0 
+//Version 1.1:	Added consideration of parent reference. Preferred reference is that "in scope" of component part.
+//Version 1.0
 
 using System.Linq;
 using System.Collections.Generic;
@@ -20,9 +21,26 @@ namespace SwissAcademic.Citavi.Citations
 			handled = false;
 			
 			if (componentPart == null) return null;
-			if (citation == null || citation.Reference == null) return null;
-
-			SeriesTitle seriesTitle = citation.Reference.SeriesTitle;
+			
+			Reference currentReference = citation.Reference;
+			if (currentReference == null) return null;
+			
+			Reference currentParentReference = currentReference.ParentReference; // can be null;
+			
+			if (componentPart == null) return null;
+			if (componentPart.Elements == null || !componentPart.Elements.Any()) return null;
+			
+			Reference referenceInScope = null;
+			if (componentPart.Scope == ComponentPartScope.ParentReference && currentParentReference != null)
+			{
+				referenceInScope = currentParentReference;
+			}
+			else if (componentPart.Scope == ComponentPartScope.Reference)
+			{
+				referenceInScope = currentReference;
+			}
+			
+			SeriesTitle seriesTitle = referenceInScope.SeriesTitle;
 			if (seriesTitle == null) return null;	
 
 			SeriesTitleFieldElement seriesTitleFieldElement = componentPart.Elements.OfType<SeriesTitleFieldElement>().FirstOrDefault() as SeriesTitleFieldElement;
