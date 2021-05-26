@@ -5,7 +5,7 @@ Dieses Skript ersetzt die Leerzeichen in den Namen von Reihentiteln jeweils durc
 Citavi 6 (oder höher)
 
 ## Anwendung
-Das Skript kann im Zitationsstileditor an eine der folgenden Komponente angehängt werden:
+Das Skript kann im Zitationsstileditor an eine der folgenden Komponente angehängt werden (dies ist jeweils für reguläre und übergeordnete Komponenten möglich):
 - **Reihentitel**
 - **Serientitel**
 - **Vortragsreihe**
