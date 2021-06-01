@@ -9,6 +9,11 @@ Diese programmierte Vorlagenbedingung kann nur für das Regelset `Literaturverze
 ## Voraussetzungen
 Citavi 6 (oder höher)
 
+## Anpassung
+
+Die folgende Bedingung können Sie bei Bedarf zusätzlich auswählen:
+- `Autor/Herausgeber/Institution stimmt mit vorherige Titeleintrag überein`
+
 ## Beispiele
 
 Für den Fall, dass als vorheriger Titeleintrag ein Werk mit demselben Titel aufgeführt wird, soll beim zweiten Titel eine verkürzte Ausgabe des Titels erfolgen.
