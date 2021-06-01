@@ -2,7 +2,9 @@
 
 Mehrere Werke wurden mit demselben Titel veröffentlicht.
 
-Bei der Angabe eines Titels aus einer mehrbändigen Reihe soll der Titel mit vollständigem Namen aufgeführt werden. Wenn der unmittelbar vorherige Titeleintrag im Literaturverzeichnis denselben hat, soll beim aktuellen Titel statt des vollständigen Titels nur die Abkürzung genannt werden. Alternativ sollen einige Komponenten entfallen.
+Bei der Angabe eines Titels aus einer mehrbändigen Reihe soll der Titel mit vollständigem Namen aufgeführt werden. 
+
+Wenn der unmittelbar vorherige Titeleintrag im Literaturverzeichnis denselben hat, soll beim aktuellen Titel statt des vollständigen Titels nur die Abkürzung genannt werden. Gegebenenfalls soll in der neuen Vorlage auch auf einige Komponenten verzicht werden.
 
 Diese programmierte Vorlagenbedingung kann nur für das Regelset `Literaturverzeichnis` verwendet werden.
 
