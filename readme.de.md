@@ -224,6 +224,10 @@
 
 [TRE014](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE014%20Previous%20citation%20is%20not%20part%20of%20a%20caption) Previous citation of the reference is not part of a caption
 
+[TRE015](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE015%20Consecutive%20entry%20in%20the%20bibliography%20-%20same%20reference%20title) Consecutive entry in the bibliography - same reference title
+
+[TRE016](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE016%20Consecutive%20entry%20in%20the%20bibliography%20-%20same%20series%20title) Consecutive entry in the bibliography - same series title
+
 [TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20or%20Verf%C3%BCgung) Field "Specific Field 3" contains "Schreiben", "Erlass" or "Verfügung"
 
 [TXY002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY002%20Field%20Author%20contains%20exactly%204%20authors) Field "Author" contains exactly 4 authors
