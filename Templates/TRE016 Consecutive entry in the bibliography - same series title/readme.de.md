@@ -2,7 +2,9 @@
 
 Mehrere Werke wurden mit demselben Reihentitel veröffentlicht.
 
-Bei der Angabe eines Titels aus einer Reihe soll der Reihentitel mit vollständigem Namen aufgeführt werden. Wenn der unmittelbar vorherige Titeleintrag im Literaturverzeichnis aus derselben Reihe stammt, soll beim aktuellen Titel statt des vollständigen Reihentitels nur die Abkürzung des Reihentitels genannt werden. Alternativ sollen einige Komponenten entfallen.
+Bei der Angabe eines Titels aus einer Reihe soll der Reihentitel mit vollständigem Namen aufgeführt werden. 
+
+Wenn der unmittelbar vorherige Titeleintrag im Literaturverzeichnis aus derselben Reihe stammt, soll beim aktuellen Titel statt des vollständigen Reihentitels nur die Abkürzung des Reihentitels genannt werden. Gegebenenfalls soll in der neuen Vorlage auch auf einige Komponenten verzicht werden.
 
 Diese programmierte Vorlagenbedingung kann nur für das Regelset `Literaturverzeichnis` verwendet werden.
 
