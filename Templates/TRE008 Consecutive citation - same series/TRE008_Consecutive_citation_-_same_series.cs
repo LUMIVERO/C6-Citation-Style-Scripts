@@ -1,3 +1,4 @@
+//TRE008
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -21,15 +22,15 @@ namespace SwissAcademic.Citavi.Citations
 
 			//Make sure we are dealing with PlaceholderCitations (i.e. in-text and footnote citations, not bibliography entries)	
 			var currentPlaceholderCitation = citation as PlaceholderCitation;
-            if (currentPlaceholderCitation == null) return false;
+			if (currentPlaceholderCitation == null) return false;
 
-            var previousPlaceholderCitation = currentPlaceholderCitation.PreviousPlaceholderCitation;
-            if (previousPlaceholderCitation == null) return false;
+			var previousPlaceholderCitation = currentPlaceholderCitation.PreviousPlaceholderCitation;
+			if (previousPlaceholderCitation == null) return false;
 			
 			
 			//determine the series of the current reference, if necessary by looking at its parent reference
-            var currentReference = citation.Reference;
-            if (currentReference == null) return false;
+			var currentReference = citation.Reference;
+			if (currentReference == null) return false;
 			
 			var currentSeries = currentReference.SeriesTitle;
 			if (currentSeries == null && currentReference.ParentReference != null) currentSeries = currentReference.ParentReference.SeriesTitle;
@@ -56,32 +57,32 @@ namespace SwissAcademic.Citavi.Citations
 				if (previousInTextCitation == null) return false;
 				previousReference = previousInTextCitation.Reference;
 			}
-            if (previousReference == null) return false;
+			if (previousReference == null) return false;
 			
 			var previousSeries = previousReference.SeriesTitle;
 			if (previousSeries == null && previousReference.ParentReference != null) previousSeries = previousReference.ParentReference.SeriesTitle;
 			if (previousSeries == null) return false;
 			
 
-            bool conditionMet = false;
+			bool conditionMet = false;
 
-            conditionMet = currentSeries == previousSeries;
-            if (!conditionMet) return false;
+			conditionMet = currentSeries == previousSeries;
+			if (!conditionMet) return false;
 
-            //https://github.com/Citavi/Citavi/issues/744
-            bool noRuleSetOverride = currentPlaceholderCitation.RuleSetOverride == RuleSetOverride.None ||
-                (currentPlaceholderCitation.CitationType == CitationType.Footnote && currentPlaceholderCitation.RuleSetOverride == RuleSetOverride.Footcit) ||
-                (currentPlaceholderCitation.CitationType == CitationType.InText && currentPlaceholderCitation.RuleSetOverride == RuleSetOverride.Textcit);
+			//https://github.com/Citavi/Citavi/issues/744
+			bool noRuleSetOverride = currentPlaceholderCitation.RuleSetOverride == RuleSetOverride.None ||
+				(currentPlaceholderCitation.CitationType == CitationType.Footnote && currentPlaceholderCitation.RuleSetOverride == RuleSetOverride.Footcit) ||
+				(currentPlaceholderCitation.CitationType == CitationType.InText && currentPlaceholderCitation.RuleSetOverride == RuleSetOverride.Textcit);
 
-            // currentPlaceholderCitation.PersonOnly: siehe Kommentar bei RepeatingInTextCitation
-            conditionMet =
-                noRuleSetOverride &&
-                currentPlaceholderCitation.YearOnly == false &&
-                currentPlaceholderCitation.Entry != null;
+			// currentPlaceholderCitation.PersonOnly: siehe Kommentar bei RepeatingInTextCitation
+			conditionMet =
+				noRuleSetOverride &&
+				currentPlaceholderCitation.YearOnly == false &&
+				currentPlaceholderCitation.Entry != null;
 
-            if (!conditionMet) return false;
+			if (!conditionMet) return false;
 
-            return true;
+			return true;
 		}
 	}
 }
