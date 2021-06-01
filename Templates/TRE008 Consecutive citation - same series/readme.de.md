@@ -11,8 +11,8 @@ Citavi 6 (oder höher)
 
 Für den Fall, dass als vorheriger Titeleintrag ein Werk mit demselben Reihentitel zitiert wird, soll beim zweiten Titel eine verkürzte Ausgabe des Reihentitels erfolgen.
 
-- United States, Department of the Treasury: Annual Report of the Secretary of the Treasury on the State of the Finances for the Fiscal Year Ended June 30, 1900, p. 18
-- United States, Department of the Treasury: AR Treasury, 1901, p. 249
+1. United States, Department of the Treasury: Annual Report of the Secretary of the Treasury on the State of the Finances for the Fiscal Year Ended June 30, 1900, p. 18.
+2. United States, Department of the Treasury: AR Treasury, 1901, p. 249.
 
 ## Installation
 Siehe Citavi Handbuch: [Creating Custom Templates](http://www.citavi.com/creating_custom_templates)
