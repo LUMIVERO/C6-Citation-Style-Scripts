@@ -14,7 +14,7 @@ Citavi 6 (oder höher)
 ## Anpassung
 
 Die folgende Bedingung können Sie bei Bedarf zusätzlich auswählen:
-- `Autor/Herausgeber/Institution stimmt mit vorherige Titeleintrag überein`
+- `Autor/Herausgeber/Institution stimmt mit vorherigem Titeleintrag überein`
 
 ## Beispiele
 
