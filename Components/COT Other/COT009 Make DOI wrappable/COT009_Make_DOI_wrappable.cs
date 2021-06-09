@@ -21,11 +21,11 @@ namespace SwissAcademic.Citavi.Citations
 		{
 			handled = false;
 			
-			bool addDxDoi = true;				// display dx.doi.org/ 
-			bool addHttps = true;				// add http:// to DOI to generate link; only works if addDxDoi == true;
+			bool addDxDoi = true;					// display dx.doi.org/ 
+			bool addHttps = true;					// add http:// to DOI to generate link; only works if addDxDoi == true;
 			
-			var makeWrappable = true;			//replaced '/.-' by '/.-' plus zero-width breaking opportunity
-			var zwb = ((char)8203).ToString();	//http://en.wikipedia.org/wiki/Zero-width_space \u200B' or ALT+08203
+			var makeWrappable = true;				// replaced '/.-' by '/.-' plus zero-width breaking opportunity
+			var zwb = ((char)8203).ToString();		// https://en.wikipedia.org/wiki/Zero-width_space \u200B' or ALT+08203
 			
 			if (componentPart == null) return null;
 			if (citation == null || citation.Reference == null) return null;
