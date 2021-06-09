@@ -1,7 +1,7 @@
 //C6#COT009
 //C5#431517
-//Description: Make DOI wrappable
-//Version: 1.0  
+//Description:	Make DOI wrappable
+//Version 1.1:	Corrected: https instead of http
 
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -22,9 +22,9 @@ namespace SwissAcademic.Citavi.Citations
 			handled = false;
 			
 			bool addDxDoi = true;				// display dx.doi.org/ 
-			bool addHttp = true;				// add http:// to DOI to generate link; only works if addDxDoi == true;
+			bool addHttps = true;				// add http:// to DOI to generate link; only works if addDxDoi == true;
 			
-			var makeWrappable = true;		//replaced '/.-' by '/.-' plus zero-width breaking opportunity
+			var makeWrappable = true;			//replaced '/.-' by '/.-' plus zero-width breaking opportunity
 			var zwb = ((char)8203).ToString();	//http://en.wikipedia.org/wiki/Zero-width_space \u200B' or ALT+08203
 			
 			if (componentPart == null) return null;
@@ -41,9 +41,9 @@ namespace SwissAcademic.Citavi.Citations
 			if (addDxDoi) 
 			{
 				result = "dx.doi.org/" + result;
-				if (addHttp)
+				if (addHttps)
 				{
-					result = "http://" + result;
+					result = "https://" + result;
 				}
 			}
 						
