@@ -1,6 +1,6 @@
 # Titel wurde zuvor bereits auf der gleichen Seite in einer Fußnote zitiert
 
-Bei dem aktuellen Titelnachweis handelt es sich auf dieser Seite um mindestens die zweite Erwähnung dieses Titels.
+Bei dem aktuellen Titelnachweis handelt es sich auf dieser Seite um mindestens die zweite Erwähnung dieses Titels innerhalb einer Fußnote.
 
 Nutzen Sie dieses Skript, um die wiederholte Nennung von Titeln differenziert behandelt zu können.
 
