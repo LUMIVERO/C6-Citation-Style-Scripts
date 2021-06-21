@@ -228,9 +228,9 @@
 
 [TRE016](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE016%20Consecutive%20entry%20in%20the%20bibliography%20-%20same%20series%20title) Consecutive entry in the bibliography - same series title
 
-[TRE017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE017%20Reference%20has%20been%20cited%20exactly%20once%20before%20in%20footnotes) Reference has been cited exactly once before in footnotes
+[TRE017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE017%20Reference%20has%20been%20cited%20exactly%20once%20before) Reference has been cited exactly once before
 
-[TRE018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE018%20Reference%20has%20been%20cited%20exactly%20once%20before) Reference has been cited exactly once before
+[TRE018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE018%20Reference%20has%20been%20cited%20exactly%20once%20before%20in%20footnotes) Reference has been cited exactly once before in footnotes
 
 [TRE019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE019%20Reference%20has%20been%20cited%20on%20the%20same%20page%20before) Reference has been cited on the same page before
 
