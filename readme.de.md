@@ -230,11 +230,13 @@
 
 [TRE017](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE017%20Reference%20has%20been%20cited%20exactly%20once%20before%20in%20footnotes) Reference has been cited exactly once before in footnotes
 
-[TRE018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE018%20Reference%20has%20been%20cited%20on%20the%20same%20page%20before) Reference has been cited on the same page before
+[TRE018](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE018%20Reference%20has%20been%20cited%20exactly%20once%20before) Reference has been cited exactly once before
 
-[TRE019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE019%20Reference%20has%20been%20cited%20in%20a%20footnote%20on%20the%20same%20page%20before) Reference has been cited in a footnote on the same page before
+[TRE019](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE019%20Reference%20has%20been%20cited%20on%20the%20same%20page%20before) Reference has been cited on the same page before
 
-[TRE020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE020%20Reference%20is%20cited%20in%20the%20first%20footnote%20of%20a%20page) Reference is cited in the first footnote of a page
+[TRE020](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE020%20Reference%20has%20been%20cited%20in%20a%20footnote%20on%20the%20same%20page%20before) Reference has been cited in a footnote on the same page before
+
+[TRE021](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE021%20Reference%20is%20cited%20in%20the%20first%20footnote%20of%20a%20page) Reference is cited in the first footnote of a page
 
 [TXY001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TXY001%20Field%20Specific%20Field%203%20contains%20Schreiben%2C%20Erlass%20or%20Verf%C3%BCgung) Field "Specific Field 3" contains "Schreiben", "Erlass" or "Verfügung"
 
