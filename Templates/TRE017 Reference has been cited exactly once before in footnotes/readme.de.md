@@ -28,7 +28,7 @@ Die folgenden Bedingungen können Sie bei Bedarf zusätzlich auswählen:
 Variante A:
 1. Nennung (`Standardvorlage`): `Vollbeleg`
    - **Immanuel Kant: Kritik der reinen Vernunft. Stuttgart 1984 [1781].**
-2. Nennung (Vorlage mit `diesem Skript`): `Kurznachweis` inkl. Ausgabe des vollständigen Titels sowie eines Titelstichworts (mithilfe der `Kurzbeleg`-Funktion)
+2. Nennung (Vorlage mit `diesem Skript`, muss OBERHALB von der Bedingung `Titel wurde bereits in einer vorherigen Fußnote genannt` platziert werden): `Kurznachweis` inkl. Ausgabe des vollständigen Titels sowie eines Titelstichworts (mithilfe der `Kurzbeleg`-Funktion)
    - **Kant: Kritik der reinen Vernunft (=KrV).**
 3. und weitere Nennungen (Vorlage mit der Bedingung `Titel wurde bereits in einer vorherigen Fußnote genannt`): `Kurznachweis` inkl. Ausgabe des Titelstichworts
    - **Kant: KrV.**
@@ -36,7 +36,7 @@ Variante A:
 Variante B, wenn das Skript mit den Wiederholungsbedingungen kombiniert wird:
 1. Nennung (`Standardvorlage`): `Vollbeleg`
    - **Immanuel Kant: Kritik der reinen Vernunft (=KrV). Stuttgart 1984 [1781].**
-2. Nennung (Vorlage mit `diesem Skript`): `Kurznachweis` (ggf. inkl. Ausgabe eines Titelstichworts mithilfe der `Kurzbeleg`-Funktion) - hier soll noch KEIN ebd. verwendet werden
+2. Nennung (Vorlage mit `diesem Skript`, muss OBERHALB von der Bedingung `Titel wurde bereits in einer vorherigen Fußnote genannt` platziert werden): `Kurznachweis` (ggf. inkl. Ausgabe eines Titelstichworts mithilfe der `Kurzbeleg`-Funktion) - hier soll noch KEIN ebd. verwendet werden
    - **Kant: KrV.**
 3. und weitere Nennungen, wenn identisch mit dem vorherigen Titeleintrag (Vorlage mit der Bedingung `Titel wurde bereits in einer vorherigen Fußnote genannt` & weiteren `Wdh.-Bedingungen`):
    - **ebd.**
