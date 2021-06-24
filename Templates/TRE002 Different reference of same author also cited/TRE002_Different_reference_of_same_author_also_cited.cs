@@ -16,15 +16,15 @@ namespace SwissAcademic.Citavi.Citations
 		//Other reference of same author(s)/editor(s)/organization(s) cited BEFORE
 		public bool IsTemplateForReference(ConditionalTemplate template, Citation citation)
 		{
-			var testEqualityBy = PersonIdentityTest.ByInternalID; //adjust here to your needs
-																//e.g. PersonIdentityTest.ByLastNameFirstName
-                                                                //e.g. PersonIdentityText.ByFullName
-																//e.g. PersonIdentityTest.ByInternalID <- recommended for most cases
-			
+			var testEqualityBy = PersonIdentityTest.ByInternalID;	//adjust here to your needs
+																	//e.g. PersonIdentityTest.ByLastNameFirstName
+																	//e.g. PersonIdentityText.ByFullName
+																	//e.g. PersonIdentityTest.ByInternalID <- recommended for most cases
+
 			bool considerNoBibInBibliographyCitations = false;
 			bool considerNoBibInInTextCitations = false;
 			bool considerNoBibInFootnoteCitations = false;
-			
+
 			if (citation == null) return false;
 
 			CitationManager citationManager = citation.CitationManager;
@@ -35,14 +35,14 @@ namespace SwissAcademic.Citavi.Citations
 
 			IEnumerable<Person> currentPersons = currentReference.AuthorsOrEditorsOrOrganizations;
 			if (currentPersons == null || currentPersons.Count() == 0) return false;
-			
+
 			IEnumerable<PublicationCitation> allCitations = null;
-			
+
 			PublicationCitation currentPublicationCitation = citation as PublicationCitation;
 			if (currentPublicationCitation == null) return false;
-			
+
 			#region InTextCitations
-			
+
 			InTextCitation currentInTextCitation = citation as InTextCitation;
 			if (currentInTextCitation != null)
 			{
@@ -51,11 +51,11 @@ namespace SwissAcademic.Citavi.Citations
 					citationManager.InTextCitations.Where(item => !item.BibOnly).Cast<PublicationCitation>() :
 					citationManager.InTextCitations.Where(item => !item.BibOnly && item.CorrespondingBibliographyCitation != null && !item.CorrespondingBibliographyCitation.NoBib.GetValueOrDefault(false));
 			} 
-			
+
 			#endregion 
-			
+
 			#region FootnoteCitations
-			
+
 			if (allCitations == null)
 			{
 				FootnoteCitation currentFootnoteCitation = citation as FootnoteCitation;
@@ -67,9 +67,9 @@ namespace SwissAcademic.Citavi.Citations
 						citationManager.FootnoteCitations.Where(item => !item.BibOnly && item.CorrespondingBibliographyCitation != null && !item.CorrespondingBibliographyCitation.NoBib.GetValueOrDefault(false));
 				}
 			}
-			
+
 			#endregion
-			
+
 			#region BibliographyCitations
 
 			if (allCitations == null)
@@ -81,10 +81,9 @@ namespace SwissAcademic.Citavi.Citations
 					allCitations = citationManager.BibliographyCitations.Where(item => !item.NoBib.GetValueOrDefault(false)).Cast<PublicationCitation>();
 				}
 			}
-			
+
 			#endregion 
-			
-			
+
 			IEnumerable<string> currentIdentifiers = GetPersonIdentifiers(currentPersons, testEqualityBy);
 
 			foreach (PublicationCitation otherPublicationCitation in allCitations)
@@ -100,7 +99,6 @@ namespace SwissAcademic.Citavi.Citations
 				var otherPersons = otherReference.AuthorsOrEditorsOrOrganizations;
 				if (otherPersons == null || otherPersons.Count() == 0) continue;
 
-				
 				var otherIdentifiers = GetPersonIdentifiers(otherPersons, testEqualityBy);
 				
 				if (testEqualityBy == PersonIdentityTest.ByInternalID)
@@ -116,15 +114,15 @@ namespace SwissAcademic.Citavi.Citations
 
 			return false;
 		}
-		
+
 		public enum PersonIdentityTest
-        {
+		{
 			ByInternalID,
-            ByLastName,
-            ByLastNameFirstName,
-            ByFullName
-        }
-		
+			ByLastName,
+			ByLastNameFirstName,
+			ByFullName
+		}
+
 		public IEnumerable<string> GetPersonIdentifiers(IEnumerable<Person> persons, PersonIdentityTest method)
 		{
 			if (persons == null || !persons.Any()) return Enumerable.Empty<string>();
