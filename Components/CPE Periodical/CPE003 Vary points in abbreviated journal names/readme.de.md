@@ -15,10 +15,12 @@ Citavi 5 (oder höher)
 
 ## Beispiele
 
-- Name = vollständiger Name der Zeischrift:           New England Journal of Medicine
-- Abkürzung 1 = mit Punkten abgekürzte Namen:         N. England J. M.
-- Abkürzung 2 = ohne Punkte abgekürzte Namen:         New Eng J Med
-- Abkürzung 3 = vom Verlag festgesetzte Abkürzungen:  NEJM  - spielt bei beiden Skripte außer als Fallback bei Skript A keine Rolle
+Feld in Citavi | Zweck | Ausgabe
+---|---|---
+Name | vollständiger Name der Zeischrift | New England Journal of Medicine
+Abkürzung 1 | mit Punkten abgekürzte Namen | N. England J. M.
+Abkürzung 2 | ohne Punkte abgekürzte Namen | New Eng J Med
+Abkürzung 3 | vom Verlag festgesetzte Abkürzungen | NEJM  - spielt bei beiden Skripte außer als Fallback bei Skript A keine Rolle
 
 ## Customizing
 Erstellen Sie eine Kopie der Komponente **Zeitschrift**. Fügen Sie den Programmcode dieser Komponente hinzu.
