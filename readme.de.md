@@ -120,6 +120,8 @@
 
 [CPE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE002%20Add%20the%20content%20of%20the%20Note%20field%20to%20the%20journal%20name) Add the content of the "Note" field to the Journal Name
 
+[CPE003](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE003%20Vary%20points%20in%20abbreviated%20journal%20names) Vary points in abbreviated journal names
+
 [CPE004](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE004%20Add%20the%20content%20of%20the%20Abbreviation%203%20field%20to%20the%20journal%20name) Add the content of the "Abbreviation 3" field to the Journal Name
 
 [CPE005](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Components/CPE%20Periodical/CPE005%20Replace%20Space%20by%20Non-breaking%20Space%20in%20the%20Journal%20Name) Replace Space by Non-breaking Space in the Journal Name
