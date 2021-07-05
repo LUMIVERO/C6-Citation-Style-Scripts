@@ -1,4 +1,4 @@
-//C6#CPE003-B - SpaceOnly
+//C6#CPE003-B - Vary points in abbreviated Journal Names - without extended fallback option - SpaceOnly
 //C5#43123
 //Description:	Changes Output Style of Journal Abbreviation (using "Abbreviation 1" and "Abbreviation 2" as source)
 //Version 3.0:	var B - the script now takes into account which abbreviation option was set in the component
