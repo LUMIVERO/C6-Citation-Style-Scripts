@@ -15,12 +15,16 @@ Citavi 5 (oder höher)
 
 ## Beispiele
 
+In Citavi gibt es neben dem Namensfeld für das Journal noch 3 Abkürzungsfelder für Zeitschriftennamen:
+
 Feld in Citavi | Zweck | Ausgabe
 ---|---|---
 Name | vollständiger Name der Zeischrift | New England Journal of Medicine
 Abkürzung 1 | mit Punkten abgekürzte Namen | N. England J. M.
 Abkürzung 2 | ohne Punkte abgekürzte Namen | New Eng J Med
 Abkürzung 3 | vom Verlag festgesetzte Abkürzungen | NEJM  - spielt bei beiden Skripte außer als Fallback bei Skript A keine Rolle
+
+Ergänzender Hinweis: Wenn Sie bei PubMed recherchieren, erhalten Sie immer die Abkürzungen automatisch mitgeliefert, aber nur für das Feld `Abkürzung 2`.  
 
 ## Customizing
 Erstellen Sie eine Kopie der Komponente **Zeitschrift**. Fügen Sie den Programmcode dieser Komponente hinzu.
