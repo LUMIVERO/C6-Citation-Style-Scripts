@@ -1,5 +1,5 @@
 # Zeitschriftennamen um Inhalt des Felds "Abkürzung 3" ergänzen
-Das Skript sorgt dafür, dass an den Zeitschriftennamen der Inhalt des Felds `Abkürzung 3` angehängt wird. Die Abkürzungs-Felder von Zeitschriftennamen lässt sich anzeigen und anpassen, wenn Sie die betreffende Zeitschrift über das Menü `Listen` > `Zeitschriften und Zeitungen` bearbeiten.
+Das Skript sorgt dafür, dass an den Zeitschriftennamen der Inhalt des Felds `Abkürzung 3` angehängt wird. Die Abkürzungsfelder von Zeitschriftennamen lässt sich anzeigen und anpassen, wenn Sie die betreffende Zeitschrift über das Menü `Listen` > `Zeitschriften und Zeitungen` bearbeiten.
 
 ## Voraussetzungen
 Citavi 5 (oder höher)
