@@ -1,4 +1,4 @@
-//C6#CPE003-A - SpaceOnly
+//C6#CPE003-A - Vary points in abbreviated Journal Names - with extended fallback option - SpaceOnly
 //C5#43123
 //Description:	Changes Output Style of Journal Abbreviation (using "Abbreviation 1" and "Abbreviation 2" as source)
 //Version 3.0:	var A - added extended fallback capabilities
