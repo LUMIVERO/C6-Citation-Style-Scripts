@@ -1,5 +1,6 @@
 # Citation Style Scripts for Citavi 6 and Citavi 7
 All scripts listed here work with both Citavi 6 and Citavi 7.
+
 [[> Deutsche Version]](readme.de.md)
 
 ## Programmable Components
