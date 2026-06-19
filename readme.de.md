@@ -1,4 +1,5 @@
-# Zitationstil-Skripte für Citavi 6
+# Zitationstil-Skripte für Citavi 6 und Citavi 7
+Alle hier aufgeführten Skripte funktionieren sowohl mit Citavi 6 als auch mit Citavi 7.
 
 [[> English version]](readme.md)
 
@@ -306,7 +307,7 @@
 
 ## Support
 
-Bei Fragen, Anmerkungen oder Wünschen kontaktieren Sie bitte den [Support](https://www.citavi.com/de/support/uebersicht) direkt
+Bei Fragen, Anmerkungen oder Wünschen kontaktieren Sie bitte den [Support](https://www.citavi.com/ticket) direkt
 
 ## Lizenz
 
