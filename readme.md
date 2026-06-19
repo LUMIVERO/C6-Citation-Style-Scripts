@@ -1,4 +1,4 @@
-# Citation Style Scripts for Citavi 6
+# Citation Style Scripts for Citavi 6 and Citavi 7
 
 [[> Deutsche Version]](readme.de.md)
 
