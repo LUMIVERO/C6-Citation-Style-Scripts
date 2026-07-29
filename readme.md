@@ -199,6 +199,8 @@ All scripts listed here work with both Citavi 6 and Citavi 7.
 
 [TNE008](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE008%20Field%20Author%20of%20the%20parent%20reference%20is%20empty) Field "Author" of the parent reference is empty
 
+[TNE009](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TNE009%20Field%20Year%20of%20the%20parent%20reference%20is%20empty) Field "Year" of the parent reference is empty
+
 [TRE001](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE001%20Another%20contribution%20from%20parent%20reference%20in%20the%20same%20footnote%20is%20cited) Another contribution from parent reference in the same footnote is cited
 
 [TRE002](https://github.com/Citavi/C6-Citation-Style-Scripts/tree/master/Templates/TRE002%20Different%20reference%20of%20same%20author%20also%20cited) Different reference of same author also cited
